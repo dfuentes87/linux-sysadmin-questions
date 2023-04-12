@@ -24,7 +24,7 @@
 </p>
 
 <div align="center">
-  <sub>Forked from <a href="https://github.com/trimstray/test-your-sysadmin-skills">trimstray</a>; Brought back to life and updated by <a href="https://github.com/dfuentes87/linux-sysadmin-questions">dfuentes87</a>
+  <sub>Forked from <a href="https://github.com/trimstray/test-your-sysadmin-skills">trimstray</a>; Brought back to life and updated by <a href="https://github.com/dfuentes87/linux-sysadmin-questions">dfuentes87</a></sub>
 </div>
 
 <br>
@@ -33,21 +33,21 @@
 
 <br>
 
-:information_source: &nbsp;This project contains over **200** questions and answers that can be used to test your general knowledge as a **Linux System Administrator**, or to ask someone interviewing for such a position.
+:information_source: This project contains almost **200** questions and answers that can be used to test your general knowledge as a **Linux System Administrator**, or to ask someone interviewing for such a position.
 
-These questions are not meant to be a list of arbitrary facts, such as port numbers that you'll maybe deal with once a year, situations or commands that are rarely encountered, or issues specific to a certain application. Instead these are geared towards real world situations that are common and good to know in general, however not knowing all these does not mean you are not a good Linux SysAdmin.
+These questions are not meant to be a list of arbitrary facts, such as port numbers that you'll maybe deal with once a year, situations or commands that are rarely encountered, or issues specific to a certain application. Instead, these are geared towards real world situations that are common and good to know in general, however not knowing all these do not mean you are not a good Linux SysAdmin.
 
-:heavy_check_mark: &nbsp;The answers are only **examples** and do not exhaust the whole topic. Most of them contains **useful resources** for a deeper understanding.
+:heavy_check_mark: The answers are only **examples** and do not exhaust the whole topic. Most of them contains **useful resources** for a deeper understanding.
 
-:warning: &nbsp;Questions marked **`***`** don't have answer yet or answer the is incomplete - **make a pull request to add them**!
+:warning: Questions marked **`***`** don't have answer yet or answer the is incomplete - **make a pull request to add them**!
 
-:traffic_light: &nbsp;If you find something which doesn't make sense, or something doesn't seem right, **please make a pull request** and please add valid and well-reasoned explanations about your changes or comments.
+:traffic_light: If you find something which doesn't make sense, or something doesn't seem right, **please make a pull request** and please add valid and well-reasoned explanations about your changes or comments.
 
 <br>
 
 ### Contributing
 
-If you would like to answer questions or you found an error - fork the repo, add your fixes, and submit a pull request.
+If you would like to answer questions, or you found an error - fork the repo, add your fixes, and submit a pull request.
 
 #### Using the issue tracker
 
@@ -88,7 +88,7 @@ When creating a pull request, please heed the following:
 ###### System Questions
 
 <details>
-<summary><b>Give some examples of Unix or Linux distributions. Describe what makes them unique.</b></summary><br>
+<summary><b>Give some examples of Unix or Linux distributions. Describe what makes them unique.</b></summary>
 
 - Red Hat Enterprise Linux
 
@@ -104,11 +104,11 @@ When creating a pull request, please heed the following:
 
 - OpenBSD
 
-- **Arch Linux** offers a minimalist base system on which one can build a custom operating system. The beauty of it is that it has the Arch User Repository (AUR), which when combined with its official binary repositories allows it to probably have the largest repositories of any distribution. Its packaging process is also very simple, which means if one wants a package not in its official repositories or the AUR, it should be easy to make it for oneself.
+**Arch Linux** offers a minimalist base system on which one can build a custom operating system. The beauty of it is that it has the Arch User Repository (AUR), which when combined with its official binary repositories allows it to probably have the largest repositories of any distribution. Its packaging process is also very simple, which means if one wants a package not in its official repositories or the AUR, it should be easy to make it for oneself.
 
-- **Kali Linux** is a Debian-based Linux distribution aimed at advanced Penetration Testing and Security Auditing. Kali contains several hundred tools which are geared towards various information security tasks, such as Penetration Testing, Security research, Computer Forensics and Reverse Engineering.
+**Kali Linux** is a Debian-based Linux distribution aimed at advanced Penetration Testing and Security Auditing. Kali contains several hundred tools which are geared towards various information security tasks, such as Penetration Testing, Security research, Computer Forensics and Reverse Engineering.
 
-- **OpenBSD** is a security-focused OS which emphasizes adherence to strictly open source licensing, sane initial settings, and excellent documentation for everything. It is known for it's superior packet filter firewall and much of the OpenSSH codebase.
+**OpenBSD** is a security-focused OS which emphasizes adherence to strictly open source licensing, sane initial settings, and excellent documentation for everything. It is known for its superior packet filter firewall and much of the OpenSSH codebase.
 
 Useful resources:
 
@@ -118,16 +118,17 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>In SQL, what is a Primary key? What implicit constraint does it have? ***</b></summary><br>
+<summary><b>In SQL, what is a Primary key? What implicit constraint does it have?</b></summary>
 
 A primary key is a combination of fields which uniquely specify a row. A Unique key constraint uniquely identified each record in the database. This provides uniqueness for the column or set of columns. This is a special kind of unique key, and it has implicit NOT NULL constraint. It means, Primary key values cannot be NULL.
 
 </details>
 
 <details>
-<summary><b>What is BASH? ***</b></summary><br>
+<summary><b>What is BASH?</b></summary>
 
-*Pending rewrite*
+A command-line interface for interacting with the operating system. It allows users to execute commands, manage files, and perform a variety of other tasks including scripting. 
+It is the default shell on most Linux distributions
 
 Useful resources:
 
@@ -183,9 +184,11 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>In SQL, how do you restrict your query to a certain number of rows, aside from using specific <code>where</code> clauses? ***</b></summary><br>
+<summary><b>In SQL, how do you restrict your query to a certain number of rows, aside from using specific <code>where</code> clauses?</b></summary>
 
-To be completed.
+You can use "LIMIT" which limits the number of rows returned:
+
+<code>SELECT column_name(s) FROM table_name LIMIT number_of_rows;</code>
 
 </details>
 
@@ -258,15 +261,13 @@ Useful resources:
 <details>
 <summary><b>Is running processes as root a good or bad practice?</b></summary><br>
 
-Running (everything) as root is bad because:
+Running (everything) as root is bad practice because:
 
-- **Stupidity**: nothing prevents you from making a careless mistake. If you try to change the system in any potentially harmful way, you need to use sudo, which ensures a pause (while you're entering the password) to ensure that you aren't about to make a mistake.
+- Nothing prevents you from making a careless mistake. If you try to change the system in any potentially harmful way, you need to use sudo, which ensures a pause (while you're entering the password) to ensure that you aren't about to make a mistake.
 
-- **Security**: harder to hack if you don't know the admin user's login account. root means you already have one half of the working set of admin credentials.
+- Processes running as root have unrestricted access to the system's resources. It can make changes to anything and if
+the process is exploited or hacked, that 3rd party will have root by proxy.
 
-- **You don't really need it**: if you need to run several commands as root, and you're annoyed by having to enter your password several times when `sudo` has expired, all you need to do is `sudo -i` and you are now root. Want to run some commands using pipes? Then use `sudo sh -c "command1 | command2"`.
-
-- **You can always use it in the recovery console**: the recovery console allows you to recover from a major mistake, or fix a problem caused by an app (which you still had to run as `sudo`). Ubuntu doesn't have a password for the root account in this case, but you can search online for changing that - this will make it harder for anyone that has physical access to your box to be able to do harm.
 
 Useful resources:
 
@@ -277,11 +278,12 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>How can you check memory and CPU resource usage? ***</b></summary><br>
+<summary><b>How can you check memory and CPU resource usage?</b></summary><br>
 
-*Answer needs more details*
-
-You can use `top` for both. Using `free` and `vmstat` command we can display the physical and virtual memory statistics respectively. With the help of `sar` command we see the CPU utilization & other stats (but `sar` isn't even installed in most systems).
+- **top:** This command displays a real-time view of the system's processes, including their CPU usage and memory consumption. The output is updated every few seconds and can be sorted by various parameters, such as process ID, CPU usage, or memory usage.
+- **ps:** This command displays a snapshot of the current processes running on the system, along with their process ID (PID), CPU usage, and memory usage. The ps command can be combined with other Unix commands, such as grep, to filter the output and show only processes that meet certain criteria.
+- **vmstat:** This command displays system statistics, including CPU usage, memory usage, and I/O activity. The vmstat command provides a summary of system resource usage since the last reboot, as well as real-time updates on resource usage.
+- **free:** This command displays information about the system's memory usage, including the total amount of memory, the amount of memory used, and the amount of memory available. The free command can be used to check if the system is running low on memory and if any memory-intensive processes need to be optimized or terminated.
 
 Useful resources:
 
@@ -304,9 +306,9 @@ It is meant to give you an idea of the state of the system, averaged over severa
 Some interpretations:
 
 - if the averages are 0.0, then your system is idle
-- if the 1 minute average is higher than the 5 or 15 minute averages, then load is increasing
-- if the 1 minute average is lower than the 5 or 15 minute averages, then load is decreasing
-- if they are higher than your CPU count, then you might have a performance problem (it depends)
+- if the 1-minute average is higher than the 5 or 15 minute averages, then load is increasing
+- if the 1-minute average is lower than the 5 or 15 minute averages, then load is decreasing
+- if they are higher than your CPU count, then you _might_ have a performance problem
 
 Useful resources:
 
@@ -319,9 +321,9 @@ Useful resources:
 <details>
 <summary><b>Where are user passwords stored on Linux/Unix systems?</b></summary><br>
 
-The passwords are not stored anywhere on the system at all. What is stored in `/etc/shadow` are so called hashes of the passwords.
+The passwords are not stored anywhere on the system at all. What is stored in `/etc/shadow` are so-called hashes of the passwords.
 
-A hash of some text is created by performing a so called one way function on the text (password), thus creating a string to check against. By design it is "impossible" (computationally infeasible) to reverse that process.
+A hash of some text is created by performing a so-called one way function on the text (password), thus creating a string to check against. By design, it is "impossible" (computationally infeasible) to reverse that process.
 
 Older Unix variants stored the encrypted passwords in `/etc/passwd` along with other information about each account.
 
@@ -338,9 +340,9 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>You type <code>CTRL + C</code> but your script still running. How do you stop it? ***</b></summary><br>
+<summary><b>You type <code>CTRL + C</code> but your script still running. How do you stop it?</b></summary><br>
 
-To be completed.
+Use the kill command to terminate the script: First, find the process ID (PID) of the running script using the ps command. Once you have the PID, you can use the kill command to send a termination signal to the process. 
 
 Useful resources:
 
@@ -416,16 +418,27 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>When would you want to use <code>-f</code> for <code>rm</code>? ***</b></summary><br>
+<summary><b>When would you want to use <code>-f</code> for <code>rm</code>?</b></summary><br>
 
-To be completed.
+- Removing large numbers of files: If you are trying to delete a large number of files at once, using the -f option can save you time by skipping the confirmation prompt for each file.
+- Removing write-protected files: If you have a write-protected file that you need to delete, using the -f option can force its removal without changing its permissions.
+- Removing files owned by other users: If you have permission to delete a file, but it is owned by another user, using the -f option can force its removal without prompting for confirmation.
 
 </details>
 
 <details>
-<summary><b>How can I chmod files using the <code>find</code> command? ***</b></summary><br>
+<summary><b>How can I chmod files using the <code>find</code> command?</b></summary><br>
 
-To be completed.
+You can use the -exec option with the find command to execute the chmod command on each matching file. For example:
+
+<code>find . -name "*.txt" -exec chmod 644 "{}" \;</code>
+
+The <code>\;</code> sequence is used to indicate the end of the command that should be executed on each file. The backslash before the semicolon is used to escape it and prevent the shell from interpreting it as a command terminator.
+
+Useful resources:
+
+- [How to Use the find Command With exec](https://linuxhandbook.com/find-exec-command/)
+- [How to Use the Powerful Xargs Command in Linux](https://linuxhandbook.com/xargs-command/)
 
 </details>
 
@@ -506,8 +519,8 @@ Useful resources:
 <details>
 <summary><b>Many basic maintenance or troubleshooting tasks require you to edit config files. Explain ways to undo the changes you make.</b></summary><br>
 
-- manually make a copy of the file or entire directory before editing using tools such as cp or tar
-- for more permanent changes, the best solution is to use version control such as git to keep track of changes
+- Manually make a copy of the file by using `cp` or copy the line and comment out the original.
+- For more permanent changes, the best solution is to use version control such as git to keep track of changes
 
 Useful resources:
 
@@ -517,7 +530,7 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>You have to find all files larger than 20MB. How you do it?</b></summary><br>
+<summary><b>You have to find all files larger than 20MB. How do you do it?</b></summary><br>
 
 ```bash
 find / -type f -size +20M
@@ -548,23 +561,23 @@ Useful resources:
 
 They are essential to investigate issues on the system. **Log management** is absolutely critical for IT security.
 
-Servers, firewalls, and other IT equipment keep log files that record important events and transactions. This information can provide important clues about hostile activity affecting your network from within and without. Log data can also provide information for identifying and troubleshooting equipment problems including configuration problems and hardware failure.
+Servers, firewalls, and other IT equipment keep log files that record important events and transactions. This information can provide important clues about hostile activity affecting your network from within and without.
+Log data can also provide information for identifying and troubleshooting equipment problems including configuration problems and hardware failure.
 
-It’s your server’s record of who’s come to your site, when, and exactly what they looked at. It’s incredibly detailed, showing:
+It’s your server’s record of who has accessed your site or server, when, and exactly what they looked at.
 
-- where folks came from
-- what browser they were using
-- exactly which files they looked at
-- how long it took to load each file
-- and a whole bunch of other nerdy stuff
+- Origin (IP, location)
+- Browser (agent) being used
+- Files accessed/modified
+- Actions taken
 
 Factors to consider:
 
-- legal requirements for retention or destruction
-- company policies for retention and destruction
-- how long the logs are useful
-- what questions you're hoping to answer from the logs
-- how much space they take up
+- Legal requirements for retention or destruction
+- Company policies for retention and destruction
+- How long the logs are useful
+- What questions you're hoping to answer from the logs
+- How much space they take up
 
 By collecting and analyzing logs, you can understand what transpires within your network. Each log file contains many pieces of information that can be invaluable, especially if you know how to read them and analyze them.
 
@@ -586,14 +599,13 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What is RAID? What is RAID0, RAID1, RAID5, RAID6, RAID10? </b></summary><br>
+<summary><b>What is RAID? What is RAID0, RAID1, RAID5, RAID10? </b></summary><br>
 
 A **RAID** (Redundant Array of Inexpensive Disks) is a technology that is used to increase the performance and/or reliability of data storage.
 
 - **RAID0**: Also known as disk **striping**, is a technique that breaks up a file and spreads the data across all the disk drives in a RAID group. There are no safeguards against failure
 - **RAID1**: A popular disk subsystem that increases safety by writing the same data on two drives. Called "**mirroring**," RAID 1 does not increase write performance, but read performance may equal up to the sum of each disks' performance. However, if one drive fails, the second drive is used, and the failed drive is manually replaced. After replacement, the RAID controller duplicates the contents of the working drive onto the new one
 - **RAID5**: It is disk subsystem that increases safety by computing parity data and increasing speed by interleaving data across three or more drives (**striping**). Upon failure of a single drive, subsequent reads can be calculated from the distributed parity such that no data is lost
-- **RAID6**: RAID 6 extends RAID 5 by adding another parity block. It requires a minimum of four disks and can continue to execute read and write of any two concurrent disk failures. RAID 6 does not have a performance penalty for read operations, but it does have a performance penalty on write operations because of the overhead associated with parity calculations
 - **RAID10**: Also known as **RAID 1+0**, is a RAID configuration that combines disk mirroring and disk striping to protect data. It requires a minimum of four disks, and stripes data across mirrored pairs. As long as one disk in each mirrored pair is functional, data can be retrieved. If two disks in the same mirrored pair fail, all data will be lost because there is no parity in the striped sets
 
 Useful resources:
@@ -667,9 +679,17 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What is a Proxy Server? ***</b></summary><br>
+<summary><b>What is a Proxy Server?</b></summary><br>
 
-To be completed.
+A proxy server is a server that acts as an intermediary between clients (such as web browsers) and other servers on the internet.
+When a client sends a request to access a resource (such as a website or file) on the internet, the request is first sent to the proxy server, which then forwards the request to the appropriate server. The response from the server is then returned to the proxy server, which in turn sends the response back to the client.
+
+Proxy servers can be used for several purposes, including:
+
+- Improving performance: Proxy servers can cache frequently accessed resources, such as web pages or files, so that subsequent requests can be served faster from the cache instead of retrieving the resource again from the original server.
+- Filtering content: Proxy servers can be used to filter content, such as blocking access to certain websites or restricting access to certain types of content based on policy or user preferences.
+- Increasing security: Proxy servers can provide an additional layer of security by acting as a gateway between clients and servers, blocking malicious traffic, and providing anonymity for clients by hiding their IP addresses.
+- Controlling access: Proxy servers can be used to control access to resources based on policies, such as restricting access to certain resources to specific users or groups.
 
 </details>
 
@@ -703,7 +723,7 @@ Useful resources:
 
 To troubleshoot communication problems between servers, it is better to ideally follow the TCP/IP stack:
 
-1. **Application Layer**: are the services up and running on both servers? Are they correctly configured (eg. bind the correct IP and correct port)? Do application and system logs show meaningful errors?
+1. **Application Layer**: are the services up and running on both servers? Are they correctly configured (e.g. bind the correct IP and correct port)? Do application and system logs show meaningful errors?
 
 2. **Transport Layer**: are the ports used by the application open (try telnet!)? Is it possible to ping the server?
 
@@ -762,16 +782,22 @@ nc -vz code42.example.com 5432
 </details>
 
 <details>
-<summary><b>What are the ports used for FTP and SFTP, and how is each used? ***</b></summary><br>
+<summary><b>What are the ports used for FTP and SFTP, and how is each used?</b></summary><br>
 
-To be completed.
+FTP uses two ports: port 21 for control commands and port 20 for data transfers. The control connection is used to send commands such as login credentials and directory listings, while the data connection is used to transfer the actual files.
+
+SFTP, on the other hand, uses a single port for both control commands and data transfers: port 22. SFTP is a secure file transfer protocol that uses SSH (Secure Shell) to encrypt all data in transit. This makes SFTP more secure than FTP and suitable for transferring sensitive data.
 
 </details>
 
 <details>
 <summary><b>What is the difference between Hub, Switch, and Router? ***</b></summary><br>
 
-To be completed.
+A hub is the simplest of the three devices, and it operates at the physical layer of the OSI model. A hub connects multiple devices on a network, and it sends all incoming data to every device on the network. This means that any device connected to the hub can receive data sent by any other device, but it also means that data collisions can occur if multiple devices try to send data at the same time. Hubs are not commonly used in modern networks due to their limited functionality and lack of security features.
+
+A switch is a more advanced device that operates at the data link layer of the OSI model. Like a hub, a switch connects multiple devices on a network, but it is capable of selectively sending data to only the device for which it is intended. This means that data collisions are less likely to occur, and the network can operate more efficiently. Switches are commonly used in modern networks and are essential for creating local area networks (LANs).
+
+A router is a device that operates at the network layer of the OSI model. A router connects multiple networks, such as LANs or wide area networks (WANs), and it is capable of directing traffic between them. Routers use routing tables to determine the most efficient path for data to take between networks. They can also provide security features such as firewalls, which filter incoming and outgoing traffic to protect the network from attacks.
 
 </details>
 
@@ -791,7 +817,7 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What are IP classes? How is it different from CIDR (classless)?</b></summary><br>
+<summary><b>What are IP classes? How is it different from CIDR (classless)? ***</b></summary><br>
 
 To be completed.
 
@@ -800,9 +826,8 @@ To be completed.
 <details>
 <summary><b>Explain the function of each of the following DNS records: SOA, PTR, A, MX, and CNAME.</b></summary><br>
 
-**DNS records** are basically mapping files that tell the DNS server which IP address each domain is associated with, and how to handle requests sent to each domain. Some **DNS records** syntax that are commonly used in nearly all DNS record configurations are `A`, `AAAA`, `CNAME`, `MX`, `PTR`, `NS`, `SOA`, `SRV`, `TXT`, and `NAPTR`.
+**DNS records** are basically mapping files that tell the DNS server which IP address each domain is associated with, and how to handle requests sent to each domain. Some **DNS records** syntax that are commonly used in nearly all DNS record configurations are `A`, `AAAA`, `CNAME`, `MX`, `PTR`, `NS`, and `TXT`.
 
-- **SOA** - A Start Of Authority
 - **A** - Address Mapping records
 - **AAAA** - IP Version 6 Address records
 - **CNAME** - Canonical Name records
@@ -819,16 +844,20 @@ Useful resources:
 <details>
 <summary><b>What is a MAC address and how is it determined? ***</b></summary><br>
 
-To be completed.
+A Media Access Control (MAC) address is a unique identifier assigned to a network interface controller (NIC) for use as a network address in communications within a network segment. It is used to uniquely identify devices on a network at the data link layer of the networking stack.
+
+MAC addresses are typically assigned by the manufacturer of the network interface card and are stored in its hardware. The MAC address is a 48-bit number (12 hexadecimal digits) that is globally unique and permanently assigned to the NIC by the manufacturer. The first half of the MAC address represents the vendor, while the second half represents the device itself.
+
+MAC addresses are used in various network protocols to identify the source and destination of network traffic. They are also used in security protocols, such as MAC filtering, to restrict network access based on the MAC address of a device.
 
 - [How is the MAC address on a computer determined?](https://superuser.com/questions/504770/how-is-the-mac-address-on-a-computer-determined)
 
 </details>
 
 <details>
-<summary><b>What is the smallest IPv4 subnet that can be applied to a network containing up to 200 devices? ***</b></summary><br>
+<summary><b>What is the smallest IPv4 subnet that can be applied to a network containing up to 200 devices?</b></summary><br>
 
-To be completed.
+The smallest IPv4 subnet that can be applied to a network containing up to 200 devices is /24 or 255.255.255.0. This allows for a maximum of 254 usable IP addresses on the network (excluding the network address and broadcast address), which is sufficient for a network with 200 devices.
 
 Useful resources:
 
@@ -858,7 +887,7 @@ Useful resources:
 <details>
 <summary><b>What is DevOps?</b></summary><br>
 
-**DevOps** is a cohesive team that engages in both Development and Operations tasks, or it's individual Operations and Development teams that work very closely together. It's more of a "way" of working collaboratively with other departments to achieve common goals.
+**DevOps** is a cohesive team that engages in both Development and Operations tasks, or its individual Operations and Development teams that work very closely together. It's more of a "way" of working collaboratively with other departments to achieve common goals.
 
 </details>
 
@@ -904,7 +933,7 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>Explain some basic <code>Docker</code> commands.</b></summary><br>
+<summary><b>Explain some basic Docker commands.</b></summary><br>
 
 - `docker ps` - show running containers
 - `docker ps -a` - show all containers
@@ -916,12 +945,16 @@ Useful resources:
 
 </details>
 
-###### Cyber Security Questions
+###### Cybersecurity Questions
 
 <details>
-<summary><b>What makes a password very strong? ***</b></summary><br>
+<summary><b>What makes a password very strong?</b></summary><br>
 
-To be completed.
+Password length is more important than complexity when it comes to creating a strong password.
+
+A password that is long and complex can be difficult to remember, and users may be more likely to write it down or reuse it across multiple accounts, which can increase the risk of a security breach. In contrast, a longer password that is easy to remember but not easily guessable can provide strong security.
+
+It is generally recommended to use a password that is at least 16 characters long, and that does not contain easily guessable information such as names, birthdays, or common phrases. It is also important to use unique passwords for each account to prevent a security breach from affecting multiple accounts. To help remember long passwords, users can use password managers, which securely store passwords and generate random, complex passwords for each account.
 
 Useful resources:
 - [Password Strength](https://xkcd.com/936/)
@@ -939,7 +972,7 @@ Useful resources:
 <details>
 <summary><b>Most tutorials suggest using SSH key authentication rather than password authentication. Why is it considered more secure?</b></summary><br>
 
-An **SSH key** is an access credential in the SSH protocol. Its function is similar to that of user names and passwords, but the keys are primarily used for automated processes and for implementing single sign-on by system administrators and power users.
+An **SSH key** is an access credential in the SSH protocol. Its function is similar to that of usernames and passwords, but the keys are primarily used for automated processes and for implementing single sign-on by system administrators and power users.
 
 Instead of requiring a user's password, it is possible to confirm the client's identity by using asymmetric cryptography algorithms, with public and private keys.
 
@@ -955,23 +988,48 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>Define the three major terms in cybersecurity (Confidentiality, Integrity, and Availability). ***</b></summary><br>
+<summary><b>Define the three major terms in cybersecurity (Confidentiality, Integrity, and Availability).</b></summary><br>
 
-To be completed.
+Confidentiality, integrity, and availability are three fundamental principles of information security and cybersecurity. They are commonly referred to as the CIA triad.
+
+- Confidentiality: Confidentiality is the principle that ensures that information is only accessible to authorized individuals or entities. It involves protecting sensitive information from unauthorized access, disclosure, or theft. Confidentiality is often achieved through the use of encryption, access controls, and other security measures.
+- Integrity: Integrity is the principle that ensures that information is accurate, complete, and trustworthy. It involves protecting information from unauthorized modification or destruction, and ensuring that it remains consistent and reliable over time. Integrity is often achieved through the use of data backups, checksums, and other data validation techniques.
+- Availability: Availability is the principle that ensures that information and resources are accessible to authorized individuals or entities when needed. It involves ensuring that systems and applications are always operational and that resources are available to support business operations. Availability is often achieved through the use of redundancy, disaster recovery, and backup systems.
+
+Together, confidentiality, integrity, and availability provide a framework for securing information and systems against a wide range of threats.
+
+Useful resources:
+
+- [Confidentiality, Integrity, and Availability: The CIA Triad](https://informationsecurity.wustl.edu/items/confidentiality-integrity-and-availability-the-cia-triad/)
 
 </details>
 
 <details>
-<summary><b>What is the difference between threats, vulnerabilities, and attacks? ***</b></summary><br>
+<summary><b>What is the difference between threats, vulnerabilities, and attacks?</b></summary><br>
 
-To be completed.
+A threat is a potential danger that could exploit a vulnerability in a system or application. Threats can come in various forms, including natural disasters, human errors, or malicious attacks.
+
+A vulnerability is a weakness or flaw in a system or application that can be exploited by a threat. Vulnerabilities can be caused by software bugs, misconfigurations, or human error, among other things.
+
+An attack is an intentional action that is taken to exploit a vulnerability in a system or application. An attack can be carried out by a human, a bot, or a malware, and can have various objectives, such as stealing data, disrupting service, or gaining unauthorized access.
+
+To illustrate the differences between these concepts, consider the example of a bank's online banking system. The system may have a vulnerability, such as a weak password policy, which can be exploited by a threat, such as a hacker. The hacker may launch an attack, such as a brute force attack, to try to guess users' passwords and gain unauthorized access to their accounts.
 
 </details>
 
 <details>
-<summary><b>Describe Threat Modeling. ***</b></summary><br>
+<summary><b>Describe Threat Modeling.</b></summary><br>
 
-To be completed.
+Threat modeling is a process that is used to identify, prioritize, and mitigate potential security threats to a system or application. It is a systematic approach to analyzing potential threats and vulnerabilities in order to identify the most effective strategies for mitigating those risks.
+
+The process of threat modeling typically involves several steps, including:
+
+- Defining the scope of the model: This involves identifying the system or application to be analyzed, as well as any external dependencies or interfaces that may be relevant to the analysis.
+- Creating a data flow diagram: This diagram is used to identify the data flows within the system or application, as well as any entry points and exit points where data can enter or leave the system.
+- Identifying potential threats: This involves brainstorming potential threats that could affect the system or application, such as malware, data breaches, or social engineering attacks.
+- Analyzing the risks: This step involves assessing the potential impact and likelihood of each identified threat, and prioritizing them based on their risk level.
+- Mitigating the risks: Once the risks have been prioritized, strategies can be developed to mitigate those risks. This may involve implementing technical controls, such as firewalls or encryption, or non-technical controls, such as training or policies and procedures.
+- Re-evaluating the model: Threat modeling is an ongoing process, and it is important to periodically re-evaluate the model to ensure that it is up-to-date and effective.
 
 </details>
 
@@ -982,7 +1040,7 @@ To be completed.
 ###### System Questions
 
 <details>
-<summary><b>Explain briefly how Linux allows most of it's software to be updated without needing to reboot? Is it possible to update the kernel without rebooting?</b></summary><br>
+<summary><b>Explain briefly how Linux allows most of its software to be updated without needing to reboot? Is it possible to update the kernel without rebooting? ***</b></summary><br>
 
 To be completed.
 
@@ -998,7 +1056,7 @@ Useful resources:
 
 - `&` puts the job in the background, that is, makes it block on attempting to read input, and makes the shell not wait for its completion
 - `disown` removes the process from the shell's job control, but it still leaves it connected to the terminal. One of the results is that the shell won't send it a **SIGHUP**. Obviously, it can only be applied to background jobs, because you cannot enter it when a foreground job is running
-- `nohup` disconnects the process from the terminal, redirects its output to `nohup.out` and shields it from **SIGHUP**. One of the effects (the naming one) is that the process won't receive any sent **SIGHUP**. It is completely independent from job control and could in principle be used also for foreground jobs (although that's not very useful)
+- `nohup` disconnects the process from the terminal, redirects its output to `nohup.out` and shields it from **SIGHUP**. One of the effects (the naming one) is that the process won't receive any sent **SIGHUP**. It is completely independent of job control and could in principle be used also for foreground jobs (although that's not very useful)
 
 If you use all three together, the process is running in the background, is removed from the shell's job control and is effectively disconnected from the terminal.
 
@@ -1009,9 +1067,13 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>Pick two different computer languages. Describe when you would use one over the other. ***</b></summary><br>
+<summary><b>Pick two different computer languages. Describe when you would use one over the other.</b></summary><br>
 
-To be completed.
+Python is a high-level, interpreted language that is known for its simplicity, ease of use, and flexibility. It is commonly used for data science, machine learning, web development, scripting, and automation tasks. Python has a large and active community that creates and maintains numerous libraries and frameworks, making it an excellent choice for rapid prototyping, experimentation, and development of proof-of-concept applications.
+
+C++ is a lower-level, compiled language that is known for its speed, efficiency, and power. It is commonly used for systems programming, operating systems, embedded systems, games, and other applications that require high performance, low-level control, and minimal runtime overhead. C++ allows for greater memory control and more efficient use of system resources, making it a better choice for applications that require high levels of optimization.
+
+When deciding between Python and C++, it's important to consider the requirements and constraints of the project at hand. If the project requires high-level abstraction and rapid development, Python may be the better choice. However, if the project requires fine-tuned control over system resources and high-performance execution, C++ may be a better option. Ultimately, the choice of language will depend on the specific requirements of the project and the skills and preferences of the development team.
 
 </details>
 
@@ -1056,7 +1118,7 @@ I've had file copies while in single user mode dump files into directories that 
 
 **Solution 2**
 
-On the other hand `df -h` and `du -sh` could mismatched by about 50% of the hard disk size. This was caused by e.g. Apache (httpd) keeping large log files in memory which had been deleted from disk.
+On the other hand `df -h` and `du -sh` could disagree by about 50% of the hard disk size. This was caused by e.g. Apache (httpd) keeping large log files in memory which had been deleted from disk.
 
 This was tracked down by running `lsof | grep "/var" | grep deleted` where `/var` was the partition I needed to clean up.
 
@@ -1108,31 +1170,46 @@ Useful resource:
 </details>
 
 <details>
-<summary><b>How are different production enviornments used and why? ***</b></summary><br>
+<summary><b>How are different production enviornments used and why?</b></summary><br>
 
-To be completed.
+In software development, different production environments are used to facilitate the deployment, testing, and running of an application in a way that is specific to the stage of development and the purpose of that environment.
+
+There are typically three different production environments: development, testing, and production.
+
+Development environment: This is where the application is developed and tested by developers. It's usually a local environment, but it can also be a shared environment that is used by multiple developers.
+Testing environment: This is where the application is tested by QA (quality assurance) team to ensure that it works as expected before it is released to production. The testing environment should mimic the production environment as much as possible.
+Production environment: This is where the application is deployed for the end-users. It's a live environment that is publicly accessible. Any changes or updates that are made to the application should be thoroughly tested in the testing environment before being deployed to production to ensure that the application remains stable and secure.
 
 </details>
 
 <details>
-<summary><b>Provide a general explanation of how SSL works. ***</b></summary><br>
+<summary><b>Provide a general explanation of how SSL works.</b></summary><br>
 
-To be completed.
+SSL (Secure Sockets Layer) is a protocol used to establish a secure and encrypted communication between a client and a server over the internet. It was replaced by TLS (Transport Layer Security), but the term SSL is still often used.
+
+When a client (such as a web browser) initiates an SSL connection to a server, the following process takes place:
+
+1. The client sends a request to the server to initiate an SSL connection.
+2. The server responds with its SSL certificate, which contains a public key and other information about the certificate holder.
+3. The client verifies the certificate's validity by checking it against a list of trusted root certificates installed on the client's device.
+4. The client generates a session key, encrypts it using the server's public key, and sends it to the server.
+5. The server decrypts the session key using its private key.
+6. The client and server use the session key to encrypt and decrypt data exchanged during the session.
 
 </details>
 
 <details>
 <summary><b>Explain in a few points the boot process of the Linux system.</b></summary><br>
 
-**BIOS**: Full form of BIOS is Basic Input or Output System that performs integrity checks and it will search and load and then it will execute the bootloader.
+**BIOS**: Full form of BIOS is Basic Input or Output System that performs integrity checks, and it will search and load, and then it will execute the bootloader.
 
-**Bootloader**: Since the earlier phases are not specific to the operating system, the BIOS-based boot process for x86 and x86-64 architectures is considered to start when the master boot record (MBR) code is executed in real mode and the first-stage boot loader is loaded. In UEFI systems, a payload, such as the Linux kernel, can be executed directly. Thus no boot loader is necessary. Some popular bootloaders: **GRUB**, **Syslinux/Isolinux** or **Lilo**.
+**Bootloader**: Since the earlier phases are not specific to the operating system, the BIOS-based boot process for x86 and x86-64 architectures is considered to start when the master boot record (MBR) code is executed in real mode and the first-stage bootloader is loaded. In UEFI systems, a payload, such as the Linux kernel, can be executed directly. Therefore, no bootloader is necessary. Some popular bootloaders: **GRUB**, **Syslinux/Isolinux** or **Lilo**.
 
 **Kernel**: The kernel in Linux handles all operating system processes, such as memory management, task scheduling, I/O, interprocess communication, and overall system control. This is loaded in two stages - in the first stage, the kernel (as a compressed image file) is loaded into memory and decompressed, and a few fundamental functions such as basic memory management are set up.
 
 **Init**: Is the parent of all processes on the system, it is executed by the kernel and is responsible for starting all other processes.
 
-- `SysV init` - init's job is "to get everything running the way it should be once the kernel is fully running. Essentially it establishes and operates the entire user space. This includes checking and mounting file systems, starting up necessary user services, and ultimately switching to a user-environment when system startup is completed.
+- `SysV init` - init's job is to get everything running the way it should be once the kernel is fully running. Essentially it establishes and operates the entire user space. This includes checking and mounting file systems, starting up necessary user services, and ultimately switching to a user-environment when system startup is completed.
 - `systemd` - the developers of systemd aimed to replace the Linux init system inherited from Unix System V. Like init, systemd is a daemon that manages other daemons. All daemons, including systemd, are background processes. Systemd is the first daemon to start (during booting) and the last daemon to terminate (during shutdown).
 - `runinit` - runinit is an init scheme for Unix-like operating systems that initializes, supervises, and ends processes throughout the operating system. It is a reimplementation of the daemontools process supervision toolkit that runs on the Linux, Mac OS X, \*BSD, and Solaris operating systems.
 
@@ -1144,16 +1221,24 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What is SELinux and how does it work? ***</b></summary><br>
+<summary><b>What is SELinux and how does it work?</b></summary><br>
 
-To be completed.
+SELinux, or Security-Enhanced Linux, is a security module for the Linux kernel that provides access control mechanisms to enforce mandatory access control policies. It works by labeling resources such as files, directories, processes, and network sockets with security context labels.
+
+SELinux uses a set of rules called policies that determine what actions are allowed or denied for each labeled resource based on the security context of the process trying to access it. The policies are defined in a policy language and can be modified or extended to suit specific security requirements.
+
+SELinux provides a more fine-grained level of access control than traditional Linux file permissions, which are based on user and group ownership. It is designed to provide a more secure environment by preventing applications or processes from accessing resources they do not have permission to access, even if the underlying Linux file permissions allow it.
+
+SELinux operates on a set of modes, which include enforcing mode, permissive mode, and disabled mode. In enforcing mode, SELinux denies access to any resource that violates the security policy. In permissive mode, it only logs violations without actually enforcing them, which is useful for debugging policy issues. In disabled mode, SELinux is turned off completely.
 
 </details>
 
 <details>
 <summary><b>Is 1.00 CPU load on a four-core processor a bad thing?</b></summary><br>
 
-To be completed.
+It depends on the context and the workload running on the processor. In general, a CPU load of 1.00 on a four-core processor indicates that all four cores are being fully utilized. If this is expected and desired behavior for the workload, then a CPU load of 1.00 is not necessarily a bad thing.
+
+However, if the workload is not designed to fully utilize all four cores or if there are other processes running on the system that are also competing for CPU resources, a sustained CPU load of 1.00 may indicate that the system is under heavy load and may be struggling to keep up. In this case, it could be a bad thing as the system's performance could be negatively impacted and may become unresponsive or unstable. It's important to monitor CPU load in conjunction with other performance metrics to get a better understanding of system behavior and identify potential issues.
 
 Useful resources:
 
@@ -1165,7 +1250,7 @@ Useful resources:
 <details>
 <summary><b>What does it mean when the effective user is root, but the real user ID is still your username?</b></summary><br>
 
-The **real user ID** is who you really are (the user who owns the process), and the **effective user ID** is what the operating system looks at to make a decision whether or not you are allowed to do something (most of the time, there are some exceptions).
+The **real user ID** is who you really are (the user who owns the process), and the **effective user ID** is what the operating system looks at to make a decision whether you are allowed to do something (most of the time, there are some exceptions).
 
 When you log in, the login shell sets both the **real and effective user ID** to the same value (your **real user ID**) as supplied by the password file.
 
@@ -1295,7 +1380,7 @@ Useful resources:
 
 If the system needs more memory resources and the RAM is full, inactive pages in memory are moved to the swap space. While swap space can help machines with a small amount of RAM, it should not be considered a replacement for more RAM. **Swap** space is located on hard drives, which have a slower access time than physical memory.
 
-Workload increases your RAM demand. You are running a workload that requires more memory. Usage of the entire swap indicates that. Also, changing `swappiness` to **1** might not be a wise decision. Setting `swappiness` to **1** does not indicate that swapping will not be done. It just indicates how aggressive kernel will be in respect of swapping, it does not eliminate swapping. Swapping will happen if needs to be done.
+Workload increases your RAM demand. You are running a workload that requires more memory. Usage of the entire swap indicates that. Also, changing `swappiness` to **1** might not be a wise decision. Setting `swappiness` to **1** does not indicate that swapping will not be done. It just indicates how aggressive kernel will be in respect of swapping, it does not eliminate swapping. Swapping will happen if it needs to be done.
 
 - **Increasing the size of the swap space** - firstly, you'd have increased disk use. If your disks aren't fast enough to keep up, then your system might end up thrashing, and you'd experience slowdowns as data is swapped in and out of memory. This would result in a bottleneck.
 
@@ -1327,11 +1412,13 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What is umask? Describe a scenario where you might need to change it for a user. ***</b></summary><br>
+<summary><b>What is umask? Describe a scenario where you might need to change it for a user.</b></summary><br>
 
-On Linux and other Unix-like operating systems, new files are created with a default set of permissions. Specifically, a new file's permissions may be restricted in a specific way by applying a permissions "mask" called the `umask`. The `umask` command is used to set this mask, or to show you its current value.
+`umask` is a default permission setting that determines the permissions that are assigned to newly created files and directories.
 
-To be completed.
+The umask value is subtracted from the default permissions of a file or directory to determine its final permissions. For example, if the umask value is set to 022, the default permissions for a file would be 666 (rw-rw-rw-) and the final permissions would be 644 (rw-r--r--), since 022 is subtracted from 666.
+
+A scenario where you might need to change the umask for a user is when you want to control the default permissions for new files or directories created by that user. For example, if you have a user who is creating sensitive files that should not be accessible to other users, you might want to set their umask value to 077, which would result in files with permissions 600 (rw-------) and directories with permissions 700 (rwx------). This would ensure that only the owner of the files or directories can access them, and no other users on the system can read or modify them.
 
 Useful resources:
 
@@ -1340,9 +1427,27 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>In SQL, how can you combine rows from two or more tables, based on a related column between them? ***</b></summary><br>
+<summary><b>In SQL, how can you combine rows from two or more tables, based on a related column between them?</b></summary><br>
 
-To be completed.
+In SQL, you can combine rows from two or more tables using the JOIN clause based on a related column between them. The JOIN clause combines the specified columns from two or more tables using a specified condition.
+
+There are different types of JOIN operations in SQL, including:
+
+- INNER JOIN: Returns only the rows that have matching values in both tables.
+- LEFT JOIN: Returns all the rows from the left table and the matched rows from the right table. If there are no matches in the right table, NULL values are returned.
+- RIGHT JOIN: Returns all the rows from the right table and the matched rows from the left table. If there are no matches in the left table, NULL values are returned.
+- FULL OUTER JOIN: Returns all the rows from both tables. If there are no matches, NULL values are returned.
+
+Here is an example of an INNER JOIN query that combines rows from two tables based on a related column:
+
+<code>
+SELECT customers.customer_id, customers.name, orders.order_id, orders.order_date
+FROM customers
+INNER JOIN orders
+ON customers.customer_id = orders.customer_id;
+</code>
+
+This query combines the customers table with the orders table based on the customer_id column, and returns only the rows that have matching values in both tables. The resulting table contains the customer_id, name, order_id, and order_date columns.
 
 </details>
 
@@ -1463,7 +1568,7 @@ To be completed.
 
 - which users have access to the app filesystem
 - permissions for web servers, e.g. Apache and app servers e.g. uwsgi
-- permissions for specific directories like a **uploads**, **cache** and main app directory like a `/var/www/app01/html`
+- permissions for specific directories such as **uploads**, **cache** and main app directory like a `/var/www/app01/html`
 - correct `umask` value for users and **suid**/**sgid** (only for specific situations)
 - permissions for all future files and directories
 - permissions for cron jobs and scripts
@@ -1487,7 +1592,7 @@ chown -R u02-prod:g02-prod /var/www/app02
 
 **4) Developers owner and group**
 
-All of the users that maintain the website have own groups and they're attach to application group:
+All users that maintain the website have own groups, and they're attached to application group:
 
 ```bash
 id alice
@@ -1502,7 +1607,7 @@ So **alice** user has standard privileges for `/var/www/app01` and **bob** user 
 
 Any files or directories that need to be written by the webserver have their owner. If the web servers is Apache, default owner/group are **apache:apache** or **www-data:www-data** and for Nginx it will be **nginx:nginx**. Don't change these settings.
 
-If applications works with app servers like a **uwsgi** or **php-fpm** should set the appropriate user and group (e.g. for **app01** it will be **u01-prod:g01-prod**) in specific config files.
+If applications work with app servers, such as **uwsgi** or **php-fpm**, then you should set the appropriate user and group (e.g. for **app01** it will be **u01-prod:g01-prod**) in specific config files.
 
 **6) Permissions**
 
@@ -1546,14 +1651,25 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>How do you change system runlevels? What are some reasons you would need to? ***</b></summary><br>
+<summary><b>How do you change system runlevels? What are some reasons you would need to?</b></summary><br>
 
-To be completed.
+runlevels are different operating modes in which the system can run. There are typically seven runlevels, from 0 to 6, with each one defining a specific state or mode of operation. Each runlevel is designed to start a specific set of processes and services, and by changing the runlevel, you can control which processes and services are running on your system.
+
+To change system runlevels, you can use the init command with the appropriate runlevel number. For example, to switch to runlevel 3, you can run:
+
+<code>sudo init 3</code>
+
+A few reasons you might need to switch runlevels:
+
+- Troubleshooting: You might need to switch to a lower runlevel (such as runlevel 1 or 3) to troubleshoot a system issue or perform maintenance tasks.
+- Upgrades: You might need to switch to a higher runlevel (such as runlevel 6) to perform a system upgrade or reboot the system.
+- Security: You might need to disable certain services or processes that are not needed for security reasons.
+- Performance: You might need to adjust the system runlevel to optimize system performance based on the workload or resources available.
 
 </details>
 
 <details>
-<summary><b>The root password has been forgotten and you are locked out of the system. How can you reset the root password?</b></summary><br>
+<summary><b>The root password has been forgotten, and you are locked out of the system. How can you reset the root password? ***</b></summary><br>
 
 To be completed.
 
@@ -1575,9 +1691,21 @@ __EOF__
 </details>
 
 <details>
-<summary><b>How do you change kernel parameters? What kernel options might you need to tune? ***</b></summary><br>
+<summary><b>How do you change kernel parameters? What kernel options might you need to tune?</b></summary><br>
 
-To set the kernel parameters in Unix-like, first edit the file `/etc/sysctl.conf` after making the changes save the file and run the command `sysctl -p`, this command will make the changes permanently without rebooting the machine.
+You can change kernel parameters at boot time or during runtime using the `sysctl` command.
+
+To change kernel parameters at boot time, you can modify the `GRUB_CMDLINE_LINUX` variable in the /etc/default/grub file, then run sudo update-grub to update the GRUB configuration.
+
+To change kernel parameters during runtime, you can use the `sysctl` command followed by the name of the parameter you want to change and its new value. For example, to increase the maximum number of open files, you can use the following command:
+
+<code>sudo sysctl -w fs.file-max=100000</code>
+
+Some kernel options that you might need to tune include:
+
+- Network-related options, such as the maximum number of connections, the size of network buffers, and the default congestion control algorithm.
+- File system-related options, such as the maximum number of open files, the size of disk caches, and the behavior of the journaling file system.
+- Security-related options, such as the maximum number of processes and threads, the permissions for executing programs, and the behavior of system calls.
 
 Useful resources:
 
@@ -1610,20 +1738,27 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>Describe your data backup process. How often should you test your backups? ***</b></summary><br>
+<summary><b>Describe your data backup process. How often should you test your backups?</b></summary><br>
 
-To be completed.
+- Determine what data needs to be backed up: Identify the critical data that needs to be backed up, such as files, databases, and configurations.
+- Decide on a backup frequency: Determine how often you need to back up your data. The frequency will depend on how often the data changes and how critical it is to your business.
+- Choose a backup method: There are several backup methods you can use, such as full backup, incremental backup, and differential backup. Each method has its advantages and disadvantages, so choose the one that best suits your needs.
+- Select a backup location: Choose a secure location to store your backups, such as an external hard drive, a cloud storage service, or a dedicated backup server.
+- Automate the backup process: Automate the backup process to ensure that backups are performed regularly and reliably.
+- Test your backups: Regularly test your backups to ensure that they are complete and accurate. Testing backups is critical, as it helps ensure that you can recover your data in the event of a disaster.
+
+It is recommended to test backups at least once every three months to ensure that they are working correctly. Additionally, you should test your backups after any significant changes to your system or data to ensure that your backup process is still effective.
 
 </details>
 
 <details>
-<summary><b>Explain three types of journaling in ext3/ext4.</b></summary><br>
+<summary><b>Explain three types of journaling in ext4 and xfs.</b></summary><br>
 
-There are three types of journaling available in **ext3/ext4** file systems:
+There are three types of journaling available in **ext4 and xfs** file systems:
 
-- **Journal** - metadata and content are saved in the journal
-- **Ordered** - only metadata is saved in the journal. Metadata are  journaled only after writing the content to disk. This is the default
-- **Writeback** - only metadata is saved in the journal. Metadata might be  journaled either before or after the content is written to the disk
+- **Data journaling**: In data journaling, only file data is logged in the journal. Metadata is written to disk directly, and file contents are written to the journal before being written to disk. In case of a system crash, only the data in the journal is lost. The metadata on disk remains consistent. This type of journaling is faster than other types because only the data is logged to the journal.
+- **Ordered journaling**: In ordered journaling, metadata is written to the journal before file data. This ensures that metadata is always consistent, and files can be recovered correctly in case of a system crash. This type of journaling is slower than data journaling because metadata is logged before data.
+- **Writeback journaling**: In writeback journaling, file data is written to disk before being logged in the journal. This can result in data inconsistencies in case of a system crash or power failure, as metadata can be updated before the corresponding data is written to the journal. However, writeback journaling is the fastest and most efficient journaling mode, as file data is written directly to disk without being logged in the journal first.
 
 </details>
 
@@ -1664,7 +1799,7 @@ Users can create files with characters that make it difficult to see the directo
 touch `printf "aa\bb"`
 ```
 
-Now what what happens when you use the `ls` command:
+Now what happens when you use the `ls` command:
 
 ```bash
 ls
@@ -1728,7 +1863,7 @@ Useful resources:
 - move any number of logical volumes of an old physical one
 - remove that volume from the volume group without needing to unmount any partitions
 - you can also make snapshots of logical volumes for making backups
-- LVM has built in mirroring support so you can have a logical volume mirrored across multiple physical volumes
+- LVM has built in mirroring support, so you can have a logical volume mirrored across multiple physical volumes
 - LVM even supports TRIM
 
 Useful resources:
@@ -1820,7 +1955,7 @@ Useful resources:
 
 **Strace Overview**
 
-`strace` can be seen as a light weight debugger. It allows a programmer/user to quickly find out how a program is interacting with the OS. It does this by monitoring system calls and signals.
+`strace` can be seen as a lightweight debugger. It allows a programmer/user to quickly find out how a program is interacting with the OS. It does this by monitoring system calls and signals.
 
 **Uses**
 
@@ -1925,7 +2060,7 @@ journalctl _SYSTEMD_UNIT=ssh.service | egrep "Failed|Failure"
 
 **Client side**
 
-Also you should run SSH client with `-v|--verbose` - it is in first level of verbosity. Next, you can enable additional (level 2 and 3) verbosity for even more debugging messages as shown with e.g. `-vv`.
+Also, you should run SSH client with `-v|--verbose` - it is in first level of verbosity. Next, you can enable additional (level 2 and 3) verbosity for even more debugging messages as shown with e.g. `-vv`.
 
 Useful resources:
 
@@ -1941,12 +2076,18 @@ To be completed.
 </details>
 
 <details>
-<summary><b>A project manager needs a new SQL Server. What do you ask her/his? ***</b></summary><br>
+<summary><b>A Project Manager needs a new SQL Server. What questions would you ask to ensure the proper system is setup?</b></summary><br>
 
-I want the DBA to ask questions like:
+1. What is the expected workload and number of concurrent users?
+2. What is the size of the database?
+3. What is the growth rate of the database?
+4. What are the performance requirements for the database?
+5. What are the backup and recovery requirements for the database?
+6. What is the budget for the project?
+7. What is the expected availability requirement?
+8. What are the security requirements for the database?
 
-- How big will the database be? (whether we can add the database to an existing server)
-- How critical is the database? (about clustering, disaster recovery, high availability)
+The answers to these questions will help determine the hardware and software requirements for the SQL Server. Based on the expected workload, database size, and performance requirements, the appropriate hardware can be chosen. The backup and recovery requirements will help determine the type and frequency of backups that will be required. The budget will also play a significant role in determining the hardware and software choices. The expected availability and security requirements will help determine the high availability and security features that will be required for the SQL Server.
 
 </details>
 
@@ -1970,7 +2111,7 @@ For example (with `visudo` command):
 user1 ALL=(user2) NOPASSWD: /opt/scripts/bin/generate.sh
 ```
 
-The command paths must be absolute! Then call `sudo -u user2 /opt/scripts/bin/generate.sh` from a user1 shell.
+The command paths must be absolute! Then call `sudo -u user2 /opt/scripts/bin/generate.sh` from the user1 shell.
 
 </details>
 
@@ -1995,9 +2136,9 @@ A good example are also web servers. Imagine if Apache ran as root and someone f
 
 **`nobody` or `www-data` for httpd (Apache)**
 
-Upon starting Apache needs root access, but it quickly drops this and assumes the identity of a non privileged user. This user can either be `nobody` or `apache`, or `www-data`.
+Upon starting Apache needs root access, but it quickly drops this and assumes the identity of a non-privileged user. This user can either be `nobody` or `apache`, or `www-data`.
 
-Several applications use the user `nobody` as a default. For example you probably never really want say the Apache service to be overwriting files that belong to bind. Having a per-service account tends to be a very good idea.
+Several applications use the user `nobody` as a default. For example, you probably never really want say the Apache service to be overwriting files that belong to bind. Having a per-service account tends to be a very good idea.
 
 Getting Apache to run as `nobody:nobody` is pretty easy, just update the user and group settings. But as I mentioned above I don't really recommend that particular user/group. It is entirely possible that you may be tempted to add a service to the system at some time in the future that also runs as `nobody`, and you will forget that have given write access on the filesystem to the user `nobody`.
 
@@ -2039,7 +2180,7 @@ Furthermore, if you want to append to the log file, use `tee -a` as:
 
 You should use `#!/usr/bin/env bash` for portability: different \*nixes put bash in different places, and using `/usr/bin/env` is a workaround to run the first bash found on the `PATH`.
 
-Running `./script` does exactly that, and requires execute permission on the file, but is agnostic to what type of a program it is. It might be a **bash script**, an **sh script**, or a **Perl**, **Python**, **awk**, or **expect script**, or an actual **binary executable**. Running `bash script` would force it to be run under `sh`, instead of anything else.
+Running `./script` does exactly that, and requires execute permission on the file, but is agnostic to what type of program it is. It might be a **bash script**, a **sh script**, or a **Perl**, **Python**, **awk**, or **expect script**, or an actual **binary executable**. Running `bash script` would force it to be run under `sh`, instead of anything else.
 
 Useful resources:
 
@@ -2075,7 +2216,7 @@ Useful resources:
 
 To find out the main purpose of an intermediate CA, you should first learn about **Root CAs**, **Intermediate CAs**, and the **SSL Certificate Chain Trust**.
 
-**Root CAs** are primary CAs which typically don’t directly sign end entity/server certificates. They issue Root certificates which are usually pre-installed within all browsers, mobiles, and applications. The private key of these certificates is used to sign other subsequent certificates called intermediate certificates. Root CAs are usually kept "offline” and in a highly secure environment with stringently limited access.
+**Root CAs** are primary CAs which typically don’t directly sign end entity/server certificates. They issue Root certificates which are usually pre-installed within all browsers, mobiles, and applications. The private key of these certificates is used to sign other subsequent certificates called intermediate certificates. Root CAs are usually kept "offline" and in a highly secure environment with stringently limited access.
 
 **Intermediates CAs** are CAs that subordinate to the Root CA by one or more levels, being trusted by these to sign certificates on their behalf. The purpose of creating and using Intermediate CAs is primarily for security because if the intermediate private key is compromised, then the Root CA can revoke the intermediate certificate and create a new one with a new cryptographic key pair.
 
@@ -2113,7 +2254,7 @@ Changes you make to servers running behind a reverse proxy are going to be compl
 
 **Load Balancing**
 
-The reverse proxy will then enforce a load balancing algorithm like round robin, weighted round robin, least connections, weighted least connections, or random, to distribute the load among the servers in the cluster.
+The reverse proxy will then enforce a load balancing algorithm such as round-robin, weighted round robin, least connections, weighted least connections, or random, to distribute the load among the servers in the cluster.
 
 When a server goes down, the system will automatically failover to the next server up and users can continue with their secure file transfer activities.
 
@@ -2169,16 +2310,22 @@ ldd /bin/ls
 </details>
 
 <details>
-<summary><b>What is the difference between a container and a VM? Mention some benefits of each. ***</b></summary><br>
+<summary><b>What is the difference between a container and a VM? Mention some benefits of each.</b></summary><br>
 
-To be completed.
+A container is a lightweight, portable software package that includes everything an application needs to run, such as code, libraries, and dependencies, but shares the host OS kernel. A virtual machine (VM), on the other hand, is a complete operating system with its own kernel that runs on top of a hypervisor or virtualization layer.
 
-Below are the advantages of containerization over virtualization:
+Some benefits of containers include:
 
-containers provide real-time provisioning and scalability but VMs provide slow provisioning
-containers are lightweight when compared to VMs
-VMs have limited performance when compared to containers
-containers have better resource utilization compared to VMs
+- Efficiency: Containers are lightweight and share the host OS kernel, so they require fewer resources and have faster startup times than VMs.
+- Portability: Containers can run on any system that supports containerization, making them easy to move between development, testing, and production environments.
+- Consistency: Containers ensure that an application runs the same way in any environment, eliminating the "works on my machine" problem.
+- Scalability: Containers are designed to be scalable and can be easily orchestrated with tools like Kubernetes.
+
+Some benefits of VMs include:
+
+- Isolation: VMs provide complete isolation between applications and the host OS, making them more secure.
+- Flexibility: VMs can run different operating systems and versions, making them useful for testing and compatibility purposes.
+- Robustness: VMs have a proven track record of stability and reliability.
 
 Useful resources:
 
@@ -2187,9 +2334,21 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>Why wouldn't hostnames resolve on your server and how would you troubleshoot the issue? ***</b></summary><br>
+<summary><b>Why wouldn't hostnames resolve on your server and how would you troubleshoot the issue?</b></summary><br>
 
-To be completed.
+Some possible reasons and troubleshooting steps to resolve the issue are:
+
+- DNS server misconfiguration: Check if the server is configured to use the correct DNS server and if the DNS server is working correctly. You can check this by using the "nslookup" command to look up a hostname and see if it resolves to the correct IP address. If the DNS server is misconfigured, correct the configuration or use a different DNS server.
+
+- Incorrect hostname resolution order: Check the hostname resolution order on the server. This can be checked by examining the /etc/nsswitch.conf file. Make sure that the desired method for hostname resolution is listed first.
+
+- Firewall blocking DNS traffic: Check if the firewall on the server is blocking DNS traffic. You can check this by temporarily disabling the firewall and testing if hostname resolution works. If it does, then the firewall is the issue and you need to allow DNS traffic through it.
+
+- DNS cache issues: Check if the DNS cache on the server is causing issues. You can clear the cache using the "systemd-resolve --flush-caches" command.
+
+- Incorrect DNS record: Check if the DNS record for the hostname is correct. This can be done by using the "dig" or "nslookup" command and checking if the DNS record for the hostname matches the expected IP address.
+
+- Network connectivity issues: Check if there are any network connectivity issues that are preventing the server from accessing the DNS server. This can be done by using the "ping" command to check if the server can communicate with the DNS server.
 
 </details>
 
@@ -2220,14 +2379,14 @@ The terminologies Internet, Intranet, and Extranet are used to define how the ap
 
 Packet filtering is appropriate where there are modest security requirements. The internal (private) networks of many organizations are not highly segmented. Highly sophisticated firewalls are not necessary for isolating one part of the organization from another.
 
-However it is prudent to provide some sort of protection of the production network from a lab or experimental network. A packet filtering device is a very appropriate measure for providing isolation of one subnet from another.
+However, it is prudent to provide some sort of protection of the production network from a lab or experimental network. A packet filtering device is a very appropriate measure for providing isolation of one subnet from another.
 
 Operating at the network layer and transport layer of the TCP/IP protocol stack, every packet is examined as it enters the protocol stack. The network and transport headers are examined closely for the following information:
 
 - **protocol (IP header, network layer)** - in the IP header, byte 9 (remember the byte count begins with zero) identifies the protocol of the packet. Most filter devices have the capability to differentiate between TCP, UPD, and ICMP.
 - **source address (IP header, network layer)** - the source address is the 32-bit IP address of the host which created the packet.
 - **destination address (IP header, network layer)** - the destination address is the 32-bit IP address of the host the packet is destined for.
-- **source port (TCP or UDP header, transport layer)** - each end of a TCP or UDP network connection is bound to a port. TCP ports are separate and distinct from UDP ports. Ports numbered below 1024 are reserved – they have a specifically defined use. Ports numbered above 1024 (inclusive) are known as ephemeral ports. They can be used however a vendor chooses. For a list of "well known" ports, refer to RFP1700. The source port is a pseudo-randomly assigned ephemeral port number. Thus it is often not very useful to filter on the source port.
+- **source port (TCP or UDP header, transport layer)** - each end of a TCP or UDP network connection is bound to a port. TCP ports are separate and distinct from UDP ports. Ports numbered below 1024 are reserved – they have a specifically defined use. Ports numbered above 1024 (inclusive) are known as ephemeral ports. They can be used however a vendor chooses. For a list of "well known" ports, refer to RFP1700. The source port is a pseudo-randomly assigned ephemeral port number. Thus, it is often not very useful to filter on the source port.
 - **destination port (TCP or UDP header, transport layer)** - the destination port number indicates a port that the packet is sent to. Each service on the destination host listens to a port. Some well-known ports that might be filtered are 20/TCP and 21/TCP - ftp connection/data, 23/TCP - telnet, 80/TCP - http, and 53/TCP - DNS zone transfers.
 - **connection status (TCP header, transport layer)** - the connection status tells whether the packet is the first packet of the network session. The ACK bit in the TCP header is set to “false” or 0 if this is the first packet in the session. It is simple to disallow a host from establishing a connection by rejecting or discarding any packets which have the ACK bit set to "false" or 0.
 
@@ -2238,18 +2397,24 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What is a VPN? Describe briefly how it works. ***</b></summary><br>
+<summary><b>What is a VPN? Describe briefly how it works.</b></summary><br>
 
-To be completed.
+A VPN, or virtual private network, is a network technology that allows users to establish a secure and encrypted connection over a public network, such as the internet.
+
+When a user connects to a VPN, their device creates a secure tunnel between the user's device and the VPN server. All traffic that passes through this tunnel is encrypted and protected from unauthorized access or interception.
+
+This encrypted tunnel allows users to access resources on the private network, such as files or applications, as if they were directly connected to the network. It also allows users to access the internet securely, without revealing their true location or IP address.
+
+VPNs can be used to provide remote access for employees who need to access company resources while working from home or traveling, as well as to protect personal information and online activities from surveillance or monitoring.
 
 </details>
 
 <details>
 <summary><b>According to an HTTP monitor, a website is down. You're able to telnet to the port, so how do you resolve it?</b></summary><br>
 
-If you can telnet to the port, this means that the service listening on the port is running and you can connect to it (it's not a networking problem). It is good to check this way for the IP address to which the domain is resolved and using the same domain to test connection.
+If you can telnet to the port, this means that the service listening on the port is running, and you can connect to it (it's not a networking problem). It is good to check this way for the IP address to which the domain is resolved and using the same domain to test connection.
 
-First of all check if your site is online from a other location. It then lets you know if the site is down everywhere, or if only your network is unable to view it. It is also a good idea to check what the web browser returns.
+First of all check if your site is online from another location. It then lets you know if the site is down everywhere, or if only your network is unable to view it. It is also a good idea to check what the web browser returns.
 
 **If only IP connection working**
 
@@ -2261,8 +2426,8 @@ If domain not resolved it's probably problem with DNS servers.
 
 **If domain resolved properly**
 
-- investigate the log files and resolve the issue regarding to the logs, it's the best way to show what's wrong
-- check the http status code, usually it will be the response with the 5xx, maybe server is overload because clients making lot's of connection to the website or specific url? maybe your caching rules not working properly?
+- investigate the log files and resolve the issue regarding the logs, it's the best way to show what's wrong
+- check the http status code, usually it will be the response with the 5xx, maybe server is overload because clients making lots of connection to the website or specific url? maybe your caching rules not working properly?
 - check web/proxy server configuration (e.g. `nginx -t -c </path/to/nginx.conf>`), maybe another sysadmin has made some changes to the domain configuration?
 - maybe something on the server has crashed? maybe run out of space or run out of memory?
 - maybe it's a programming error on the website?
@@ -2286,15 +2451,11 @@ To be completed.
 <details>
 <summary><b>Explain difference between HTTP 1.1 and HTTP 2.0.</b></summary><br>
 
-<b>HTTP/2</b> supports queries multiplexing, headers compression, priority and more intelligent packet streaming management. This results in reduced latency and accelerates content download on modern web pages.
+One of the major differences between HTTP 1.1 and HTTP 2.0 is how they handle data transfer. HTTP 1.1 relies on a serial transfer of data, which means that it can only send one request at a time, waiting for the response before sending the next request. This can result in a delay in loading web pages, particularly for sites with a lot of small files.
 
-Key differences with **HTTP/1.1**:
+HTTP 2.0, on the other hand, uses a binary protocol and allows for multiple requests to be sent at the same time, in parallel. It also compresses headers and reduces the number of round trips required to establish a connection, which further speeds up the process of loading web pages.
 
-- it is binary, instead of textual
-- fully multiplexed, instead of ordered and blocking
-- can therefore use one connection for parallelism
-- uses header compression to reduce overhead
-- allows servers to "push" responses proactively into client caches
+Another significant difference between the two protocols is that HTTP 2.0 supports server push, which allows the server to send resources to the client before they are requested. This feature can further improve the loading speed of web pages.
 
 Useful resources:
 
@@ -2318,7 +2479,9 @@ Useful resources:
 <details>
 <summary><b>Why is UDP faster than TCP?</b></summary><br>
 
-**UDP** is faster than **TCP**, and the simple reason is because its nonexistent acknowledge packet (`ACK`) that permits a continuous packet stream, instead of TCP that acknowledges a set of packets, calculated by using the TCP window size and round-trip time (`RTT`).
+UDP is often faster than TCP because it has a much simpler and less error-checking mechanism than TCP. UDP does not establish a connection, does not guarantee data delivery, and does not provide error-checking or retransmission of lost packets. Instead, UDP simply sends packets of data to the recipient and expects the recipient to process them in the correct order.
+
+This lack of error-checking and retransmission makes UDP faster than TCP in some cases, as there is less overhead associated with managing the connection and ensuring that all packets are delivered.
 
 Useful resources:
 
@@ -2353,7 +2516,7 @@ Useful resources:
 <details>
 <summary><b>What is the purpose of Spanning Tree?</b></summary><br>
 
-This protocol operates at layer 2 of the OSI model with the purpose of preventing loops on the network. Without **STP**, a redundant switch deployment would create broadcast storms that cripple even the most robust networks. There are several iterations based on the original IEEE 802.1D standard; each operates slightly different than the others while largely accomplishing the same loop-free goal.
+This protocol operates at layer 2 of the OSI model with the purpose of preventing loops on the network. Without **STP**, a redundant switch deployment would create broadcast storms that cripple even the most robust networks. There are several iterations based on the original IEEE 802.1D standard; each operates slightly different from the others while largely accomplishing the same loop-free goal.
 
 </details>
 
@@ -2373,7 +2536,7 @@ Use the:
 <details>
 <summary><b>What mean <code>Host key verification failed</code> when you connect to the remote host? Do you accept it automatically?</b></summary><br>
 
-`Host key verification failed` means that the host key of the remote host was changed. This can easily happen when connecting to a computer who's host keys in `/etc/ssh` have changed if that computer was upgraded without copying its old host keys. The host keys here are proof when you reconnect to a remote computer with ssh that you are talking to the same computer you connected to the first time you accessed it.
+`Host key verification failed` means that the host key of the remote host was changed. This can easily happen when connecting to a computer whose host keys in `/etc/ssh` have changed if that computer was upgraded without copying its old host keys. The host keys here are proof when you reconnect to a remote computer with ssh that you are talking to the same computer you connected to the first time you accessed it.
 
 Whenever you connect to a server via SSH, that server's public key is stored in your home directory (or possibly in your local account settings if using a Mac or Windows desktop) file called **known_hosts**. When you reconnect to the same server, the SSH connection will verify the current public key matches the one you have saved in your **known_hosts** file. If the server's key has changed since the last time you connected to it, you will receive the above error.
 
@@ -2437,12 +2600,12 @@ Useful resources:
 
 - check if the URL is correct, maybe you should add `www` or set correctly `Host:` header? Check also scheme (http or https)
 - check the domain is resolving into a correct IP address
-- enable debug tracing with `--trace-ascii curl.dump`. `Recv failure` is a really generic error so its hard for more info
+- enable debug tracing with `--trace-ascii curl.dump`. `Recv failure` is a really generic error, so it's hard for more info
 - use external proxy with `--proxy` for debug connection from external ip
 - use network sniffer (e.g. `tcpdump`) for debug connection in the lower TCP/IP layers
 - check firewall rules on the production environment and on the exit point of your network, also check your NAT rules
 - check MTU size of packets traveling over your network
-- check SSL version with ssl/tls `curl` params if you connecting to https protocol
+- check SSL version with ssl/tls `curl` params if you are connecting to the HTTPS protocol
 - it may be a problem on the client side e.g. the netfilter drop or limit  connections from your IP address to the domain
 
 Useful resources:
@@ -2480,11 +2643,19 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What does <code>tcpdump</code> do and what are some examples for its use? ***</b></summary><br>
+<summary><b>What does <code>tcpdump</code> do and what are some examples for its use?</b></summary><br>
 
-`tcpdump` is a powerful and widely used command-line packets sniffer or package analyzer tool which is used to capture or filter TCP/IP packets that received or transferred over a network on a specific interface.
+Tcpdump is a command-line packet analyzer tool that is used for network troubleshooting, analysis, and security auditing. It captures packets that are being transmitted or received over a network interface and displays detailed information about the packets, such as the source and destination addresses, protocols, ports, and payload.
 
-`tcpdump` puts your network card into promiscuous mode, which basically tells it to accept every packet it receives. It allows the user to see all traffic being passed over the network. Wireshark uses pcap to capture packets.
+`tcpdump` puts your network card into promiscuous mode, which basically tells it to accept every packet it receives. It allows the user to see all traffic being passed over the network.
+
+Some examples of how tcpdump can be used include:
+
+- Troubleshooting network connectivity issues: Tcpdump can be used to capture packets on a network interface to diagnose connectivity issues, such as dropped packets, slow response times, and incorrect routing.
+- Monitoring network traffic: Tcpdump can be used to monitor network traffic for suspicious or unauthorized activity, such as malware infections, network attacks, and data breaches.
+- Analyzing network protocols: Tcpdump can be used to analyze network protocols and their behavior, such as TCP/IP, DNS, DHCP, and HTTP.
+- Debugging network applications: Tcpdump can be used to debug network applications, such as web servers, mail servers, and VoIP applications, by capturing and analyzing packets exchanged between the client and server.
+- Auditing network security: Tcpdump can be used to audit network security by capturing packets and analyzing them for security vulnerabilities, such as weak passwords, unencrypted traffic, and unauthorized access.
 
 </details>
 
@@ -2513,20 +2684,20 @@ The most popular DevOps tools are mentioned below:
 </details>
 
 <details>
-<summary><b>What is Agile and how is it beneficial?</b></summary><br>
+<summary><b>What is Agile and how is it beneficial? ***</b></summary><br>
 
 To be completed.
 
 </details>
 
 <details>
-<summary><b>What is Continuous Integration and Continous Deployment?</b></summary><br>
+<summary><b>What is Continuous Integration and Continous Deployment? ***</b></summary><br>
 
 To be completed.
 
 </details>
 
-###### Cyber Security Questions
+###### Cybersecurity Questions
 
 <details>
 <summary><b>What are salted hashes?</b></summary><br>
@@ -2546,9 +2717,14 @@ The `$ID` indicates the type of encryption, the `$SALT` is a random string (up t
 </details>
 
 <details>
-<summary><b>Explain the four types of access control. ***</b></summary><br>
+<summary><b>Explain the four types of access control.</b></summary><br>
 
-To be completed.
+Access control is a security mechanism used to restrict or allow access to resources based on various criteria. There are four main types of access control:
+
+- Mandatory Access Control (MAC): MAC is a strict form of access control that is typically used in high-security environments, such as government and military organizations. It enforces a centralized security policy that dictates who can access which resources based on their security clearance level.
+- Discretionary Access Control (DAC): DAC is a more flexible form of access control that allows users to set permissions on their own resources. In DAC, each resource has an owner who determines who can access it and at what level of access.
+- Role-Based Access Control (RBAC): RBAC is a popular access control model used in large organizations with many users and resources. It assigns users to roles based on their job function or responsibilities, and then grants access permissions to those roles. This simplifies access management and reduces the risk of human error or intentional abuse.
+- Attribute-Based Access Control (ABAC): ABAC is a newer form of access control that is based on a set of attributes or properties, such as user identity, location, time of day, and device type. It uses a rules engine to evaluate these attributes and determine access permissions for each resource. ABAC is more fine-grained than RBAC, but also more complex to set up and manage.
 
 </details>
 
@@ -2561,11 +2737,11 @@ You should configure services to run as a user with the least possible rights ne
 
 As an example, a hacker breaking into a system using a zero-day exploit of the Apache webserver service is highly likely to be limited to just the system memory and file resources that can be accessed by that process. The hacker would be able to download your html and php source files, and probably look into your mysql database, but they should not be able to get root or extend their intrusion beyond apache-accessible files.
 
-Many default Apache webserver installations create the 'apache' user and group by default and you can easily configure the main Apache configuration file (`httpd.conf`) to run apache using those groups.
+Many default Apache webserver installations create the 'apache' user and group by default, and you can easily configure the main Apache configuration file (`httpd.conf`) to run apache using those groups.
 
 2) **The principle of separation of privileges**
 
-If your web site only needs read-only access to the database, then create an account that only has read-only permissions, and only to that database.
+If your website only needs read-only access to the database, then create an account that only has read-only permissions, and only to that database.
 
 **SElinux** is a good choice for creating context for security, `app-armor` is another tool. **Bastille** was a previous choice for hardening.
 
@@ -2659,21 +2835,25 @@ Useful resources:
 <details>
 <summary><b>What is the difference between Host Intrusion Detection and Network Intrusion Detection? Is one better than the other?</b></summary><br>
 
-Host Intrusion Detection system runs on individual hosts, such as an anti-virus, while Network Intrusion Detection system oversees the network. One is not "better" than the other as they have similar but different functions. A **HIDS** is important to monitor and protect individual hosts generally from user actions, while a **NIDS** is important to monitor and protect hosts from each other as well as from outside networks.
+Host Intrusion Detection system runs on individual hosts, such as an antivirus, while Network Intrusion Detection system oversees the network. One is not "better" than the other as they have similar but different functions. A **HIDS** is important to monitor and protect individual hosts generally from user actions, while a **NIDS** is important to monitor and protect hosts from each other as well as from outside networks.
 
 </details>
 
 <details>
 <summary><b>What is Compliance?</b></summary><br>
 
-Abiding by a set of standards set by a government/Independent party/organisation, e.g. an industry which stores, processes or transmits Payment related information needs to be complied with PCI DSS (Payment card Industry Data Security Standard). Other compliance examples can be an organisation complying with its own policies.
+Compliance refers to the set of rules and regulations that organizations must follow to protect sensitive data and prevent security breaches. Compliance frameworks, such as the Payment Card Industry Data Security Standard (PCI DSS), the Health Insurance Portability and Accountability Act (HIPAA), and the General Data Protection Regulation (GDPR), provide guidelines and best practices for protecting personal information and preventing unauthorized access.
+
+Compliance is important because it helps ensure that organizations are taking the necessary steps to protect their data and the data of their customers or clients. Failure to comply with regulations can result in legal and financial penalties, as well as damage to the organization's reputation. Compliance also helps to establish trust with customers and stakeholders, as they can be confident that the organization is taking steps to protect their information.
 
 </details>
 
 <details>
 <summary><b>What is the difference between hashing and encryption?</b></summary><br>
 
-**Hashing** is a form of cryptographic security which differs from **encryption** whereas **encryption** is a two step process used to first encrypt and then decrypt a message, **hashing** condenses a message into an irreversible fixed-length value, or hash.
+Hashing is a one-way process that converts plain text into a fixed-length string of characters, known as a hash value or message digest. The hash value is unique to the input, meaning that the same input will always produce the same hash value. However, it is practically impossible to reverse the hash function and obtain the original input from the hash value. Hashing is commonly used for password storage, digital signatures, and file integrity checking.
+
+Encryption, on the other hand, is a two-way process that transforms plain text into ciphertext, which can only be read by someone who has the key to decrypt it. Encryption is commonly used for data protection during storage or transmission. There are two main types of encryption: symmetric encryption and asymmetric encryption. Symmetric encryption uses the same key for both encryption and decryption, while asymmetric encryption uses a public key to encrypt data and a private key to decrypt it.
 
 </details>
 
@@ -2684,7 +2864,11 @@ Abiding by a set of standards set by a government/Independent party/organisation
 <details>
 <summary><b>In the context of computing, what is Split-Brain and why is it a problem?</b></summary><br>
 
-To be completed.
+Split-Brain refers to a state in which a distributed system consisting of multiple nodes becomes divided into two or more separate, independent clusters due to a loss of communication between the nodes. Each cluster then operates independently of the others, potentially resulting in inconsistencies and conflicts between them.
+
+Split-Brain is a problem because it can lead to a loss of data consistency and integrity. If each cluster is making decisions and changes independently, without knowledge of the other clusters, it can result in data inconsistencies that are difficult to reconcile. In addition, it can lead to a situation where multiple nodes are trying to perform the same task simultaneously, resulting in conflicts and errors.
+
+To prevent Split-Brain, distributed systems often use a quorum-based approach, in which a majority of nodes must agree on a decision before it is made. This helps to ensure that there is always a single authoritative copy of data and that decisions are made consistently across the system. Additionally, various techniques such as fencing and STONITH (Shoot The Other Node In The Head) are used to prevent rogue nodes from causing problems in the system.
 
 Useful resources:
 
@@ -2695,7 +2879,13 @@ Useful resources:
 <details>
 <summary><b>What is Split-horizon DNS and how do you implement it?</b></summary><br>
 
-To be completed.
+Split-horizon DNS is a technique used to provide different DNS query responses based on the requester's network location. In other words, it enables the DNS server to provide different responses to different clients depending on whether they are inside or outside the local network.
+
+The split-horizon DNS technique can be used to resolve issues when the internal network has the same domain name as an external network, and the internal DNS server needs to resolve addresses differently than the external DNS server. For example, suppose a company has a website with the domain name "example.com." The company's internal network may also use the same domain name for its internal servers, such as "mail.example.com," "intranet.example.com," etc. External clients that access the company's website should receive the external IP address of the web server, while internal clients should receive the internal IP address of the web server.
+
+To implement split-horizon DNS, you need to create two sets of DNS zones: one for internal clients and another for external clients. You can achieve this by setting up two DNS servers, each with a different view of the zone files. The internal DNS server should contain a complete set of zone files for the internal network, while the external DNS server should only contain zone files for the public-facing domain names.
+
+You can also implement split-horizon DNS using the same DNS server, by using the BIND software's "view" feature. This feature enables you to create multiple views of the zone files, with each view containing a different set of DNS records. With views, you can create a separate view for internal clients and another for external clients, each containing the appropriate DNS records.
 
 Useful resources:
 
@@ -2706,7 +2896,7 @@ Useful resources:
 ###### System Questions
 
 <details>
-<summary><b>What are some keep elements to keep in mind when writing good documentation?</b></summary><br>
+<summary><b>What are some keep elements to keep in mind when writing good documentation? ***</b></summary><br>
 
 To be completed.
 
@@ -2720,9 +2910,15 @@ To be completed.
 </details>
 
 <details>
-<summary><b>What is the difference between EXT4, XFS, and ZFS? ***</b></summary><br>
+<summary><b>What is the difference between EXT4, XFS, and ZFS?</b></summary><br>
 
-To be completed.
+EXT4 is the default file system used in most Linux distributions. It is a mature and stable file system that supports large files and file systems, and offers good performance for most workloads. It has been in use for many years and is well understood by system administrators and developers.
+
+XFS is known for its high performance, especially for large files and file systems. It also has features like snapshots and online defragmentation that make it useful for certain applications.
+
+ZFS is a file system originally developed by Sun Microsystems for their Solaris operating system. It has since been ported to other operating systems like FreeBSD and Linux. ZFS is known for its advanced features like built-in data compression, deduplication, and snapshotting. It also has a unique approach to storage management, using a pool of disks instead of individual disks.
+
+EXT4 is the most widely used file system in Linux and is a good choice for most workloads. XFS is a good choice for large files and file systems, while ZFS is a good choice for advanced features like snapshots and data management. Ultimately, the choice of file system depends on the specific requirements of the system and the workload it will be used for.
 
 </details>
 
@@ -2755,7 +2951,7 @@ Make backups of entire virtual machines and important components in the middle o
 
 **Create snapshots: vm, disks or lvm**
 
-Snapshots are perfect if you want to recover a server from a previous state but it's only a "quick method", it cannot restore the system after too many items changed.
+Snapshots are perfect if you want to recover a server from a previous state, but it's only a "quick method", it cannot restore the system after too many items changed.
 
 Create them always before making changes on production environments (and not only).
 
@@ -2785,7 +2981,7 @@ A good idea is also slightly longer delay of data replication (e.g. for DRC). As
 
 **Create database model with users, roles and rights, use different methods of protection**
 
-Only very advanced devs have permissions for db admin access. The other really don't need write access to clone a database. On the other hand just don't give a developer write access to prod.
+Only very advanced devs have permissions for db admin access. The other really don't need Write access to clone a database. On the other hand just don't give a developer write access to prod.
 
 The production database should refuse connections from any server and pc which isn't the one running the production application, even if it provides a valid username/password.
 
@@ -2795,7 +2991,7 @@ How the hell development machines can access a production database right like th
 
 The post-mortem audience includes customers, direct reports, peers, the company's executive team and often investors.
 
-Explain what caused the outage on a timeline. Every incident begins with a specific trigger at a specific time, which often causes some unexpected behavior. For example, our servers were rebooted and we expected them to come back up intact, which didn't happen.
+Explain what caused the outage on a timeline. Every incident begins with a specific trigger at a specific time, which often causes some unexpected behavior. For example, our servers were rebooted, and we expected them to come back up intact, which didn't happen.
 
 Furthermore, every incident has a root cause: the reboot itself was trigger, however a bug in the driver caused the actual outage. Finally, there are consequences to every incident, the most obvious one is that the site goes down.
 
@@ -2820,7 +3016,7 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>How do you add new disk in Linux server without rebooting? How do you rescan and add it in LVM?</b></summary><br>
+<summary><b>How do you add new disk in Linux server without rebooting? How do you rescan and add it in LVM? ***</b></summary><br>
 
 To be completed.
 
@@ -2831,9 +3027,11 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What does it mean to mount the root file system? ***</b></summary><br>
+<summary><b>What does it mean to mount the root file system?</b></summary><br>
 
-To be completed.
+Mounting the root file system means making the root directory of a file system accessible to the operating system. In other words, it allows the operating system to access and read/write files stored on the root file system.
+
+When a computer boots up, the bootloader loads the kernel into memory and passes control to the kernel. The kernel then initializes the hardware and mounts the root file system so that it can access the system files and start up the rest of the operating system.
 
 Useful resources:
 
@@ -2857,15 +3055,15 @@ To be completed.
 </details>
 
 <details>
-<summary><b>Explain the risks and caveats of LVM. ***</b></summary><br>
+<summary><b>Explain the risks and caveats of LVM (Logical Volume Manager).</b></summary><br>
 
 **Risks of using LVM**
 
-- Vulnerable to write caching issues with SSD or VM hypervisor
-- Harder to recover data due to more complex on-disk structures
-- Harder to resize filesystems correctly
-- Snapshots are hard to use, slow and buggy
-- Requires some skill to configure correctly given these issues
+- Single point of failure: LVM metadata, which contains information about logical volumes, physical volumes, and volume groups, is stored on the disk. If this metadata is lost or corrupted, it can result in data loss or system downtime.
+- Performance overhead: LVM adds another layer of abstraction between the physical storage and file system, which can result in performance overhead. While the performance impact is generally negligible for most use cases, it can be significant for I/O-intensive workloads.
+- Complexity: LVM introduces additional complexity to the system and requires a good understanding of how the underlying storage works. This can make troubleshooting and maintenance more challenging.
+- Fragmentation: LVM can lead to data fragmentation because it can allocate space in small chunks. This can result in reduced performance and increased disk usage.
+- Data loss: LVM provides the ability to move and resize volumes, which can lead to data loss if not done correctly. It is essential to have a backup strategy in place before making any changes to LVM configurations.
 
 Useful resources:
 
@@ -2884,7 +3082,7 @@ Normally, processes cannot block `SIGKILL`. But kernel code can, and processes e
 
 A process blocked in a system call is in uninterruptible sleep. The `ps` or `top` command will (on most unices) show it in state **D**.
 
-To remove a **D** State Process, since it is uninterruptible, only a machine reboot can solve the problem in case its not automatically handled by the system.
+To remove a **D** State Process, since it is uninterruptible, only a machine reboot can solve the problem in case it's not automatically handled by the system.
 
 Usually there is a very few chance that a process stays in **D** State for long. And if it does then there is something not properly being handled in the system. This can be a potential bug as well.
 
@@ -2919,7 +3117,7 @@ The idea is that you create a directory tree where you copy or link in all the s
 
 On Linux, using a bind mounts is a great way to populate the chroot tree. Using that, you can pull in folders like `/lib` and `/usr/lib` while not pulling in `/usr`, for example. Just bind the directory trees you want to directories you create in the jail directory.
 
-Chroot environment is useful for:
+A chroot environment is useful for:
 
 - reinstall bootloader
 - reset a forgotten password
@@ -2935,7 +3133,7 @@ Limitation is that `/dev`, `/sys` and `/proc` are not mounted by default but nee
 
 Useful resources:
 
-- [Its all about Chroot](https://medium.com/@itseranga/chroot-316dc3c89584)
+- [It's all about Chroot](https://medium.com/@itseranga/chroot-316dc3c89584)
 - [Best Practices for UNIX chroot() Operations](http://www.unixwiz.net/techtips/chroot-practices.html)
 - [Is there an easier way to chroot than bind-mounting?](https://askubuntu.com/questions/32418/is-there-an-easier-way-to-chroot-than-bind-mounting)
 - [What's the proper way to prepare chroot to recover a broken Linux installation?](https://superuser.com/questions/111152/whats-the-proper-way-to-prepare-chroot-to-recover-a-broken-linux-installation)
@@ -2994,7 +3192,7 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>In terms of *nix systems, what does it mean when we say everything is a file?</b></summary><br>
+<summary><b>In terms of *nix systems, what does it mean when we say everything is a file? ***</b></summary><br>
 
 To be completed.
 
@@ -3086,14 +3284,14 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>You have just discovered a server you manage for the company you work at has been hacked. Go through the steps of what you do and recover from this.</b></summary><br>
+<summary><b>You have just discovered a server you manage for the company you work at has been hacked. Go through the steps of what you do and recover from this. ***</b></summary><br>
 
 To be completed.
 
 </details>
 
 <details>
-<summary><b>You have a LAMP stack with Nginx as a reverse proxy. Going to the site served by this web server results in a 500 Internal Server Error. List the possible causes for this issue.</b></summary><br>
+<summary><b>You have a LAMP stack with Nginx as a reverse proxy. Going to the site served by this web server results in a 500 Internal Server Error. List the possible causes for this issue. ***</b></summary><br>
 
 To be completed.
 
@@ -3119,7 +3317,19 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>MySQL replication for one Slave is failing. How do you troubleshoot the issue? ***</b></summary><br>
+<summary><b>MySQL replication for one Slave is failing. How do you troubleshoot the issue?</b></summary><br>
+
+- Check the MySQL error log on both the master and the slave servers. Look for any error messages that might indicate the source of the problem.
+- Verify that the slave server is connected to the master server and that the replication process is running. You can do this by running the following command on the slave server:
+`SHOW SLAVE STATUS\G`
+- This command will show you the current replication status of the slave, including the replication thread state, the last SQL statement executed, and the current position in the replication stream.
+- Check the network connectivity between the master and slave servers. Make sure that there are no firewalls or other network devices blocking the replication traffic.
+- Verify that the data on the slave server matches the data on the master server. You can do this by comparing the output of the following commands on both the master and the slave servers:
+`SELECT COUNT(*) FROM table_name;`
+- If the number of rows returned by the two commands does not match, then there is a problem with the replication process.
+- Check the MySQL configuration files on both the master and slave servers. Verify that the replication settings are correct and that the servers are configured to use the same character set and collation.
+- If none of the above steps resolve the issue, you may need to rebuild the replication process from scratch. This involves stopping the replication process, resetting the slave server to the master's current position in the replication stream, and then restarting the replication process.
+- Monitor the replication process for a period of time to ensure that it is working correctly.
 
 Useful resources:
 
@@ -3130,9 +3340,11 @@ Useful resources:
 ###### Network Questions
 
 <details>
-<summary><b>Is it better to set <code>-j REJECT</code> or <code>-j DROP</code> in iptables? ***</b></summary><br>
+<summary><b>Is it better to set <code>-j REJECT</code> or <code>-j DROP</code> in iptables?</b></summary><br>
 
-To be completed.
+Using -j REJECT will send an error message back to the client, letting them know that their request was denied. This can be useful for troubleshooting and for providing feedback to legitimate users. It also makes it easier to identify and investigate potential attacks or suspicious activity.
+
+Using -j DROP, on the other hand, simply discards the traffic without providing any feedback to the client. This can be useful for denying traffic from known malicious sources or for denying traffic to services that should not be accessible from the public internet.
 
 Useful resources:
 - [https://unix.stackexchange.com/questions/109459/is-it-better-to-set-j-reject-or-j-drop-in-iptables](https://unix.stackexchange.com/questions/109459/is-it-better-to-set-j-reject-or-j-drop-in-iptables)
@@ -3186,14 +3398,14 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>A client of the company you work at reports their server has stopped receiving data from your server. Go through the steps of troubleshooting the issue both on your end and your communications with them.</b></summary><br>
+<summary><b>A client of the company you work at reports their server has stopped receiving data from your server. Go through the steps of troubleshooting the issue both on your end and your communications with them. ***</b></summary><br>
 
 To be completed.
 
 </details>
 
 <details>
-<summary><b>What is SNI SSL and in which cases it is useful?</b></summary><br>
+<summary><b>What is SNI SSL and in which cases it is useful? ***</b></summary><br>
 
 To be completed.
 
@@ -3216,11 +3428,11 @@ Useful resources:
 
 Browser checks if the domain is in its cache. When this cache fails, it simply asks the OS to resolve the domain.
 
-The OS resolver has it's own cache which it will check. If it fails this, it resorts to asking the OS configured DNS servers.
+The OS resolver has its own cache which it will check. If it fails this, it resorts to asking the OS configured DNS servers.
 
 The OS configured DNS servers will typically be configured by DHCP from the router where the DNS servers are likely to be the ISP's DNS servers configured by DHCP from the internet gateway to the router.
 
-In the event the router has it's own DNS servers, it may have it's own cache otherwise you should be directed straight to your ISP's DNS servers most typically as soon as the OS cache was found to be empty.
+In the event the router has its own DNS servers, it may have its own cache otherwise you should be directed straight to your ISP's DNS servers most typically as soon as the OS cache was found to be empty.
 
 Useful resources:
 
@@ -3235,7 +3447,7 @@ Useful resources:
 
 a) <b>Physical Layer (Layer 1)</b>: It converts data bits into electrical impulses or radio signals. Example: Ethernet.
 
-b) <b>Data Link Layer (Layer 2)</b>: At the Data Link layer, data packets are encoded and decoded into bits and it provides a node to node data transfer. This layer also detects the errors that occurred at Layer 1.
+b) <b>Data Link Layer (Layer 2)</b>: At the Data Link layer, data packets are encoded and decoded into bits, and it provides a node to node data transfer. This layer also detects the errors that occurred at Layer 1.
 
 c) <b>Network Layer (Layer 3)</b>: This layer transfers variable length data sequence from one node to another node in the same network. This variable-length data sequence is also known as “Datagrams”.
 
@@ -3258,12 +3470,14 @@ To be completed.
 
 </details>
 
-###### Cyber Security Questions
+###### Cybersecurity Questions
 
 <details>
 <summary><b>Explain briefly how the Spectre vulnerability works.</b></summary><br>
 
-To be completed.
+The Spectre vulnerability is a class of speculative execution attacks that can allow an attacker to read sensitive data from the memory of a victim process. The vulnerability arises due to the speculative execution feature of modern processors, where they attempt to predict future program behavior and execute instructions in advance to improve performance. Spectre exploits the branch prediction mechanism of the processor to leak information from one process to another or even from the kernel to user-space applications.
+
+The Spectre attack works by tricking the processor's branch predictor into speculatively executing a set of instructions that should not be executed based on the actual program control flow. The attacker then carefully times their own code to observe the effects of these speculatively executed instructions, such as changes to the processor cache or other side effects. By analyzing these effects, the attacker can deduce the contents of sensitive data stored in memory, including passwords, cryptographic keys, and other confidential information.
 
 Useful resources:
 
@@ -3272,7 +3486,7 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>How would you break into a system? How would you prevent these attacks?</b></summary><br>
+<summary><b>How would you break into a system? How would you prevent these attacks? ***</b></summary><br>
 
 To be completed.
 
@@ -3281,7 +3495,13 @@ To be completed.
 <details>
 <summary><b>What is the difference between policies, processes and guidelines?</b></summary><br>
 
-As **security policy** defines the security objectives and the security framework of an organisation. A **process** is a detailed step by step how to document that specifies the exact action which will be necessary to implement important security mechanism. **Guidelines** are recommendations which can be customized and used in the creation of procedures.
+- Policies: Policies are high-level statements that define an organization's rules and principles. They provide a framework for decision-making and guide employees in their actions. Policies are typically developed by senior management and are designed to align with the organization's mission, values, and strategic goals. Examples of policies include information security policy, acceptable use policy, and employee code of conduct.
+ 
+
+- Processes: Processes are a set of interrelated activities that transform inputs into outputs. They describe how work is done in an organization and provide a structured approach to achieving specific objectives. Processes are often defined at a lower level than policies and are designed to be repeatable and scalable. Examples of processes include incident management process, change management process, and procurement process.
+
+
+- Guidelines: Guidelines are recommendations or best practices that provide direction on how to achieve a specific objective. Unlike policies and processes, guidelines are not mandatory and are often subject to interpretation. They are designed to assist employees in making decisions and performing tasks. Guidelines can be developed internally or externally, and they may be specific to a particular function or industry. Examples of guidelines include security configuration guidelines, data retention guidelines, and accessibility guidelines.
 
 </details>
 
@@ -3326,7 +3546,7 @@ Linux exposes open files through special symbolic links under `/proc`. These lin
 
 The name under which the file was opened is still visible in the target of the symbolic link: if the file was `/var/log/apache/foo.log`, then the target of the link is `/var/log/apache/foo.log (deleted)`.
 
-Thus you can recover the content of an open deleted file given the **PID** of a process that has it open and the descriptor that it's opened on like this:
+Thus, you can recover the content of an open deleted file given the **PID** of a process that has it open and the descriptor that it's opened on like this:
 
 ```bash
 recover_open_deleted_file () {
