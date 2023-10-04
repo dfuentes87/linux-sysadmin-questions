@@ -85,7 +85,7 @@ When creating a pull request, please heed the following:
 
 ### :diamond_shape_with_a_dot_inside: <a name="junior-sysadmin">Junior Sysadmin</a>
 
-###### System Questions
+#### System Questions
 
 <details>
 <summary><b>Give some examples of Unix or Linux distributions. Describe what makes them unique.</b></summary>
@@ -629,7 +629,7 @@ Useful resources:
 
 </details>
 
-###### Network Questions
+#### Network Questions
 
 <details>
 <summary><b>Describe the steps for a successful DHCP handshake process.</b></summary><br>
@@ -665,7 +665,7 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What is the difference between TCP and UDP? When is one better used than the other? ***</b></summary><br>
+<summary><b>What is the difference between TCP and UDP?</b></summary><br>
 
 | TCP | UDP |
 | :--- | :--- |
@@ -755,7 +755,7 @@ You can resolve an IP Address back to a hostname if the IP Address is stored in 
 dig -x 1.2.3.4
 ```
 
-To lookup the IPv6 address for a host:
+To look up the IPv6 address for a host:
 
 ```bash
 dig AAAA domain.com
@@ -791,7 +791,7 @@ SFTP, on the other hand, uses a single port for both control commands and data t
 </details>
 
 <details>
-<summary><b>What is the difference between Hub, Switch, and Router? ***</b></summary><br>
+<summary><b>What is the difference between Hub, Switch, and Router?</b></summary><br>
 
 A hub is the simplest of the three devices, and it operates at the physical layer of the OSI model. A hub connects multiple devices on a network, and it sends all incoming data to every device on the network. This means that any device connected to the hub can receive data sent by any other device, but it also means that data collisions can occur if multiple devices try to send data at the same time. Hubs are not commonly used in modern networks due to their limited functionality and lack of security features.
 
@@ -817,9 +817,13 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What are IP classes? How is it different from CIDR (classless)? ***</b></summary><br>
+<summary><b>What are IP classes? How are they different from CIDR (classless)?</b></summary><br>
 
-To be completed.
+The classful IP addressing system was an early method that divided the IPv4 address space into specific classes based on the leading bits of an address.
+
+CIDR was introduced to improve the scalability of IP addressing and overcome the limitations of the classful system, especially given the rapid growth of the internet.
+CIDR doesn't rely on fixed classes. Instead, it allows for flexible division of IP space.
+
 
 </details>
 
@@ -842,7 +846,7 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What is a MAC address and how is it determined? ***</b></summary><br>
+<summary><b>What is a MAC address and how is it determined?</b></summary><br>
 
 A Media Access Control (MAC) address is a unique identifier assigned to a network interface controller (NIC) for use as a network address in communications within a network segment. It is used to uniquely identify devices on a network at the data link layer of the networking stack.
 
@@ -882,7 +886,7 @@ Useful resources:
 
 </details>
 
-###### DevOps Questions
+#### DevOps Questions
 
 <details>
 <summary><b>What is DevOps?</b></summary><br>
@@ -892,19 +896,24 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What is a version control? What are atomic commits? ***</b></summary><br>
+<summary><b>What is a version control? What are atomic commits?</b></summary><br>
 
 It is a system that records changes to a file or set of files over time so that you can recall specific versions later. Version control systems consist of a central shared repository where teammates can commit changes to a file or set of file. Then you can mention the uses of version control.
 
 Version control allows you to:
 
-- revert files back to a previous state
-- revert the entire project back to a previous state
-- compare changes over time
-- see who last modified something that might be causing a problem
-- who introduced an issue and when
+- Track Changes: Every change, along with its author and a descriptive message, is recorded. This aids in understanding the evolution of a project.
+- Collaboration: Multiple developers can work on the same project simultaneously without overwriting each other's changes. The version control system assists in merging concurrent modifications.
+- Backup and Restore: All changes and historical versions of files are stored. If mistakes are made, it's easy to revert back to a previous state.
+- Branching and Merging: Developers can create branches to isolate feature development or experimental changes, then merge these branches back into the main project line once the changes are stable.
+- Accountability: By logging every change with its associated author, it's clear who made each change, ensuring accountability.
 
-*Answer atomic commits question*
+Atomic commits are about making small, focused changes that can be easily understood and, if necessary, independently reverted. This practice promotes better code history, simplifies debugging, and improves collaboration.
+
+- Single Purpose: Each commit should address a single, clear objective. For example, fixing one bug or adding one feature.
+- Consistency: An atomic commit should never leave the codebase in a broken state. If a commit is applied, the system should still function correctly. If it's reverted, the system should revert to its previous working state without any residual side effects.
+- Comprehensibility: Atomic commits make the history more understandable. When reviewing history, it's easier to understand and reason about changes when each commit represents a single, isolated piece of work.
+- Ease of Reversion: If a specific change introduces an issue, atomic commits make it easier to revert just that change without affecting other unrelated changes.
 
 Useful resources:
 
@@ -945,7 +954,7 @@ Useful resources:
 
 </details>
 
-###### Cybersecurity Questions
+#### Cybersecurity Questions
 
 <details>
 <summary><b>What makes a password very strong?</b></summary><br>
@@ -1037,12 +1046,22 @@ The process of threat modeling typically involves several steps, including:
 
 ### :diamond_shape_with_a_dot_inside: <a name="proficient-sysadmin">Proficient Sysadmin</a>
 
-###### System Questions
+#### System Questions
 
 <details>
-<summary><b>Explain briefly how Linux allows most of its software to be updated without needing to reboot? Is it possible to update the kernel without rebooting? ***</b></summary><br>
+<summary><b>Explain briefly how Linux allows most of its software to be updated without needing to reboot? Is it possible to update the kernel without rebooting?</b></summary><br>
 
-To be completed.
+- Shared Libraries: Linux uses shared libraries (.so files) extensively. When software is updated, new versions of shared libraries are typically placed alongside the old ones. Running applications will continue to use the old libraries they were started with until they are restarted. New or restarted applications will use the updated libraries.
+- Process Management: In Linux, you can restart individual services or processes without affecting others. So, if you update a service, you generally only need to restart that specific service to start using the updated version, rather than rebooting the entire system.
+- File System Implementation: Linux file systems allow files to be replaced even while they're being used by the system. When a file is replaced (or deleted), any process that still has the file open continues to see the old version until it closes the file. New accesses to the file see the new version. This is possible because the inode of the file (data structure storing file metadata) remains valid as long as there are references to it, even if the directory entry is removed or replaced.
+
+Traditionally, updating the Linux kernel required a reboot to switch to the new kernel. However, there are methods and technologies developed to enable live kernel patching, which allows kernel updates without rebooting:
+
+- kpatch: A tool developed by Red Hat, kpatch allows you to patch a Linux kernel without rebooting the system. It works by building dynamic kernel modules that can replace existing code in the running kernel.
+- kGraft: Developed by SUSE, kGraft is another approach to live kernel patching. Like kpatch, it allows for real-time patching of a running kernel.
+- KernelCare: This is a commercial solution that offers rebootless kernel updates. It's automated and works with various Linux distributions.
+- Livepatch: Offered by Canonical for Ubuntu, Livepatch provides kernel updates without the need for a reboot.
+
 
 Useful resources:
 
@@ -1292,9 +1311,20 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>How can you see what files are associated with a running process? What is one example of why you would use this command? ***</b></summary><br>
+<summary><b>How can you see what files are associated with a running process? What is one example of why you would use this command?</b></summary><br>
 
-To be completed.
+
+To see the files associated with a running process, you can use the lsof command, which stands for "list open files." Every file, including devices, network sockets, pipes, and more, is represented as a file in UNIX-like systems. 
+
+**Example:**
+Let's say you have a process with the PID 1234, and you want to see the files it has opened:
+
+**Why would you use this command?**
+- **Troubleshooting Network Issues**: If a process is misbehaving or is suspected of unauthorized network activity, you can use lsof to check which network connections the process has established.
+- **File Locks**: If a process has locked a file and other processes can't access it, you can use lsof to identify the locking process and the locked file.
+- **Resource Leaks**: If you suspect that a process is not releasing file handles or consuming too many resources, lsof can provide insights by listing all open files by the process.
+- **Disk Space Issues**: Sometimes, deleted files continue to consume disk space because they are still open in a process. With lsof, you can identify such "deleted" but open files.
+- **Security Audits**: If you're conducting a security check, lsof can help you identify what resources and network connections each process is using, aiding in the identification of suspicious activities.
 
 Useful resources:
 
@@ -1303,9 +1333,26 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What kind of information can you see with the <code>top</code> command and how is it they useful? ***</b></summary><br>
+<summary><b>What kind of information can you see with the <code>top</code> command and how is it they useful?</b></summary><br>
 
-To be completed.
+The top command in UNIX-like operating systems provides a dynamic real-time overview of system performance.
+
+**System Summary Information:**
+- **Uptime**: How long the system has been running.
+- **Number of Users**: How many users are currently logged in.
+- **Load Averages**: The system load averages for the last 1, 5, and 15 minutes. A general rule of thumb is that if the 1-minute load average is higher than the number of CPU cores, it might indicate the system is overloaded.
+- **Tasks**: Number of total tasks and their breakdown (running, stopped, sleeping, etc.).
+- **CPU Usage**: A breakdown of CPU time in user processes, system processes, processes with priority upgrade nice, idle processes, and more.
+- **Memory and Swap**: Total, used, and free physical memory (RAM) and swap space.
+
+**How is the top command useful?**
+- **Performance Monitoring**: Quickly identify which processes are consuming the most resources, allowing administrators to troubleshoot performance issues.
+- **Resource Analysis**: Observe real-time data on system memory, CPU, and swap usage to make informed decisions about system health and when to upgrade resources.
+- **Process Management**: Identify rogue or misbehaving processes. From within top, you can send signals to processes. For example, you can terminate unresponsive processes directly from the top interface.
+- **System Health**: The load average, uptime, and the number of active tasks provide a quick view of the system's overall health and performance.
+- **User Activity**: Monitor which users are consuming the most resources, especially in shared or multi-user environments.
+- **Trends and Patterns**: Over time, consistently monitoring with top can help administrators recognize performance trends and patterns.
+
 
 Useful resources:
 
@@ -1548,14 +1595,31 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>In SQL, what is the difference between <code>REPLACE</code> and <code>INSERT</code>? ***</b></summary><br>
+<summary><b>In SQL, what is the difference between <code>REPLACE</code> and <code>INSERT</code>?</b></summary><br>
 
-To be completed.
+In SQL, both REPLACE and INSERT are used to add data into tables, but they behave differently when it comes to handling duplicate records.
+
+If you try to `INSERT` a record that would result in a duplicate value in a unique indexed column or primary key, the database will typically raise an error and reject the operation.
+
+The `REPLACE` statement either inserts or replaces the existing row if there's a duplicate unique or primary key.
+If the new row doesn't conflict with any existing row based on the unique index or primary key, it's simply inserted.
+If there's a conflict, the existing row is deleted, and the new row is inserted in its place.
+
+**Error Handling:**
+With INSERT, if you attempt to add a duplicate record that violates the primary key or unique index constraints, you get an error.
+With REPLACE, if a duplicate is found, the old record is deleted, and the new one is inserted without any errors.
+
+**Use Cases:**
+You'd use INSERT when you want to add new data and ensure that you're not overwriting any existing data.
+You'd use REPLACE when you want to add new data but overwrite any existing data if there's a primary key or unique index conflict.
+
+**Underlying Operations:**
+With REPLACE, the operation involves both a DELETE (if there's a conflict) and an INSERT.
 
 </details>
 
 <details>
-<summary><b>How do you make a server or application high availabile? ***</b></summary><br>
+<summary><b>How do you make a server or application high availability? ***</b></summary><br>
 
 To be completed.
 
@@ -1669,24 +1733,37 @@ A few reasons you might need to switch runlevels:
 </details>
 
 <details>
-<summary><b>The root password has been forgotten, and you are locked out of the system. How can you reset the root password? ***</b></summary><br>
+<summary><b>The root password has been forgotten, and you are locked out of the system. How can you reset the root password?</b></summary><br>
 
-To be completed.
+If you've forgotten the root password and are locked out of a Linux system, you can reset it by booting into a single-user mode or using a rescue mode provided by some installation media.
+
+**Using Single-User Mode:**
+1. Reboot the system.
+2. Access Boot Loader: As the system boots, you typically need to press a key (like Shift or Esc for GRUB) to access the boot loader menu.
+3. Edit Boot Entry:
+In the GRUB bootloader menu, highlight the default kernel entry (usually the top one), and press e to edit.
+4. Modify Kernel Boot Parameters:
+- Find the line starting with linux (or linux16 or linuxefi depending on your setup).
+- At the end of this line, append the parameter init=/bin/bash or rw init=/bin/sh.
+- This will instruct the system to boot directly to a shell without prompting for a password.
+5. Boot the System: Press Ctrl + X or F10 to boot the system with the modified parameters.
+6. Reset the Password: Once you get a root shell, you can reset the root password using the passwd command: `passwd root`
+7. Reboot: Once you've reset the password, reboot the system: `exec /sbin/init`
+
+**Using Rescue Mode:**
+1. Boot from Installation Media: Insert the installation media (like a DVD or USB stick) for your Linux distribution and boot from it.
+2. Enter Rescue Mode: Follow the prompts to enter rescue mode. This process can differ among distributions.
+3. Mount the System: Once in rescue mode, you may need to mount your system's root filesystem. Some rescue modes will assist you in identifying and mounting the system.
+4. Chroot into System: Use chroot to change the root directory to your system's root: `chroot /mnt/sysimage`
+5. Reset the Password: Use the passwd command to reset the root password.
+6. Exit and Reboot: Exit from the chroot environment and reboot the system.
 
 </details>
 
 <details>
-<summary><b>How could you modify a text file without invoking a text editor?</b></summary><br>
+<summary><b>How could you modify a text file without invoking a text editor? ***</b></summary><br>
 
-For example:<br>
-
-```bash
-# cat  >filename ... - overwrite file
-# cat >>filename ... - append to file
-cat > filename << __EOF__
-data
-__EOF__
-```
+To answer...
 
 </details>
 
@@ -1998,7 +2075,7 @@ Typical current algorithms are:
 - MD5
 - SHA-1 (also called SHA)
 
-both should not be used for cryptographic/security purposes any more!!
+both should not be used for cryptographic/security purposes anymore!
 
 - SHA-256
 - SHA-512
@@ -2254,7 +2331,7 @@ Changes you make to servers running behind a reverse proxy are going to be compl
 
 **Load Balancing**
 
-The reverse proxy will then enforce a load balancing algorithm such as round-robin, weighted round robin, least connections, weighted least connections, or random, to distribute the load among the servers in the cluster.
+The reverse proxy will then enforce a load balancing algorithm such as round-robin, weighted-round robin, least connections, weighted least connections, or random, to distribute the load among the servers in the cluster.
 
 When a server goes down, the system will automatically failover to the next server up and users can continue with their secure file transfer activities.
 
@@ -2342,7 +2419,7 @@ Some possible reasons and troubleshooting steps to resolve the issue are:
 
 - Incorrect hostname resolution order: Check the hostname resolution order on the server. This can be checked by examining the /etc/nsswitch.conf file. Make sure that the desired method for hostname resolution is listed first.
 
-- Firewall blocking DNS traffic: Check if the firewall on the server is blocking DNS traffic. You can check this by temporarily disabling the firewall and testing if hostname resolution works. If it does, then the firewall is the issue and you need to allow DNS traffic through it.
+- Firewall blocking DNS traffic: Check if the firewall on the server is blocking DNS traffic. You can check this by temporarily disabling the firewall and testing if hostname resolution works. If it does, then the firewall is the issue, and you need to allow DNS traffic through it.
 
 - DNS cache issues: Check if the DNS cache on the server is causing issues. You can clear the cache using the "systemd-resolve --flush-caches" command.
 
@@ -2352,7 +2429,7 @@ Some possible reasons and troubleshooting steps to resolve the issue are:
 
 </details>
 
-###### Network Questions
+#### Network Questions
 
 <details>
 <summary><b>What is Boot to LAN?</b></summary><br>
@@ -2436,13 +2513,6 @@ If domain not resolved it's probably problem with DNS servers.
 
 <details>
 <summary><b>Load balancing can dramatically impact server performance. Discuss several load balancing mechanisms. ***</b></summary><br>
-
-To be completed.
-
-</details>
-
-<details>
-<summary><b>List examples of network troubleshooting tools that can degrade during DNS issues. ***</b></summary><br>
 
 To be completed.
 
@@ -2551,9 +2621,22 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>How do you connect to a mail server using <code>telnet</code>? ***</b></summary><br>
+<summary><b>How do you connect to a mail server using <code>nc</code> (netcat)?</b></summary><br>
 
-To be completed.
+`nc mail.example.com 25`
+
+SMTP Conversation:
+After connecting, you should receive a 220 response code, indicating the server is ready. From there, you can manually type in SMTP commands to simulate an email transaction:
+```HELO myhostname.com
+MAIL FROM:<sender@example.com>
+RCPT TO:<recipient@example.com>
+DATA
+Subject: Test mail from netcat
+This is a test email sent from netcat.
+.
+QUIT
+```
+Each SMTP command should result in a response from the server, typically beginning with a 250 response code indicating success.
 
 </details>
 
@@ -2659,7 +2742,7 @@ Some examples of how tcpdump can be used include:
 
 </details>
 
-###### Devops Questions
+#### Devops Questions
 
 <details>
 <summary><b>What some of the top DevOps tools? How do all these tools work together?</b></summary><br>
@@ -2691,13 +2774,38 @@ To be completed.
 </details>
 
 <details>
-<summary><b>What is Continuous Integration and Continous Deployment? ***</b></summary><br>
+<summary><b>What is Continuous Integration and Continous Deployment?</b></summary><br>
 
-To be completed.
+Continuous Integration (CI) and Continuous Deployment (CD) are modern software development practices that are part of the DevOps methodology. They focus on automating the software delivery process to improve speed, consistency, and reliability.
+
+**Continuous Integration (CI)**:
+
+Continuous Integration is the practice of frequently integrating code changes into a shared repository. With CI, each integration (i.e., code commit) is automatically tested to detect and rectify integration errors as quickly as possible. The key principles of CI are:
+
+1. **Frequent Commits**: Developers integrate their changes multiple times a day.
+2. **Automated Testing**: Upon each integration, automated tests run to ensure that new changes do not break existing functionality or introduce new bugs.
+3. **Immediate Feedback**: Developers receive immediate feedback on the success or failure of their changes.
+4. **Maintain a Single Source Repository**: All code changes are stored in a version control system, ensuring a single source of truth.
+5. **Consistent Build Process**: Ensure the build process is consistent and reproducible.
+
+**Continuous Deployment (CD)**:
+
+Continuous Deployment is an extension of Continuous Delivery, a practice where every change in the software, after passing through the CI process, is automatically deployed to production without human intervention.
+
+1. **Automated Deployments**: Every change that passes CI tests is automatically deployed to production.
+2. **Quick Release Cycle**: With CD, software can be released in minutes, ensuring features, bug fixes, and other changes reach users rapidly.
+3. **Reliable Releases**: Automated testing and deployment processes ensure that releases are consistent and reliable.
+4. **Rollbacks**: In case of an issue, the process should support quick rollbacks to restore service.
+
+It's worth noting the difference between Continuous Delivery and Continuous Deployment:
+
+**Continuous Delivery**: Ensures that the software can be released at any time. It stops short of pushing changes to production automatically. Instead, the final deployment step requires manual approval.
+
+**Continuous Deployment**: Doesn't require human intervention and pushes changes to production automatically once they've passed automated tests.
 
 </details>
 
-###### Cybersecurity Questions
+#### Cybersecurity Questions
 
 <details>
 <summary><b>What are salted hashes?</b></summary><br>
@@ -2799,7 +2907,7 @@ If you use ssh keys remember about passphrases which is strongly recommended to 
 
 Useful resources:
 
-- [How to forward local keypair in a SSH session?](https://stackoverflow.com/questions/12257968/how-to-forward-local-keypair-in-a-ssh-session)
+- [How to forward local keypair in an SSH session?](https://stackoverflow.com/questions/12257968/how-to-forward-local-keypair-in-a-ssh-session)
 - [Using SSH agent forwarding](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
 - [SSH Agent Forwarding considered harmful](https://heipei.github.io/2015/02/26/SSH-Agent-Forwarding-considered-harmful/)
 - [Security Consideration while using ssh-agent](https://www.commandprompt.com/blog/security_considerations_while_using_ssh-agent/)
@@ -2893,12 +3001,36 @@ Useful resources:
 
 </details>
 
-###### System Questions
+#### System Questions
 
 <details>
-<summary><b>What are some keep elements to keep in mind when writing good documentation? ***</b></summary><br>
+<summary><b>What are some keep elements to keep in mind when writing good documentation?</b></summary><br>
 
-To be completed.
+Technical documentation serves as a valuable resource for users, developers, system administrators, and other stakeholders, enabling them to understand and effectively work with a software or system.
+
+1. **Audience Understanding**: Know your audience. Different readers (e.g., end-users, developers, system administrators) have different needs. Tailor your content to the specific needs and technical proficiency of your target audience.
+
+2. **Clear Structure and Organization**: Organize the content logically, usually starting with fundamental concepts and progressing to advanced topics. Use headings, subheadings, tables of contents, and indexes to guide readers.
+
+3. **Consistency**: Be consistent in terminology, writing style, formatting, and naming conventions. Consistency makes documentation predictable and easier to follow.
+
+4. **Use of Visuals**: Incorporate diagrams, screenshots, flowcharts, and other visuals where appropriate. They can help clarify complex concepts and provide visual breaks in text-heavy content.
+
+5. **Step-by-Step Tutorials**: For documentation that instructs users on how to perform tasks, provide detailed, step-by-step tutorials. Ensure they are tested and validated for accuracy.
+
+6. **Concise and Precise Writing**: Avoid unnecessary jargon and verbosity. Use clear and concise language, ensuring that explanations are straightforward.
+
+7. **Active Voice**: Use the active voice ("Click the button") rather than the passive voice ("The button should be clicked"). It's more direct and easier to understand.
+
+8. **Code Samples and Examples**: When documenting software, provide code samples, examples, and usage scenarios. Ensure all code is tested and accurate.
+
+9. **Cross-Referencing**: Link to related topics within the documentation. This allows readers to quickly jump to additional relevant information.
+
+10. **Versioning**: Clearly indicate for which version of the software or system the documentation applies. Update the documentation with each new version or significant change.
+
+11. **Continuous Updates**: Technical documentation should be treated as a living document. As products or systems evolve, documentation should be updated accordingly.
+
+12. **Review and Testing**: Before publishing, have the documentation reviewed by peers, technical experts, or a dedicated editor. Consider user testing, where individuals unfamiliar with the topic try to complete tasks using only the documentation as a guide.
 
 </details>
 
@@ -3249,9 +3381,9 @@ Requests which involve disk I/O can be slowed greatly if cpu(s) needs to wait on
 
 First, attempt to confirm if disk I/O is slowing down application performance by using a few terminal command line tools (`top`, `atop` and `iotop`).
 
-Example of debug:
+Example of debugging:
 
-- answering whether or not I/O is causing system slowness
+- answering whether I/O is causing system slowness
 - finding which disk is being written to
 - finding the processes that are causing high I/O
 - process list **state**
@@ -3278,7 +3410,7 @@ Useful resources:
 - [Linux server performance: Is disk I/O slowing your application? (original)](https://haydenjames.io/linux-server-performance-disk-io-slowing-application/)
 - [Troubleshooting High I/O Wait in Linux](https://bencane.com/2012/08/06/troubleshooting-high-io-wait-in-linux/)
 - [Debugging Linux I/O latency](https://superuser.com/questions/396696/debugging-linux-i-o-latency)
-- [How do pdflush, kjournald, swapd, etc interoperate?](https://unix.stackexchange.com/questions/76970/how-do-pdflush-kjournald-swapd-etc-interoperate)
+- [How do pdflush, kjournald, swapd, etc. interoperate?](https://unix.stackexchange.com/questions/76970/how-do-pdflush-kjournald-swapd-etc-interoperate)
 - [5 ways to improve HDD speed on Linux](https://thecodeartist.blogspot.com/2012/06/improving-hdd-performance-linux.html)
 
 </details>
@@ -3337,7 +3469,7 @@ Useful resources:
 
 </details>
 
-###### Network Questions
+#### Network Questions
 
 <details>
 <summary><b>Is it better to set <code>-j REJECT</code> or <code>-j DROP</code> in iptables?</b></summary><br>
@@ -3461,16 +3593,16 @@ g) <b>Application Layer (Layer 7)</b>: This is the last layer of the OSI Referen
 
 </details>
 
-###### Devops Questions
+#### Devops Questions
 
 <details>
-<summary><b>In what situations is Docker and Kubernetes viable for production? When are they not the proper solutions for production? ***</b></summary><br>
+<summary><b>In what situations is Docker and Kubernetes viable for production? When are they not the proper solutions for production?</b></summary><br>
 
 To be completed.
 
 </details>
 
-###### Cybersecurity Questions
+#### Cybersecurity Questions
 
 <details>
 <summary><b>Explain briefly how the Spectre vulnerability works.</b></summary><br>
