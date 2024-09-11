@@ -1066,7 +1066,6 @@ Traditionally, updating the Linux kernel required a reboot to switch to the new 
 Useful resources:
 
 - [How does Linux update without a reboot? - Quora ](https://www.quora.com/How-does-Linux-update-without-a-reboot)
-- [Updating Linux Kernel Without Reboots](https://blog.kernelcare.com/updating-linux-kernel-without-reboots-live-patching-tools-overview)
 
 </details>
 
@@ -1235,7 +1234,7 @@ When a client (such as a web browser) initiates an SSL connection to a server, t
 Useful resources:
 
 - [Analyzing the Linux boot process](https://opensource.com/article/18/1/analyzing-linux-boot-process)
-- [Systemd Boot Process a Close Look in Linux](https://linoxide.com/linux-how-to/systemd-boot-process/)
+- [ systemd Boot Process ](https://insujang.github.io/2018-11-22/systemd-boot-process/)
 
 </details>
 
@@ -1306,7 +1305,7 @@ Using `logrotate` is the usual way of dealing with logfiles. But instead of addi
 Useful resources:
 
 - [How to Use logrotate to Manage Log Files](https://www.linode.com/docs/uptime/logs/use-logrotate-to-manage-log-files/)
-- [System logging](https://www.ibm.com/developerworks/library/l-lpic1-108-2/index.html)
+- [System logging](https://developer.ibm.com/tutorials/l-lpic1-108-2/)
 
 </details>
 
@@ -1377,14 +1376,82 @@ In Immutable Server model, whole unit (server, container) is replaced by new upd
 
 Useful resources:
 
-- [Infrastructure as a Code - Chapter 8: Patterns for Updating and Changing Servers](http://shop.oreilly.com/product/0636920039297.do)
+- [Infrastructure as a Code - Chapter 8: Patterns for Updating and Changing Servers](https://www.oreilly.com/library/view/infrastructure-as-code/9781491924334/)
 
 </details>
 
 <details>
-<summary><b>How do you permanently set <code>$PATH</code> on Linux/Unix? Why is this variable so important? ***</b></summary><br>
+<summary><b>How do you permanently set <code>$PATH</code> on Linux/Unix? Why is this variable so important?</b></summary><br>
 
-To be completed.
+The `$PATH` variable is crucial because it tells the system where to look for executables when you run a command. By modifying the `$PATH`, you can ensure the system can locate your custom or additional scripts and binaries without needing to specify their full paths.
+
+Here’s how to permanently set or modify the `$PATH` variable on Linux/Unix:
+
+### 1. **Modify `$PATH` for a Specific User**
+   To set the `$PATH` variable permanently for a specific user, modify their shell configuration file (usually `.bashrc`, `.bash_profile`, `.profile`, or `.zshrc` depending on the shell).
+
+     - Edit the user’s **`.bashrc`** or **`.bash_profile`** file:
+       ```bash
+       vim ~/.bashrc   # or ~/.bash_profile
+       ```
+     - Add the following line to modify the `$PATH`:
+       ```bash
+       export PATH="$PATH:/path/to/directory"
+       ```
+     - Save the file and source it to apply the changes immediately:
+       ```bash
+       source ~/.bashrc  # or ~/.bash_profile
+       ```
+     - The `$PATH` modification will now persist across sessions for that user.
+
+### 2. **Modify `$PATH` System-Wide**
+   To set the `$PATH` variable for all users, edit one of the global shell configuration files.
+
+   - **For all users (system-wide)**:
+     - Edit **`/etc/profile`** or add a new file to **`/etc/profile.d/`**:
+       ```bash
+       sudo vim /etc/profile
+       ```
+     - Add the following:
+       ```bash
+       export PATH="$PATH:/path/to/directory"
+       ```
+     - Alternatively, create a new file in `/etc/profile.d/` (e.g., `custom_path.sh`):
+       ```bash
+       sudo vim /etc/profile.d/custom_path.sh
+       ```
+     - Add the following:
+       ```bash
+       export PATH="$PATH:/path/to/directory"
+       ```
+     - Save the file and source `/etc/profile` or log out and log back in for changes to take effect.
+
+   - **For all users on a specific shell**:
+     - For **Bash**, you can edit **`/etc/bash.bashrc`** to modify the `$PATH` for all users using Bash.
+
+### 3. **Modify `$PATH` for a Single Session**
+   You can also set the `$PATH` for the current session only by directly exporting it in the shell. This change will last until the session ends (e.g., when the terminal is closed):
+
+   ```bash
+   export PATH="$PATH:/path/to/directory"
+   ```
+
+The `$PATH` variable defines the directories that the system searches when you run a command without specifying its full path. If a directory containing an executable is not in the `$PATH`, you would need to provide the full path to that executable every time you run it.
+
+1. **Simplifies Command Execution**:
+   - With `$PATH` set correctly, you can execute programs, scripts, and binaries from any location without having to specify their full file paths.
+
+2. **Prioritizes Executable Locations**:
+   - The system searches directories in the order they are listed in `$PATH`. You can prioritize certain directories by placing them earlier in the `$PATH`, ensuring that specific versions of programs are executed.
+
+3. **Customizability**:
+   - You can extend the `$PATH` to include custom locations for user-installed programs, third-party software, or local scripts, giving you flexibility and control over your environment.
+
+4. **Multiple Executable Versions**:
+   - If multiple versions of the same command (e.g., different versions of Python) exist in different directories, the one found first in the `$PATH` will be executed. Adjusting `$PATH` allows you to control which version is run.
+
+5. **Security**:
+   - By controlling the `$PATH`, you can limit the risk of executing untrusted or malicious binaries by ensuring that system directories are prioritized, and user directories are well defined. It is generally recommended not to include `.` (the current directory) in the `$PATH`, as it can lead to unintended or malicious command execution.
 
 </details>
 
@@ -2000,9 +2067,84 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What is the proper way to upgrade/update a system in production? Do you automate these processes? Do you set downtime for them? Write recommendations. ***</b></summary><br>
+<summary><b>What is the proper way to upgrade/update a system in production? Do you automate these processes? Do you set downtime for them? Write recommendations.</b></summary><br>
 
-To be completed.
+Upgrading or updating a system in production requires careful planning to avoid service disruption, data loss, or downtime. Here are best practices and recommendations for handling system updates in a production environment:
+
+### 1. **Plan Updates Carefully**
+   - **Determine the Type of Update**:
+     - **Security patches**: Prioritize critical security updates to minimize vulnerabilities.
+     - **Minor updates**: Bug fixes and minor enhancements are generally safer to apply without significant risk.
+     - **Major upgrades**: Kernel, OS, or application upgrades that introduce significant changes should be carefully planned and tested.
+   
+   - **Check Compatibility**: Ensure that the updates do not break existing dependencies, software, or services running on the system. Review release notes and update documentation for known issues or changes.
+
+### 2. **Create a Backup/Recovery Plan**
+   - **Full system backup**: Before performing updates, create a full backup of the system, including important files, databases, and configurations.
+   - **Automated snapshots**: If you're using a system that supports snapshots (e.g., LVM snapshots or VM snapshots), take a snapshot before the update, allowing quick rollback if something goes wrong.
+   - **Test the recovery process**: Ensure that you have tested restoring backups or snapshots before you rely on them in production.
+
+### 3. **Automate the Update Process (With Caution)**
+   Automation helps ensure consistency and reduce human error, but you should balance automation with manual oversight in production environments.
+
+   - **Use configuration management tools**: Use automation tools like **Ansible**, **Puppet**, or **Chef** to handle updates across multiple servers.
+     - Example Ansible playbook:
+     ```yaml
+     ---
+     - name: Update packages on production servers
+       hosts: production
+       tasks:
+         - name: Update all packages
+           ansible.builtin.dnf:
+             name: "*"
+             state: latest
+     ```
+   - **Staggered updates**: Automate the update process to be applied in small batches (canary deployments) to avoid updating all production systems simultaneously and exposing the entire environment to risks.
+   - **Automated testing**: Integrate automated post-update testing to ensure that the system is functional after updates are applied.
+
+### 4. **Use Staging Environments for Testing**
+   - **Test updates in a staging environment**: Always apply updates first to a **staging environment** that mirrors the production system. This helps you detect any issues before they impact production.
+   - **Run automated and manual tests**: Perform tests that reflect production workloads, including automated tests for critical services, manual functional tests, and monitoring service performance.
+
+### 5. **Schedule Downtime (if Necessary)**
+   - **Non-critical updates**: For minor updates that do not disrupt services, you can often apply them during regular operation without scheduling downtime.
+   - **Critical updates**: For major or disruptive updates (e.g., kernel updates, database migrations, or application upgrades), schedule a maintenance window or downtime when user impact is minimal. Inform stakeholders well in advance.
+   - **Hot patching**: For critical security updates on production systems where downtime is not an option, consider using **live patching** tools like **KernelCare** or **kpatch** to apply kernel patches without requiring a reboot.
+
+### 6. **Monitoring and Rollback Strategy**
+   - **Monitor the system after updates**: Closely monitor the system after applying updates. Use tools like **Prometheus**, **Nagios**, or **Zabbix** to track key metrics such as CPU, memory usage, network traffic, and application performance.
+   - **Rollback plan**: Ensure that you have a rollback plan if something goes wrong. This could involve restoring a backup, rolling back a package to a previous version, or reverting a snapshot. Automate rollback procedures when possible.
+
+### 7. **Communicate with Stakeholders**
+   - **Notify users**: Inform stakeholders (customers, users, and team members) about planned updates, potential downtime, and the expected impact. Provide timely updates if any issues arise.
+   - **Document changes**: Keep detailed documentation of the updates, including what was changed, who approved it, the time of implementation, and any issues encountered during the process.
+
+### Recommended Process for Updating Production Systems:
+
+1. **Pre-Update Preparation**:
+   - Review available updates and their impact.
+   - Create a backup or snapshot.
+   - Test the updates in a staging environment.
+   - Schedule downtime or maintenance windows if needed.
+   - Communicate with stakeholders.
+
+2. **During the Update**:
+   - Apply updates using automation or manually if necessary.
+   - Apply the updates in batches or staggered across systems to minimize risk.
+   - Monitor logs and services for any anomalies during the update process.
+
+3. **Post-Update Monitoring**:
+   - Verify system and application functionality after the updates.
+   - Monitor performance metrics and logs to detect any post-update issues.
+   - Be prepared to roll back if critical issues are detected.
+
+4. **Follow-Up**:
+   - Notify stakeholders of successful updates or any issues.
+   - Document the update process, outcome, and lessons learned for future reference.
+
+---
+
+By automating where possible, rigorously testing updates, and planning for contingencies, you can reduce the risk of disruption in a production environment while keeping systems secure and up-to-date.
 
 </details>
 
@@ -2056,7 +2198,7 @@ Useful resources:
 
 - [How should strace be used? (original)](https://stackoverflow.com/questions/174942/how-should-strace-be-used)
 - [How does strace connect to an already running process? (original)](https://stackoverflow.com/questions/7482076/how-does-strace-connect-to-an-already-running-process)
-- [strace: for fun, profit, and debugging](http://timetobleed.com/hello-world/)
+- [Tracing processes for fun and profit](https://techblog.rosedu.org/tracing-processes-for-fun-and-profit.html)
 
 </details>
 
@@ -2146,13 +2288,6 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>Why do most distros use ext4, as opposed to XFS or other filesystems? Why are there so many of them? ***</b></summary><br>
-
-To be completed.
-
-</details>
-
-<details>
 <summary><b>A Project Manager needs a new SQL Server. What questions would you ask to ensure the proper system is setup?</b></summary><br>
 
 1. What is the expected workload and number of concurrent users?
@@ -2224,7 +2359,6 @@ Getting Apache to run as `nobody:nobody` is pretty easy, just update the user an
 Useful resources:
 
 - [What is nobody user and group?](https://unix.stackexchange.com/questions/186568/what-is-nobody-user-and-group)
-- [The Linux and Unix Nobody User](http://linuxg.net/the-linux-and-unix-nobody-user/)
 - [What is the purpose of the 'nobody' user?](https://askubuntu.com/questions/329714/what-is-the-purpose-of-the-nobody-user)
 
 </details>
@@ -2275,16 +2409,54 @@ nohup long-running-process &
 exit
 ```
 
-or you want to be using **GNU Screen**:
+or to prevent a command from being killed after the SSH session drops, you can use **`tmux`**, a terminal multiplexer that allows you to run multiple terminal sessions and keep them running even after disconnecting from the SSH session.
+
+Here’s how to use `tmux` to run a long-running process:
+
+### 1. **Start a New tmux Session**
+First, connect to your server via SSH and start a new `tmux` session:
 
 ```bash
-screen -d -m long-running-process
-exit
+tmux new -s mysession
 ```
 
-Useful resources:
+Here, `mysession` is the name of the session. You can choose any name you prefer.
 
-- [5 Ways to Keep Remote SSH Sessions and Processes Running After Disconnection](https://www.tecmint.com/keep-remote-ssh-sessions-running-after-disconnection/)
+### 2. **Run Your Command**
+Inside the tmux session, run the command that is expected to take a long time.
+
+```bash
+long_running_command
+```
+
+This command will now run inside the tmux session, independent of your SSH connection.
+
+### 3. **Detach from the tmux Session**
+To safely disconnect from the tmux session while keeping the command running in the background, **detach** from the session by pressing:
+
+```
+Ctrl + b, then d
+```
+
+This will bring you back to your original shell while leaving the long-running process active within the tmux session.
+
+### 4. **Reconnect to the tmux Session Later**
+If you lose connection or want to reconnect to your tmux session later, SSH back into the server and reattach to the session:
+
+```bash
+tmux attach -t mysession
+```
+
+This will resume the tmux session exactly where you left off, showing the progress of your long-running command.
+
+### 5. **List Active tmux Sessions**
+If you forget the session name or want to see all active tmux sessions, use:
+
+```bash
+tmux ls
+```
+
+This will display a list of active tmux sessions that you can reattach to.
 
 </details>
 
@@ -2303,7 +2475,7 @@ The **Root-Intermediate CA** structure is created by each major CA to protect ag
 
 Useful resources:
 
-- [How certificate chains work](https://knowledge.digicert.com/solution/SO16297.html)
+- [How certificate chains work](https://knowledge.digicert.com/solution/how-certificate-chains-work)
 
 </details>
 
@@ -2512,9 +2684,95 @@ If domain not resolved it's probably problem with DNS servers.
 </details>
 
 <details>
-<summary><b>Load balancing can dramatically impact server performance. Discuss several load balancing mechanisms. ***</b></summary><br>
+<summary><b>Load balancing can positively impact server performance. Discuss several load balancing mechanisms. ***</b></summary><br>
 
-To be completed.
+Load balancing is the process of distributing network or application traffic across multiple servers to ensure no single server becomes overwhelmed, which improves performance, reliability, and availability. There are several load balancing mechanisms, each suited to different types of workloads and traffic patterns. Here's a discussion of the key load balancing techniques:
+
+### 1. **Round Robin**
+   - **Mechanism**: In this method, requests are distributed across servers in a sequential and circular order. The first request goes to the first server, the second request to the second server, and so on. Once all servers have received a request, the cycle starts again.
+   - **Use Case**: Round Robin is ideal for environments where the servers have similar hardware and can handle roughly the same load.
+   - **Advantages**:
+     - Simple to implement.
+     - Does not require knowledge of server load.
+   - **Disadvantages**:
+     - Does not account for server performance or current load, which can lead to performance degradation if one server is slower than the others or has more tasks to handle.
+
+### 2. **Weighted Round Robin**
+   - **Mechanism**: Similar to Round Robin, but each server is assigned a weight based on its capacity. Servers with higher capacity (e.g., more CPU or memory) receive more requests, while those with lower capacity receive fewer requests.
+   - **Use Case**: Ideal when servers have different hardware configurations and processing capabilities, ensuring that more powerful servers handle more traffic.
+   - **Advantages**:
+     - Distributes traffic more evenly according to server capacity.
+     - Helps balance load in heterogeneous server environments.
+   - **Disadvantages**:
+     - Still doesn’t take real-time server performance or load into account.
+
+### 3. **Least Connections**
+   - **Mechanism**: The load balancer directs traffic to the server with the fewest active connections at any given time. This method assumes that servers with fewer connections can handle more load and therefore receive more traffic.
+   - **Use Case**: Suitable for environments where each client connection generates a different amount of load, such as when clients use persistent or long-lived connections.
+   - **Advantages**:
+     - Balances traffic based on real-time connection load.
+   - **Disadvantages**:
+     - Requires more overhead to track the number of connections per server.
+
+### 4. **Weighted Least Connections**
+   - **Mechanism**: Combines the Weighted Round Robin and Least Connections algorithms. Servers are weighted based on their capacity, but traffic is distributed according to the number of active connections and server weight. Servers with fewer connections relative to their capacity receive more traffic.
+   - **Use Case**: Ideal when servers have different capacities, and connection load varies significantly.
+   - **Advantages**:
+     - More efficient in balancing load based on both server capacity and connection count.
+   - **Disadvantages**:
+     - Requires more overhead to monitor connection counts and server capacities.
+
+### 5. **IP Hash (Source IP Hashing)**
+   - **Mechanism**: The load balancer uses a hash function based on the client’s IP address to determine which server will handle the request. The same client will always be directed to the same server as long as the server is available.
+   - **Use Case**: Useful when session persistence or "sticky sessions" are required, where clients need to be consistently directed to the same server (e.g., for stateful applications).
+   - **Advantages**:
+     - Ensures that clients are always routed to the same server, helping with session persistence.
+   - **Disadvantages**:
+     - If a server fails, session data can be lost unless additional mechanisms (like session replication) are used.
+     - Not ideal if load distribution is a priority, as traffic may become unevenly distributed depending on the source IP distribution.
+
+### 6. **Least Response Time**
+   - **Mechanism**: The load balancer monitors the response time of each server and sends traffic to the server that has the quickest response time. This ensures that servers that are responding more efficiently receive more traffic.
+   - **Use Case**: Useful for environments where response time is critical, and the load balancer needs to ensure that requests are sent to the least busy or fastest server.
+   - **Advantages**:
+     - Accounts for server load and performance in real-time.
+   - **Disadvantages**:
+     - Requires more overhead to monitor response times and adjust routing decisions accordingly.
+
+### 7. **Geolocation-Based Load Balancing**
+   - **Mechanism**: Traffic is routed based on the geographic location of the client. The load balancer directs traffic to the nearest or most appropriate data center or server to reduce latency.
+   - **Use Case**: Useful for global applications or services with geographically distributed servers or data centers, such as CDNs (Content Delivery Networks).
+   - **Advantages**:
+     - Minimizes latency by routing traffic to the closest server.
+     - Helps improve user experience, especially for latency-sensitive applications.
+   - **Disadvantages**:
+     - Does not consider server load, only geographic proximity, which can lead to imbalanced traffic if one location experiences much higher demand.
+
+### 8. **Randomized Load Balancing**
+   - **Mechanism**: Traffic is randomly distributed to any of the available servers. Each request has an equal chance of going to any server, regardless of load or capacity.
+   - **Use Case**: This method is simple and rarely used alone in production environments but may be useful for very small, homogenous environments where load distribution is not a major concern.
+   - **Advantages**:
+     - Easy to implement.
+   - **Disadvantages**:
+     - Does not account for server capacity or current load, which can result in uneven distribution and performance bottlenecks.
+
+### 9. **Global Server Load Balancing (GSLB)**
+   - **Mechanism**: GSLB distributes traffic across multiple geographically distributed data centers or servers based on various factors, such as proximity, server load, or response time.
+   - **Use Case**: Ideal for multinational companies or services that have data centers or cloud resources across the world and need to optimize traffic routing to improve performance and redundancy.
+   - **Advantages**:
+     - Increases availability and fault tolerance by distributing traffic globally.
+     - Can optimize for performance by considering both proximity and load.
+   - **Disadvantages**:
+     - Requires more complex infrastructure, including DNS routing and monitoring.
+
+### 10. **Dynamic Load Balancing**
+   - **Mechanism**: Traffic distribution decisions are made based on real-time server health and performance metrics, such as CPU load, memory usage, or disk I/O. The load balancer dynamically adjusts based on the state of the servers.
+   - **Use Case**: Best for high-performance environments where server load can fluctuate significantly, such as in cloud services or microservice architectures.
+   - **Advantages**:
+     - Provides efficient load balancing by adjusting dynamically based on server performance.
+     - Helps prevent overloading any server.
+   - **Disadvantages**:
+     - High overhead in monitoring server health in real-time.
 
 </details>
 
@@ -2560,9 +2818,51 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>Which, in your opinion, are the 5 most important OpenSSH parameters that improve the security? ***</b></summary><br>
+<summary><b>Which, in your opinion, are the 5 most important OpenSSH parameters that improve the security?</b></summary><br>
 
-To be completed.
+Here are the **five most important OpenSSH parameters** to improve security, along with their explanations and why they are critical:
+
+### 1. **`PermitRootLogin no`**
+   - **Description**: Disables root login over SSH.
+   - **Why it's important**: Allowing root to log in via SSH poses a significant security risk since the root account has full control over the system. Disabling it forces users to log in with their own accounts and use `sudo` or `su` for elevated privileges. This adds a layer of security and accountability.
+   - **How to configure**: Edit `/etc/ssh/sshd_config` and set:
+     ```bash
+     PermitRootLogin no
+     ```
+
+### 2. **`PasswordAuthentication no`**
+   - **Description**: Disables password-based login, enforcing the use of more secure methods such as public key authentication.
+   - **Why it's important**: Password-based logins are vulnerable to brute-force attacks. By disabling password authentication, you force users to authenticate using SSH keys, which are significantly more secure and harder to crack.
+   - **How to configure**: Edit `/etc/ssh/sshd_config` and set:
+     ```bash
+     PasswordAuthentication no
+     ```
+
+### 3. **`AllowUsers` or `AllowGroups`**
+   - **Description**: Restricts which users or groups can log in via SSH.
+   - **Why it's important**: Limiting which users can access the server via SSH reduces the attack surface by preventing unauthorized or unnecessary users from attempting to log in.
+   - **How to configure**: You can specify the users or groups allowed to access the server by adding these directives:
+     ```bash
+     AllowUsers user1 user2
+     ```
+     Or:
+     ```bash
+     AllowGroups sshusers admin
+     ```
+
+### 4. - **`LoginGraceTime 60`** 
+   - **Description**: Reduces the time allowed for login attempts, minimizing the time an attacker has to brute force login credentials.
+  ```bash
+  LoginGraceTime 60
+  ```
+
+### 5. **`MaxAuthTries 3`**
+   - **Description**: Limits the number of authentication attempts per connection.
+   - **Why it's important**: By limiting the number of authentication attempts, you reduce the window for brute-force attacks. After the limit is reached, the SSH connection is closed, forcing the attacker to reconnect and start over.
+   - **How to configure**: Edit `/etc/ssh/sshd_config` and set:
+     ```bash
+     MaxAuthTries 3
+     ```
 
 Useful resources:
 
@@ -2698,14 +2998,89 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>How do you allow traffic to/from specific IP with iptables?</b></summary><br>
+<summary><b>How do you allow traffic to/from specific IP with firewalld?</b></summary><br>
 
-For example:
+To allow traffic to or from a specific IP address using `firewalld`, you can configure rules that permit access based on the source or destination IP. Firewalld operates using **zones**, so you need to ensure the rule is applied to the correct zone where your interface resides.
+
+Here’s how to allow traffic to/from a specific IP address in `firewalld`:
+
+### 1. **Allow Traffic From a Specific IP (Source IP)**
+
+This rule allows incoming traffic from a specific IP address. You can apply this rule globally or to a specific zone.
+
+- To allow traffic from a specific IP (e.g., `192.168.1.100`), use:
 
 ```bash
-/sbin/iptables -A INPUT -p tcp -s XXX.XXX.XXX.XXX -j ACCEPT
-/sbin/iptables -A OUTPUT -p tcp -d  XXX.XXX.XXX.XXX -j ACCEPT
+sudo firewall-cmd --zone=public --add-source=192.168.1.100
 ```
+
+- To make the rule persistent across reboots, add `--permanent`:
+
+```bash
+sudo firewall-cmd --zone=public --add-source=192.168.1.100 --permanent
+```
+
+- Reload the firewall to apply permanent changes:
+
+```bash
+sudo firewall-cmd --reload
+```
+
+This command adds the IP `192.168.1.100` as a trusted source in the specified zone (`public` in this example).
+
+### 2. **Allow Traffic to a Specific IP (Destination IP)**
+
+To allow outgoing traffic to a specific IP address, use a rich rule. This allows finer control over traffic permissions.
+
+- To allow traffic to a specific destination IP (e.g., `203.0.113.100`), use:
+
+```bash
+sudo firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" destination address="203.0.113.100" accept'
+```
+
+- To make it persistent:
+
+```bash
+sudo firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" destination address="203.0.113.100" accept' --permanent
+```
+
+- Reload the firewall:
+
+```bash
+sudo firewall-cmd --reload
+```
+
+### 3. **Allow Traffic to/from a Specific IP on Specific Ports**
+
+If you need to allow traffic to/from a specific IP only on certain ports, you can specify both the IP address and the port.
+
+- For example, to allow traffic from `192.168.1.100` on port `22` (SSH):
+
+```bash
+sudo firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.1.100" port protocol="tcp" port="22" accept'
+```
+
+- To make it persistent:
+
+```bash
+sudo firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.1.100" port protocol="tcp" port="22" accept' --permanent
+```
+
+- Reload the firewall:
+
+```bash
+sudo firewall-cmd --reload
+```
+
+### 4. **Checking and Verifying the Rules**
+
+- List all current rules for a specific zone to verify that the rules are applied:
+
+```bash
+sudo firewall-cmd --zone=public --list-all
+```
+
+This will display all the allowed sources, services, and rich rules applied to the `public` zone.
 
 </details>
 
@@ -2769,7 +3144,57 @@ The most popular DevOps tools are mentioned below:
 <details>
 <summary><b>What is Agile and how is it beneficial? ***</b></summary><br>
 
-To be completed.
+### What is Agile?
+
+**Agile** is a project management and software development methodology that promotes an iterative, flexible, and collaborative approach to delivering high-quality software or products. Agile focuses on incremental progress, continuous feedback, and the ability to adapt to changing requirements quickly. It emphasizes collaboration between cross-functional teams and stakeholders and encourages frequent reassessment of project goals and priorities.
+
+Agile frameworks, such as **Scrum**, **Kanban**, and **Extreme Programming (XP)**, guide how Agile is implemented in practice, but the core principles are defined by the **Agile Manifesto**, which prioritizes:
+
+- **Individuals and interactions** over processes and tools
+- **Working software** over comprehensive documentation
+- **Customer collaboration** over contract negotiation
+- **Responding to change** over following a plan
+
+### Key Agile Practices:
+1. **Iterations/Sprints**: Short cycles of development (typically 1-4 weeks) during which teams deliver a potentially shippable product increment.
+2. **Continuous Feedback**: Regular feedback from stakeholders and customers to ensure the project remains aligned with evolving requirements.
+3. **Collaboration**: Close cooperation between team members, including developers, testers, and product owners.
+4. **Adaptability**: Ability to change project scope and direction based on real-time feedback and changing requirements.
+5. **Daily Stand-ups**: Short, daily meetings where the team discusses progress, obstacles, and goals for the day.
+
+---
+
+### Benefits of Agile:
+
+1. **Flexibility and Adaptability**:
+   - Agile's iterative approach allows teams to adapt to changes in requirements or market conditions more easily. This is particularly useful in dynamic environments where customer needs may evolve during the development process.
+
+2. **Improved Product Quality**:
+   - By breaking the project into smaller increments and regularly testing and reviewing each piece, Agile enables early detection and resolution of bugs and issues, leading to better overall product quality.
+
+3. **Faster Time-to-Market**:
+   - Agile’s incremental approach enables teams to deliver functional versions of the product more quickly, allowing stakeholders and users to see value earlier and get the product to market faster.
+
+4. **Customer Satisfaction**:
+   - Continuous collaboration with customers ensures their feedback is incorporated throughout the development process. This leads to a product that better meets customer expectations, improving overall satisfaction.
+
+5. **Increased Transparency**:
+   - Agile promotes transparency through regular communication, such as daily stand-ups, sprint reviews, and retrospectives. Stakeholders are kept informed about progress and challenges, creating a sense of shared ownership.
+
+6. **Risk Management**:
+   - By delivering small increments regularly and getting constant feedback, teams can identify risks and issues early, allowing them to address problems before they escalate.
+
+7. **Team Empowerment and Collaboration**:
+   - Agile encourages self-organizing teams, where team members have more autonomy and are empowered to make decisions. This fosters a collaborative environment where each member contributes to the project's success.
+
+8. **Continuous Improvement**:
+   - Agile promotes a culture of continuous improvement through regular retrospectives, where teams reflect on what went well and what could be improved, leading to better processes over time.
+
+9. **Higher Productivity**:
+   - Short development cycles and focused sprints help teams stay on track, avoid delays, and deliver value efficiently. Agile's iterative nature also means that the team focuses on high-priority tasks, improving productivity.
+
+10. **Better Alignment with Business Goals**:
+    - Agile encourages close collaboration with product owners and stakeholders, ensuring that the team’s efforts are aligned with business priorities and delivering real value.
 
 </details>
 
@@ -2935,8 +3360,8 @@ Useful resources:
 
 Useful resources:
 
-- [Security Harden CentOS 7](https://highon.coffee/blog/security-harden-centos-7/)
-- [CentOS 7 Server Hardening Guide](https://www.lisenet.com/2017/centos-7-server-hardening-guide/)
+- [Security Harden RHEL 9](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/pdf/security_hardening/Red_Hat_Enterprise_Linux-9-Security_hardening-en-US.pdf)
+- [CIS Red Hat Enterprise Linux 8](https://www.tenable.com/audits/CIS_Red_Hat_EL8_Server_v3.0.0_L1)
 
 </details>
 
@@ -3143,7 +3568,7 @@ Useful resources:
 
 - [Accidentally destroyed production database on first day of a job...](https://www.reddit.com/r/cscareerquestions/comments/6ez8ag/accidentally_destroyed_production_database_on/)
 - [Postmortem of database outage of January 31](https://about.gitlab.com/2017/02/10/postmortem-of-database-outage-of-january-31/)
-- [How to write an Incident Report/Postmortem](https://sysadmincasts.com/episodes/20-how-to-write-an-incident-report-postmortem)
+- [What is an Incident Postmortem?](https://www.pagerduty.com/resources/learn/incident-postmortem/)
 
 </details>
 
@@ -3162,10 +3587,6 @@ First, check the available disks before and after adding the new one. This helps
 - After adding the disk:
   ```bash
   echo "- - -" > /sys/class/scsi_host/host0/scan
-  ```
-  Or use:
-  ```bash
-  rescan-scsi-bus
   ```
 
   Then check again with `lsblk` or `fdisk -l` to verify the new disk is detected (e.g., `/dev/sdb`).
@@ -3234,22 +3655,9 @@ Once the partition is created, mark it for LVM use with the correct partition ty
   lvdisplay
   ```
 
-- Extend the logical volume:
+- Extend the logical volume while also extending the underlying filesystem:
   ```bash
-  lvextend -l +100%FREE /dev/<VolumeGroupName>/<LogicalVolumeName>
-  ```
-
-### 7. **Resize the Filesystem**
-   After extending the logical volume, resize the filesystem to take advantage of the additional space.
-
-- For **ext4** or **ext3** filesystems:
-  ```bash
-  resize2fs /dev/<VolumeGroupName>/<LogicalVolumeName>
-  ```
-
-- For **XFS** filesystems:
-  ```bash
-  xfs_growfs /mount_point
+  lvextend -r -l +100%FREE /dev/<VolumeGroupName>/<LogicalVolumeName>
   ```
 
 ### 8. **Verify the Changes**
@@ -3443,7 +3851,7 @@ Useful resources:
 - [What if kill -9 does not work? (original)](https://unix.stackexchange.com/questions/5642/what-if-kill-9-does-not-work)
 - [How to kill a process in Linux if kill -9 has no effect](https://serverfault.com/questions/458261/how-to-kill-a-process-in-linux-if-kill-9-has-no-effect)
 - [When should I not kill -9 a process?](https://unix.stackexchange.com/questions/8916/when-should-i-not-kill-9-a-process)
-- [SIGTERM vs. SIGKILL](https://major.io/2010/03/18/sigterm-vs-sigkill/)
+- [SIGTERM vs. SIGKILL](https://major.io/p/sigterm-vs-sigkill/)
 
 </details>
 
@@ -3527,7 +3935,7 @@ Useful resources:
 - [What are segmentation faults (segfaults), and how can I identify what's causing them? (original)](https://kb.iu.edu/d/aqsj)
 - [What is a segmentation fault on Linux?](https://stackoverflow.com/questions/3200526/what-is-a-segmentation-fault-on-linux)
 - [Segmentation fault when calling a recursive bash function](https://unix.stackexchange.com/questions/296641/segmentation-fault-when-calling-a-recursive-bash-function)
-- [Troubleshooting Segmentation Violations/Faults](http://web.mit.edu/10.001/Web/Tips/tips_on_segmentation.html)
+- [Troubleshooting Segmentation Violations/Faults](https://web.mit.edu/10.001/Web/Tips/tips_on_segmentation.html)
 - [Can one use libSegFault.so to get backtraces for SIGABRT?](https://stackoverflow.com/questions/18706496/can-one-use-libsegfault-so-to-get-backtraces-for-sigabrt)
 
 </details>
@@ -3692,7 +4100,6 @@ For improvement performance:
 Useful resources:
 
 - [Linux server performance: Is disk I/O slowing your application? (original)](https://haydenjames.io/linux-server-performance-disk-io-slowing-application/)
-- [Troubleshooting High I/O Wait in Linux](https://bencane.com/2012/08/06/troubleshooting-high-io-wait-in-linux/)
 - [Debugging Linux I/O latency](https://superuser.com/questions/396696/debugging-linux-i-o-latency)
 - [How do pdflush, kjournald, swapd, etc. interoperate?](https://unix.stackexchange.com/questions/76970/how-do-pdflush-kjournald-swapd-etc-interoperate)
 - [5 ways to improve HDD speed on Linux](https://thecodeartist.blogspot.com/2012/06/improving-hdd-performance-linux.html)
@@ -3835,7 +4242,7 @@ Using -j REJECT will send an error message back to the client, letting them know
 Using -j DROP, on the other hand, simply discards the traffic without providing any feedback to the client. This can be useful for denying traffic from known malicious sources or for denying traffic to services that should not be accessible from the public internet.
 
 Useful resources:
-- [https://unix.stackexchange.com/questions/109459/is-it-better-to-set-j-reject-or-j-drop-in-iptables](https://unix.stackexchange.com/questions/109459/is-it-better-to-set-j-reject-or-j-drop-in-iptables)
+- [Is it better to set -j REJECT or -j DROP in iptables?](https://unix.stackexchange.com/questions/109459/is-it-better-to-set-j-reject-or-j-drop-in-iptables)
 - [Drop versus Reject](https://www.chiark.greenend.org.uk/~peterb/network/drop-vs-reject)
 
 </details>
