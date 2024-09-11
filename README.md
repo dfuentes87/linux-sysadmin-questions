@@ -3148,13 +3148,118 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>How do you add new disk in Linux server without rebooting? How do you rescan and add it in LVM? ***</b></summary><br>
+<summary><b>How do you add a new disk to a Linux server without rebooting? How do you rescan and add it in LVM?</b></summary><br>
 
-To be completed.
+### 1. **Identify the New Disk**
+First, check the available disks before and after adding the new one. This helps confirm that the new disk is detected by the system.
 
-Useful resources:
+- Before adding the disk:
+  ```bash
+  lsblk
+  fdisk -l
+  ```
 
-- [How to Add New Disk in Linux CentOS 7 Without Rebooting](https://linoxide.com/linux-how-to/add-new-disk-centos-7-without-rebooting/)
+- After adding the disk:
+  ```bash
+  echo "- - -" > /sys/class/scsi_host/host0/scan
+  ```
+  Or use:
+  ```bash
+  rescan-scsi-bus
+  ```
+
+  Then check again with `lsblk` or `fdisk -l` to verify the new disk is detected (e.g., `/dev/sdb`).
+
+### 2. **Create a Partition on the New Disk (Optional)**
+   You can directly use the entire disk for LVM or create a partition. If you want to create a partition, use `fdisk` or `parted`:
+   
+   - Using `fdisk`:
+     ```bash
+     fdisk /dev/sdb
+     ```
+     Inside `fdisk`, create a new primary partition:
+     - Press `n` to create a new partition.
+     - Press `p` to make it a primary partition.
+     - Press `w` to write changes.
+
+   - Using `parted` (for GPT partition table):
+     ```bash
+     parted /dev/sdb mklabel gpt
+     parted /dev/sdb mkpart primary 0% 100%
+     ```
+
+### 3. **Mark the Partition for LVM**
+Once the partition is created, mark it for LVM use with the correct partition type.
+
+- Using `fdisk`:
+  ```bash
+  fdisk /dev/sdb
+  ```
+  - Type `t` to change the partition type.
+  - Select partition (usually `1`).
+  - Enter `8e` (LVM partition type).
+  - Type `w` to save changes.
+
+### 4. **Create a Physical Volume (PV)**
+   Initialize the new disk or partition as a physical volume for LVM.
+
+- For the entire disk:
+  ```bash
+  pvcreate /dev/sdb
+  ```
+
+- If you created a partition (e.g., `/dev/sdb1`):
+  ```bash
+  pvcreate /dev/sdb1
+  ```
+
+### 5. **Extend the Volume Group (VG)**
+   Add the newly created physical volume to your existing volume group.
+
+- Check existing volume groups:
+  ```bash
+  vgdisplay
+  ```
+
+- Add the new physical volume to the volume group:
+  ```bash
+  vgextend <VolumeGroupName> /dev/sdb1  # or /dev/sdb if using the whole disk
+  ```
+
+### 6. **Extend the Logical Volume (LV)**
+   After adding the physical volume to the volume group, you can extend the logical volume.
+
+- Check existing logical volumes:
+  ```bash
+  lvdisplay
+  ```
+
+- Extend the logical volume:
+  ```bash
+  lvextend -l +100%FREE /dev/<VolumeGroupName>/<LogicalVolumeName>
+  ```
+
+### 7. **Resize the Filesystem**
+   After extending the logical volume, resize the filesystem to take advantage of the additional space.
+
+- For **ext4** or **ext3** filesystems:
+  ```bash
+  resize2fs /dev/<VolumeGroupName>/<LogicalVolumeName>
+  ```
+
+- For **XFS** filesystems:
+  ```bash
+  xfs_growfs /mount_point
+  ```
+
+### 8. **Verify the Changes**
+   Verify that the logical volume and filesystem have been resized correctly.
+
+- Check the new size:
+  ```bash
+  df -h
+  lvdisplay
+  ```
 
 </details>
 
@@ -3173,9 +3278,113 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>A bare metal server's root partition is full and will not boot. How do you troubleshoot and fix the issue? ***</b></summary><br>
+<summary><b>A bare metal server's root partition is full and will not boot. How do you troubleshoot and fix the issue?</b></summary><br>
 
-To be completed.
+### 1. **Access the System in Rescue Mode or with a Live CD/USB**
+   - **Boot into Rescue Mode**:
+     - If your system uses a Linux distribution that supports rescue mode (like CentOS/RHEL), boot into rescue mode from the installation media.
+     - During boot, select the appropriate recovery/rescue option from the GRUB menu.
+   - **Use a Live CD/USB**:
+     - If rescue mode isn’t available, use a Linux live CD/USB to boot the system. This gives you access to the filesystem so you can troubleshoot.
+
+### 2. **Mount the Root Filesystem**
+   - Once in rescue mode or a live environment, you’ll need to mount the root partition to gain access to the system’s files.
+   - **Identify the root partition**:
+     - Use `lsblk`, `fdisk -l`, or `blkid` to identify the root partition (e.g., `/dev/sda1`, `/dev/nvme0n1p1`).
+   - **Mount the root partition**:
+     ```bash
+     mkdir /mnt/root
+     mount /dev/sda1 /mnt/root
+     ```
+   - If you have separate partitions for `/boot`, `/var`, or `/home`, you may need to mount those as well:
+     ```bash
+     mount /dev/sda2 /mnt/root/boot
+     mount /dev/sda3 /mnt/root/var
+     ```
+
+### 3. **Identify Large Files to Delete**
+   - **Change to the mounted root filesystem**:
+     ```bash
+     chroot /mnt/root
+     ```
+   - **Check disk usage**:
+     - Use `du` or `df` to determine which directories or files are taking up the most space:
+     ```bash
+     df -h          # Check the overall usage of the root filesystem
+     du -sh /*      # Identify large directories
+     du -sh /var/*  # Drill down into the `/var` directory, which is often a culprit
+     ```
+   - **Common directories to check**:
+     - **/var/log/**: Large or old log files.
+     - **/var/cache/**: Package manager caches (e.g., DNF, YUM, APT caches).
+     - **/tmp/**: Temporary files that may not be necessary anymore.
+     - **/root/** or **/home/**: Check for large personal files (backups, ISOs, etc.).
+
+### 4. **Free Up Space**
+   - **Delete or compress log files**:
+     - Identify and delete old or large log files in `/var/log/`. You can either remove them or compress them:
+     ```bash
+     rm -f /var/log/*.log  # Remove old logs
+     gzip /var/log/*.log    # Compress logs to save space
+     ```
+   - **Clear package cache**:
+     - For RPM-based systems (CentOS/RHEL/Fedora):
+     ```bash
+     dnf clean all    # or yum clean all for older systems
+     ```
+     - For APT-based systems (Debian/Ubuntu):
+     ```bash
+     apt-get clean
+     ```
+   - **Remove unnecessary files from `/tmp`**:
+     ```bash
+     rm -rf /tmp/*
+     ```
+   - **Remove orphaned packages** (optional):
+     - Check for orphaned or unnecessary packages and remove them to free space.
+     ```bash
+     dnf autoremove  # For RPM-based systems
+     apt-get autoremove  # For APT-based systems
+     ```
+
+### 5. **Check for and Remove Old Kernels**
+   - On systems with a separate `/boot` partition, it can fill up if old kernels aren’t cleaned up. You can list installed kernels and remove old ones:
+     - List kernels:
+     ```bash
+     rpm -q kernel  # CentOS/RHEL
+     dpkg --list | grep linux-image  # Debian/Ubuntu
+     ```
+     - Remove old kernels, keeping the current and one or two previous versions:
+     ```bash
+     dnf remove kernel-old-version
+     ```
+
+### 6. **Check for Core Dumps or Large Swap Files**
+   - **Core dumps**:
+     - Check for large core dump files in `/var/lib/systemd/coredump/` or `/var/crash/`. These can take up a lot of space and are safe to remove unless needed for debugging.
+     ```bash
+     rm -f /var/lib/systemd/coredump/*
+     ```
+   - **Large swap files**:
+     - If the root partition contains a large swap file, consider moving it to another partition temporarily or reducing its size.
+
+### 7. **Resize the Partition (if necessary)**
+   - If space is consistently an issue, you may need to resize the root partition. This step is complex and risky, especially if the disk is already partitioned. Use tools like `gparted` or `parted` from a live CD to resize partitions if possible. Alternatively, consider adding another disk or creating a new partition for data.
+
+### 8. **Reboot the Server**
+   - After freeing up enough space, unmount the root partition and reboot the server:
+     ```bash
+     exit   # Exit chroot
+     umount /mnt/root
+     reboot
+     ```
+   - The system should now boot normally.
+
+### 9. **Set Up Monitoring (Post-Fix)**
+   - Once the issue is resolved, it’s good practice to implement monitoring to avoid future disk space issues:
+     - **Disk usage monitoring**: Use tools like `df` or monitoring solutions (e.g., Nagios, Zabbix, Prometheus) to alert you when disk usage exceeds a certain threshold.
+     - **Log rotation**: Ensure that log files are rotated properly using tools like `logrotate` to prevent logs from consuming excessive disk space.
+     - **Package cache cleaning**: Automate cleaning of package caches periodically to prevent them from accumulating.
 
 </details>
 
@@ -3324,9 +3533,39 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>In terms of *nix systems, what does it mean when we say everything is a file? ***</b></summary><br>
+<summary><b>In terms of *nix systems, what does it mean when we say everything is a file?</b></summary><br>
 
-To be completed.
+### 1. **Traditional Files**:
+   - Regular files containing data (e.g., text files, binaries) are the most obvious representation of this concept. Operations like reading and writing are done via standard file operations (`open`, `read`, `write`, `close`).
+
+### 2. **Directories**:
+   - Directories are treated as special types of files that store information about other files and subdirectories. They can be read to list their contents but cannot be written directly like regular files.
+
+### 3. **Devices**:
+   - **Character devices and block devices**: Hardware devices (e.g., hard drives, keyboards, mice, terminals) are represented as files in the `/dev` directory. For example:
+     - **Character devices** (e.g., `/dev/tty`, `/dev/null`) are accessed character-by-character.
+     - **Block devices** (e.g., `/dev/sda`, `/dev/loop0`) allow random access to blocks of data, typical for disk drives.
+   - Accessing or interacting with devices is done using the same read/write operations as with regular files.
+
+### 4. **Pipes and Sockets**:
+   - **Named pipes** (`FIFO files`) and **UNIX domain sockets** are special files that allow inter-process communication. They enable data to be passed between processes, similar to how data is read from and written to a regular file.
+     - **Pipes**: Used for unidirectional communication (e.g., `|` in shell commands).
+     - **Sockets**: Enable bidirectional communication between processes, often used for network services.
+
+### 5. **Processes**:
+   - Processes are represented as files under the `/proc` directory. Each running process has a directory (`/proc/<PID>`) containing information about the process, such as memory usage, file descriptors, and environment variables. This directory provides a file-based interface to the kernel’s process-related information.
+   
+### 6. **Symbolic Links**:
+   - Symbolic links (symlinks) are special files that point to other files or directories. These links allow flexible file and directory manipulation, abstracting access to target files.
+
+### 7. **Input/Output Streams**:
+   - Standard input, output, and error streams (`stdin`, `stdout`, `stderr`) are treated as files with descriptors (`0`, `1`, and `2`, respectively). This file-based abstraction allows redirecting input/output between files, devices, and other processes seamlessly.
+
+### 8. **Network Interfaces**:
+   - Network interfaces can be accessed via special files (e.g., `/dev/tun` for tunneling interfaces). Network communication, especially through UNIX domain sockets, can be treated similarly to reading and writing to files.
+
+### 9. **System Information**:
+   - **System resources and kernel settings**: The `/proc` and `/sys` directories provide access to system information and kernel parameters. Files in these directories allow the inspection and modification of kernel behavior, such as managing hardware, checking memory usage, or tuning kernel parameters.
 
 </details>
 
@@ -3368,9 +3607,54 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>Which symptoms might be suffering from a disk bottleneck? ***</b></summary><br>
+<summary><b>Which symptoms might be suffering from a disk bottleneck?</b></summary><br>
 
-To be completed.
+### 1. **Slow Read/Write Operations**:
+   - **Long disk access times**: Operations involving disk I/O (file reads/writes, database queries) take much longer than usual.
+   - **Sluggish application performance**: Applications that rely on disk access (e.g., databases, web servers) may become slow, especially during peak usage times.
+
+### 2. **High Disk Utilization**:
+   - **High disk I/O wait**: High `iowait` values (visible in `top`, `iostat`, or `vmstat`) indicate that processes are waiting for disk operations to complete.
+   - **High disk utilization percentage**: Disk utilization nearing 100% in monitoring tools (e.g., `iostat`, `iostat -x`, `dstat`, or graphical monitoring like Grafana) indicates the disk is being fully utilized, leaving little room for additional requests.
+
+### 3. **System Freezes or Stalls**:
+   - **Temporary system hangs**: The system may freeze temporarily, especially when performing disk-heavy operations like backups or loading large files.
+   - **Slow boot times**: The system may take much longer to boot if it is trying to read or write a lot of data during startup.
+
+### 4. **Excessive Page Faulting/Swapping**:
+   - **Increased swapping**: When the system runs low on memory, it swaps data to disk. If the disk is already bottlenecked, this increases the load, leading to slower performance as the system struggles to swap efficiently.
+   - **High number of page faults**: Page faults happen when the system tries to access data that is not in memory and has to retrieve it from disk, which is slow during a disk bottleneck.
+
+### 5. **Slow Database Performance**:
+   - **Delayed database queries**: Queries take a long time to return results due to slow disk I/O, especially on databases using spinning disks or slow SSDs for storage.
+   - **Increased latency in transaction processing**: Applications relying on databases may experience high transaction latency, indicating the database is waiting on disk access.
+
+### 6. **High I/O Load on Monitoring Tools**:
+   - **High `await` and `svctm` times**: Tools like `iostat` and `sar` can show high average wait times (`await`) and service times (`svctm`), indicating that disk operations are taking longer to complete.
+   - **Queue size buildup**: An increasing queue size (`avgqu-sz` in `iostat`) suggests that disk requests are stacking up because the disk can’t keep up with the demand.
+
+### 7. **Increased CPU I/O Wait Time**:
+   - **High CPU I/O wait time**: The CPU spends significant time in an "I/O wait" state, visible in tools like `top` or `vmstat`. This indicates the CPU is idle, waiting for the disk to complete operations.
+   - **Low CPU usage despite slow performance**: You may notice low CPU usage, even though the system is slow, because the CPU is frequently waiting for disk operations to finish.
+
+### 8. **High Latency on Disk Operations**:
+   - **Slow response times**: High latency in disk read and write operations, which can be monitored using tools like `ioping` or `fio`, signals that the disk is struggling to meet the demand.
+   - **Excessive time for I/O-bound tasks**: Tasks like copying large files or running backup jobs take much longer than expected.
+
+### 9. **Unresponsiveness During Disk-Intensive Tasks**:
+   - **Application timeouts**: Applications might time out when trying to access the disk for large reads/writes.
+   - **System becomes unresponsive**: The entire system may become unresponsive or exhibit noticeable slowdowns when performing disk-heavy tasks like backups, indexing, or compiling large projects.
+
+### 10. **Error Messages and Logs**:
+   - **Disk-related error logs**: Disk bottlenecks might cause errors or warnings in system logs, such as timeouts or delays in disk operations (visible in `/var/log/messages`, `dmesg`, or journal logs).
+   - **Frequent I/O errors**: Frequent I/O errors or retries in log files may indicate that the disk is under strain or approaching failure.
+
+### 11. **Poor Virtual Machine or Container Performance**:
+   - **Virtual machines (VMs) slow down**: VMs may experience degraded performance if they share the same storage, especially if one or more VMs are I/O heavy.
+   - **Containers experience delays**: Similarly, containers relying on disk operations might exhibit slow performance, particularly when using shared volumes or slow disk storage.
+
+### 12. **Slow Backup and Restore Operations**:
+   - **Backup jobs take longer**: If backups or restores take significantly longer than usual, it might indicate the disk is overwhelmed by the number of I/O requests.
 
 </details>
 
@@ -3423,9 +3707,81 @@ To be completed.
 </details>
 
 <details>
-<summary><b>You have a LAMP stack with Nginx as a reverse proxy. Going to the site served by this web server results in a 500 Internal Server Error. List the possible causes for this issue. ***</b></summary><br>
+<summary><b>You have a LAMP stack with Nginx as a reverse proxy. Going to the site served by this web server results in a 500 Internal Server Error. List the possible causes for this issue.</b></summary><br>
 
-To be completed.
+### 1. **Nginx Configuration Issues**:
+   - **Improper reverse proxy configuration**:
+     - The proxy settings in the Nginx configuration might be incorrect. For example, issues with the `proxy_pass` directive or missing upstream server definitions.
+   - **Incorrect permissions**:
+     - Nginx may not have proper permissions to access certain files, such as the Unix socket used by PHP-FPM.
+   - **Proxy buffer size issues**:
+     - If the responses from Apache or PHP are too large, and the Nginx proxy buffers are too small, you could encounter a 500 error. Adjusting `proxy_buffer_size`, `proxy_buffers`, and `proxy_busy_buffers_size` may help.
+
+### 2. **Apache or PHP Configuration Issues**:
+   - **Apache misconfiguration**:
+     - Issues with the virtual host configuration or `.htaccess` files can cause Apache to respond with a 500 error. Check for syntax errors in the configuration.
+   - **PHP-FPM not working**:
+     - If PHP-FPM is used to handle PHP requests and isn’t running or misconfigured, Nginx will return a 500 error when it can’t forward requests properly.
+   - **Incorrect permissions for PHP files**:
+     - If PHP files are not readable or executable by Apache or PHP-FPM, it can result in a 500 error. This can happen due to incorrect ownership or file permissions.
+   - **Memory or execution time limits**:
+     - The `php.ini` file may have restrictive memory (`memory_limit`) or execution time (`max_execution_time`) settings, causing scripts to fail.
+
+### 3. **PHP Application Errors**:
+   - **Syntax or fatal errors in the PHP code**:
+     - A 500 error can result from unhandled exceptions, syntax errors, or PHP fatal errors that crash the application.
+   - **Missing PHP modules**:
+     - If the application requires specific PHP modules that are not installed or enabled (e.g., `mysqli`, `pdo_mysql`), it can cause a 500 error.
+   - **Incorrect database credentials**:
+     - If the PHP application is unable to connect to the database due to incorrect MySQL credentials or a missing database, it might return a 500 error.
+
+### 4. **Database Issues**:
+   - **MySQL/MariaDB service not running**:
+     - If the MySQL/MariaDB service is down, the application will fail to retrieve data, potentially causing a 500 error.
+   - **Database connection issues**:
+     - Network issues or improper configuration of MySQL (e.g., bind-address issues) might prevent PHP from connecting to the database, resulting in a 500 error.
+
+### 5. **Permission Issues**:
+   - **File and directory permissions**:
+     - The files and directories being served must have the correct permissions. For example, files should typically have `644` permissions, and directories should have `755`. Incorrect permissions can prevent execution or access.
+   - **SELinux issues** (if applicable):
+     - If SELinux is enabled, it may block access to certain resources unless the appropriate contexts are set. A 500 error could occur if SELinux is blocking access to necessary files.
+
+### 6. **Log Files and Error Reporting**:
+   - **Check Nginx logs**:
+     - Nginx logs (usually in `/var/log/nginx/error.log`) can provide insights into proxy errors, bad gateway issues, or permission problems.
+   - **Check Apache logs**:
+     - Look for errors in the Apache logs (`/var/log/httpd/error_log` or `/var/log/apache2/error.log` depending on the system) that might indicate script failures or configuration issues.
+   - **PHP error logging**:
+     - PHP errors may not be visible unless logging is enabled. Ensure `display_errors` is off and `log_errors` is on in `php.ini`, and check the PHP error log (typically `/var/log/php-fpm/error.log` or similar).
+   - **MySQL logs**:
+     - If database issues are suspected, check the MySQL error logs for any service crashes or connection issues.
+
+### 7. **Resource Limitations**:
+   - **Memory exhaustion**:
+     - If your server is running out of memory (RAM), processes might be killed (especially PHP or MySQL), resulting in a 500 error. Check system logs (`dmesg` or `/var/log/messages`) for any memory-related issues.
+   - **Process limits**:
+     - Exceeding process limits (e.g., `max_children` in PHP-FPM) can result in the server being unable to process requests, causing a 500 error.
+   - **Disk space exhaustion**:
+     - If the disk is full, PHP may not be able to write sessions, logs, or other temporary data, leading to a 500 error.
+
+### 8. **Misbehaving Plugins or Extensions**:
+   - **Web application plugins**:
+     - For CMS platforms like WordPress, Joomla, or Drupal, a misbehaving plugin or extension can crash the application and result in a 500 error.
+   - **Application configuration changes**:
+     - Recent changes to the application’s configuration (such as changes to a `.htaccess` file or PHP settings) may lead to a misconfiguration that causes a 500 error.
+
+### 9. **SSL/TLS Misconfigurations**:
+   - **SSL certificate issues**:
+     - If the site uses HTTPS, issues with the SSL certificate, including expired or invalid certificates, can cause Nginx to fail in its role as a reverse proxy and return a 500 error.
+   - **Misconfigured SSL settings in Nginx**:
+     - Incorrect SSL settings, such as outdated ciphers or protocols, can cause Nginx to fail to establish a secure connection, resulting in a 500 error.
+
+### 10. **Miscommunication Between Nginx and Apache**:
+   - **Incorrect FastCGI settings**:
+     - If Nginx is using FastCGI to communicate with Apache or PHP-FPM, misconfigurations in the FastCGI parameters (e.g., incorrect `fastcgi_param` settings) could cause data transmission issues.
+   - **Timeouts**:
+     - Nginx and Apache might be timing out while processing requests. Check both Nginx and Apache timeout settings (e.g., `proxy_read_timeout` in Nginx or `Timeout` in Apache).
 
 </details>
 
@@ -3530,28 +3886,79 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>A client of the company you work at reports their server has stopped receiving data from your server. Go through the steps of troubleshooting the issue both on your end and your communications with them. ***</b></summary><br>
+<summary><b>A client of the company you work at reports their server has stopped receiving data from your server. Go through the steps of troubleshooting the issue both on your end and your communications with them.</b></summary><br>
 
-To be completed.
+### 1. **Gather Information from the Client**
+   - **Initial Communication**:
+     - **Ask the client** for details: When did the issue start? What kind of data is not being received (specific service, API, etc.)? Are there any error messages or logs that indicate the failure?
+     - **Determine any changes**: Ask if they have recently changed firewall rules, network configuration, or updated software (on either the server or network layer).
+     - **Get context**: Determine if this is an intermittent issue or a complete failure, and whether the failure is only with your server or across multiple services.
+
+### 2. **Verify Connectivity and Status on Your End**
+   - **Check server health**:
+     - Ensure your server is running normally and that the service responsible for sending the data is active (e.g., database, API server, or file transfer service).
+     - Check for any recent service or network configuration changes that could affect outbound data transmission.
+   - **Network/Firewall checks**:
+     - Review firewall rules and security groups to ensure that the necessary ports for communication with the client's server are open (e.g., port 80 for HTTP, 443 for HTTPS, or any other relevant protocol).
+     - If your infrastructure uses a load balancer, ensure it's forwarding traffic to the correct backend servers and that no misconfigurations exist.
+   - **Logs inspection**:
+     - Look at your server logs for any failed data transfers or connection attempts. This could provide insight into whether your server is attempting to send data and encountering failures.
+     - Check the logs of the relevant service (e.g., web server, API service, or data processing system) to see if there are errors during the data transmission.
+   - **Data queues and buffers**:
+     - If you're using a message queue or batch system, check whether data has accumulated in queues or is stuck in transit.
+     - Investigate if there are network timeouts or message drop issues.
+
+### 3. **Perform Connectivity Tests**
+   - **Ping test**: Try pinging the client's server from your server to verify basic connectivity (if ICMP is allowed).
+   - **Traceroute**: Run a traceroute (or `mtr`) from your server to their server to diagnose network issues, like routing problems or latency spikes.
+   - **Port tests**: Use `telnet` or `nc` (netcat) to verify that you can reach the relevant service port on the client’s server (e.g., `telnet client-server 80` to check HTTP).
+   - **Test data transmission**:
+     - Send a test request (e.g., using `curl` or `wget`) to their endpoint and inspect the response. This will show whether the server is reachable and how it responds.
+     - If data is transferred via an API, manually call the API with the expected payload and verify the result.
+
+### 4. **Communicate with the Client Throughout**
+   - **Initial response**:
+     - Let the client know you are investigating the issue and outline the steps you are taking.
+     - Ask for specific logs or monitoring data from their side that could give more details (e.g., HTTP logs, connection errors, or security event logs).
+   - **Share findings**:
+     - If you identify issues on your end, communicate them and provide an estimated resolution time.
+     - If no issues are found on your side, let them know what tests you’ve conducted and share the results (e.g., ping success, traceroute path).
+   - **Request client-side checks**:
+     - Ask the client to verify the health of their server, including whether their services are running correctly and whether they can reach your server.
+     - Suggest they perform similar tests: ping, traceroute, and port checks from their server to your server. This will help identify if the issue lies within their network or your connection.
+     - If they use firewalls or security appliances, ask them to confirm that traffic from your IP address is not being blocked.
+   - **Suggest a temporary bypass**:
+     - If possible, ask the client to disable any recent firewall rules or security features temporarily to rule out misconfigurations.
+
+### 5. **Investigate External Factors**
+   - **DNS Issues**: Check whether the DNS name used to connect to the client’s server is resolving correctly. Ask the client if they’ve made any DNS changes recently.
+   - **ISP/Network provider issues**: If connectivity seems fine but data still isn’t flowing, investigate whether an issue exists with either your ISP or the client’s ISP, especially if routing paths or latency are problematic.
+
+### 6. **Escalation and Collaboration**
+   - **Involve Network and Security Teams**: If the issue appears network-related, escalate it to your network team or security team to check for deeper routing or firewall issues (both on your side and theirs).
+   - **Set up a conference call**: If needed, set up a real-time troubleshooting session with the client’s technical team. This allows both sides to run tests in parallel and exchange findings quickly.
+
+### 7. **Monitor and Confirm Resolution**
+   - **Test again**: After making any changes, send test data from your server to the client’s server and confirm successful transmission.
+   - **Ask for confirmation**: Request the client to confirm that they are now receiving the data and that everything is working as expected.
+   - **Monitor for stability**: Keep an eye on logs and monitoring systems to ensure the issue is fully resolved and doesn’t reoccur.
 
 </details>
 
 <details>
-<summary><b>What is SNI SSL and in which cases it is useful? ***</b></summary><br>
+<summary><b>What is SNI SSL and in which cases it is useful?</b></summary><br>
 
-To be completed.
+SNI (Server Name Indication) is an extension to the SSL/TLS protocol that allows a client to specify the hostname it is trying to connect to during the SSL handshake. This enables the server to present the correct SSL certificate based on the requested hostname, even when multiple domain names are hosted on the same IP address.
 
-</details>
+### When SNI SSL is useful:
 
-<details>
-<summary><b>In the context of mail servers, is :fail: or :blackhole: better? ***</b></summary><br>
+1. **Multiple SSL certificates on the same IP address**: SNI allows hosting multiple SSL-enabled websites on a single IP address. Without SNI, each site would need a unique IP address to present the correct SSL certificate.
 
-To be completed.
+2. **Shared hosting environments**: For providers hosting numerous websites on the same server, SNI allows serving multiple HTTPS sites from the same server, making it cost-effective and scalable without needing separate IP addresses.
 
-Useful resources:
+3. **Cloud and CDN services**: SNI enables cloud and content delivery services to handle multiple secure domains without requiring multiple IP addresses or additional configuration, especially when traffic routing to different backend services.
 
-- [Why you should use :fail:](https://www.configserver.com/free/fail.html)
-- [Should I let email bounce or send it to a blackhole?](https://serverfault.com/questions/607568/should-i-let-email-bounce-or-send-it-to-a-blackhole)
+4. **Virtual hosting**: In virtual hosting environments (where one server hosts multiple domains), SNI is essential for serving different SSL certificates for different domains over HTTPS on the same IP address.
 
 </details>
 
@@ -3593,15 +4000,6 @@ g) <b>Application Layer (Layer 7)</b>: This is the last layer of the OSI Referen
 
 </details>
 
-#### Devops Questions
-
-<details>
-<summary><b>In what situations is Docker and Kubernetes viable for production? When are they not the proper solutions for production?</b></summary><br>
-
-To be completed.
-
-</details>
-
 #### Cybersecurity Questions
 
 <details>
@@ -3614,13 +4012,6 @@ The Spectre attack works by tricking the processor's branch predictor into specu
 Useful resources:
 
 - [Spectre (security vulnerability)](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability))
-
-</details>
-
-<details>
-<summary><b>How would you break into a system? How would you prevent these attacks? ***</b></summary><br>
-
-To be completed.
 
 </details>
 
