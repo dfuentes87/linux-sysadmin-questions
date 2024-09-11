@@ -273,7 +273,6 @@ Useful resources:
 
 - [Why is it bad to log in as root? (original)](https://askubuntu.com/questions/16178/why-is-it-bad-to-log-in-as-root)
 - [What's wrong with always being root?](https://serverfault.com/questions/57962/whats-wrong-with-always-being-root)
-- [Why you should avoid running applications as root](https://bencane.com/2012/02/20/why-you-should-avoid-running-applications-as-root/)
 
 </details>
 
@@ -288,7 +287,6 @@ Useful resources:
 Useful resources:
 
 - [How do I Find Out Linux CPU Utilization?](https://www.cyberciti.biz/tips/how-do-i-find-out-linux-cpu-utilization.html)
-- [16 Linux server monitoring commands you really need to know](https://www.hpe.com/us/en/insights/articles/16-linux-server-monitoring-commands-you-really-need-to-know-1703.html)
 
 </details>
 
@@ -313,7 +311,6 @@ Some interpretations:
 Useful resources:
 
 - [Linux Load Averages: Solving the Mystery (original)](http://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html)
-- [Linux load average - the definitive summary](http://blog.angulosolido.pt/2015/04/linux-load-average-definitive-summary.html)
 - [How CPU load averages work (and using them to triage webserver performance!)](https://jvns.ca/blog/2016/02/07/cpu-load-averages/)
 
 </details>
@@ -625,7 +622,7 @@ Useful resources:
 
 Useful resources:
 
-- [5 Reasons to Rackmount Your PC](https://www.racksolutions.com/news/custom-projects/5-reasons-to-rackmount-pc/)
+- [5 Reasons to Rackmount Your PC](https://www.racksolutions.com/news/blog/5-reasons-to-rackmount-pc/)
 
 </details>
 
@@ -698,10 +695,6 @@ Proxy servers can be used for several purposes, including:
 
 Using the commands `netstat -nr`, `route -n` or `ip route show` we can see the default route and routing tables.
 
-Useful resources:
-
-- [How to check routes (routing table) in linux](https://howto.lintel.in/how-to-check-routes-routing-table-in-linux/)
-
 </details>
 
 <details>
@@ -725,7 +718,7 @@ To troubleshoot communication problems between servers, it is better to ideally 
 
 1. **Application Layer**: are the services up and running on both servers? Are they correctly configured (e.g. bind the correct IP and correct port)? Do application and system logs show meaningful errors?
 
-2. **Transport Layer**: are the ports used by the application open (try telnet!)? Is it possible to ping the server?
+2. **Transport Layer**: are the ports used by the application open? Is it possible to ping the server?
 
 3. **Network Layer**: is there a firewall on the network or on the OS correctly configured? Is the IP stack correctly configured (IP, routes, dns, etc.)? Are switches and routers working (check the ARP table!)?
 
@@ -743,7 +736,7 @@ Examples to a resolve an IP address from a domain name:
 host domain.com 8.8.8.8
 
 # with dig command:
-dig @9.9.9.9 google.com
+dig @1.1.1.1 google.com
 
 # with nslookup command:
 nslookup domain.com 8.8.8.8
@@ -769,12 +762,9 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>How do you test port connectivity with <code>telnet</code> or <code>nc</code>?</b></summary><br>
+<summary><b>How do you test port connectivity with <code>nc</code>?</b></summary><br>
 
 ```bash
-# with telnet command:
-telnet code42.example.com 5432
-
 # with nc (netcat) command:
 nc -vz code42.example.com 5432
 ```
@@ -1686,9 +1676,52 @@ With REPLACE, the operation involves both a DELETE (if there's a conflict) and a
 </details>
 
 <details>
-<summary><b>How do you make a server or application high availability? ***</b></summary><br>
+<summary><b>How do you make a server or application high availability?</b></summary><br>
 
-To be completed.
+To make a server or application **highly available**, the goal is to minimize downtime and ensure the system remains operational, even in the event of failures. High availability (HA) is achieved through redundancy, failover mechanisms, load balancing, and eliminating single points of failure. Here are the key steps:
+
+### 1. **Redundancy**
+   - **Multiple Servers/Instances**: Deploy multiple instances of your application or service across different servers or environments. If one server fails, another can continue serving requests.
+   - **Active-Active vs Active-Passive**:
+     - **Active-Active**: All instances are actively serving traffic simultaneously.
+     - **Active-Passive**: One instance is active, while another is on standby and takes over in case of failure.
+
+### 2. **Load Balancing**
+   - **Distribute Traffic**: Use a load balancer (e.g., **Nginx**, **HAProxy**, **AWS ELB**) to distribute incoming requests across multiple servers. This ensures no single server is overwhelmed, and traffic is seamlessly redirected if a server fails.
+   - **Health Checks**: Configure load balancers to perform health checks on backend servers. If a server becomes unhealthy, it is automatically removed from the pool until it recovers.
+
+### 3. **Failover Mechanisms**
+   - **Automatic Failover**: Implement failover mechanisms that detect when an instance or service goes down and automatically shift traffic to the remaining healthy servers.
+   - **DNS Failover**: Use DNS with short TTLs and failover services (like **Route 53** or **Cloudflare**) to redirect traffic to backup instances in case of failure.
+   - **Virtual IP (VIP)**: In some HA setups, use a shared virtual IP address that moves between servers in an active-passive configuration, so clients always connect to a single IP, regardless of which server is active.
+
+### 4. **Clustering**
+   - **Database Clustering**: Use database clusters (e.g., **MySQL Galera Cluster**, **PostgreSQL Streaming Replication**) to replicate data across multiple database nodes, ensuring continuous availability even if one node fails.
+   - **Application Clustering**: Applications like web servers and middleware can be clustered for HA (e.g., **Apache HTTPD with mod_cluster**, **Tomcat clustering**).
+
+### 5. **Data Replication**
+   - **File/Data Replication**: Ensure that critical data is replicated across servers or storage systems, so no single point of failure can result in data loss.
+   - **Distributed File Systems**: Use distributed or replicated file systems (e.g., **GlusterFS**, **Ceph**, **NFS**) to ensure file availability across multiple nodes.
+
+### 6. **Eliminate Single Points of Failure**
+   - Ensure that every part of your architecture, including networking (switches, routers), storage (disks, SANs), and servers, has redundancy.
+   - Avoid reliance on single components like a single server, database, or load balancer.
+
+### 7. **Geographic Redundancy**
+   - **Multi-Region Deployment**: Deploy services across multiple geographic regions or data centers. In case of a complete failure in one region (e.g., natural disaster, power outage), the other regions can continue serving traffic.
+   - **Global Load Balancing**: Use global load balancing services that route traffic to the nearest available region.
+
+### 8. **Monitoring and Alerts**
+   - **Real-time Monitoring**: Implement continuous monitoring of servers, applications, and services to detect failures or performance degradation (e.g., using **Prometheus**, **Nagios**, or cloud-native monitoring tools).
+   - **Alerting**: Set up alerts for critical incidents to enable quick intervention by operations teams.
+
+### 9. **Backup and Recovery**
+   - Regularly back up critical data and configurations.
+   - Ensure **automated recovery procedures** for systems or databases to restore service quickly after a failure.
+
+### 10. **Automated Scaling**
+   - **Horizontal Scaling**: Set up automatic scaling to add or remove instances based on demand (e.g., using **AWS Auto Scaling**, **Kubernetes Horizontal Pod Autoscaler**).
+   - **Auto-restart and Self-healing**: Use container orchestrators like **Kubernetes** to automatically restart failed application instances or self-heal unhealthy pods.
 
 </details>
 
@@ -3460,9 +3493,19 @@ Technical documentation serves as a valuable resource for users, developers, sys
 </details>
 
 <details>
-<summary><b>How would you remotely provision a blank server in a datacenter to be a LAMP stack web server with predefined users and configurations? Assume all datacenter hardware has been setup and networking side of things is also ready (e.g. VLAN tag). ***</b></summary><br>
+<summary><b>How would you remotely provision a blank server in a datacenter to be a LAMP stack web server with predefined users and configurations? Assume all datacenter hardware has been setup and networking side of things is also ready (e.g. VLAN tag).</b></summary><br>
 
-To be completed.
+1. **Access the Server**: Use the datacenter’s out-of-band management (e.g., IPMI, iLO) to access the server remotely and boot it using a network boot (PXE) or virtual media.
+
+2. **Install the OS**: Perform an automated OS installation using a method like **Kickstart** (for RHEL/AlmaLinux) or **Preseed** (for Debian/Ubuntu) to ensure the OS is installed with predefined configurations.
+
+3. **Automate Configuration**: After the OS installation, use a configuration management tool like **Ansible**, **Puppet**, or **Chef** to install the LAMP stack (Apache, MySQL, PHP), create predefined users, and configure necessary services like virtual hosts, databases, and firewall rules.
+
+4. **Set Up Security**: Secure the server by enabling **SSH key authentication**, configuring the **firewall** (e.g., allowing only HTTP, HTTPS, and SSH), and optionally configuring **SELinux** and installing tools like **fail2ban**.
+
+5. **Automate Backups and Monitoring**: Set up automated backups for the server (e.g., using `rsnapshot` or a similar tool) and install monitoring tools (e.g., **Nagios**, **Zabbix**, or **Prometheus**) to track system performance and availability.
+
+6. **Document the Process**: Maintain documentation of the entire setup process for future maintenance and scalability, including backup policies, firewall rules, and configurations applied.
 
 </details>
 
@@ -3690,7 +3733,7 @@ Useful resources:
 
 ### 1. **Access the System in Rescue Mode or with a Live CD/USB**
    - **Boot into Rescue Mode**:
-     - If your system uses a Linux distribution that supports rescue mode (like CentOS/RHEL), boot into rescue mode from the installation media.
+     - If your system uses a Linux distribution that supports rescue mode (like AlmaLinux/RHEL), boot into rescue mode from the installation media.
      - During boot, select the appropriate recovery/rescue option from the GRUB menu.
    - **Use a Live CD/USB**:
      - If rescue mode isn’t available, use a Linux live CD/USB to boot the system. This gives you access to the filesystem so you can troubleshoot.
@@ -3736,17 +3779,13 @@ Useful resources:
      gzip /var/log/*.log    # Compress logs to save space
      ```
    - **Clear package cache**:
-     - For RPM-based systems (CentOS/RHEL/Fedora):
+     - For RPM-based systems (AlmaLinux/RHEL/Fedora):
      ```bash
      dnf clean all    # or yum clean all for older systems
      ```
      - For APT-based systems (Debian/Ubuntu):
      ```bash
      apt-get clean
-     ```
-   - **Remove unnecessary files from `/tmp`**:
-     ```bash
-     rm -rf /tmp/*
      ```
    - **Remove orphaned packages** (optional):
      - Check for orphaned or unnecessary packages and remove them to free space.
@@ -3759,7 +3798,7 @@ Useful resources:
    - On systems with a separate `/boot` partition, it can fill up if old kernels aren’t cleaned up. You can list installed kernels and remove old ones:
      - List kernels:
      ```bash
-     rpm -q kernel  # CentOS/RHEL
+     rpm -q kernel  # RHEL/AlmaLinux
      dpkg --list | grep linux-image  # Debian/Ubuntu
      ```
      - Remove old kernels, keeping the current and one or two previous versions:
@@ -4317,8 +4356,8 @@ Useful resources:
 
 ### 3. **Perform Connectivity Tests**
    - **Ping test**: Try pinging the client's server from your server to verify basic connectivity (if ICMP is allowed).
-   - **Traceroute**: Run a traceroute (or `mtr`) from your server to their server to diagnose network issues, like routing problems or latency spikes.
-   - **Port tests**: Use `telnet` or `nc` (netcat) to verify that you can reach the relevant service port on the client’s server (e.g., `telnet client-server 80` to check HTTP).
+   - **Traceroute**: Run a traceroute from your server to their server to diagnose network issues, like routing problems or latency spikes.
+   - **Port tests**: Use `nc` (netcat) to verify that you can reach the relevant service port on the client’s server.
    - **Test data transmission**:
      - Send a test request (e.g., using `curl` or `wget`) to their endpoint and inspect the response. This will show whether the server is reachable and how it responds.
      - If data is transferred via an API, manually call the API with the expected payload and verify the result.
@@ -4588,9 +4627,22 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>You have a lot of sockets hanging in <code>TIME_WAIT</code>. Your http service behind proxy serve a lot of small http requests. How to check and reduce <code>TIME_WAIT</code> sockets? ***</b></summary><br>
+<summary><b>You have a lot of sockets hanging in <code>TIME_WAIT</code>. Your http service is behind a proxy and serves a lot of small http requests. How to check and reduce <code>TIME_WAIT</code> sockets?</b></summary><br>
 
-To be completed.
+To check and reduce the number of `TIME_WAIT` sockets on a server handling many small HTTP requests behind a proxy:
+
+### Check `TIME_WAIT` Sockets:
+- Use tools like `ss` or `netstat` to view the number of sockets in `TIME_WAIT`.
+- Get detailed information to diagnose the connections causing `TIME_WAIT`.
+
+### Reduce `TIME_WAIT` Sockets:
+1. **Enable TCP socket reuse**: Allow the system to reuse `TIME_WAIT` sockets for new connections when safe.
+2. **Lower `TIME_WAIT` duration**: Adjust the timeout value for `TIME_WAIT` to shorten the time sockets remain in this state.
+3. **Increase available ports**: Expand the range of ephemeral ports to reduce port exhaustion.
+4. **Use Keep-Alive connections**: Enable keep-alive in your web server or proxy to reuse connections and reduce the creation of new ones.
+5. **Tune proxy settings**: Adjust connection handling settings in the proxy to minimize socket overhead.
+
+After applying these settings, monitor the system to ensure the changes effectively reduce `TIME_WAIT` sockets without impacting service. Make these settings persistent by adding them to your system configuration.
 
 Useful resources:
 
