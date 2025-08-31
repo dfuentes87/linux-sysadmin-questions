@@ -120,15 +120,24 @@ Useful resources:
 <details>
 <summary><b>In SQL, what is a Primary key? What implicit constraint does it have?</b></summary>
 
-A primary key is a combination of fields which uniquely specify a row. A Unique key constraint uniquely identified each record in the database. This provides uniqueness for the column or set of columns. This is a special kind of unique key, and it has implicit NOT NULL constraint. It means, Primary key values cannot be NULL.
+A **primary key** is one or more columns that uniquely identify each row in a table. There can be only **one primary key constraint per table**, but it may be **composite** (multiple columns).
+
+* Implicit constraints: **UNIQUE** across the key columns and **NOT NULL** on each key column. This is stricter than a `UNIQUE` constraint alone because `UNIQUE` permits a single `NULL` per column in many RDBMS, while a primary key does not allow `NULL` at all.
+* Purpose: stable identity for joins, indexing, and referential integrity (foreign keys reference it).
+* Practical notes: choose narrow, stable keys; avoid business fields that can change; surrogate keys (e.g., integer/bigint) are common when natural keys are wide or mutable.
 
 </details>
 
 <details>
 <summary><b>What is BASH?</b></summary>
 
-A command-line interface for interacting with the operating system. It allows users to execute commands, manage files, and perform a variety of other tasks including scripting.
-It is the default shell on most Linux distributions
+**Bash** is a POSIX-compatible command interpreter and scripting language used as the default shell on many Linux distributions.
+
+* Interactive use: job control, history, completion, aliases, prompts.
+* Scripting: variables, arrays, functions, arithmetic, conditionals, loops, and pipelines.
+* Portability: most POSIX shell syntax works in `/bin/sh`; Bash adds extensions (arrays, `[[ ]]`, brace expansion).
+* Robust scripts: `set -euo pipefail`, `IFS` control, quoting to avoid word-splitting and globbing, and explicit exit codes.
+* Automation: combine commands, parse text, and orchestrate tools; for complex tasks consider Python or Go when maintainability or performance matters.
 
 Useful resources:
 
@@ -193,85 +202,52 @@ You can use "LIMIT" which limits the number of rows returned:
 </details>
 
 <details>
-<summary><b>What is the advantage of executing a process in the background? How can you do that?</b></summary><br>
+<summary><b>What is the advantage of executing a process in the background? How can you do that?</b></summary>
 
-The advantage of executing processes in the background is that you can do any other task simultaneously. You can do this by adding the special character `&` at the end of the command.
+Running jobs in the **background** frees the terminal to keep working while long tasks run.
 
-Generally applications that take too long to execute and doesn't require user interaction are sent to background so that we can continue our work in terminal.
+* Start in background: append `&` (shell still owns the job).
+* Manage jobs: `jobs`, `fg %1`, `bg %1`.
+* Survive logout or SIGHUP: use `nohup cmd &` or `disown` an existing background job; for services, prefer a supervisor (systemd) instead of ad‑hoc backgrounding.
+* I/O caveats: background jobs still inherit the terminal by default; redirect stdout/stderr (`>out 2>&1`) to avoid blocking.
 
-For example if you want to download something in background, you can:
-
-```bash
-wget https://url-to-download.com/download.tar.gz &
-```
-
-When you run the above command you get the following output:
+**Example**
 
 ```bash
-[1] 2203
+long_task --opt A &   # returns a job id and PID
+nohup long_task &>/var/log/long_task.log &
 ```
-
-Here 1 is the serial number of job and 2203 is PID of the job.
-
-You can see the jobs running in background using the following command:
-
-```bash
-jobs
-```
-
-When you execute job in background it give you a PID of job, you can kill the job running in background using the following command:
-
-```bash
-kill PID
-```
-
-Replace the PID with the PID of the job. If you have only one job running you can bring it to foreground using:
-
-```bash
-fg
-```
-
-If you have multiple jobs running in background you can bring any job in foreground using:
-
-```bash
-fg %#
-```
-
-Replace the `#` with serial number of the job.
-
-Useful resources:
-
-* [How do I run a Unix process in the background?](https://kb.iu.edu/d/afnz)
-* [Job Control Commands](http://tldp.org/LDP/abs/html/x9644.html)
-* [What is/are the advantage(s) of running applications in background?](https://unix.stackexchange.com/questions/162186/what-is-are-the-advantages-of-running-applications-in-backgound)
 
 </details>
 
 <details>
-<summary><b>How can you reduce load time of a dynamic website?</b></summary><br>
+<summary><b>How can you reduce load time of a dynamic website?</b></summary>
 
-* website optimization
-* compressed files
-* Apache/Nginx tuning
-* server-side "caching" (Squid, Varnish, Redis)
-* external caching (e.g. Cloudflare)
+Think in layers and measure with a profiler and real‑user metrics.
+
+* **Front end**: HTTP compression, minify and bundle, lazy‑load assets, defer non‑critical JS, optimize images, use HTTP/2 or HTTP/3.
+* **Caching**: browser cache headers; CDN for static assets; reverse proxy cache (Varnish/Nginx) for cacheable pages; application‑level caches; database query caching where appropriate.
+* **Database**: proper indexing, avoid N+1 queries, connection pooling, tune slow queries, pagination, read replicas for scale.
+* **Server/runtime**: keep frameworks updated, enable opcode caches (PHP OPcache), JIT where applicable, tune thread/process pools.
+* **Network**: keep TLS fast (session resumption, OCSP stapling), colocate compute near users, reduce round trips.
+* **Observe**: define SLOs, track p95/p99 latency, use tracing to find the real bottleneck before optimizing.
 
 </details>
 
 <details>
-<summary><b>Is running processes as root a good or bad practice?</b></summary><br>
+<summary><b>Is running processes as root a good or bad practice?</b></summary>
 
-Running (everything) as root is bad practice because:
+Running everything as **root** is risky. Prefer **least privilege**.
 
-* Nothing prevents you from making a careless mistake. If you try to change the system in any potentially harmful way, you need to use sudo, which ensures a pause (while you're entering the password) to ensure that you aren't about to make a mistake.
-
-* Processes running as root have unrestricted access to the system's resources. It can make changes to anything and if
-the process is exploited or hacked, that 3rd party will have root by proxy.
+* Run services as dedicated users/groups; restrict file/dir ownership and permissions.
+* Drop privileges: use Linux capabilities (`cap_net_bind_service`), `AmbientCapabilities=` and `NoNewPrivileges=` in systemd units.
+* Containment: chroot, namespaces/containers, seccomp, SELinux/AppArmor.
+* Limit blast radius: network and FS sandboxes, read‑only roots, minimal images.
+* When root is required, isolate and audit: short‑lived privileged helpers, strict sudoers, logging, and MFA for admin access.
 
 Useful resources:
 
-* [Why is it bad to log in as root? (original)](https://askubuntu.com/questions/16178/why-is-it-bad-to-log-in-as-root)
-* [What's wrong with always being root?](https://serverfault.com/questions/57962/whats-wrong-with-always-being-root)
+* [Principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
 
 </details>
 
@@ -348,27 +324,20 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What is <code>grep</code> command? How do you match multiple strings in the same line?</b></summary><br>
+<summary><b>What is <code>grep</code> command? How do you match multiple strings in the same line?</b></summary>
 
-The `grep` utilities are a family of Unix tools, including `egrep` and `fgrep`.
+The `grep` family searches input for patterns and prints matching lines.
 
-`grep` searches file patterns. If you are looking for a specific pattern in the output of another command, `grep` highlights the relevant lines. Use this grep command for searching log files, specific processes, and more.
-
-For match multiple strings:
-
-```bash
-grep -E "string1|string2" filename
-```
-
-or
-
-```bash
-grep -e "string1" -e "string2" filename
-```
+* Basic usage: `grep PATTERN file`. Use `-n` for line numbers, `-i` case-insensitive, `-w` whole words.
+* Regex flavors: `grep` = basic regex, `egrep`/`grep -E` = extended regex (alternation `A|B`), `grep -F` = fixed strings (fast, no regex), `grep -P` = PCRE (if supported).
+* Multiple strings on the **same line**:
+  * Alternation (either one): `grep -E "foo|bar" file`.
+  * Require **both** on one line: `grep -E 'foo' file | grep -E 'bar'` or a single PCRE with lookaheads: `grep -P '(?=.*foo)(?=.*bar)' file`.
+* Multiple `-e` flags are equivalent to alternation: `grep -e foo -e bar file`.
 
 Useful resources:
 
-* [What is grep, and how do I use it? (original)](https://kb.iu.edu/d/afiy)
+* [grep manual](https://man7.org/linux/man-pages/man1/grep.1.html)
 
 </details>
 
@@ -585,13 +554,20 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What is an incremental backup?</b></summary><br>
+<summary><b>What is an incremental backup?</b></summary>
 
-An incremental backup is a type of backup that only copies files that have changed since the previous backup.
+An **incremental backup** copies only data changed **since the last backup of any type** (full or incremental).
+
+* Compare:
+  * **Full**: everything. Slowest to create, fastest to restore from a single point.
+  * **Differential**: changes since the **last full**. Grows until next full; restore needs full + latest differential.
+  * **Incremental**: changes since the **last backup**. Smallest daily size; restore needs full + **every** incremental up to target.
+* Trade‑offs: incrementals save time and bandwidth but lengthen restores and increase chain risk; many systems synthesize periodic fulls to cap chain length.
+* Validate: test restores regularly and track RPO/RTO targets.
 
 Useful resources:
 
-* [What Is Incremental Backup?](https://www.nakivo.com/blog/what-is-incremental-backup/)
+* [Backup types overview](https://en.wikipedia.org/wiki/Backup#Types)
 
 </details>
 
