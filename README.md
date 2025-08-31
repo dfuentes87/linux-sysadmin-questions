@@ -4784,9 +4784,7 @@ Useful resources:
 
 </details>
 
-<br>
-
-## <a name="extra-knowledge">Extra Knowledge</a>
+# <a name="extra-knowledge">Extra Knowledge</a>
 
 <details>
 <summary><b>Explain what is Event-Driven architecture and how it improves performance?</b></summary><br>
