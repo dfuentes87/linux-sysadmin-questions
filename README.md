@@ -71,7 +71,7 @@ When creating a pull request, please heed the following:
 
 ### :diamond_shape_with_a_dot_inside: <a name="junior-sysadmin">Junior Sysadmin</a>
 
-#### <span style="color:#2A6496;">System Questions</span>
+#### 🔹 System Questions
 
 <details>
 <summary><b>Give some examples of Unix or Linux distributions. Describe what makes them unique.</b></summary>
@@ -572,7 +572,7 @@ Useful resources:
 
 </details>
 
-#### 🔹 Network Questions
+### 🔹 Network Questions
 
 <details>
 <summary><b>Describe the steps for a successful DHCP handshake process.</b></summary><br>
@@ -936,7 +936,7 @@ A **CI pipeline** automates build, test, and integration steps so code changes a
 
 </details>
 
-#### <span style="color:#2A6496;">Cybersecurity Questions</span>
+#### 🔹 Cybersecurity Questions
 
 <details>
 <summary><b>What makes a password very strong?</b></summary><br>
@@ -1029,7 +1029,7 @@ The process of threat modeling typically involves several steps, including:
 
 ### :diamond_shape_with_a_dot_inside: <a name="proficient-sysadmin">Proficient Sysadmin</a>
 
-#### <span style="color:#2A6496;">System Questions</span>
+#### 🔹 System Questions
 
 <details>
 <summary><b>Explain briefly how Linux allows most of its software to be updated without needing to reboot? Is it possible to update the kernel without rebooting?</b></summary><br>
@@ -2793,7 +2793,7 @@ Some possible reasons and troubleshooting steps to resolve the issue are:
 
 </details>
 
-#### 🔹 Network Questions
+### 🔹 Network Questions
 
 <details>
 <summary><b>What is Boot to LAN?</b></summary><br>
@@ -3447,7 +3447,7 @@ It's worth noting the difference between Continuous Delivery and Continuous Depl
 
 </details>
 
-#### <span style="color:#2A6496;">Cybersecurity Questions</span>
+#### 🔹 Cybersecurity Questions
 
 <details>
 <summary><b>What are salted hashes?</b></summary><br>
@@ -3611,6 +3611,8 @@ Encryption, on the other hand, is a two-way process that transforms plain text i
 
 ### :diamond_shape_with_a_dot_inside: <a name="senior-sysadmin">Senior Sysadmin</a>
 
+#### 🔹 System Questions
+
 <details>
 <summary><b>In the context of computing, what is Split-Brain and why is it a problem?</b></summary><br>
 
@@ -3642,8 +3644,6 @@ Useful resources:
 * [What is Split-Horizon DNS?](https://splitdns.net/)
 
 </details>
-
-#### <span style="color:#2A6496;">System Questions</span>
 
 <details>
 <summary><b>What are some keep elements to keep in mind when writing good documentation?</b></summary><br>
@@ -4577,7 +4577,7 @@ Useful resources:
 
 </details>
 
-#### 🔹 Network Questions
+### 🔹 Network Questions
 
 <details>
 <summary><b>Is it better to set <code>-j REJECT</code> or <code>-j DROP</code> in iptables?</b></summary><br>
@@ -4760,7 +4760,7 @@ g) <b>Application Layer (Layer 7)</b>: This is the last layer of the OSI Referen
 
 </details>
 
-#### <span style="color:#2A6496;">Cybersecurity Questions</span>
+#### 🔹 Cybersecurity Questions
 
 <details>
 <summary><b>Explain briefly how the Spectre vulnerability works.</b></summary><br>
