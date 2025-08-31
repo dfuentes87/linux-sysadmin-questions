@@ -15,7 +15,7 @@
 <br>
 
 <p align="center">
-  <a href="https://github.com/dfuentes87/test-your-sysadmin-skills/pulls">
+  <a href="https://github.com/dfuentes87/linux-sysadmin-questions/pulls">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?longCache=true" alt="Pull Requests">
   </a>
   <a href="LICENSE.md">
@@ -33,7 +33,7 @@
 
 <br>
 
-:information_source: This project contains almost **200** questions and answers that can be used to test your general knowledge as a **Linux System Administrator**, or to ask someone interviewing for such a position.
+:information_source: This project contains more than **150** questions and answers that can be used to test your general knowledge as a **Linux System Administrator**, or to ask someone interviewing for such a position.
 
 These questions are not meant to be a list of arbitrary facts, such as port numbers that you'll maybe deal with once a year, situations or commands that are rarely encountered, or issues specific to a certain application. Instead, these are geared towards real world situations that are common and good to know in general, however not knowing all these do not mean you are not a good Linux SysAdmin.
 
