@@ -60,7 +60,7 @@ When creating a pull request, please heed the following:
 
 ## Table of Contents
 
-| <b>[General Knowledge](#general-knowledge)</b> ||
+| <b>General Knowledge</b> ||
 | :---         | :---         |
 | :small_orange_diamond: [Junior SysAdmin](#junior-sysadmin) | Reasonably simple questions based on basic knowledge. |
 | :small_orange_diamond: [Proficient SysAdmin](#proficient-sysadmin) | Mid-level questions that you will probably come across during your first 5 years. |
@@ -71,7 +71,7 @@ When creating a pull request, please heed the following:
 
 ### :diamond_shape_with_a_dot_inside: <a name="junior-sysadmin">Junior Sysadmin</a>
 
-#### System Questions
+#### <span style="color:#2A6496;">System Questions</span>
 
 <details>
 <summary><b>Give some examples of Unix or Linux distributions. Describe what makes them unique.</b></summary>
@@ -572,7 +572,7 @@ Useful resources:
 
 </details>
 
-#### Network Questions
+#### <span style="color:#2A6496;">Network Questions</span>
 
 <details>
 <summary><b>Describe the steps for a successful DHCP handshake process.</b></summary><br>
@@ -936,7 +936,7 @@ A **CI pipeline** automates build, test, and integration steps so code changes a
 
 </details>
 
-#### Cybersecurity Questions
+#### <span style="color:#2A6496;">Cybersecurity Questions</span>
 
 <details>
 <summary><b>What makes a password very strong?</b></summary><br>
@@ -1029,7 +1029,7 @@ The process of threat modeling typically involves several steps, including:
 
 ### :diamond_shape_with_a_dot_inside: <a name="proficient-sysadmin">Proficient Sysadmin</a>
 
-#### System Questions
+#### <span style="color:#2A6496;">System Questions</span>
 
 <details>
 <summary><b>Explain briefly how Linux allows most of its software to be updated without needing to reboot? Is it possible to update the kernel without rebooting?</b></summary><br>
@@ -2793,7 +2793,7 @@ Some possible reasons and troubleshooting steps to resolve the issue are:
 
 </details>
 
-#### Network Questions
+#### <span style="color:#2A6496;">Network Questions</span>
 
 <details>
 <summary><b>What is Boot to LAN?</b></summary><br>
@@ -3447,7 +3447,7 @@ It's worth noting the difference between Continuous Delivery and Continuous Depl
 
 </details>
 
-#### Cybersecurity Questions
+#### <span style="color:#2A6496;">Cybersecurity Questions</span>
 
 <details>
 <summary><b>What are salted hashes?</b></summary><br>
@@ -3643,7 +3643,7 @@ Useful resources:
 
 </details>
 
-#### System Questions
+#### <span style="color:#2A6496;">System Questions</span>
 
 <details>
 <summary><b>What are some keep elements to keep in mind when writing good documentation?</b></summary><br>
@@ -4577,7 +4577,7 @@ Useful resources:
 
 </details>
 
-#### Network Questions
+#### <span style="color:#2A6496;">Network Questions</span>
 
 <details>
 <summary><b>Is it better to set <code>-j REJECT</code> or <code>-j DROP</code> in iptables?</b></summary><br>
@@ -4760,7 +4760,7 @@ g) <b>Application Layer (Layer 7)</b>: This is the last layer of the OSI Referen
 
 </details>
 
-#### Cybersecurity Questions
+#### <span style="color:#2A6496;">Cybersecurity Questions</span>
 
 <details>
 <summary><b>Explain briefly how the Spectre vulnerability works.</b></summary><br>
@@ -5001,7 +5001,7 @@ Useful resources:
 * **Most modern operating systems** like Linux, Windows, and macOS, typically implement **two rings**:
   * **Ring 0**: Kernel mode, where the OS kernel and low-level drivers run.
   * **Ring 3**: User mode, where applications and services run.
-  
+
 ### Virtualization and Hypervisors
 
 * In virtualized environments, a **Ring -1** is sometimes used for the **hypervisor**, which controls virtual machines. This allows the hypervisor to manage multiple operating systems, each operating in its own Ring 0, without them having direct access to the actual hardware.
