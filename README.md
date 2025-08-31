@@ -60,12 +60,12 @@ If you would like to answer questions, or you found an error - fork the repo, ad
 
 When creating a pull request, please heed the following:
 
-- For new answers: try to give an objective, clear, and concise response, including an example if appropriate.
-- For changes to answers: explain why you believe the current answer is incorrect and a better response and/or solution. 
+* For new answers: try to give an objective, clear, and concise response, including an example if appropriate.
+* For changes to answers: explain why you believe the current answer is incorrect and a better response and/or solution.
 
 <br>
 
-***
+****
 
 <br>
 
@@ -77,7 +77,7 @@ When creating a pull request, please heed the following:
 | :small_orange_diamond: [Junior SysAdmin](#junior-sysadmin) | Reasonably simple questions based on basic knowledge. |
 | :small_orange_diamond: [Proficient SysAdmin](#proficient-sysadmin) | Mid-level questions that you will probably come across during your first 5 years. |
 | :small_orange_diamond: [Senior SysAdmin](#senior-sysadmin) | Advanced questions which may be open-ended, require actual experience to<br> fully understand, or are unique scenarios. |
-| <b>[Extra Knowledge](#extra-knowledge)</b> |
+| <b>[Extra Knowledge](#extra-knowledge)</b> ||
 
 <br>
 
@@ -90,21 +90,21 @@ When creating a pull request, please heed the following:
 <details>
 <summary><b>Give some examples of Unix or Linux distributions. Describe what makes them unique.</b></summary>
 
-- Red Hat Enterprise Linux
+* Red Hat Enterprise Linux
 
-- AlmaLinux
+* AlmaLinux
 
-- Debian
+* Debian
 
-- Ubuntu
+* Ubuntu
 
-- Arch
+* Arch
 
-- Kali
+* Kali
 
-- OpenBSD
+* OpenBSD
 
-**Arch Linux** offers a minimalist base system on which one can build a custom operating system. The beauty of it is that it has the Arch User Repository (AUR), which when combined with its official binary repositories allows it to probably have the largest repositories of any distribution. Its packaging process is also very simple, which means if one wants a package not in its official repositories or the AUR, it should be easy to make it for oneself.
+**AlmaLinux** is a free and open-source, community-driven enterprise Linux distribution. It is a downstream rebuild of Red Hat Enterprise Linux (RHEL), designed to be binary-compatible with it. AlmaLinux emerged as a replacement for CentOS after its shift to CentOS Stream. Its key strengths are long-term support, enterprise stability, and predictable release cycles.
 
 **Kali Linux** is a Debian-based Linux distribution aimed at advanced Penetration Testing and Security Auditing. Kali contains several hundred tools which are geared towards various information security tasks, such as Penetration Testing, Security research, Computer Forensics and Reverse Engineering.
 
@@ -112,8 +112,8 @@ When creating a pull request, please heed the following:
 
 Useful resources:
 
-- [List of Linux distributions](https://en.wikipedia.org/wiki/List_of_Linux_distributions)
-- [Distro Watch](https://distrowatch.com/)
+* [List of Linux distributions](https://en.wikipedia.org/wiki/List_of_Linux_distributions)
+* [Distro Watch](https://distrowatch.com/)
 
 </details>
 
@@ -127,21 +127,21 @@ A primary key is a combination of fields which uniquely specify a row. A Unique 
 <details>
 <summary><b>What is BASH?</b></summary>
 
-A command-line interface for interacting with the operating system. It allows users to execute commands, manage files, and perform a variety of other tasks including scripting. 
+A command-line interface for interacting with the operating system. It allows users to execute commands, manage files, and perform a variety of other tasks including scripting.
 It is the default shell on most Linux distributions
 
 Useful resources:
 
-- [Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells)
+* [Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells)
 
 </details>
 
 <details>
 <summary><b>How do you get help on the command line?</b></summary><br>
 
-- `man` [commandname] can be used to see a description of a command (ex.: `man less`, `man cat`)
+* `man` [commandname] can be used to see a description of a command (ex.: `man less`, `man cat`)
 
-- `-h` or `--help` some programs will implement printing instructions when passed this parameter (ex.: `python -h` and `python --help`)
+* `-h` or `--help` some programs will implement printing instructions when passed this parameter (ex.: `python -h` and `python --help`)
 
 </details>
 
@@ -154,32 +154,32 @@ In the order of output:
 -rwxrw-r--    1    root   root 2048    Jan 13 07:11 db.dump
 ```
 
-- file permissions,
-- number of links,
-- owner name,
-- owner group,
-- file size,
-- time of last modification,
-- file/directory name
+* file permissions,
+* number of links,
+* owner name,
+* owner group,
+* file size,
+* time of last modification,
+* file/directory name
 
 File permissions is displayed as following:
 
-- first character is `-` or `l` or `d`, `d` indicates a directory, a `-` represents a file, `l` is a symlink (or soft link) - special type of file
-- three sets of characters, three times, indicating permissions for owner, group and other:
-  - `r` = readable
-  - `w` = writable
-  - `x` = executable
+* first character is `-` or `l` or `d`, `d` indicates a directory, a `-` represents a file, `l` is a symlink (or soft link) - special type of file
+* three sets of characters, three times, indicating permissions for owner, group and other:
+  * `r` = readable
+  * `w` = writable
+  * `x` = executable
 
 In your example `-rwxrw-r--`, this means the line displayed is:
 
-- a regular file (displayed as `-`)
-- readable, writable and executable by owner (`rwx`)
-- readable, writable, but not executable by group (`rw-`)
-- readable but not writable or executable by other (`r--`)
+* a regular file (displayed as `-`)
+* readable, writable and executable by owner (`rwx`)
+* readable, writable, but not executable by group (`rw-`)
+* readable but not writable or executable by other (`r--`)
 
 Useful resources:
 
-- [What do the fields in ls -al output mean? (original)](https://unix.stackexchange.com/questions/103114/what-do-the-fields-in-ls-al-output-mean)
+* [What do the fields in ls -al output mean? (original)](https://unix.stackexchange.com/questions/103114/what-do-the-fields-in-ls-al-output-mean)
 
 </details>
 
@@ -241,20 +241,20 @@ Replace the `#` with serial number of the job.
 
 Useful resources:
 
-- [How do I run a Unix process in the background?](https://kb.iu.edu/d/afnz)
-- [Job Control Commands](http://tldp.org/LDP/abs/html/x9644.html)
-- [What is/are the advantage(s) of running applications in background?](https://unix.stackexchange.com/questions/162186/what-is-are-the-advantages-of-running-applications-in-backgound)
+* [How do I run a Unix process in the background?](https://kb.iu.edu/d/afnz)
+* [Job Control Commands](http://tldp.org/LDP/abs/html/x9644.html)
+* [What is/are the advantage(s) of running applications in background?](https://unix.stackexchange.com/questions/162186/what-is-are-the-advantages-of-running-applications-in-backgound)
 
 </details>
 
 <details>
 <summary><b>How can you reduce load time of a dynamic website?</b></summary><br>
 
-- website optimization
-- compressed files
-- Apache/Nginx tuning
-- server-side "caching" (Squid, Varnish, Redis)
-- external caching (e.g. Cloudflare)
+* website optimization
+* compressed files
+* Apache/Nginx tuning
+* server-side "caching" (Squid, Varnish, Redis)
+* external caching (e.g. Cloudflare)
 
 </details>
 
@@ -263,30 +263,29 @@ Useful resources:
 
 Running (everything) as root is bad practice because:
 
-- Nothing prevents you from making a careless mistake. If you try to change the system in any potentially harmful way, you need to use sudo, which ensures a pause (while you're entering the password) to ensure that you aren't about to make a mistake.
+* Nothing prevents you from making a careless mistake. If you try to change the system in any potentially harmful way, you need to use sudo, which ensures a pause (while you're entering the password) to ensure that you aren't about to make a mistake.
 
-- Processes running as root have unrestricted access to the system's resources. It can make changes to anything and if
+* Processes running as root have unrestricted access to the system's resources. It can make changes to anything and if
 the process is exploited or hacked, that 3rd party will have root by proxy.
-
 
 Useful resources:
 
-- [Why is it bad to log in as root? (original)](https://askubuntu.com/questions/16178/why-is-it-bad-to-log-in-as-root)
-- [What's wrong with always being root?](https://serverfault.com/questions/57962/whats-wrong-with-always-being-root)
+* [Why is it bad to log in as root? (original)](https://askubuntu.com/questions/16178/why-is-it-bad-to-log-in-as-root)
+* [What's wrong with always being root?](https://serverfault.com/questions/57962/whats-wrong-with-always-being-root)
 
 </details>
 
 <details>
 <summary><b>How can you check memory and CPU resource usage?</b></summary><br>
 
-- **top:** This command displays a real-time view of the system's processes, including their CPU usage and memory consumption. The output is updated every few seconds and can be sorted by various parameters, such as process ID, CPU usage, or memory usage.
-- **ps:** This command displays a snapshot of the current processes running on the system, along with their process ID (PID), CPU usage, and memory usage. The ps command can be combined with other Unix commands, such as grep, to filter the output and show only processes that meet certain criteria.
-- **vmstat:** This command displays system statistics, including CPU usage, memory usage, and I/O activity. The vmstat command provides a summary of system resource usage since the last reboot, as well as real-time updates on resource usage.
-- **free:** This command displays information about the system's memory usage, including the total amount of memory, the amount of memory used, and the amount of memory available. The free command can be used to check if the system is running low on memory and if any memory-intensive processes need to be optimized or terminated.
+* **top:** This command displays a real-time view of the system's processes, including their CPU usage and memory consumption. The output is updated every few seconds and can be sorted by various parameters, such as process ID, CPU usage, or memory usage.
+* **ps:** This command displays a snapshot of the current processes running on the system, along with their process ID (PID), CPU usage, and memory usage. The ps command can be combined with other Unix commands, such as grep, to filter the output and show only processes that meet certain criteria.
+* **vmstat:** This command displays system statistics, including CPU usage, memory usage, and I/O activity. The vmstat command provides a summary of system resource usage since the last reboot, as well as real-time updates on resource usage.
+* **free:** This command displays information about the system's memory usage, including the total amount of memory, the amount of memory used, and the amount of memory available. The free command can be used to check if the system is running low on memory and if any memory-intensive processes need to be optimized or terminated.
 
 Useful resources:
 
-- [How do I Find Out Linux CPU Utilization?](https://www.cyberciti.biz/tips/how-do-i-find-out-linux-cpu-utilization.html)
+* [How do I Find Out Linux CPU Utilization?](https://www.cyberciti.biz/tips/how-do-i-find-out-linux-cpu-utilization.html)
 
 </details>
 
@@ -303,15 +302,15 @@ It is meant to give you an idea of the state of the system, averaged over severa
 
 Some interpretations:
 
-- if the averages are 0.0, then your system is idle
-- if the 1-minute average is higher than the 5 or 15 minute averages, then load is increasing
-- if the 1-minute average is lower than the 5 or 15 minute averages, then load is decreasing
-- if they are higher than your CPU count, then you _might_ have a performance problem
+* if the averages are 0.0, then your system is idle
+* if the 1-minute average is higher than the 5 or 15 minute averages, then load is increasing
+* if the 1-minute average is lower than the 5 or 15 minute averages, then load is decreasing
+* if they are higher than your CPU count, then you _might_ have a performance problem
 
 Useful resources:
 
-- [Linux Load Averages: Solving the Mystery (original)](http://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html)
-- [How CPU load averages work (and using them to triage webserver performance!)](https://jvns.ca/blog/2016/02/07/cpu-load-averages/)
+* [Linux Load Averages: Solving the Mystery (original)](http://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html)
+* [How CPU load averages work (and using them to triage webserver performance!)](https://jvns.ca/blog/2016/02/07/cpu-load-averages/)
 
 </details>
 
@@ -330,21 +329,21 @@ For more info consult `man crypt`, `man shadow`, `man passwd`.
 
 Useful resources:
 
-- [Where is my password stored on Linux?](https://security.stackexchange.com/questions/37050/where-is-my-password-stored-on-linux)
-- [Where are the passwords of the users located in Linux?](https://www.cyberciti.biz/faq/where-are-the-passwords-of-the-users-located-in-linux/)
-- [Linux Password & Shadow File Formats](https://www.tldp.org/LDP/lame/LAME/linux-admin-made-easy/shadow-file-formats.html)
+* [Where is my password stored on Linux?](https://security.stackexchange.com/questions/37050/where-is-my-password-stored-on-linux)
+* [Where are the passwords of the users located in Linux?](https://www.cyberciti.biz/faq/where-are-the-passwords-of-the-users-located-in-linux/)
+* [Linux Password & Shadow File Formats](https://www.tldp.org/LDP/lame/LAME/linux-admin-made-easy/shadow-file-formats.html)
 
 </details>
 
 <details>
 <summary><b>You type <code>CTRL + C</code> but your script still running. How do you stop it?</b></summary><br>
 
-Use the kill command to terminate the script: First, find the process ID (PID) of the running script using the ps command. Once you have the PID, you can use the kill command to send a termination signal to the process. 
+Use the kill command to terminate the script: First, find the process ID (PID) of the running script using the ps command. Once you have the PID, you can use the kill command to send a termination signal to the process.
 
 Useful resources:
 
-- [How to kill a script running in terminal, without closing terminal (Ctrl + C doesn't work)? (original)](https://askubuntu.com/questions/520107/how-to-kill-a-script-running-in-terminal-without-closing-terminal-ctrl-c-doe)
-- [What's the difference between ^C and ^D for Unix/Mac OS X terminal?](https://superuser.com/questions/169051/whats-the-difference-between-c-and-d-for-unix-mac-os-x-terminal)
+* [How to kill a script running in terminal, without closing terminal (Ctrl + C doesn't work)? (original)](https://askubuntu.com/questions/520107/how-to-kill-a-script-running-in-terminal-without-closing-terminal-ctrl-c-doe)
+* [What's the difference between ^C and ^D for Unix/Mac OS X terminal?](https://superuser.com/questions/169051/whats-the-difference-between-c-and-d-for-unix-mac-os-x-terminal)
 
 </details>
 
@@ -369,37 +368,37 @@ grep -e "string1" -e "string2" filename
 
 Useful resources:
 
-- [What is grep, and how do I use it? (original)](https://kb.iu.edu/d/afiy)
+* [What is grep, and how do I use it? (original)](https://kb.iu.edu/d/afiy)
 
 </details>
 
 <details>
 <summary><b>Explain a few commands to read files without editing them.</b></summary><br>
 
-- `head`: to check the starting of a file.
-- `tail`: to check the ending of the file. It is the reverse of head command.
-- `cat`: used to view, create, concatenate the files.
-- `tac`: same as `cat` but the contents are shown starting from the bottom
-- `more`: used to display the text in the terminal window in pager form.
-- `less`: used to view the text in the backward direction and also provides single line movement.
+* `head`: to check the starting of a file.
+* `tail`: to check the ending of the file. It is the reverse of head command.
+* `cat`: used to view, create, concatenate the files.
+* `tac`: same as `cat` but the contents are shown starting from the bottom
+* `more`: used to display the text in the terminal window in pager form.
+* `less`: used to view the text in the backward direction and also provides single line movement.
 
 Useful resources:
 
-- [5 Commands to View the Content of a File in Linux Command Line](https://linuxhandbook.com/view-file-linux/)
+* [5 Commands to View the Content of a File in Linux Command Line](https://linuxhandbook.com/view-file-linux/)
 
 </details>
 
 <details>
 <summary><b>Explain the SIGHUP, SIGINT, SIGKILL, and SIGTERM signals.</b></summary><br>
 
-- **SIGHUP** - is sent to a process when its controlling terminal is closed. It was originally designed to notify the process of a serial line drop (a hangup). Many daemons will reload their configuration files and reopen their logfiles instead of exiting when receiving this signal.
-- **SIGINT** - is sent to a process by its controlling terminal when a user wishes to interrupt the process. This is typically initiated by pressing `Ctrl+C`, but on some systems, the "delete" character or "break" key can be used.
-- **SIGKILL** - is sent to a process to cause it to terminate immediately (kill). In contrast to **SIGTERM** and **SIGINT**, this signal cannot be caught or ignored, and the receiving process cannot perform any clean-up upon receiving this signal.
-- **SIGTERM** - is sent to a process to request its termination. Unlike the **SIGKILL** signal, it can be caught and interpreted or ignored by the process. This allows the process to perform nice termination releasing resources and saving state if appropriate. **SIGINT** is nearly identical to **SIGTERM**.
+* **SIGHUP** - is sent to a process when its controlling terminal is closed. It was originally designed to notify the process of a serial line drop (a hangup). Many daemons will reload their configuration files and reopen their logfiles instead of exiting when receiving this signal.
+* **SIGINT** - is sent to a process by its controlling terminal when a user wishes to interrupt the process. This is typically initiated by pressing `Ctrl+C`, but on some systems, the "delete" character or "break" key can be used.
+* **SIGKILL** - is sent to a process to cause it to terminate immediately (kill). In contrast to **SIGTERM** and **SIGINT**, this signal cannot be caught or ignored, and the receiving process cannot perform any clean-up upon receiving this signal.
+* **SIGTERM** - is sent to a process to request its termination. Unlike the **SIGKILL** signal, it can be caught and interpreted or ignored by the process. This allows the process to perform nice termination releasing resources and saving state if appropriate. **SIGINT** is nearly identical to **SIGTERM**.
 
 Useful resources:
 
-- [A list of signals and what they mean](https://www-uxsup.csx.cam.ac.uk/courses/moved.Building/signals.pdf)
+* [A list of signals and what they mean](https://www-uxsup.csx.cam.ac.uk/courses/moved.Building/signals.pdf)
 
 </details>
 
@@ -410,16 +409,16 @@ In Unix and Unix-like operating systems, `kill` is a command used to send a sign
 
 Useful resources:
 
-- [Mastering the "Kill" Command in Linux](https://www.maketecheasier.com/kill-command-in-linux/)
+* [Mastering the "Kill" Command in Linux](https://www.maketecheasier.com/kill-command-in-linux/)
 
 </details>
 
 <details>
 <summary><b>When would you want to use <code>-f</code> for <code>rm</code>?</b></summary><br>
 
-- Removing large numbers of files: If you are trying to delete a large number of files at once, using the -f option can save you time by skipping the confirmation prompt for each file.
-- Removing write-protected files: If you have a write-protected file that you need to delete, using the -f option can force its removal without changing its permissions.
-- Removing files owned by other users: If you have permission to delete a file, but it is owned by another user, using the -f option can force its removal without prompting for confirmation.
+* Removing large numbers of files: If you are trying to delete a large number of files at once, using the -f option can save you time by skipping the confirmation prompt for each file.
+* Removing write-protected files: If you have a write-protected file that you need to delete, using the -f option can force its removal without changing its permissions.
+* Removing files owned by other users: If you have permission to delete a file, but it is owned by another user, using the -f option can force its removal without prompting for confirmation.
 
 </details>
 
@@ -434,8 +433,8 @@ The <code>\;</code> sequence is used to indicate the end of the command that sho
 
 Useful resources:
 
-- [How to Use the find Command With exec](https://linuxhandbook.com/find-exec-command/)
-- [How to Use the Powerful Xargs Command in Linux](https://linuxhandbook.com/xargs-command/)
+* [How to Use the find Command With exec](https://linuxhandbook.com/find-exec-command/)
+* [How to Use the Powerful Xargs Command in Linux](https://linuxhandbook.com/xargs-command/)
 
 </details>
 
@@ -470,7 +469,7 @@ cd /my_folder \
 
 Useful resources:
 
-- [Execute combine multiple linux commands in one line (original)](https://stackoverflow.com/questions/13077241/execute-combine-multiple-linux-commands-in-one-line)
+* [Execute combine multiple linux commands in one line (original)](https://stackoverflow.com/questions/13077241/execute-combine-multiple-linux-commands-in-one-line)
 
 </details>
 
@@ -481,14 +480,15 @@ Useful resources:
 chmod a+x /path/to/file
 ```
 
-- `a` - for all users
-- `x` - for execution permission
-- `r` - for read permission
-- `w` - for write permission
+* `a` - for all users
+* `x` - for execution permission
+* `r` - for read permission
+* `w` - for write permission
 
 Useful resources:
-- [How to Set File Permissions Using chmod](https://www.washington.edu/computing/unix/permissions.html)
-- [What does "chmod +x your_file_name" do and how do I use it?](https://askubuntu.com/questions/443789/what-does-chmod-x-filename-do-and-how-do-i-use-it)
+
+* [How to Set File Permissions Using chmod](https://www.washington.edu/computing/unix/permissions.html)
+* [What does "chmod +x your_file_name" do and how do I use it?](https://askubuntu.com/questions/443789/what-does-chmod-x-filename-do-and-how-do-i-use-it)
 
 </details>
 
@@ -501,28 +501,28 @@ To sync the contents of **dir1** to **dir2** on the same system, type:
 rsync -av --progress --delete dir1/ dir2
 ```
 
-- `-a`, `--archive` - archive mode
-- `--delete` - delete extraneous files from dest dirs
-- `-v`, `--verbose` - verbose mode (increase verbosity)
-- `--progress` - show progress during transfer
+* `-a`, `--archive` - archive mode
+* `--delete` - delete extraneous files from dest dirs
+* `-v`, `--verbose` - verbose mode (increase verbosity)
+* `--progress` - show progress during transfer
 
 Useful resources:
 
-- [How can I sync two local directories? (original](https://unix.stackexchange.com/questions/392536/how-can-i-sync-two-local-directories)
-- [Synchronizing folders with rsync](https://www.jveweb.net/en/archives/2010/11/synchronizing-folders-with-rsync.html)
+* [How can I sync two local directories? (original](https://unix.stackexchange.com/questions/392536/how-can-i-sync-two-local-directories)
+* [Synchronizing folders with rsync](https://www.jveweb.net/en/archives/2010/11/synchronizing-folders-with-rsync.html)
 
 </details>
 
 <details>
 <summary><b>Many basic maintenance or troubleshooting tasks require you to edit config files. Explain ways to undo the changes you make.</b></summary><br>
 
-- Manually make a copy of the file by using `cp` or copy the line and comment out the original.
-- For more permanent changes, the best solution is to use version control such as git to keep track of changes
+* Manually make a copy of the file by using `cp` or copy the line and comment out the original.
+* For more permanent changes, the best solution is to use version control such as git to keep track of changes
 
 Useful resources:
 
-- [Backup file with .bak before filename extension](https://unix.stackexchange.com/questions/66376/backup-file-with-bak-before-filename-extension)
-- [Is it a good idea to use git for configuration file version controlling?](https://superuser.com/questions/1037211/is-it-a-good-idea-to-use-git-for-configuration-file-version-controlling)
+* [Backup file with .bak before filename extension](https://unix.stackexchange.com/questions/66376/backup-file-with-bak-before-filename-extension)
+* [Is it a good idea to use git for configuration file version controlling?](https://superuser.com/questions/1037211/is-it-a-good-idea-to-use-git-for-configuration-file-version-controlling)
 
 </details>
 
@@ -535,7 +535,7 @@ find / -type f -size +20M
 
 Useful resources:
 
-- [How can I find files that are bigger/smaller than x bytes?](https://superuser.com/questions/204564/how-can-i-find-files-that-are-bigger-smaller-than-x-bytes)
+* [How can I find files that are bigger/smaller than x bytes?](https://superuser.com/questions/204564/how-can-i-find-files-that-are-bigger-smaller-than-x-bytes)
 
 </details>
 
@@ -548,8 +548,8 @@ Useful resources:
 
 Useful resources:
 
-- [su vs sudo -s vs sudo -i vs sudo bash](https://unix.stackexchange.com/questions/35338/su-vs-sudo-s-vs-sudo-i-vs-sudo-bash)
-- [Why do we use su - and not just su? (original)](https://unix.stackexchange.com/questions/7013/why-do-we-use-su-and-not-just-su)
+* [su vs sudo -s vs sudo -i vs sudo bash](https://unix.stackexchange.com/questions/35338/su-vs-sudo-s-vs-sudo-i-vs-sudo-bash)
+* [Why do we use su - and not just su? (original)](https://unix.stackexchange.com/questions/7013/why-do-we-use-su-and-not-just-su)
 
 </details>
 
@@ -563,24 +563,24 @@ Log data can also provide information for identifying and troubleshooting equipm
 
 It’s your server’s record of who has accessed your site or server, when, and exactly what they looked at.
 
-- Origin (IP, location)
-- Browser (agent) being used
-- Files accessed/modified
-- Actions taken
+* Origin (IP, location)
+* Browser (agent) being used
+* Files accessed/modified
+* Actions taken
 
 Factors to consider:
 
-- Legal requirements for retention or destruction
-- Company policies for retention and destruction
-- How long the logs are useful
-- What questions you're hoping to answer from the logs
-- How much space they take up
+* Legal requirements for retention or destruction
+* Company policies for retention and destruction
+* How long the logs are useful
+* What questions you're hoping to answer from the logs
+* How much space they take up
 
 By collecting and analyzing logs, you can understand what transpires within your network. Each log file contains many pieces of information that can be invaluable, especially if you know how to read them and analyze them.
 
 Useful resources:
 
-- [How long do you keep log files?](https://serverfault.com/questions/135365/how-long-do-you-keep-log-files)
+* [How long do you keep log files?](https://serverfault.com/questions/135365/how-long-do-you-keep-log-files)
 
 </details>
 
@@ -591,7 +591,7 @@ An incremental backup is a type of backup that only copies files that have chang
 
 Useful resources:
 
-- [What Is Incremental Backup?](https://www.nakivo.com/blog/what-is-incremental-backup/)
+* [What Is Incremental Backup?](https://www.nakivo.com/blog/what-is-incremental-backup/)
 
 </details>
 
@@ -600,29 +600,29 @@ Useful resources:
 
 A **RAID** (Redundant Array of Inexpensive Disks) is a technology that is used to increase the performance and/or reliability of data storage.
 
-- **RAID0**: Also known as disk **striping**, is a technique that breaks up a file and spreads the data across all the disk drives in a RAID group. There are no safeguards against failure
-- **RAID1**: A popular disk subsystem that increases safety by writing the same data on two drives. Called "**mirroring**," RAID 1 does not increase write performance, but read performance may equal up to the sum of each disks' performance. However, if one drive fails, the second drive is used, and the failed drive is manually replaced. After replacement, the RAID controller duplicates the contents of the working drive onto the new one
-- **RAID5**: It is disk subsystem that increases safety by computing parity data and increasing speed by interleaving data across three or more drives (**striping**). Upon failure of a single drive, subsequent reads can be calculated from the distributed parity such that no data is lost
-- **RAID10**: Also known as **RAID 1+0**, is a RAID configuration that combines disk mirroring and disk striping to protect data. It requires a minimum of four disks, and stripes data across mirrored pairs. As long as one disk in each mirrored pair is functional, data can be retrieved. If two disks in the same mirrored pair fail, all data will be lost because there is no parity in the striped sets
+* **RAID0**: Also known as disk **striping**, is a technique that breaks up a file and spreads the data across all the disk drives in a RAID group. There are no safeguards against failure
+* **RAID1**: A popular disk subsystem that increases safety by writing the same data on two drives. Called "**mirroring**," RAID 1 does not increase write performance, but read performance may equal up to the sum of each disks' performance. However, if one drive fails, the second drive is used, and the failed drive is manually replaced. After replacement, the RAID controller duplicates the contents of the working drive onto the new one
+* **RAID5**: It is disk subsystem that increases safety by computing parity data and increasing speed by interleaving data across three or more drives (**striping**). Upon failure of a single drive, subsequent reads can be calculated from the distributed parity such that no data is lost
+* **RAID10**: Also known as **RAID 1+0**, is a RAID configuration that combines disk mirroring and disk striping to protect data. It requires a minimum of four disks, and stripes data across mirrored pairs. As long as one disk in each mirrored pair is functional, data can be retrieved. If two disks in the same mirrored pair fail, all data will be lost because there is no parity in the striped sets
 
 Useful resources:
 
-- [RAID](https://www.prepressure.com/library/technology/raid)
+* [RAID](https://www.prepressure.com/library/technology/raid)
 
 </details>
 
 <details>
 <summary><b>Why would you want to mount servers in a rack?</b></summary><br>
 
-- Protecting Hardware
-- Proper Cooling
-- Organized Workspace
-- Better Power Management
-- Cleaner Environment
+* Protecting Hardware
+* Proper Cooling
+* Organized Workspace
+* Better Power Management
+* Cleaner Environment
 
 Useful resources:
 
-- [5 Reasons to Rackmount Your PC](https://www.racksolutions.com/news/blog/5-reasons-to-rackmount-pc/)
+* [5 Reasons to Rackmount Your PC](https://www.racksolutions.com/news/blog/5-reasons-to-rackmount-pc/)
 
 </details>
 
@@ -635,13 +635,13 @@ Useful resources:
 
 2. Offer - When a DHCP server receives a DHCPDISCOVER message from a client, the DHCP server reserves an IP address for the client and makes a lease offer by sending a DHCPOFFER message to the client.
 
-3. Request - In response to the DHCP offer, the client replies with a DHCPREQUEST message, broadcast to the server, requesting the offered address. Before claiming an IP address, the client will broadcast an ARP request, in order to find if there is another host present in the network with the proposed IP address. If there is no reply, this address does not conflict with that of another host, so it is free to be used. 
+3. Request - In response to the DHCP offer, the client replies with a DHCPREQUEST message, broadcast to the server, requesting the offered address. Before claiming an IP address, the client will broadcast an ARP request, in order to find if there is another host present in the network with the proposed IP address. If there is no reply, this address does not conflict with that of another host, so it is free to be used.
 
-4. Acknowledge - The DHCP server sends a DHCPACK packet to the client. This packet includes the lease duration and any other configuration information that the client might have requested. At this point, the IP configuration process is completed. 
+4. Acknowledge - The DHCP server sends a DHCPACK packet to the client. This packet includes the lease duration and any other configuration information that the client might have requested. At this point, the IP configuration process is completed.
 
 Useful resources:
 
-- [DHCP Operation](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Operation)
+* [DHCP Operation](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Operation)
 
 </details>
 
@@ -650,14 +650,14 @@ Useful resources:
 
 The most important things to understand about the **OSI** model are:
 
-- we can divide up protocols into layers
-- layers provide encapsulation
-- layers provide abstraction
-- layers decouple functions from others
+* we can divide up protocols into layers
+* layers provide encapsulation
+* layers provide abstraction
+* layers decouple functions from others
 
 Useful resources:
 
-- [OSI Model and Networking Protocols Relationship](https://networkengineering.stackexchange.com/questions/6380/osi-model-and-networking-protocols-relationship)
+* [OSI Model and Networking Protocols Relationship](https://networkengineering.stackexchange.com/questions/6380/osi-model-and-networking-protocols-relationship)
 
 </details>
 
@@ -683,10 +683,10 @@ When a client sends a request to access a resource (such as a website or file) o
 
 Proxy servers can be used for several purposes, including:
 
-- Improving performance: Proxy servers can cache frequently accessed resources, such as web pages or files, so that subsequent requests can be served faster from the cache instead of retrieving the resource again from the original server.
-- Filtering content: Proxy servers can be used to filter content, such as blocking access to certain websites or restricting access to certain types of content based on policy or user preferences.
-- Increasing security: Proxy servers can provide an additional layer of security by acting as a gateway between clients and servers, blocking malicious traffic, and providing anonymity for clients by hiding their IP addresses.
-- Controlling access: Proxy servers can be used to control access to resources based on policies, such as restricting access to certain resources to specific users or groups.
+* Improving performance: Proxy servers can cache frequently accessed resources, such as web pages or files, so that subsequent requests can be served faster from the cache instead of retrieving the resource again from the original server.
+* Filtering content: Proxy servers can be used to filter content, such as blocking access to certain websites or restricting access to certain types of content based on policy or user preferences.
+* Increasing security: Proxy servers can provide an additional layer of security by acting as a gateway between clients and servers, blocking malicious traffic, and providing anonymity for clients by hiding their IP addresses.
+* Controlling access: Proxy servers can be used to control access to resources based on policies, such as restricting access to certain resources to specific users or groups.
 
 </details>
 
@@ -706,8 +706,8 @@ Using the commands `netstat -nr`, `route -n` or `ip route show` we can see the d
 
 Useful resources:
 
-- [What is the difference between 127.0.0.1 and localhost?](https://stackoverflow.com/questions/7382602/what-is-the-difference-between-127-0-0-1-and-localhost)
-- [localhost vs. 127.0.0.1](https://stackoverflow.com/questions/3715925/localhost-vs-127-0-0-1)
+* [What is the difference between 127.0.0.1 and localhost?](https://stackoverflow.com/questions/7382602/what-is-the-difference-between-127-0-0-1-and-localhost)
+* [localhost vs. 127.0.0.1](https://stackoverflow.com/questions/3715925/localhost-vs-127-0-0-1)
 
 </details>
 
@@ -756,8 +756,8 @@ dig AAAA domain.com
 
 Useful resources:
 
-- [How can I resolve a hostname to an IP address in a Bash script?](https://unix.stackexchange.com/questions/20784/how-can-i-resolve-a-hostname-to-an-ip-address-in-a-bash-script)
-- [How To Resolve IP Addresses To Domain Names?](https://superuser.com/questions/315687/how-to-resolve-ip-addresses-to-domain-names)
+* [How can I resolve a hostname to an IP address in a Bash script?](https://unix.stackexchange.com/questions/20784/how-can-i-resolve-a-hostname-to-an-ip-address-in-a-bash-script)
+* [How To Resolve IP Addresses To Domain Names?](https://superuser.com/questions/315687/how-to-resolve-ip-addresses-to-domain-names)
 
 </details>
 
@@ -802,7 +802,7 @@ The **SSH** daemon and **SSH** client listen for connections on a specific netwo
 
 Useful resources:
 
-- [Understanding the SSH Encryption and Connection Process](https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process)
+* [Understanding the SSH Encryption and Connection Process](https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process)
 
 </details>
 
@@ -814,7 +814,6 @@ The classful IP addressing system was an early method that divided the IPv4 addr
 CIDR was introduced to improve the scalability of IP addressing and overcome the limitations of the classful system, especially given the rapid growth of the internet.
 CIDR doesn't rely on fixed classes. Instead, it allows for flexible division of IP space.
 
-
 </details>
 
 <details>
@@ -822,16 +821,16 @@ CIDR doesn't rely on fixed classes. Instead, it allows for flexible division of 
 
 **DNS records** are basically mapping files that tell the DNS server which IP address each domain is associated with, and how to handle requests sent to each domain. Some **DNS records** syntax that are commonly used in nearly all DNS record configurations are `A`, `AAAA`, `CNAME`, `MX`, `PTR`, `NS`, and `TXT`.
 
-- **A** - Address Mapping records
-- **AAAA** - IP Version 6 Address records
-- **CNAME** - Canonical Name records
-- **MX** - Mail exchanger record
-- **NS** - Name Server records
-- **PTR** - Reverse-lookup Pointer records
+* **A** - Address Mapping records
+* **AAAA** - IP Version 6 Address records
+* **CNAME** - Canonical Name records
+* **MX** - Mail exchanger record
+* **NS** - Name Server records
+* **PTR** - Reverse-lookup Pointer records
 
 Useful resources:
 
-- [List of DNS record types](https://en.wikipedia.org/wiki/List_of_DNS_record_types)
+* [List of DNS record types](https://en.wikipedia.org/wiki/List_of_DNS_record_types)
 
 </details>
 
@@ -844,7 +843,7 @@ MAC addresses are typically assigned by the manufacturer of the network interfac
 
 MAC addresses are used in various network protocols to identify the source and destination of network traffic. They are also used in security protocols, such as MAC filtering, to restrict network access based on the MAC address of a device.
 
-- [How is the MAC address on a computer determined?](https://superuser.com/questions/504770/how-is-the-mac-address-on-a-computer-determined)
+* [How is the MAC address on a computer determined?](https://superuser.com/questions/504770/how-is-the-mac-address-on-a-computer-determined)
 
 </details>
 
@@ -855,24 +854,24 @@ The smallest IPv4 subnet that can be applied to a network containing up to 200 d
 
 Useful resources:
 
-- [How do you calculate the prefix, network, subnet, and host numbers?](https://networkengineering.stackexchange.com/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers)
-- [The slash after an IP Address - CIDR Notation](https://networkengineering.stackexchange.com/questions/3697/the-slash-after-an-ip-address-cidr-notation)
-- [IP Calculator](http://jodies.de/ipcalc)
+* [How do you calculate the prefix, network, subnet, and host numbers?](https://networkengineering.stackexchange.com/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers)
+* [The slash after an IP Address - CIDR Notation](https://networkengineering.stackexchange.com/questions/3697/the-slash-after-an-ip-address-cidr-notation)
+* [IP Calculator](http://jodies.de/ipcalc)
 
 </details>
 
 <details>
 <summary><b>What are some common HTTP status codes?</b></summary><br>
 
-- **1xx** - Informational responses - communicates transfer protocol-level information
-- **2xx** - Success - indicates that the client’s request was accepted successfully
-- **3xx** - Redirection - indicates that the client must take some additional action in order to complete their request
-- **4xx** - Client side error - this category of error status codes points the finger at clients
-- **5xx** - Server side error - the server takes responsibility for these error status codes
+* **1xx** - Informational responses - communicates transfer protocol-level information
+* **2xx** - Success - indicates that the client’s request was accepted successfully
+* **3xx** - Redirection - indicates that the client must take some additional action in order to complete their request
+* **4xx** - Client side error - this category of error status codes points the finger at clients
+* **5xx** - Server side error - the server takes responsibility for these error status codes
 
 Useful resources:
 
-- [HTTP Status Codes](https://httpstatuses.com/)
+* [HTTP Status Codes](https://httpstatuses.com/)
 
 </details>
 
@@ -892,55 +891,55 @@ It is a system that records changes to a file or set of files over time so that 
 
 Version control allows you to:
 
-- Track Changes: Every change, along with its author and a descriptive message, is recorded. This aids in understanding the evolution of a project.
-- Collaboration: Multiple developers can work on the same project simultaneously without overwriting each other's changes. The version control system assists in merging concurrent modifications.
-- Backup and Restore: All changes and historical versions of files are stored. If mistakes are made, it's easy to revert back to a previous state.
-- Branching and Merging: Developers can create branches to isolate feature development or experimental changes, then merge these branches back into the main project line once the changes are stable.
-- Accountability: By logging every change with its associated author, it's clear who made each change, ensuring accountability.
+* Track Changes: Every change, along with its author and a descriptive message, is recorded. This aids in understanding the evolution of a project.
+* Collaboration: Multiple developers can work on the same project simultaneously without overwriting each other's changes. The version control system assists in merging concurrent modifications.
+* Backup and Restore: All changes and historical versions of files are stored. If mistakes are made, it's easy to revert back to a previous state.
+* Branching and Merging: Developers can create branches to isolate feature development or experimental changes, then merge these branches back into the main project line once the changes are stable.
+* Accountability: By logging every change with its associated author, it's clear who made each change, ensuring accountability.
 
 Atomic commits are about making small, focused changes that can be easily understood and, if necessary, independently reverted. This practice promotes better code history, simplifies debugging, and improves collaboration.
 
-- Single Purpose: Each commit should address a single, clear objective. For example, fixing one bug or adding one feature.
-- Consistency: An atomic commit should never leave the codebase in a broken state. If a commit is applied, the system should still function correctly. If it's reverted, the system should revert to its previous working state without any residual side effects.
-- Comprehensibility: Atomic commits make the history more understandable. When reviewing history, it's easier to understand and reason about changes when each commit represents a single, isolated piece of work.
-- Ease of Reversion: If a specific change introduces an issue, atomic commits make it easier to revert just that change without affecting other unrelated changes.
+* Single Purpose: Each commit should address a single, clear objective. For example, fixing one bug or adding one feature.
+* Consistency: An atomic commit should never leave the codebase in a broken state. If a commit is applied, the system should still function correctly. If it's reverted, the system should revert to its previous working state without any residual side effects.
+* Comprehensibility: Atomic commits make the history more understandable. When reviewing history, it's easier to understand and reason about changes when each commit represents a single, isolated piece of work.
+* Ease of Reversion: If a specific change introduces an issue, atomic commits make it easier to revert just that change without affecting other unrelated changes.
 
 Useful resources:
 
-- [Getting Started - About Version Control (original)](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
+* [Getting Started - About Version Control (original)](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
 
 </details>
 
 <details>
 <summary><b>Explain some basic <code>git</code> commands.</b></summary><br>
 
-- `git init` - create a new local repository
-- `git commit -m "message"` - commit changes to head
-- `git status` - list the files you've added with `git add` and also commit any files you've changed since then
-- `git push origin master` - send changes to the master branch of your remote repository
+* `git init` - create a new local repository
+* `git commit -m "message"` - commit changes to head
+* `git status` - list the files you've added with `git add` and also commit any files you've changed since then
+* `git push origin master` - send changes to the master branch of your remote repository
 
 </details>
 
 <details>
 <summary><b>Explain a simple Continuous Integration pipeline.</b></summary><br>
 
-- clone repository
-- deploy stage (QA)
-- testing environment (QA)
-- deploy stage (PROD)
+* clone repository
+* deploy stage (QA)
+* testing environment (QA)
+* deploy stage (PROD)
 
 </details>
 
 <details>
 <summary><b>Explain some basic Docker commands.</b></summary><br>
 
-- `docker ps` - show running containers
-- `docker ps -a` - show all containers
-- `docker images` - show docker images
-- `docker logs <container-id|container-name>` - get logs from container
-- `docker network ls` - show all docker networks
-- `docker volumes ls` - show all docker volumes
-- `docker exec -it <container-id|container-name> bash` - execute bash in container with interactive shell
+* `docker ps` - show running containers
+* `docker ps -a` - show all containers
+* `docker images` - show docker images
+* `docker logs <container-id|container-name>` - get logs from container
+* `docker network ls` - show all docker networks
+* `docker volumes ls` - show all docker volumes
+* `docker exec -it <container-id|container-name> bash` - execute bash in container with interactive shell
 
 </details>
 
@@ -956,8 +955,9 @@ A password that is long and complex can be difficult to remember, and users may 
 It is generally recommended to use a password that is at least 16 characters long, and that does not contain easily guessable information such as names, birthdays, or common phrases. It is also important to use unique passwords for each account to prevent a security breach from affecting multiple accounts. To help remember long passwords, users can use password managers, which securely store passwords and generate random, complex passwords for each account.
 
 Useful resources:
-- [Password Strength](https://xkcd.com/936/)
-- [Short complex password, or long dictionary passphrase?](https://security.stackexchange.com/questions/6095/xkcd-936-short-complex-password-or-long-dictionary-passphrase)
+
+* [Password Strength](https://xkcd.com/936/)
+* [Short complex password, or long dictionary passphrase?](https://security.stackexchange.com/questions/6095/xkcd-936-short-complex-password-or-long-dictionary-passphrase)
 
 </details>
 
@@ -981,8 +981,8 @@ If your SSH service allows password based authentication, then your Internet con
 
 Useful resources:
 
-- [Key-Based Authentication (Public Key Authentication)](http://www.crypto-it.net/eng/tools/key-based-authentication.html)
-- [SSH password vs. key authentication](https://security.stackexchange.com/questions/33381/ssh-password-vs-key-authentication)
+* [Key-Based Authentication (Public Key Authentication)](http://www.crypto-it.net/eng/tools/key-based-authentication.html)
+* [SSH password vs. key authentication](https://security.stackexchange.com/questions/33381/ssh-password-vs-key-authentication)
 
 </details>
 
@@ -991,15 +991,15 @@ Useful resources:
 
 Confidentiality, integrity, and availability are three fundamental principles of information security and cybersecurity. They are commonly referred to as the CIA triad.
 
-- Confidentiality: Confidentiality is the principle that ensures that information is only accessible to authorized individuals or entities. It involves protecting sensitive information from unauthorized access, disclosure, or theft. Confidentiality is often achieved through the use of encryption, access controls, and other security measures.
-- Integrity: Integrity is the principle that ensures that information is accurate, complete, and trustworthy. It involves protecting information from unauthorized modification or destruction, and ensuring that it remains consistent and reliable over time. Integrity is often achieved through the use of data backups, checksums, and other data validation techniques.
-- Availability: Availability is the principle that ensures that information and resources are accessible to authorized individuals or entities when needed. It involves ensuring that systems and applications are always operational and that resources are available to support business operations. Availability is often achieved through the use of redundancy, disaster recovery, and backup systems.
+* Confidentiality: Confidentiality is the principle that ensures that information is only accessible to authorized individuals or entities. It involves protecting sensitive information from unauthorized access, disclosure, or theft. Confidentiality is often achieved through the use of encryption, access controls, and other security measures.
+* Integrity: Integrity is the principle that ensures that information is accurate, complete, and trustworthy. It involves protecting information from unauthorized modification or destruction, and ensuring that it remains consistent and reliable over time. Integrity is often achieved through the use of data backups, checksums, and other data validation techniques.
+* Availability: Availability is the principle that ensures that information and resources are accessible to authorized individuals or entities when needed. It involves ensuring that systems and applications are always operational and that resources are available to support business operations. Availability is often achieved through the use of redundancy, disaster recovery, and backup systems.
 
 Together, confidentiality, integrity, and availability provide a framework for securing information and systems against a wide range of threats.
 
 Useful resources:
 
-- [Confidentiality, Integrity, and Availability: The CIA Triad](https://informationsecurity.wustl.edu/items/confidentiality-integrity-and-availability-the-cia-triad/)
+* [Confidentiality, Integrity, and Availability: The CIA Triad](https://informationsecurity.wustl.edu/items/confidentiality-integrity-and-availability-the-cia-triad/)
 
 </details>
 
@@ -1023,12 +1023,12 @@ Threat modeling is a process that is used to identify, prioritize, and mitigate 
 
 The process of threat modeling typically involves several steps, including:
 
-- Defining the scope of the model: This involves identifying the system or application to be analyzed, as well as any external dependencies or interfaces that may be relevant to the analysis.
-- Creating a data flow diagram: This diagram is used to identify the data flows within the system or application, as well as any entry points and exit points where data can enter or leave the system.
-- Identifying potential threats: This involves brainstorming potential threats that could affect the system or application, such as malware, data breaches, or social engineering attacks.
-- Analyzing the risks: This step involves assessing the potential impact and likelihood of each identified threat, and prioritizing them based on their risk level.
-- Mitigating the risks: Once the risks have been prioritized, strategies can be developed to mitigate those risks. This may involve implementing technical controls, such as firewalls or encryption, or non-technical controls, such as training or policies and procedures.
-- Re-evaluating the model: Threat modeling is an ongoing process, and it is important to periodically re-evaluate the model to ensure that it is up-to-date and effective.
+* Defining the scope of the model: This involves identifying the system or application to be analyzed, as well as any external dependencies or interfaces that may be relevant to the analysis.
+* Creating a data flow diagram: This diagram is used to identify the data flows within the system or application, as well as any entry points and exit points where data can enter or leave the system.
+* Identifying potential threats: This involves brainstorming potential threats that could affect the system or application, such as malware, data breaches, or social engineering attacks.
+* Analyzing the risks: This step involves assessing the potential impact and likelihood of each identified threat, and prioritizing them based on their risk level.
+* Mitigating the risks: Once the risks have been prioritized, strategies can be developed to mitigate those risks. This may involve implementing technical controls, such as firewalls or encryption, or non-technical controls, such as training or policies and procedures.
+* Re-evaluating the model: Threat modeling is an ongoing process, and it is important to periodically re-evaluate the model to ensure that it is up-to-date and effective.
 
 </details>
 
@@ -1041,36 +1041,35 @@ The process of threat modeling typically involves several steps, including:
 <details>
 <summary><b>Explain briefly how Linux allows most of its software to be updated without needing to reboot? Is it possible to update the kernel without rebooting?</b></summary><br>
 
-- Shared Libraries: Linux uses shared libraries (.so files) extensively. When software is updated, new versions of shared libraries are typically placed alongside the old ones. Running applications will continue to use the old libraries they were started with until they are restarted. New or restarted applications will use the updated libraries.
-- Process Management: In Linux, you can restart individual services or processes without affecting others. So, if you update a service, you generally only need to restart that specific service to start using the updated version, rather than rebooting the entire system.
-- File System Implementation: Linux file systems allow files to be replaced even while they're being used by the system. When a file is replaced (or deleted), any process that still has the file open continues to see the old version until it closes the file. New accesses to the file see the new version. This is possible because the inode of the file (data structure storing file metadata) remains valid as long as there are references to it, even if the directory entry is removed or replaced.
+* Shared Libraries: Linux uses shared libraries (.so files) extensively. When software is updated, new versions of shared libraries are typically placed alongside the old ones. Running applications will continue to use the old libraries they were started with until they are restarted. New or restarted applications will use the updated libraries.
+* Process Management: In Linux, you can restart individual services or processes without affecting others. So, if you update a service, you generally only need to restart that specific service to start using the updated version, rather than rebooting the entire system.
+* File System Implementation: Linux file systems allow files to be replaced even while they're being used by the system. When a file is replaced (or deleted), any process that still has the file open continues to see the old version until it closes the file. New accesses to the file see the new version. This is possible because the inode of the file (data structure storing file metadata) remains valid as long as there are references to it, even if the directory entry is removed or replaced.
 
 Traditionally, updating the Linux kernel required a reboot to switch to the new kernel. However, there are methods and technologies developed to enable live kernel patching, which allows kernel updates without rebooting:
 
-- kpatch: A tool developed by Red Hat, kpatch allows you to patch a Linux kernel without rebooting the system. It works by building dynamic kernel modules that can replace existing code in the running kernel.
-- kGraft: Developed by SUSE, kGraft is another approach to live kernel patching. Like kpatch, it allows for real-time patching of a running kernel.
-- KernelCare: This is a commercial solution that offers rebootless kernel updates. It's automated and works with various Linux distributions.
-- Livepatch: Offered by Canonical for Ubuntu, Livepatch provides kernel updates without the need for a reboot.
-
+* kpatch: A tool developed by Red Hat, kpatch allows you to patch a Linux kernel without rebooting the system. It works by building dynamic kernel modules that can replace existing code in the running kernel.
+* kGraft: Developed by SUSE, kGraft is another approach to live kernel patching. Like kpatch, it allows for real-time patching of a running kernel.
+* KernelCare: This is a commercial solution that offers rebootless kernel updates. It's automated and works with various Linux distributions.
+* Livepatch: Offered by Canonical for Ubuntu, Livepatch provides kernel updates without the need for a reboot.
 
 Useful resources:
 
-- [How does Linux update without a reboot? - Quora ](https://www.quora.com/How-does-Linux-update-without-a-reboot)
+* [How does Linux update without a reboot? - Quora](https://www.quora.com/How-does-Linux-update-without-a-reboot)
 
 </details>
 
 <details>
 <summary><b>Difference between <code>nohup</code>, <code>disown</code>, and <code>&</code>. What happens when using all together?</b></summary><br>
 
-- `&` puts the job in the background, that is, makes it block on attempting to read input, and makes the shell not wait for its completion
-- `disown` removes the process from the shell's job control, but it still leaves it connected to the terminal. One of the results is that the shell won't send it a **SIGHUP**. Obviously, it can only be applied to background jobs, because you cannot enter it when a foreground job is running
-- `nohup` disconnects the process from the terminal, redirects its output to `nohup.out` and shields it from **SIGHUP**. One of the effects (the naming one) is that the process won't receive any sent **SIGHUP**. It is completely independent of job control and could in principle be used also for foreground jobs (although that's not very useful)
+* `&` puts the job in the background, that is, makes it block on attempting to read input, and makes the shell not wait for its completion
+* `disown` removes the process from the shell's job control, but it still leaves it connected to the terminal. One of the results is that the shell won't send it a **SIGHUP**. Obviously, it can only be applied to background jobs, because you cannot enter it when a foreground job is running
+* `nohup` disconnects the process from the terminal, redirects its output to `nohup.out` and shields it from **SIGHUP**. One of the effects (the naming one) is that the process won't receive any sent **SIGHUP**. It is completely independent of job control and could in principle be used also for foreground jobs (although that's not very useful)
 
 If you use all three together, the process is running in the background, is removed from the shell's job control and is effectively disconnected from the terminal.
 
 Useful resources:
 
-- [Difference between nohup, disown and & (original)](https://unix.stackexchange.com/questions/3886/difference-between-nohup-disown-and)
+* [Difference between nohup, disown and & (original)](https://unix.stackexchange.com/questions/3886/difference-between-nohup-disown-and)
 
 </details>
 
@@ -1132,7 +1131,7 @@ This was tracked down by running `lsof | grep "/var" | grep deleted` where `/var
 
 The output showed lines like this:
 
-```
+```plaintext
 httpd     32617    nobody  106w      REG        9,4 1835222944     688166 /var/log/apache/awstats_log (deleted)
 ```
 
@@ -1140,7 +1139,7 @@ The situation was then resolved by restarting Apache (`service httpd restart`) a
 
 Useful resources:
 
-- [Why du and df display different values in Linux and Unix](https://linuxshellaccount.blogspot.com/2008/12/why-du-and-df-display-different-values.html)
+* [Why du and df display different values in Linux and Unix](https://linuxshellaccount.blogspot.com/2008/12/why-du-and-df-display-different-values.html)
 
 </details>
 
@@ -1173,7 +1172,7 @@ most commands should start working - and then you can edit `~/.bash_profile` ins
 
 Useful resource:
 
-- [How to correctly add a path to PATH?](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path)
+* [How to correctly add a path to PATH?](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path)
 
 </details>
 
@@ -1217,14 +1216,14 @@ When a client (such as a web browser) initiates an SSL connection to a server, t
 
 **Init**: Is the parent of all processes on the system, it is executed by the kernel and is responsible for starting all other processes.
 
-- `SysV init` - init's job is to get everything running the way it should be once the kernel is fully running. Essentially it establishes and operates the entire user space. This includes checking and mounting file systems, starting up necessary user services, and ultimately switching to a user-environment when system startup is completed.
-- `systemd` - the developers of systemd aimed to replace the Linux init system inherited from Unix System V. Like init, systemd is a daemon that manages other daemons. All daemons, including systemd, are background processes. Systemd is the first daemon to start (during booting) and the last daemon to terminate (during shutdown).
-- `runinit` - runinit is an init scheme for Unix-like operating systems that initializes, supervises, and ends processes throughout the operating system. It is a reimplementation of the daemontools process supervision toolkit that runs on the Linux, Mac OS X, \*BSD, and Solaris operating systems.
+* `SysV init` - init's job is to get everything running the way it should be once the kernel is fully running. Essentially it establishes and operates the entire user space. This includes checking and mounting file systems, starting up necessary user services, and ultimately switching to a user-environment when system startup is completed.
+* `systemd` - the developers of systemd aimed to replace the Linux init system inherited from Unix System V. Like init, systemd is a daemon that manages other daemons. All daemons, including systemd, are background processes. Systemd is the first daemon to start (during booting) and the last daemon to terminate (during shutdown).
+* `runinit` - runinit is an init scheme for Unix-like operating systems that initializes, supervises, and ends processes throughout the operating system. It is a reimplementation of the daemontools process supervision toolkit that runs on the Linux, Mac OS X, \*BSD, and Solaris operating systems.
 
 Useful resources:
 
-- [Analyzing the Linux boot process](https://opensource.com/article/18/1/analyzing-linux-boot-process)
-- [ systemd Boot Process ](https://insujang.github.io/2018-11-22/systemd-boot-process/)
+* [Analyzing the Linux boot process](https://opensource.com/article/18/1/analyzing-linux-boot-process)
+* [systemd Boot Process](https://insujang.github.io/2018-11-22/systemd-boot-process/)
 
 </details>
 
@@ -1250,8 +1249,8 @@ However, if the workload is not designed to fully utilize all four cores or if t
 
 Useful resources:
 
-- [Proper way of interpreting system load on a 4 core 8 thread processor](https://serverfault.com/questions/618130/proper-way-of-interpreting-system-load-on-a-4-core-8-thread-processor)
-- [Understanding Linux CPU Load - when should you be worried?](http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages)
+* [Proper way of interpreting system load on a 4 core 8 thread processor](https://serverfault.com/questions/618130/proper-way-of-interpreting-system-load-on-a-4-core-8-thread-processor)
+* [Understanding Linux CPU Load - when should you be worried?](http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages)
 
 </details>
 
@@ -1282,8 +1281,8 @@ It's necessary that the **EUID** becomes root in the case of passwd because the 
 
 Useful resources:
 
-- [Difference between Real User ID, Effective User ID and Saved User ID? (original)](https://stackoverflow.com/questions/30493424/what-is-the-difference-between-a-process-pid-ppid-uid-euid-gid-and-egid)
-- [What is the difference between a pid, ppid, uid, euid, gid and egid?](https://stackoverflow.com/questions/30493424/what-is-the-difference-between-a-process-pid-ppid-uid-euid-gid-and-egid)
+* [Difference between Real User ID, Effective User ID and Saved User ID? (original)](https://stackoverflow.com/questions/30493424/what-is-the-difference-between-a-process-pid-ppid-uid-euid-gid-and-egid)
+* [What is the difference between a pid, ppid, uid, euid, gid and egid?](https://stackoverflow.com/questions/30493424/what-is-the-difference-between-a-process-pid-ppid-uid-euid-gid-and-egid)
 
 </details>
 
@@ -1294,30 +1293,30 @@ Using `logrotate` is the usual way of dealing with logfiles. But instead of addi
 
 Useful resources:
 
-- [How to Use logrotate to Manage Log Files](https://www.linode.com/docs/uptime/logs/use-logrotate-to-manage-log-files/)
-- [System logging](https://developer.ibm.com/tutorials/l-lpic1-108-2/)
+* [How to Use logrotate to Manage Log Files](https://www.linode.com/docs/uptime/logs/use-logrotate-to-manage-log-files/)
+* [System logging](https://developer.ibm.com/tutorials/l-lpic1-108-2/)
 
 </details>
 
 <details>
 <summary><b>How can you see what files are associated with a running process? What is one example of why you would use this command?</b></summary><br>
 
-
-To see the files associated with a running process, you can use the lsof command, which stands for "list open files." Every file, including devices, network sockets, pipes, and more, is represented as a file in UNIX-like systems. 
+To see the files associated with a running process, you can use the lsof command, which stands for "list open files." Every file, including devices, network sockets, pipes, and more, is represented as a file in UNIX-like systems.
 
 **Example:**
 Let's say you have a process with the PID 1234, and you want to see the files it has opened:
 
 **Why would you use this command?**
-- **Troubleshooting Network Issues**: If a process is misbehaving or is suspected of unauthorized network activity, you can use lsof to check which network connections the process has established.
-- **File Locks**: If a process has locked a file and other processes can't access it, you can use lsof to identify the locking process and the locked file.
-- **Resource Leaks**: If you suspect that a process is not releasing file handles or consuming too many resources, lsof can provide insights by listing all open files by the process.
-- **Disk Space Issues**: Sometimes, deleted files continue to consume disk space because they are still open in a process. With lsof, you can identify such "deleted" but open files.
-- **Security Audits**: If you're conducting a security check, lsof can help you identify what resources and network connections each process is using, aiding in the identification of suspicious activities.
+
+* **Troubleshooting Network Issues**: If a process is misbehaving or is suspected of unauthorized network activity, you can use lsof to check which network connections the process has established.
+* **File Locks**: If a process has locked a file and other processes can't access it, you can use lsof to identify the locking process and the locked file.
+* **Resource Leaks**: If you suspect that a process is not releasing file handles or consuming too many resources, lsof can provide insights by listing all open files by the process.
+* **Disk Space Issues**: Sometimes, deleted files continue to consume disk space because they are still open in a process. With lsof, you can identify such "deleted" but open files.
+* **Security Audits**: If you're conducting a security check, lsof can help you identify what resources and network connections each process is using, aiding in the identification of suspicious activities.
 
 Useful resources:
 
-- [Linux Processes](https://www.tldp.org/LDP/tlk/kernel/processes.html)
+* [Linux Processes](https://www.tldp.org/LDP/tlk/kernel/processes.html)
 
 </details>
 
@@ -1327,25 +1326,26 @@ Useful resources:
 The top command in UNIX-like operating systems provides a dynamic real-time overview of system performance.
 
 **System Summary Information:**
-- **Uptime**: How long the system has been running.
-- **Number of Users**: How many users are currently logged in.
-- **Load Averages**: The system load averages for the last 1, 5, and 15 minutes. A general rule of thumb is that if the 1-minute load average is higher than the number of CPU cores, it might indicate the system is overloaded.
-- **Tasks**: Number of total tasks and their breakdown (running, stopped, sleeping, etc.).
-- **CPU Usage**: A breakdown of CPU time in user processes, system processes, processes with priority upgrade nice, idle processes, and more.
-- **Memory and Swap**: Total, used, and free physical memory (RAM) and swap space.
+
+* **Uptime**: How long the system has been running.
+* **Number of Users**: How many users are currently logged in.
+* **Load Averages**: The system load averages for the last 1, 5, and 15 minutes. A general rule of thumb is that if the 1-minute load average is higher than the number of CPU cores, it might indicate the system is overloaded.
+* **Tasks**: Number of total tasks and their breakdown (running, stopped, sleeping, etc.).
+* **CPU Usage**: A breakdown of CPU time in user processes, system processes, processes with priority upgrade nice, idle processes, and more.
+* **Memory and Swap**: Total, used, and free physical memory (RAM) and swap space.
 
 **How is the top command useful?**
-- **Performance Monitoring**: Quickly identify which processes are consuming the most resources, allowing administrators to troubleshoot performance issues.
-- **Resource Analysis**: Observe real-time data on system memory, CPU, and swap usage to make informed decisions about system health and when to upgrade resources.
-- **Process Management**: Identify rogue or misbehaving processes. From within top, you can send signals to processes. For example, you can terminate unresponsive processes directly from the top interface.
-- **System Health**: The load average, uptime, and the number of active tasks provide a quick view of the system's overall health and performance.
-- **User Activity**: Monitor which users are consuming the most resources, especially in shared or multi-user environments.
-- **Trends and Patterns**: Over time, consistently monitoring with top can help administrators recognize performance trends and patterns.
 
+* **Performance Monitoring**: Quickly identify which processes are consuming the most resources, allowing administrators to troubleshoot performance issues.
+* **Resource Analysis**: Observe real-time data on system memory, CPU, and swap usage to make informed decisions about system health and when to upgrade resources.
+* **Process Management**: Identify rogue or misbehaving processes. From within top, you can send signals to processes. For example, you can terminate unresponsive processes directly from the top interface.
+* **System Health**: The load average, uptime, and the number of active tasks provide a quick view of the system's overall health and performance.
+* **User Activity**: Monitor which users are consuming the most resources, especially in shared or multi-user environments.
+* **Trends and Patterns**: Over time, consistently monitoring with top can help administrators recognize performance trends and patterns.
 
 Useful resources:
 
-- [top explained visually](https://svennd.be/top-explained-visually/)
+* [top explained visually](https://svennd.be/top-explained-visually/)
 
 </details>
 
@@ -1366,7 +1366,7 @@ In Immutable Server model, whole unit (server, container) is replaced by new upd
 
 Useful resources:
 
-- [Infrastructure as a Code - Chapter 8: Patterns for Updating and Changing Servers](https://www.oreilly.com/library/view/infrastructure-as-code/9781491924334/)
+* [Infrastructure as a Code - Chapter 8: Patterns for Updating and Changing Servers](https://www.oreilly.com/library/view/infrastructure-as-code/9781491924334/)
 
 </details>
 
@@ -1378,6 +1378,7 @@ The `$PATH` variable is crucial because it tells the system where to look for ex
 Here’s how to permanently set or modify the `$PATH` variable on Linux/Unix:
 
 ### 1. **Modify `$PATH` for a Specific User**
+
    To set the `$PATH` variable permanently for a specific user, modify their shell configuration file (usually `.bashrc`, `.bash_profile`, `.profile`, or `.zshrc` depending on the shell).
 
      - Edit the user’s **`.bashrc`** or **`.bash_profile`** file:
@@ -1395,31 +1396,41 @@ Here’s how to permanently set or modify the `$PATH` variable on Linux/Unix:
      - The `$PATH` modification will now persist across sessions for that user.
 
 ### 2. **Modify `$PATH` System-Wide**
+
    To set the `$PATH` variable for all users, edit one of the global shell configuration files.
 
-   - **For all users (system-wide)**:
-     - Edit **`/etc/profile`** or add a new file to **`/etc/profile.d/`**:
+* **For all users (system-wide)**:
+  * Edit **`/etc/profile`** or add a new file to **`/etc/profile.d/`**:
+
        ```bash
        sudo vim /etc/profile
        ```
-     - Add the following:
+
+  * Add the following:
+
        ```bash
        export PATH="$PATH:/path/to/directory"
        ```
-     - Alternatively, create a new file in `/etc/profile.d/` (e.g., `custom_path.sh`):
+
+  * Alternatively, create a new file in `/etc/profile.d/` (e.g., `custom_path.sh`):
+
        ```bash
        sudo vim /etc/profile.d/custom_path.sh
        ```
-     - Add the following:
+
+  * Add the following:
+
        ```bash
        export PATH="$PATH:/path/to/directory"
        ```
-     - Save the file and source `/etc/profile` or log out and log back in for changes to take effect.
 
-   - **For all users on a specific shell**:
-     - For **Bash**, you can edit **`/etc/bash.bashrc`** to modify the `$PATH` for all users using Bash.
+  * Save the file and source `/etc/profile` or log out and log back in for changes to take effect.
+
+* **For all users on a specific shell**:
+  * For **Bash**, you can edit **`/etc/bash.bashrc`** to modify the `$PATH` for all users using Bash.
 
 ### 3. **Modify `$PATH` for a Single Session**
+
    You can also set the `$PATH` for the current session only by directly exporting it in the shell. This change will last until the session ends (e.g., when the terminal is closed):
 
    ```bash
@@ -1429,19 +1440,19 @@ Here’s how to permanently set or modify the `$PATH` variable on Linux/Unix:
 The `$PATH` variable defines the directories that the system searches when you run a command without specifying its full path. If a directory containing an executable is not in the `$PATH`, you would need to provide the full path to that executable every time you run it.
 
 1. **Simplifies Command Execution**:
-   - With `$PATH` set correctly, you can execute programs, scripts, and binaries from any location without having to specify their full file paths.
+   * With `$PATH` set correctly, you can execute programs, scripts, and binaries from any location without having to specify their full file paths.
 
 2. **Prioritizes Executable Locations**:
-   - The system searches directories in the order they are listed in `$PATH`. You can prioritize certain directories by placing them earlier in the `$PATH`, ensuring that specific versions of programs are executed.
+   * The system searches directories in the order they are listed in `$PATH`. You can prioritize certain directories by placing them earlier in the `$PATH`, ensuring that specific versions of programs are executed.
 
 3. **Customizability**:
-   - You can extend the `$PATH` to include custom locations for user-installed programs, third-party software, or local scripts, giving you flexibility and control over your environment.
+   * You can extend the `$PATH` to include custom locations for user-installed programs, third-party software, or local scripts, giving you flexibility and control over your environment.
 
 4. **Multiple Executable Versions**:
-   - If multiple versions of the same command (e.g., different versions of Python) exist in different directories, the one found first in the `$PATH` will be executed. Adjusting `$PATH` allows you to control which version is run.
+   * If multiple versions of the same command (e.g., different versions of Python) exist in different directories, the one found first in the `$PATH` will be executed. Adjusting `$PATH` allows you to control which version is run.
 
 5. **Security**:
-   - By controlling the `$PATH`, you can limit the risk of executing untrusted or malicious binaries by ensuring that system directories are prioritized, and user directories are well defined. It is generally recommended not to include `.` (the current directory) in the `$PATH`, as it can lead to unintended or malicious command execution.
+   * By controlling the `$PATH`, you can limit the risk of executing untrusted or malicious binaries by ensuring that system directories are prioritized, and user directories are well defined. It is generally recommended not to include `.` (the current directory) in the `$PATH`, as it can lead to unintended or malicious command execution.
 
 </details>
 
@@ -1450,8 +1461,8 @@ The `$PATH` variable defines the directories that the system searches when you r
 
 Your console has two types of messages:
 
-- **generated by the kernel** (via printk)
-- **generated by userspace** (usually your init system)
+* **generated by the kernel** (via printk)
+* **generated by userspace** (usually your init system)
 
 Kernel messages are always stored in the **kmsg** buffer, visible via `dmesg` command. They're also often copied to your **syslog**. This also applies to userspace messages written to `/dev/kmsg`, but those are fairly rare.
 
@@ -1465,15 +1476,15 @@ If system logging is done via the journal component you should use `journalctl`.
 
 Boot issues/errors calls for a system administrator to look into certain important files in conjunction with particular commands (handled differently by different versions of Linux):
 
-- `/var/log/boot.log` - system boot log, it contains all that unfolded during the system boot
-- `/var/log/messages` - stores global system messages, including the messages that are logged during system boot
-- `/var/log/dmesg` - contains kernel ring buffer information
+* `/var/log/boot.log` - system boot log, it contains all that unfolded during the system boot
+* `/var/log/messages` - stores global system messages, including the messages that are logged during system boot
+* `/var/log/dmesg` - contains kernel ring buffer information
 
 Useful resources:
 
-- [How to view all boot messages in Linux after booting? (original)](https://superuser.com/questions/1188407/how-to-view-all-boot-messages-in-linux-after-booting)
-- [Differences in /var/log/{syslog,dmesg,messages} log files](https://superuser.com/questions/565927/differences-in-var-log-syslog-dmesg-messages-log-files)
-- [How can the messages that scroll by when booting a Debian system be reviewed later?](https://serverfault.com/questions/516411/all-debian-boot-messages)
+* [How to view all boot messages in Linux after booting? (original)](https://superuser.com/questions/1188407/how-to-view-all-boot-messages-in-linux-after-booting)
+* [Differences in /var/log/{syslog,dmesg,messages} log files](https://superuser.com/questions/565927/differences-in-var-log-syslog-dmesg-messages-log-files)
+* [How can the messages that scroll by when booting a Debian system be reviewed later?](https://serverfault.com/questions/516411/all-debian-boot-messages)
 
 </details>
 
@@ -1486,19 +1497,20 @@ If the system needs more memory resources and the RAM is full, inactive pages in
 
 Workload increases your RAM demand. You are running a workload that requires more memory. Usage of the entire swap indicates that. Also, changing `swappiness` to **1** might not be a wise decision. Setting `swappiness` to **1** does not indicate that swapping will not be done. It just indicates how aggressive kernel will be in respect of swapping, it does not eliminate swapping. Swapping will happen if it needs to be done.
 
-- **Increasing the size of the swap space** - firstly, you'd have increased disk use. If your disks aren't fast enough to keep up, then your system might end up thrashing, and you'd experience slowdowns as data is swapped in and out of memory. This would result in a bottleneck.
+* **Increasing the size of the swap space** - firstly, you'd have increased disk use. If your disks aren't fast enough to keep up, then your system might end up thrashing, and you'd experience slowdowns as data is swapped in and out of memory. This would result in a bottleneck.
 
-- **Adding more RAM** - the real solution is to add more memory. There's no substitute for RAM, and if you have enough memory, you'll swap less.
+* **Adding more RAM** - the real solution is to add more memory. There's no substitute for RAM, and if you have enough memory, you'll swap less.
 
 For monitoring swap space usage:
 
-- `cat /proc/swaps` - to see total and used swap size
-- `grep SwapTotal /proc/meminfo` - to show total swap space
-- `free` - to display the amount of free and used system memory (also swap)
-- `vmstat` - to check swapping statistics
-- `top`, `htop`- to check swap space usage
-- `atop` - to show is that your system is overcommitting memory
-- or use one-liner shell command to list all applications with how much swap space search is using in kilobytes:
+* `cat /proc/swaps` - to see total and used swap size
+* `grep SwapTotal /proc/meminfo` - to show total swap space
+* `free` - to display the amount of free and used system memory (also swap)
+* `vmstat` - to check swapping statistics
+* `top`, `htop`- to check swap space usage
+* `atop` - to show is that your system is overcommitting memory
+* or use one-liner shell command to list all applications with how much swap space search is using in kilobytes:
+
 ```bash
 for _fd in /proc/*/status ; do
   awk '/VmSwap|Name/{printf $2 " " $3}END{ print ""}' $_fd
@@ -1507,11 +1519,11 @@ done | sort -k 2 -n -r | less
 
 Useful resources:
 
-- [Linux ate my ram!](https://www.linuxatemyram.com/)
-- [How to find out which processes are using swap space in Linux?](https://stackoverflow.com/questions/479953/how-to-find-out-which-processes-are-using-swap-space-in-linux)
-- [8 Useful Commands to Monitor Swap Space Usage in Linux](https://www.tecmint.com/commands-to-monitor-swap-space-usage-in-linux/)
-- [What is the danger in having a fully used SWAP in an Ubuntu server?](https://serverfault.com/questions/499301/what-is-the-danger-in-having-a-fully-used-swap-in-an-ubuntu-server)
-- [How to empty swap if there is free RAM?](https://askubuntu.com/questions/1357/how-to-empty-swap-if-there-is-free-ram)
+* [Linux ate my ram!](https://www.linuxatemyram.com/)
+* [How to find out which processes are using swap space in Linux?](https://stackoverflow.com/questions/479953/how-to-find-out-which-processes-are-using-swap-space-in-linux)
+* [8 Useful Commands to Monitor Swap Space Usage in Linux](https://www.tecmint.com/commands-to-monitor-swap-space-usage-in-linux/)
+* [What is the danger in having a fully used SWAP in an Ubuntu server?](https://serverfault.com/questions/499301/what-is-the-danger-in-having-a-fully-used-swap-in-an-ubuntu-server)
+* [How to empty swap if there is free RAM?](https://askubuntu.com/questions/1357/how-to-empty-swap-if-there-is-free-ram)
 
 </details>
 
@@ -1526,7 +1538,7 @@ A scenario where you might need to change the umask for a user is when you want 
 
 Useful resources:
 
-- [What is Umask and How To Setup Default umask Under Linux?](https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html)
+* [What is Umask and How To Setup Default umask Under Linux?](https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html)
 
 </details>
 
@@ -1537,10 +1549,10 @@ In SQL, you can combine rows from two or more tables using the JOIN clause based
 
 There are different types of JOIN operations in SQL, including:
 
-- INNER JOIN: Returns only the rows that have matching values in both tables.
-- LEFT JOIN: Returns all the rows from the left table and the matched rows from the right table. If there are no matches in the right table, NULL values are returned.
-- RIGHT JOIN: Returns all the rows from the right table and the matched rows from the left table. If there are no matches in the left table, NULL values are returned.
-- FULL OUTER JOIN: Returns all the rows from both tables. If there are no matches, NULL values are returned.
+* INNER JOIN: Returns only the rows that have matching values in both tables.
+* LEFT JOIN: Returns all the rows from the left table and the matched rows from the right table. If there are no matches in the right table, NULL values are returned.
+* RIGHT JOIN: Returns all the rows from the right table and the matched rows from the left table. If there are no matches in the left table, NULL values are returned.
+* FULL OUTER JOIN: Returns all the rows from both tables. If there are no matches, NULL values are returned.
 
 Here is an example of an INNER JOIN query that combines rows from two tables based on a related column:
 
@@ -1560,12 +1572,12 @@ This query combines the customers table with the orders table based on the custo
 
 Underneath the file system files are represented by inodes (or is it multiple inodes not sure)
 
-- a file in the file system is basically a link to an inode
-- a hard link then just creates another file with a link to the same underlying inode
+* a file in the file system is basically a link to an inode
+* a hard link then just creates another file with a link to the same underlying inode
 
 When you delete a file it removes one link to the underlying inode. The inode is only deleted (or deletable/over-writable) when all links to the inode have been deleted.
 
-- a symbolic link is a link to another name in the file system
+* a symbolic link is a link to another name in the file system
 
 Once a hard link has been made the link is to the inode. deleting renaming or moving the original file will not affect the hard link as it links to the underlying inode. Any changes to the data on the inode is reflected in all files that refer to that inode.
 
@@ -1573,12 +1585,12 @@ Note: Hard links are only valid within the same file system. Symbolic links can 
 
 Differences:
 
-- **Hardlink** cannot be created for directories. Hard link can only be created for a file
-- **Softlink** also termed a symbolic links or symlinks can link to a directory
+* **Hardlink** cannot be created for directories. Hard link can only be created for a file
+* **Softlink** also termed a symbolic links or symlinks can link to a directory
 
 Useful resources:
 
-- [What is the difference between a hard link and a symbolic link?](https://medium.com/@wendymayorgasegura/what-is-the-difference-between-a-hard-link-and-a-symbolic-link-8c0493041b62)
+* [What is the difference between a hard link and a symbolic link?](https://medium.com/@wendymayorgasegura/what-is-the-difference-between-a-hard-link-and-a-symbolic-link-8c0493041b62)
 
 </details>
 
@@ -1647,7 +1659,7 @@ This bit should have always been called the _restricted deletion bit_ given that
 
 Useful resources:
 
-- [How does the sticky bit work? (original)](https://unix.stackexchange.com/questions/79395/how-does-the-sticky-bit-work)
+* [How does the sticky bit work? (original)](https://unix.stackexchange.com/questions/79395/how-does-the-sticky-bit-work)
 
 </details>
 
@@ -1681,47 +1693,57 @@ With REPLACE, the operation involves both a DELETE (if there's a conflict) and a
 To make a server or application **highly available**, the goal is to minimize downtime and ensure the system remains operational, even in the event of failures. High availability (HA) is achieved through redundancy, failover mechanisms, load balancing, and eliminating single points of failure. Here are the key steps:
 
 ### 1. **Redundancy**
-   - **Multiple Servers/Instances**: Deploy multiple instances of your application or service across different servers or environments. If one server fails, another can continue serving requests.
-   - **Active-Active vs Active-Passive**:
-     - **Active-Active**: All instances are actively serving traffic simultaneously.
-     - **Active-Passive**: One instance is active, while another is on standby and takes over in case of failure.
+
+* **Multiple Servers/Instances**: Deploy multiple instances of your application or service across different servers or environments. If one server fails, another can continue serving requests.
+* **Active-Active vs Active-Passive**:
+  * **Active-Active**: All instances are actively serving traffic simultaneously.
+  * **Active-Passive**: One instance is active, while another is on standby and takes over in case of failure.
 
 ### 2. **Load Balancing**
-   - **Distribute Traffic**: Use a load balancer (e.g., **Nginx**, **HAProxy**, **AWS ELB**) to distribute incoming requests across multiple servers. This ensures no single server is overwhelmed, and traffic is seamlessly redirected if a server fails.
-   - **Health Checks**: Configure load balancers to perform health checks on backend servers. If a server becomes unhealthy, it is automatically removed from the pool until it recovers.
+
+* **Distribute Traffic**: Use a load balancer (e.g., **Nginx**, **HAProxy**, **AWS ELB**) to distribute incoming requests across multiple servers. This ensures no single server is overwhelmed, and traffic is seamlessly redirected if a server fails.
+* **Health Checks**: Configure load balancers to perform health checks on backend servers. If a server becomes unhealthy, it is automatically removed from the pool until it recovers.
 
 ### 3. **Failover Mechanisms**
-   - **Automatic Failover**: Implement failover mechanisms that detect when an instance or service goes down and automatically shift traffic to the remaining healthy servers.
-   - **DNS Failover**: Use DNS with short TTLs and failover services (like **Route 53** or **Cloudflare**) to redirect traffic to backup instances in case of failure.
-   - **Virtual IP (VIP)**: In some HA setups, use a shared virtual IP address that moves between servers in an active-passive configuration, so clients always connect to a single IP, regardless of which server is active.
+
+* **Automatic Failover**: Implement failover mechanisms that detect when an instance or service goes down and automatically shift traffic to the remaining healthy servers.
+* **DNS Failover**: Use DNS with short TTLs and failover services (like **Route 53** or **Cloudflare**) to redirect traffic to backup instances in case of failure.
+* **Virtual IP (VIP)**: In some HA setups, use a shared virtual IP address that moves between servers in an active-passive configuration, so clients always connect to a single IP, regardless of which server is active.
 
 ### 4. **Clustering**
-   - **Database Clustering**: Use database clusters (e.g., **MySQL Galera Cluster**, **PostgreSQL Streaming Replication**) to replicate data across multiple database nodes, ensuring continuous availability even if one node fails.
-   - **Application Clustering**: Applications like web servers and middleware can be clustered for HA (e.g., **Apache HTTPD with mod_cluster**, **Tomcat clustering**).
+
+* **Database Clustering**: Use database clusters (e.g., **MySQL Galera Cluster**, **PostgreSQL Streaming Replication**) to replicate data across multiple database nodes, ensuring continuous availability even if one node fails.
+* **Application Clustering**: Applications like web servers and middleware can be clustered for HA (e.g., **Apache HTTPD with mod_cluster**, **Tomcat clustering**).
 
 ### 5. **Data Replication**
-   - **File/Data Replication**: Ensure that critical data is replicated across servers or storage systems, so no single point of failure can result in data loss.
-   - **Distributed File Systems**: Use distributed or replicated file systems (e.g., **GlusterFS**, **Ceph**, **NFS**) to ensure file availability across multiple nodes.
+
+* **File/Data Replication**: Ensure that critical data is replicated across servers or storage systems, so no single point of failure can result in data loss.
+* **Distributed File Systems**: Use distributed or replicated file systems (e.g., **GlusterFS**, **Ceph**, **NFS**) to ensure file availability across multiple nodes.
 
 ### 6. **Eliminate Single Points of Failure**
-   - Ensure that every part of your architecture, including networking (switches, routers), storage (disks, SANs), and servers, has redundancy.
-   - Avoid reliance on single components like a single server, database, or load balancer.
+
+* Ensure that every part of your architecture, including networking (switches, routers), storage (disks, SANs), and servers, has redundancy.
+* Avoid reliance on single components like a single server, database, or load balancer.
 
 ### 7. **Geographic Redundancy**
-   - **Multi-Region Deployment**: Deploy services across multiple geographic regions or data centers. In case of a complete failure in one region (e.g., natural disaster, power outage), the other regions can continue serving traffic.
-   - **Global Load Balancing**: Use global load balancing services that route traffic to the nearest available region.
+
+* **Multi-Region Deployment**: Deploy services across multiple geographic regions or data centers. In case of a complete failure in one region (e.g., natural disaster, power outage), the other regions can continue serving traffic.
+* **Global Load Balancing**: Use global load balancing services that route traffic to the nearest available region.
 
 ### 8. **Monitoring and Alerts**
-   - **Real-time Monitoring**: Implement continuous monitoring of servers, applications, and services to detect failures or performance degradation (e.g., using **Prometheus**, **Nagios**, or cloud-native monitoring tools).
-   - **Alerting**: Set up alerts for critical incidents to enable quick intervention by operations teams.
+
+* **Real-time Monitoring**: Implement continuous monitoring of servers, applications, and services to detect failures or performance degradation (e.g., using **Prometheus**, **Nagios**, or cloud-native monitoring tools).
+* **Alerting**: Set up alerts for critical incidents to enable quick intervention by operations teams.
 
 ### 9. **Backup and Recovery**
-   - Regularly back up critical data and configurations.
-   - Ensure **automated recovery procedures** for systems or databases to restore service quickly after a failure.
+
+* Regularly back up critical data and configurations.
+* Ensure **automated recovery procedures** for systems or databases to restore service quickly after a failure.
 
 ### 10. **Automated Scaling**
-   - **Horizontal Scaling**: Set up automatic scaling to add or remove instances based on demand (e.g., using **AWS Auto Scaling**, **Kubernetes Horizontal Pod Autoscaler**).
-   - **Auto-restart and Self-healing**: Use container orchestrators like **Kubernetes** to automatically restart failed application instances or self-heal unhealthy pods.
+
+* **Horizontal Scaling**: Set up automatic scaling to add or remove instances based on demand (e.g., using **AWS Auto Scaling**, **Kubernetes Horizontal Pod Autoscaler**).
+* **Auto-restart and Self-healing**: Use container orchestrators like **Kubernetes** to automatically restart failed application instances or self-heal unhealthy pods.
 
 </details>
 
@@ -1730,12 +1752,12 @@ To make a server or application **highly available**, the goal is to minimize do
 
 **1) Main requirements - remember about this**
 
-- which users have access to the app filesystem
-- permissions for web servers, e.g. Apache and app servers e.g. uwsgi
-- permissions for specific directories such as **uploads**, **cache** and main app directory like a `/var/www/app01/html`
-- correct `umask` value for users and **suid**/**sgid** (only for specific situations)
-- permissions for all future files and directories
-- permissions for cron jobs and scripts
+* which users have access to the app filesystem
+* permissions for web servers, e.g. Apache and app servers e.g. uwsgi
+* permissions for specific directories such as **uploads**, **cache** and main app directory like a `/var/www/app01/html`
+* correct `umask` value for users and **suid**/**sgid** (only for specific situations)
+* permissions for all future files and directories
+* permissions for cron jobs and scripts
 
 **2) Application directories**
 
@@ -1795,10 +1817,10 @@ chcon -R system_u:object_r:httpd_sys_content_t /var/www/app01
 
 **7) Security mistakes**
 
-- **root** owner for files and directories
-- **root** never executes any files in website directory, and shouldn't be creating files in there
-- to wide permissions like a **777** so some critical files may be world-writable and world-readable
-- avoid creating maintenance scripts or other critical files with suid root
+* **root** owner for files and directories
+* **root** never executes any files in website directory, and shouldn't be creating files in there
+* to wide permissions like a **777** so some critical files may be world-writable and world-readable
+* avoid creating maintenance scripts or other critical files with suid root
 
 If you allow your site to modify the files which form the code running your site, you make it much easier for someone to take over your server.
 
@@ -1808,9 +1830,9 @@ If the malicious user can upload a file with any name but not control the conten
 
 Useful resources:
 
-- [How to setup linux permissions for the WWW folder?](https://serverfault.com/questions/124800/how-to-setup-linux-permissions-for-the-www-folder)
-- [What permissions should my website files/folders have on a Linux webserver?](https://serverfault.com/questions/357108/what-permissions-should-my-website-files-folders-have-on-a-linux-webserver)
-- [Security Pitfalls of setgid Programs](https://www.agwa.name/blog/post/security_pitfalls_of_setgid_programs)
+* [How to setup linux permissions for the WWW folder?](https://serverfault.com/questions/124800/how-to-setup-linux-permissions-for-the-www-folder)
+* [What permissions should my website files/folders have on a Linux webserver?](https://serverfault.com/questions/357108/what-permissions-should-my-website-files-folders-have-on-a-linux-webserver)
+* [Security Pitfalls of setgid Programs](https://www.agwa.name/blog/post/security_pitfalls_of_setgid_programs)
 
 </details>
 
@@ -1825,10 +1847,10 @@ To change system runlevels, you can use the init command with the appropriate ru
 
 A few reasons you might need to switch runlevels:
 
-- Troubleshooting: You might need to switch to a lower runlevel (such as runlevel 1 or 3) to troubleshoot a system issue or perform maintenance tasks.
-- Upgrades: You might need to switch to a higher runlevel (such as runlevel 6) to perform a system upgrade or reboot the system.
-- Security: You might need to disable certain services or processes that are not needed for security reasons.
-- Performance: You might need to adjust the system runlevel to optimize system performance based on the workload or resources available.
+* Troubleshooting: You might need to switch to a lower runlevel (such as runlevel 1 or 3) to troubleshoot a system issue or perform maintenance tasks.
+* Upgrades: You might need to switch to a higher runlevel (such as runlevel 6) to perform a system upgrade or reboot the system.
+* Security: You might need to disable certain services or processes that are not needed for security reasons.
+* Performance: You might need to adjust the system runlevel to optimize system performance based on the workload or resources available.
 
 </details>
 
@@ -1838,19 +1860,23 @@ A few reasons you might need to switch runlevels:
 If you've forgotten the root password and are locked out of a Linux system, you can reset it by booting into a single-user mode or using a rescue mode provided by some installation media.
 
 **Using Single-User Mode:**
+
 1. Reboot the system.
 2. Access Boot Loader: As the system boots, you typically need to press a key (like Shift or Esc for GRUB) to access the boot loader menu.
 3. Edit Boot Entry:
 In the GRUB bootloader menu, highlight the default kernel entry (usually the top one), and press e to edit.
 4. Modify Kernel Boot Parameters:
-- Find the line starting with linux (or linux16 or linuxefi depending on your setup).
-- At the end of this line, append the parameter init=/bin/bash or rw init=/bin/sh.
-- This will instruct the system to boot directly to a shell without prompting for a password.
+
+* Find the line starting with linux (or linux16 or linuxefi depending on your setup).
+* At the end of this line, append the parameter init=/bin/bash or rw init=/bin/sh.
+* This will instruct the system to boot directly to a shell without prompting for a password.
+
 5. Boot the System: Press Ctrl + X or F10 to boot the system with the modified parameters.
 6. Reset the Password: Once you get a root shell, you can reset the root password using the passwd command: `passwd root`
 7. Reboot: Once you've reset the password, reboot the system: `exec /sbin/init`
 
 **Using Rescue Mode:**
+
 1. Boot from Installation Media: Insert the installation media (like a DVD or USB stick) for your Linux distribution and boot from it.
 2. Enter Rescue Mode: Follow the prompts to enter rescue mode. This process can differ among distributions.
 3. Mount the System: Once in rescue mode, you may need to mount your system's root filesystem. Some rescue modes will assist you in identifying and mounting the system.
@@ -1866,64 +1892,79 @@ In the GRUB bootloader menu, highlight the default kernel entry (usually the top
 You can modify a text file without invoking a text editor by using command-line utilities that allow you to directly manipulate the contents of the file. Here are several common ways to do this:
 
 ### 1. **Using `echo` and Redirection**
+
 You can append or overwrite content in a file using `echo` and redirection (`>` for overwrite, `>>` for append).
 
-- **Overwrite the file**:
+* **Overwrite the file**:
+
    ```bash
    echo "New content" > file.txt
    ```
 
-- **Append to the file**:
+* **Append to the file**:
+
    ```bash
    echo "Additional content" >> file.txt
    ```
 
 ### 2. **Using `sed` (Stream Editor)**
+
 `sed` allows you to perform in-place text replacements or modifications.
 
-- **Replace a word or pattern**:
+* **Replace a word or pattern**:
+
    ```bash
    sed -i 's/oldword/newword/g' file.txt
    ```
 
-- **Delete specific lines** (e.g., delete line 3):
+* **Delete specific lines** (e.g., delete line 3):
+
    ```bash
    sed -i '3d' file.txt
    ```
 
-- **Insert text at a specific line** (e.g., insert "Hello" at line 2):
+* **Insert text at a specific line** (e.g., insert "Hello" at line 2):
+
    ```bash
    sed -i '2iHello' file.txt
    ```
 
 ### 3. **Using `awk`**
+
 `awk` is another powerful tool for text processing and can be used to modify files based on patterns or specific fields.
 
-- **Replace a specific field in a line**:
+* **Replace a specific field in a line**:
+
    ```bash
    awk '{if(NR==2) $2="newvalue"}1' file.txt > temp && mv temp file.txt
    ```
 
 ### 4. **Using `tr` (Translate)**
+
 `tr` is useful for character replacements.
 
-- **Replace all occurrences of a character**:
+* **Replace all occurrences of a character**:
+
    ```bash
    tr 'a' 'b' < file.txt > temp && mv temp file.txt
    ```
 
 ### 5. **Using `head` and `tail` to Modify Specific Parts**
+
 You can extract parts of a file and replace specific lines using `head` and `tail`.
 
-- **Replace line 3 with new content**:
+* **Replace line 3 with new content**:
+
    ```bash
    head -n 2 file.txt > temp && echo "New content" >> temp && tail -n +4 file.txt >> temp && mv temp file.txt
    ```
 
 ### 6. **Using `printf`**
+
 `printf` allows formatted output and can be used similarly to `echo`.
 
-- **Overwrite a file with formatted content**:
+* **Overwrite a file with formatted content**:
+
    ```bash
    printf "Formatted content\nNext line\n" > file.txt
    ```
@@ -1943,13 +1984,13 @@ To change kernel parameters during runtime, you can use the `sysctl` command fol
 
 Some kernel options that you might need to tune include:
 
-- Network-related options, such as the maximum number of connections, the size of network buffers, and the default congestion control algorithm.
-- File system-related options, such as the maximum number of open files, the size of disk caches, and the behavior of the journaling file system.
-- Security-related options, such as the maximum number of processes and threads, the permissions for executing programs, and the behavior of system calls.
+* Network-related options, such as the maximum number of connections, the size of network buffers, and the default congestion control algorithm.
+* File system-related options, such as the maximum number of open files, the size of disk caches, and the behavior of the journaling file system.
+* Security-related options, such as the maximum number of processes and threads, the permissions for executing programs, and the behavior of system calls.
 
 Useful resources:
 
-- [How to Change Kernel Runtime Parameters in a Persistent and Non-Persistent Way](https://www.tecmint.com/change-modify-linux-kernel-runtime-parameters/)
+* [How to Change Kernel Runtime Parameters in a Persistent and Non-Persistent Way](https://www.tecmint.com/change-modify-linux-kernel-runtime-parameters/)
 
 </details>
 
@@ -1958,9 +1999,10 @@ Useful resources:
 
 The issue with trying to remove a directory named `-rf` is that the `rm` command interprets `-rf` as options (`-r` for recursive and `-f` for force), rather than as the name of the directory. This can be problematic because `rm -rf` is a common and powerful command used to forcefully and recursively remove directories and their contents, which could accidentally lead to removing unintended files if misused.
 
-### The Best Ways to Remove a Directory Named `-rf`:
+### The Best Ways to Remove a Directory Named `-rf`
 
 #### 1. **Use `./` to Specify the Path**
+
    Prepend the directory name with `./` to indicate it is a directory in the current directory, not an option.
 
    ```bash
@@ -1970,6 +2012,7 @@ The issue with trying to remove a directory named `-rf` is that the `rm` command
    This works because the shell interprets `./-rf` as a file or directory path, avoiding confusion with the `rm` options.
 
 #### 2. **Use `--` to Stop Option Parsing**
+
    The `--` argument tells the `rm` command to stop interpreting anything following it as an option, treating it as a literal argument (the directory name).
 
    ```bash
@@ -1979,6 +2022,7 @@ The issue with trying to remove a directory named `-rf` is that the `rm` command
    The `--` prevents `-rf` from being processed as an option.
 
 #### 3. **Use an Absolute or Relative Path**
+
    If the directory is located in a specific path, using the full or relative path to the directory can also avoid confusion.
 
    ```bash
@@ -1998,19 +2042,19 @@ Virtual files such as `/proc/interrupts`, `/proc/meminfo`, `/proc/mounts` and `/
 
 Useful resources:
 
-- [Linux Filesystem Hierarchy - /proc](https://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/proc.html)
+* [Linux Filesystem Hierarchy - /proc](https://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/proc.html)
 
 </details>
 
 <details>
 <summary><b>Describe your data backup process. How often should you test your backups?</b></summary><br>
 
-- Determine what data needs to be backed up: Identify the critical data that needs to be backed up, such as files, databases, and configurations.
-- Decide on a backup frequency: Determine how often you need to back up your data. The frequency will depend on how often the data changes and how critical it is to your business.
-- Choose a backup method: There are several backup methods you can use, such as full backup, incremental backup, and differential backup. Each method has its advantages and disadvantages, so choose the one that best suits your needs.
-- Select a backup location: Choose a secure location to store your backups, such as an external hard drive, a cloud storage service, or a dedicated backup server.
-- Automate the backup process: Automate the backup process to ensure that backups are performed regularly and reliably.
-- Test your backups: Regularly test your backups to ensure that they are complete and accurate. Testing backups is critical, as it helps ensure that you can recover your data in the event of a disaster.
+* Determine what data needs to be backed up: Identify the critical data that needs to be backed up, such as files, databases, and configurations.
+* Decide on a backup frequency: Determine how often you need to back up your data. The frequency will depend on how often the data changes and how critical it is to your business.
+* Choose a backup method: There are several backup methods you can use, such as full backup, incremental backup, and differential backup. Each method has its advantages and disadvantages, so choose the one that best suits your needs.
+* Select a backup location: Choose a secure location to store your backups, such as an external hard drive, a cloud storage service, or a dedicated backup server.
+* Automate the backup process: Automate the backup process to ensure that backups are performed regularly and reliably.
+* Test your backups: Regularly test your backups to ensure that they are complete and accurate. Testing backups is critical, as it helps ensure that you can recover your data in the event of a disaster.
 
 It is recommended to test backups at least once every three months to ensure that they are working correctly. Additionally, you should test your backups after any significant changes to your system or data to ensure that your backup process is still effective.
 
@@ -2021,9 +2065,9 @@ It is recommended to test backups at least once every three months to ensure tha
 
 There are three types of journaling available in **ext4 and xfs** file systems:
 
-- **Data journaling**: In data journaling, only file data is logged in the journal. Metadata is written to disk directly, and file contents are written to the journal before being written to disk. In case of a system crash, only the data in the journal is lost. The metadata on disk remains consistent. This type of journaling is faster than other types because only the data is logged to the journal.
-- **Ordered journaling**: In ordered journaling, metadata is written to the journal before file data. This ensures that metadata is always consistent, and files can be recovered correctly in case of a system crash. This type of journaling is slower than data journaling because metadata is logged before data.
-- **Writeback journaling**: In writeback journaling, file data is written to disk before being logged in the journal. This can result in data inconsistencies in case of a system crash or power failure, as metadata can be updated before the corresponding data is written to the journal. However, writeback journaling is the fastest and most efficient journaling mode, as file data is written directly to disk without being logged in the journal first.
+* **Data journaling**: In data journaling, only file data is logged in the journal. Metadata is written to disk directly, and file contents are written to the journal before being written to disk. In case of a system crash, only the data in the journal is lost. The metadata on disk remains consistent. This type of journaling is faster than other types because only the data is logged to the journal.
+* **Ordered journaling**: In ordered journaling, metadata is written to the journal before file data. This ensures that metadata is always consistent, and files can be recovered correctly in case of a system crash. This type of journaling is slower than data journaling because metadata is logged before data.
+* **Writeback journaling**: In writeback journaling, file data is written to disk before being logged in the journal. This can result in data inconsistencies in case of a system crash or power failure, as metadata can be updated before the corresponding data is written to the journal. However, writeback journaling is the fastest and most efficient journaling mode, as file data is written directly to disk without being logged in the journal first.
 
 </details>
 
@@ -2085,8 +2129,8 @@ find . -inum 435304 -delete
 
 Useful resources:
 
-- [Understand UNIX/Linux Inodes Basics with Examples](https://www.thegeekstuff.com/2012/01/linux-inodes/)
-- [What is an inode as defined by POSIX?](https://unix.stackexchange.com/questions/387087/what-is-an-inode-as-defined-by-posix/387093)
+* [Understand UNIX/Linux Inodes Basics with Examples](https://www.thegeekstuff.com/2012/01/linux-inodes/)
+* [What is an inode as defined by POSIX?](https://unix.stackexchange.com/questions/387087/what-is-an-inode-as-defined-by-posix/387093)
 
 </details>
 
@@ -2116,24 +2160,24 @@ Example of output:
 
 Useful resources:
 
-- [Question marks showing in ls of directory. IO errors too.](https://serverfault.com/questions/65616/question-marks-showing-in-ls-of-directory-io-errors-too)
+* [Question marks showing in ls of directory. IO errors too.](https://serverfault.com/questions/65616/question-marks-showing-in-ls-of-directory-io-errors-too)
 
 </details>
 
 <details>
 <summary><b>What benefits does LVM provide?</b></summary><br>
 
-- LVM makes it quite easy to move file systems around
-- you can extend a volume group onto a new physical volume
-- move any number of logical volumes of an old physical one
-- remove that volume from the volume group without needing to unmount any partitions
-- you can also make snapshots of logical volumes for making backups
-- LVM has built in mirroring support, so you can have a logical volume mirrored across multiple physical volumes
-- LVM even supports TRIM
+* LVM makes it quite easy to move file systems around
+* you can extend a volume group onto a new physical volume
+* move any number of logical volumes of an old physical one
+* remove that volume from the volume group without needing to unmount any partitions
+* you can also make snapshots of logical volumes for making backups
+* LVM has built in mirroring support, so you can have a logical volume mirrored across multiple physical volumes
+* LVM even supports TRIM
 
 Useful resources:
 
-- [What is LVM and what is it used for?](https://askubuntu.com/questions/3596/what-is-lvm-and-what-is-it-used-for)
+* [What is LVM and what is it used for?](https://askubuntu.com/questions/3596/what-is-lvm-and-what-is-it-used-for)
 
 </details>
 
@@ -2142,13 +2186,13 @@ Useful resources:
 
 Use the `lvextend` command for resize LVM partition.
 
-- extending the size by 500MB:
+* extending the size by 500MB:
 
 ```bash
 lvextend -L +500M /dev/vgroup/lvolume
 ```
 
-- extending all available free space:
+* extending all available free space:
 
 ```bash
 lvextend -l +100%FREE /dev/vgroup/lvolume
@@ -2156,13 +2200,13 @@ lvextend -l +100%FREE /dev/vgroup/lvolume
 
 and `resize2fs` or `xfs_growfs` to resize filesystem:
 
-- for ext filesystems:
+* for ext filesystems:
 
 ```bash
 resize2fs /dev/vgroup/lvolume
 ```
 
-- for xfs filesystem:
+* for xfs filesystem:
 
 ```bash
 xfs_growfs mountpoint_for_/dev/vgroup/lvolume
@@ -2170,7 +2214,7 @@ xfs_growfs mountpoint_for_/dev/vgroup/lvolume
 
 Useful resources:
 
-- [Extending a logical volume](https://www.tldp.org/HOWTO/LVM-HOWTO/extendlv.html)
+* [Extending a logical volume](https://www.tldp.org/HOWTO/LVM-HOWTO/extendlv.html)
 
 </details>
 
@@ -2183,7 +2227,7 @@ Processes marked **defunct** are dead processes (so-called "zombies") that remai
 
 Useful resources:
 
-- [What is a <defunct> process, and why doesn't it get killed?](https://askubuntu.com/questions/201303/what-is-a-defunct-process-and-why-doesnt-it-get-killed)
+* [What is a <defunct> process, and why doesn't it get killed?](https://askubuntu.com/questions/201303/what-is-a-defunct-process-and-why-doesnt-it-get-killed)
 
 </details>
 
@@ -2193,23 +2237,27 @@ Useful resources:
 Upgrading or updating a system in production requires careful planning to avoid service disruption, data loss, or downtime. Here are best practices and recommendations for handling system updates in a production environment:
 
 ### 1. **Plan Updates Carefully**
-   - **Determine the Type of Update**:
-     - **Security patches**: Prioritize critical security updates to minimize vulnerabilities.
-     - **Minor updates**: Bug fixes and minor enhancements are generally safer to apply without significant risk.
-     - **Major upgrades**: Kernel, OS, or application upgrades that introduce significant changes should be carefully planned and tested.
-   
-   - **Check Compatibility**: Ensure that the updates do not break existing dependencies, software, or services running on the system. Review release notes and update documentation for known issues or changes.
+
+* **Determine the Type of Update**:
+  * **Security patches**: Prioritize critical security updates to minimize vulnerabilities.
+  * **Minor updates**: Bug fixes and minor enhancements are generally safer to apply without significant risk.
+  * **Major upgrades**: Kernel, OS, or application upgrades that introduce significant changes should be carefully planned and tested.
+
+* **Check Compatibility**: Ensure that the updates do not break existing dependencies, software, or services running on the system. Review release notes and update documentation for known issues or changes.
 
 ### 2. **Create a Backup/Recovery Plan**
-   - **Full system backup**: Before performing updates, create a full backup of the system, including important files, databases, and configurations.
-   - **Automated snapshots**: If you're using a system that supports snapshots (e.g., LVM snapshots or VM snapshots), take a snapshot before the update, allowing quick rollback if something goes wrong.
-   - **Test the recovery process**: Ensure that you have tested restoring backups or snapshots before you rely on them in production.
+
+* **Full system backup**: Before performing updates, create a full backup of the system, including important files, databases, and configurations.
+* **Automated snapshots**: If you're using a system that supports snapshots (e.g., LVM snapshots or VM snapshots), take a snapshot before the update, allowing quick rollback if something goes wrong.
+* **Test the recovery process**: Ensure that you have tested restoring backups or snapshots before you rely on them in production.
 
 ### 3. **Automate the Update Process (With Caution)**
+
    Automation helps ensure consistency and reduce human error, but you should balance automation with manual oversight in production environments.
 
-   - **Use configuration management tools**: Use automation tools like **Ansible**, **Puppet**, or **Chef** to handle updates across multiple servers.
-     - Example Ansible playbook:
+* **Use configuration management tools**: Use automation tools like **Ansible**, **Puppet**, or **Chef** to handle updates across multiple servers.
+  * Example Ansible playbook:
+
      ```yaml
      ---
      - name: Update packages on production servers
@@ -2220,48 +2268,53 @@ Upgrading or updating a system in production requires careful planning to avoid 
              name: "*"
              state: latest
      ```
-   - **Staggered updates**: Automate the update process to be applied in small batches (canary deployments) to avoid updating all production systems simultaneously and exposing the entire environment to risks.
-   - **Automated testing**: Integrate automated post-update testing to ensure that the system is functional after updates are applied.
+
+* **Staggered updates**: Automate the update process to be applied in small batches (canary deployments) to avoid updating all production systems simultaneously and exposing the entire environment to risks.
+* **Automated testing**: Integrate automated post-update testing to ensure that the system is functional after updates are applied.
 
 ### 4. **Use Staging Environments for Testing**
-   - **Test updates in a staging environment**: Always apply updates first to a **staging environment** that mirrors the production system. This helps you detect any issues before they impact production.
-   - **Run automated and manual tests**: Perform tests that reflect production workloads, including automated tests for critical services, manual functional tests, and monitoring service performance.
+
+* **Test updates in a staging environment**: Always apply updates first to a **staging environment** that mirrors the production system. This helps you detect any issues before they impact production.
+* **Run automated and manual tests**: Perform tests that reflect production workloads, including automated tests for critical services, manual functional tests, and monitoring service performance.
 
 ### 5. **Schedule Downtime (if Necessary)**
-   - **Non-critical updates**: For minor updates that do not disrupt services, you can often apply them during regular operation without scheduling downtime.
-   - **Critical updates**: For major or disruptive updates (e.g., kernel updates, database migrations, or application upgrades), schedule a maintenance window or downtime when user impact is minimal. Inform stakeholders well in advance.
-   - **Hot patching**: For critical security updates on production systems where downtime is not an option, consider using **live patching** tools like **KernelCare** or **kpatch** to apply kernel patches without requiring a reboot.
+
+* **Non-critical updates**: For minor updates that do not disrupt services, you can often apply them during regular operation without scheduling downtime.
+* **Critical updates**: For major or disruptive updates (e.g., kernel updates, database migrations, or application upgrades), schedule a maintenance window or downtime when user impact is minimal. Inform stakeholders well in advance.
+* **Hot patching**: For critical security updates on production systems where downtime is not an option, consider using **live patching** tools like **KernelCare** or **kpatch** to apply kernel patches without requiring a reboot.
 
 ### 6. **Monitoring and Rollback Strategy**
-   - **Monitor the system after updates**: Closely monitor the system after applying updates. Use tools like **Prometheus**, **Nagios**, or **Zabbix** to track key metrics such as CPU, memory usage, network traffic, and application performance.
-   - **Rollback plan**: Ensure that you have a rollback plan if something goes wrong. This could involve restoring a backup, rolling back a package to a previous version, or reverting a snapshot. Automate rollback procedures when possible.
+
+* **Monitor the system after updates**: Closely monitor the system after applying updates. Use tools like **Prometheus**, **Nagios**, or **Zabbix** to track key metrics such as CPU, memory usage, network traffic, and application performance.
+* **Rollback plan**: Ensure that you have a rollback plan if something goes wrong. This could involve restoring a backup, rolling back a package to a previous version, or reverting a snapshot. Automate rollback procedures when possible.
 
 ### 7. **Communicate with Stakeholders**
-   - **Notify users**: Inform stakeholders (customers, users, and team members) about planned updates, potential downtime, and the expected impact. Provide timely updates if any issues arise.
-   - **Document changes**: Keep detailed documentation of the updates, including what was changed, who approved it, the time of implementation, and any issues encountered during the process.
 
-### Recommended Process for Updating Production Systems:
+* **Notify users**: Inform stakeholders (customers, users, and team members) about planned updates, potential downtime, and the expected impact. Provide timely updates if any issues arise.
+* **Document changes**: Keep detailed documentation of the updates, including what was changed, who approved it, the time of implementation, and any issues encountered during the process.
+
+### Recommended Process for Updating Production Systems
 
 1. **Pre-Update Preparation**:
-   - Review available updates and their impact.
-   - Create a backup or snapshot.
-   - Test the updates in a staging environment.
-   - Schedule downtime or maintenance windows if needed.
-   - Communicate with stakeholders.
+   * Review available updates and their impact.
+   * Create a backup or snapshot.
+   * Test the updates in a staging environment.
+   * Schedule downtime or maintenance windows if needed.
+   * Communicate with stakeholders.
 
 2. **During the Update**:
-   - Apply updates using automation or manually if necessary.
-   - Apply the updates in batches or staggered across systems to minimize risk.
-   - Monitor logs and services for any anomalies during the update process.
+   * Apply updates using automation or manually if necessary.
+   * Apply the updates in batches or staggered across systems to minimize risk.
+   * Monitor logs and services for any anomalies during the update process.
 
 3. **Post-Update Monitoring**:
-   - Verify system and application functionality after the updates.
-   - Monitor performance metrics and logs to detect any post-update issues.
-   - Be prepared to roll back if critical issues are detected.
+   * Verify system and application functionality after the updates.
+   * Monitor performance metrics and logs to detect any post-update issues.
+   * Be prepared to roll back if critical issues are detected.
 
 4. **Follow-Up**:
-   - Notify stakeholders of successful updates or any issues.
-   - Document the update process, outcome, and lessons learned for future reference.
+   * Notify stakeholders of successful updates or any issues.
+   * Document the update process, outcome, and lessons learned for future reference.
 
 ---
 
@@ -2276,15 +2329,15 @@ Speaking of killing processes never use `kill -9/SIGKILL` unless absolutely mand
 
 Always try to use the following simple procedure:
 
-- first, send **SIGTERM** (`kill -15`) signal first which tells the process to shutdown and is generally accepted as the signal to use when shutting down cleanly (but remember that this signal can be ignored).
-- next try to send **SIGHUP** (`kill -1`) signal which is commonly used to tell a process to shutdown and restart, this signal can also be caught and ignored by a process.
+* first, send **SIGTERM** (`kill -15`) signal first which tells the process to shutdown and is generally accepted as the signal to use when shutting down cleanly (but remember that this signal can be ignored).
+* next try to send **SIGHUP** (`kill -1`) signal which is commonly used to tell a process to shutdown and restart, this signal can also be caught and ignored by a process.
 
 The far majority of the time, this is all you need - and is much cleaner.
 
 Useful resources:
 
-- [When should I not kill -9 a process?](https://unix.stackexchange.com/questions/8916/when-should-i-not-kill-9-a-process)
-- [SIGTERM vs. SIGKILL](https://major.io/2010/03/18/sigterm-vs-sigkill/)
+* [When should I not kill -9 a process?](https://unix.stackexchange.com/questions/8916/when-should-i-not-kill-9-a-process)
+* [SIGTERM vs. SIGKILL](https://major.io/2010/03/18/sigterm-vs-sigkill/)
 
 </details>
 
@@ -2309,17 +2362,17 @@ Good for when you don't have source code or don't want to be bothered to really 
 
 Other such examples
 
-- `-e trace=network` - trace all the network related system calls.
-- `-e trace=signal` - trace all signal related system calls.
-- `-e trace=ipc` - trace all IPC related system calls.
-- `-e trace=desc` - trace all file descriptor related system calls.
-- `-e trace=memory` - trace all memory mapping related system calls.
+* `-e trace=network` - trace all the network related system calls.
+* `-e trace=signal` - trace all signal related system calls.
+* `-e trace=ipc` - trace all IPC related system calls.
+* `-e trace=desc` - trace all file descriptor related system calls.
+* `-e trace=memory` - trace all memory mapping related system calls.
 
 Useful resources:
 
-- [How should strace be used? (original)](https://stackoverflow.com/questions/174942/how-should-strace-be-used)
-- [How does strace connect to an already running process? (original)](https://stackoverflow.com/questions/7482076/how-does-strace-connect-to-an-already-running-process)
-- [Tracing processes for fun and profit](https://techblog.rosedu.org/tracing-processes-for-fun-and-profit.html)
+* [How should strace be used? (original)](https://stackoverflow.com/questions/174942/how-should-strace-be-used)
+* [How does strace connect to an already running process? (original)](https://stackoverflow.com/questions/7482076/how-does-strace-connect-to-an-already-running-process)
+* [Tracing processes for fun and profit](https://techblog.rosedu.org/tracing-processes-for-fun-and-profit.html)
 
 </details>
 
@@ -2335,19 +2388,19 @@ To be completed.
 
 Typical current algorithms are:
 
-- MD5
-- SHA-1 (also called SHA)
+* MD5
+* SHA-1 (also called SHA)
 
 both should not be used for cryptographic/security purposes anymore!
 
-- SHA-256
-- SHA-512
-- SHA-3 (KECCAK was announced the winner in the competition for a new federal approved hash algorithm in October 2012)
+* SHA-256
+* SHA-512
+* SHA-3 (KECCAK was announced the winner in the competition for a new federal approved hash algorithm in October 2012)
 
 Useful resources:
 
-- [What is the algorithm used to encrypt Linux passwords?](https://crypto.stackexchange.com/questions/40841/what-is-the-algorithm-used-to-encrypt-linux-passwords)
-- [How to find the hashing algorithm used to obfuscate passwords?](https://unix.stackexchange.com/questions/430141/how-to-find-the-hashing-algorithm-used-to-obfuscate-passwords)
+* [What is the algorithm used to encrypt Linux passwords?](https://crypto.stackexchange.com/questions/40841/what-is-the-algorithm-used-to-encrypt-linux-passwords)
+* [How to find the hashing algorithm used to obfuscate passwords?](https://unix.stackexchange.com/questions/430141/how-to-find-the-hashing-algorithm-used-to-obfuscate-passwords)
 
 </details>
 
@@ -2404,7 +2457,7 @@ Also, you should run SSH client with `-v|--verbose` - it is in first level of ve
 
 Useful resources:
 
-- [Enable Debugging Mode in SSH to Troubleshoot Connectivity Issues](https://www.tecmint.com/enable-debugging-mode-in-ssh/)
+* [Enable Debugging Mode in SSH to Troubleshoot Connectivity Issues](https://www.tecmint.com/enable-debugging-mode-in-ssh/)
 
 </details>
 
@@ -2479,8 +2532,8 @@ Getting Apache to run as `nobody:nobody` is pretty easy, just update the user an
 
 Useful resources:
 
-- [What is nobody user and group?](https://unix.stackexchange.com/questions/186568/what-is-nobody-user-and-group)
-- [What is the purpose of the 'nobody' user?](https://askubuntu.com/questions/329714/what-is-the-purpose-of-the-nobody-user)
+* [What is nobody user and group?](https://unix.stackexchange.com/questions/186568/what-is-nobody-user-and-group)
+* [What is the purpose of the 'nobody' user?](https://askubuntu.com/questions/329714/what-is-the-purpose-of-the-nobody-user)
 
 </details>
 
@@ -2516,7 +2569,7 @@ Running `./script` does exactly that, and requires execute permission on the fil
 
 Useful resources:
 
-- [What is the preferred Bash shebang? (original)](https://stackoverflow.com/questions/10376206/what-is-the-preferred-bash-shebang)
+* [What is the preferred Bash shebang? (original)](https://stackoverflow.com/questions/10376206/what-is-the-preferred-bash-shebang)
 
 </details>
 
@@ -2535,6 +2588,7 @@ or to prevent a command from being killed after the SSH session drops, you can u
 Here’s how to use `tmux` to run a long-running process:
 
 ### 1. **Start a New tmux Session**
+
 First, connect to your server via SSH and start a new `tmux` session:
 
 ```bash
@@ -2544,6 +2598,7 @@ tmux new -s mysession
 Here, `mysession` is the name of the session. You can choose any name you prefer.
 
 ### 2. **Run Your Command**
+
 Inside the tmux session, run the command that is expected to take a long time.
 
 ```bash
@@ -2553,15 +2608,17 @@ long_running_command
 This command will now run inside the tmux session, independent of your SSH connection.
 
 ### 3. **Detach from the tmux Session**
+
 To safely disconnect from the tmux session while keeping the command running in the background, **detach** from the session by pressing:
 
-```
+```plaintext
 Ctrl + b, then d
 ```
 
 This will bring you back to your original shell while leaving the long-running process active within the tmux session.
 
 ### 4. **Reconnect to the tmux Session Later**
+
 If you lose connection or want to reconnect to your tmux session later, SSH back into the server and reattach to the session:
 
 ```bash
@@ -2571,6 +2628,7 @@ tmux attach -t mysession
 This will resume the tmux session exactly where you left off, showing the progress of your long-running command.
 
 ### 5. **List Active tmux Sessions**
+
 If you forget the session name or want to see all active tmux sessions, use:
 
 ```bash
@@ -2596,7 +2654,7 @@ The **Root-Intermediate CA** structure is created by each major CA to protect ag
 
 Useful resources:
 
-- [How certificate chains work](https://knowledge.digicert.com/solution/how-certificate-chains-work)
+* [How certificate chains work](https://knowledge.digicert.com/solution/how-certificate-chains-work)
 
 </details>
 
@@ -2607,7 +2665,7 @@ The best way is `exec $SHELL -l` because `exec` replaces the current process wit
 
 Useful resources:
 
-- [How to reload .bash_profile from the command line?](https://stackoverflow.com/questions/4608187/how-to-reload-bash-profile-from-the-command-line)
+* [How to reload .bash_profile from the command line?](https://stackoverflow.com/questions/4608187/how-to-reload-bash-profile-from-the-command-line)
 
 </details>
 
@@ -2638,7 +2696,7 @@ Using a single ip but different URLs to route to different back end servers.
 
 Useful resources:
 
-- [The Benefits of a Reverse Proxy](https://dzone.com/articles/benefits-reverse-proxy)
+* [The Benefits of a Reverse Proxy](https://dzone.com/articles/benefits-reverse-proxy)
 
 </details>
 
@@ -2657,14 +2715,14 @@ or:
 grep -insr "pattern" *
 ```
 
-- `-i` ignore case distinctions in both the **PATTERN** and the input files
-- `-n`  prefix each line of output with the 1-based line number within its input file
-- `-s` suppress error messages about nonexistent or unreadable files.
-- `-r` read all files under each directory, recursively.
+* `-i` ignore case distinctions in both the **PATTERN** and the input files
+* `-n`  prefix each line of output with the 1-based line number within its input file
+* `-s` suppress error messages about nonexistent or unreadable files.
+* `-r` read all files under each directory, recursively.
 
 Useful resources:
 
-- [How to grep a string in a directory and all its subdirectories files in LINUX?](https://stackoverflow.com/questions/15622328/how-to-grep-a-string-in-a-directory-and-all-its-subdirectories-files-in-linux)
+* [How to grep a string in a directory and all its subdirectories files in LINUX?](https://stackoverflow.com/questions/15622328/how-to-grep-a-string-in-a-directory-and-all-its-subdirectories-files-in-linux)
 
 </details>
 
@@ -2686,20 +2744,20 @@ A container is a lightweight, portable software package that includes everything
 
 Some benefits of containers include:
 
-- Efficiency: Containers are lightweight and share the host OS kernel, so they require fewer resources and have faster startup times than VMs.
-- Portability: Containers can run on any system that supports containerization, making them easy to move between development, testing, and production environments.
-- Consistency: Containers ensure that an application runs the same way in any environment, eliminating the "works on my machine" problem.
-- Scalability: Containers are designed to be scalable and can be easily orchestrated with tools like Kubernetes.
+* Efficiency: Containers are lightweight and share the host OS kernel, so they require fewer resources and have faster startup times than VMs.
+* Portability: Containers can run on any system that supports containerization, making them easy to move between development, testing, and production environments.
+* Consistency: Containers ensure that an application runs the same way in any environment, eliminating the "works on my machine" problem.
+* Scalability: Containers are designed to be scalable and can be easily orchestrated with tools like Kubernetes.
 
 Some benefits of VMs include:
 
-- Isolation: VMs provide complete isolation between applications and the host OS, making them more secure.
-- Flexibility: VMs can run different operating systems and versions, making them useful for testing and compatibility purposes.
-- Robustness: VMs have a proven track record of stability and reliability.
+* Isolation: VMs provide complete isolation between applications and the host OS, making them more secure.
+* Flexibility: VMs can run different operating systems and versions, making them useful for testing and compatibility purposes.
+* Robustness: VMs have a proven track record of stability and reliability.
 
 Useful resources:
 
-- [RedHat: Containers vs VMs](https://www.redhat.com/en/topics/containers/containers-vs-vms)
+* [RedHat: Containers vs VMs](https://www.redhat.com/en/topics/containers/containers-vs-vms)
 
 </details>
 
@@ -2708,17 +2766,17 @@ Useful resources:
 
 Some possible reasons and troubleshooting steps to resolve the issue are:
 
-- DNS server misconfiguration: Check if the server is configured to use the correct DNS server and if the DNS server is working correctly. You can check this by using the "nslookup" command to look up a hostname and see if it resolves to the correct IP address. If the DNS server is misconfigured, correct the configuration or use a different DNS server.
+* DNS server misconfiguration: Check if the server is configured to use the correct DNS server and if the DNS server is working correctly. You can check this by using the "nslookup" command to look up a hostname and see if it resolves to the correct IP address. If the DNS server is misconfigured, correct the configuration or use a different DNS server.
 
-- Incorrect hostname resolution order: Check the hostname resolution order on the server. This can be checked by examining the /etc/nsswitch.conf file. Make sure that the desired method for hostname resolution is listed first.
+* Incorrect hostname resolution order: Check the hostname resolution order on the server. This can be checked by examining the /etc/nsswitch.conf file. Make sure that the desired method for hostname resolution is listed first.
 
-- Firewall blocking DNS traffic: Check if the firewall on the server is blocking DNS traffic. You can check this by temporarily disabling the firewall and testing if hostname resolution works. If it does, then the firewall is the issue, and you need to allow DNS traffic through it.
+* Firewall blocking DNS traffic: Check if the firewall on the server is blocking DNS traffic. You can check this by temporarily disabling the firewall and testing if hostname resolution works. If it does, then the firewall is the issue, and you need to allow DNS traffic through it.
 
-- DNS cache issues: Check if the DNS cache on the server is causing issues. You can clear the cache using the "systemd-resolve --flush-caches" command.
+* DNS cache issues: Check if the DNS cache on the server is causing issues. You can clear the cache using the "systemd-resolve --flush-caches" command.
 
-- Incorrect DNS record: Check if the DNS record for the hostname is correct. This can be done by using the "dig" or "nslookup" command and checking if the DNS record for the hostname matches the expected IP address.
+* Incorrect DNS record: Check if the DNS record for the hostname is correct. This can be done by using the "dig" or "nslookup" command and checking if the DNS record for the hostname matches the expected IP address.
 
-- Network connectivity issues: Check if there are any network connectivity issues that are preventing the server from accessing the DNS server. This can be done by using the "ping" command to check if the server can communicate with the DNS server.
+* Network connectivity issues: Check if there are any network connectivity issues that are preventing the server from accessing the DNS server. This can be done by using the "ping" command to check if the server can communicate with the DNS server.
 
 </details>
 
@@ -2736,9 +2794,9 @@ Boot to LAN is most often used when you are doing a fresh install on a system. W
 
 The terminologies Internet, Intranet, and Extranet are used to define how the applications in the network can be accessed. They use similar TCP/IP technology but differ in terms of access levels for each user inside the network and outside the network.
 
-- Internet: Applications are accessed by anyone from any location using the web.
-- Intranet: It allows limited access to users in the same organization.
-- Extranet: External users are allowed or provided with access to use the network application of the organization.
+* Internet: Applications are accessed by anyone from any location using the web.
+* Intranet: It allows limited access to users in the same organization.
+* Extranet: External users are allowed or provided with access to use the network application of the organization.
 
 </details>
 
@@ -2753,16 +2811,16 @@ However, it is prudent to provide some sort of protection of the production netw
 
 Operating at the network layer and transport layer of the TCP/IP protocol stack, every packet is examined as it enters the protocol stack. The network and transport headers are examined closely for the following information:
 
-- **protocol (IP header, network layer)** - in the IP header, byte 9 (remember the byte count begins with zero) identifies the protocol of the packet. Most filter devices have the capability to differentiate between TCP, UPD, and ICMP.
-- **source address (IP header, network layer)** - the source address is the 32-bit IP address of the host which created the packet.
-- **destination address (IP header, network layer)** - the destination address is the 32-bit IP address of the host the packet is destined for.
-- **source port (TCP or UDP header, transport layer)** - each end of a TCP or UDP network connection is bound to a port. TCP ports are separate and distinct from UDP ports. Ports numbered below 1024 are reserved – they have a specifically defined use. Ports numbered above 1024 (inclusive) are known as ephemeral ports. They can be used however a vendor chooses. For a list of "well known" ports, refer to RFP1700. The source port is a pseudo-randomly assigned ephemeral port number. Thus, it is often not very useful to filter on the source port.
-- **destination port (TCP or UDP header, transport layer)** - the destination port number indicates a port that the packet is sent to. Each service on the destination host listens to a port. Some well-known ports that might be filtered are 20/TCP and 21/TCP - ftp connection/data, 23/TCP - telnet, 80/TCP - http, and 53/TCP - DNS zone transfers.
-- **connection status (TCP header, transport layer)** - the connection status tells whether the packet is the first packet of the network session. The ACK bit in the TCP header is set to “false” or 0 if this is the first packet in the session. It is simple to disallow a host from establishing a connection by rejecting or discarding any packets which have the ACK bit set to "false" or 0.
+* **protocol (IP header, network layer)** - in the IP header, byte 9 (remember the byte count begins with zero) identifies the protocol of the packet. Most filter devices have the capability to differentiate between TCP, UPD, and ICMP.
+* **source address (IP header, network layer)** - the source address is the 32-bit IP address of the host which created the packet.
+* **destination address (IP header, network layer)** - the destination address is the 32-bit IP address of the host the packet is destined for.
+* **source port (TCP or UDP header, transport layer)** - each end of a TCP or UDP network connection is bound to a port. TCP ports are separate and distinct from UDP ports. Ports numbered below 1024 are reserved – they have a specifically defined use. Ports numbered above 1024 (inclusive) are known as ephemeral ports. They can be used however a vendor chooses. For a list of "well known" ports, refer to RFP1700. The source port is a pseudo-randomly assigned ephemeral port number. Thus, it is often not very useful to filter on the source port.
+* **destination port (TCP or UDP header, transport layer)** - the destination port number indicates a port that the packet is sent to. Each service on the destination host listens to a port. Some well-known ports that might be filtered are 20/TCP and 21/TCP - ftp connection/data, 23/TCP - telnet, 80/TCP - http, and 53/TCP - DNS zone transfers.
+* **connection status (TCP header, transport layer)** - the connection status tells whether the packet is the first packet of the network session. The ACK bit in the TCP header is set to “false” or 0 if this is the first packet in the session. It is simple to disallow a host from establishing a connection by rejecting or discarding any packets which have the ACK bit set to "false" or 0.
 
 Useful resources:
 
-- [How does a packet filters work?](https://www.tutorialspoint.com/how-does-a-packet-filters-work)
+* [How does a packet filters work?](https://www.tutorialspoint.com/how-does-a-packet-filters-work)
 
 </details>
 
@@ -2788,19 +2846,19 @@ First of all check if your site is online from another location. It then lets yo
 
 **If only IP connection working**
 
-- you can use whois to see what DNS servers serve up the hostname to the site: `whois www.example.com`
-- you can use tools like `dig` or `host` to test DNS to see if the host name is resolving: `host www.example.org dns.example.org`
-- you can also check global public dns servers: `host www.example.com 9.9.9.9`
+* you can use whois to see what DNS servers serve up the hostname to the site: `whois www.example.com`
+* you can use tools like `dig` or `host` to test DNS to see if the host name is resolving: `host www.example.org dns.example.org`
+* you can also check global public dns servers: `host www.example.com 9.9.9.9`
 
 If domain not resolved it's probably problem with DNS servers.
 
 **If domain resolved properly**
 
-- investigate the log files and resolve the issue regarding the logs, it's the best way to show what's wrong
-- check the http status code, usually it will be the response with the 5xx, maybe server is overload because clients making lots of connection to the website or specific url? maybe your caching rules not working properly?
-- check web/proxy server configuration (e.g. `nginx -t -c </path/to/nginx.conf>`), maybe another sysadmin has made some changes to the domain configuration?
-- maybe something on the server has crashed? maybe run out of space or run out of memory?
-- maybe it's a programming error on the website?
+* investigate the log files and resolve the issue regarding the logs, it's the best way to show what's wrong
+* check the http status code, usually it will be the response with the 5xx, maybe server is overload because clients making lots of connection to the website or specific url? maybe your caching rules not working properly?
+* check web/proxy server configuration (e.g. `nginx -t -c </path/to/nginx.conf>`), maybe another sysadmin has made some changes to the domain configuration?
+* maybe something on the server has crashed? maybe run out of space or run out of memory?
+* maybe it's a programming error on the website?
 
 </details>
 
@@ -2810,90 +2868,100 @@ If domain not resolved it's probably problem with DNS servers.
 Load balancing is the process of distributing network or application traffic across multiple servers to ensure no single server becomes overwhelmed, which improves performance, reliability, and availability. There are several load balancing mechanisms, each suited to different types of workloads and traffic patterns. Here's a discussion of the key load balancing techniques:
 
 ### 1. **Round Robin**
-   - **Mechanism**: In this method, requests are distributed across servers in a sequential and circular order. The first request goes to the first server, the second request to the second server, and so on. Once all servers have received a request, the cycle starts again.
-   - **Use Case**: Round Robin is ideal for environments where the servers have similar hardware and can handle roughly the same load.
-   - **Advantages**:
-     - Simple to implement.
-     - Does not require knowledge of server load.
-   - **Disadvantages**:
-     - Does not account for server performance or current load, which can lead to performance degradation if one server is slower than the others or has more tasks to handle.
+
+* **Mechanism**: In this method, requests are distributed across servers in a sequential and circular order. The first request goes to the first server, the second request to the second server, and so on. Once all servers have received a request, the cycle starts again.
+* **Use Case**: Round Robin is ideal for environments where the servers have similar hardware and can handle roughly the same load.
+* **Advantages**:
+  * Simple to implement.
+  * Does not require knowledge of server load.
+* **Disadvantages**:
+  * Does not account for server performance or current load, which can lead to performance degradation if one server is slower than the others or has more tasks to handle.
 
 ### 2. **Weighted Round Robin**
-   - **Mechanism**: Similar to Round Robin, but each server is assigned a weight based on its capacity. Servers with higher capacity (e.g., more CPU or memory) receive more requests, while those with lower capacity receive fewer requests.
-   - **Use Case**: Ideal when servers have different hardware configurations and processing capabilities, ensuring that more powerful servers handle more traffic.
-   - **Advantages**:
-     - Distributes traffic more evenly according to server capacity.
-     - Helps balance load in heterogeneous server environments.
-   - **Disadvantages**:
-     - Still doesn’t take real-time server performance or load into account.
+
+* **Mechanism**: Similar to Round Robin, but each server is assigned a weight based on its capacity. Servers with higher capacity (e.g., more CPU or memory) receive more requests, while those with lower capacity receive fewer requests.
+* **Use Case**: Ideal when servers have different hardware configurations and processing capabilities, ensuring that more powerful servers handle more traffic.
+* **Advantages**:
+  * Distributes traffic more evenly according to server capacity.
+  * Helps balance load in heterogeneous server environments.
+* **Disadvantages**:
+  * Still doesn’t take real-time server performance or load into account.
 
 ### 3. **Least Connections**
-   - **Mechanism**: The load balancer directs traffic to the server with the fewest active connections at any given time. This method assumes that servers with fewer connections can handle more load and therefore receive more traffic.
-   - **Use Case**: Suitable for environments where each client connection generates a different amount of load, such as when clients use persistent or long-lived connections.
-   - **Advantages**:
-     - Balances traffic based on real-time connection load.
-   - **Disadvantages**:
-     - Requires more overhead to track the number of connections per server.
+
+* **Mechanism**: The load balancer directs traffic to the server with the fewest active connections at any given time. This method assumes that servers with fewer connections can handle more load and therefore receive more traffic.
+* **Use Case**: Suitable for environments where each client connection generates a different amount of load, such as when clients use persistent or long-lived connections.
+* **Advantages**:
+  * Balances traffic based on real-time connection load.
+* **Disadvantages**:
+  * Requires more overhead to track the number of connections per server.
 
 ### 4. **Weighted Least Connections**
-   - **Mechanism**: Combines the Weighted Round Robin and Least Connections algorithms. Servers are weighted based on their capacity, but traffic is distributed according to the number of active connections and server weight. Servers with fewer connections relative to their capacity receive more traffic.
-   - **Use Case**: Ideal when servers have different capacities, and connection load varies significantly.
-   - **Advantages**:
-     - More efficient in balancing load based on both server capacity and connection count.
-   - **Disadvantages**:
-     - Requires more overhead to monitor connection counts and server capacities.
+
+* **Mechanism**: Combines the Weighted Round Robin and Least Connections algorithms. Servers are weighted based on their capacity, but traffic is distributed according to the number of active connections and server weight. Servers with fewer connections relative to their capacity receive more traffic.
+* **Use Case**: Ideal when servers have different capacities, and connection load varies significantly.
+* **Advantages**:
+  * More efficient in balancing load based on both server capacity and connection count.
+* **Disadvantages**:
+  * Requires more overhead to monitor connection counts and server capacities.
 
 ### 5. **IP Hash (Source IP Hashing)**
-   - **Mechanism**: The load balancer uses a hash function based on the client’s IP address to determine which server will handle the request. The same client will always be directed to the same server as long as the server is available.
-   - **Use Case**: Useful when session persistence or "sticky sessions" are required, where clients need to be consistently directed to the same server (e.g., for stateful applications).
-   - **Advantages**:
-     - Ensures that clients are always routed to the same server, helping with session persistence.
-   - **Disadvantages**:
-     - If a server fails, session data can be lost unless additional mechanisms (like session replication) are used.
-     - Not ideal if load distribution is a priority, as traffic may become unevenly distributed depending on the source IP distribution.
+
+* **Mechanism**: The load balancer uses a hash function based on the client’s IP address to determine which server will handle the request. The same client will always be directed to the same server as long as the server is available.
+* **Use Case**: Useful when session persistence or "sticky sessions" are required, where clients need to be consistently directed to the same server (e.g., for stateful applications).
+* **Advantages**:
+  * Ensures that clients are always routed to the same server, helping with session persistence.
+* **Disadvantages**:
+  * If a server fails, session data can be lost unless additional mechanisms (like session replication) are used.
+  * Not ideal if load distribution is a priority, as traffic may become unevenly distributed depending on the source IP distribution.
 
 ### 6. **Least Response Time**
-   - **Mechanism**: The load balancer monitors the response time of each server and sends traffic to the server that has the quickest response time. This ensures that servers that are responding more efficiently receive more traffic.
-   - **Use Case**: Useful for environments where response time is critical, and the load balancer needs to ensure that requests are sent to the least busy or fastest server.
-   - **Advantages**:
-     - Accounts for server load and performance in real-time.
-   - **Disadvantages**:
-     - Requires more overhead to monitor response times and adjust routing decisions accordingly.
+
+* **Mechanism**: The load balancer monitors the response time of each server and sends traffic to the server that has the quickest response time. This ensures that servers that are responding more efficiently receive more traffic.
+* **Use Case**: Useful for environments where response time is critical, and the load balancer needs to ensure that requests are sent to the least busy or fastest server.
+* **Advantages**:
+  * Accounts for server load and performance in real-time.
+* **Disadvantages**:
+  * Requires more overhead to monitor response times and adjust routing decisions accordingly.
 
 ### 7. **Geolocation-Based Load Balancing**
-   - **Mechanism**: Traffic is routed based on the geographic location of the client. The load balancer directs traffic to the nearest or most appropriate data center or server to reduce latency.
-   - **Use Case**: Useful for global applications or services with geographically distributed servers or data centers, such as CDNs (Content Delivery Networks).
-   - **Advantages**:
-     - Minimizes latency by routing traffic to the closest server.
-     - Helps improve user experience, especially for latency-sensitive applications.
-   - **Disadvantages**:
-     - Does not consider server load, only geographic proximity, which can lead to imbalanced traffic if one location experiences much higher demand.
+
+* **Mechanism**: Traffic is routed based on the geographic location of the client. The load balancer directs traffic to the nearest or most appropriate data center or server to reduce latency.
+* **Use Case**: Useful for global applications or services with geographically distributed servers or data centers, such as CDNs (Content Delivery Networks).
+* **Advantages**:
+  * Minimizes latency by routing traffic to the closest server.
+  * Helps improve user experience, especially for latency-sensitive applications.
+* **Disadvantages**:
+  * Does not consider server load, only geographic proximity, which can lead to imbalanced traffic if one location experiences much higher demand.
 
 ### 8. **Randomized Load Balancing**
-   - **Mechanism**: Traffic is randomly distributed to any of the available servers. Each request has an equal chance of going to any server, regardless of load or capacity.
-   - **Use Case**: This method is simple and rarely used alone in production environments but may be useful for very small, homogenous environments where load distribution is not a major concern.
-   - **Advantages**:
-     - Easy to implement.
-   - **Disadvantages**:
-     - Does not account for server capacity or current load, which can result in uneven distribution and performance bottlenecks.
+
+* **Mechanism**: Traffic is randomly distributed to any of the available servers. Each request has an equal chance of going to any server, regardless of load or capacity.
+* **Use Case**: This method is simple and rarely used alone in production environments but may be useful for very small, homogenous environments where load distribution is not a major concern.
+* **Advantages**:
+  * Easy to implement.
+* **Disadvantages**:
+  * Does not account for server capacity or current load, which can result in uneven distribution and performance bottlenecks.
 
 ### 9. **Global Server Load Balancing (GSLB)**
-   - **Mechanism**: GSLB distributes traffic across multiple geographically distributed data centers or servers based on various factors, such as proximity, server load, or response time.
-   - **Use Case**: Ideal for multinational companies or services that have data centers or cloud resources across the world and need to optimize traffic routing to improve performance and redundancy.
-   - **Advantages**:
-     - Increases availability and fault tolerance by distributing traffic globally.
-     - Can optimize for performance by considering both proximity and load.
-   - **Disadvantages**:
-     - Requires more complex infrastructure, including DNS routing and monitoring.
+
+* **Mechanism**: GSLB distributes traffic across multiple geographically distributed data centers or servers based on various factors, such as proximity, server load, or response time.
+* **Use Case**: Ideal for multinational companies or services that have data centers or cloud resources across the world and need to optimize traffic routing to improve performance and redundancy.
+* **Advantages**:
+  * Increases availability and fault tolerance by distributing traffic globally.
+  * Can optimize for performance by considering both proximity and load.
+* **Disadvantages**:
+  * Requires more complex infrastructure, including DNS routing and monitoring.
 
 ### 10. **Dynamic Load Balancing**
-   - **Mechanism**: Traffic distribution decisions are made based on real-time server health and performance metrics, such as CPU load, memory usage, or disk I/O. The load balancer dynamically adjusts based on the state of the servers.
-   - **Use Case**: Best for high-performance environments where server load can fluctuate significantly, such as in cloud services or microservice architectures.
-   - **Advantages**:
-     - Provides efficient load balancing by adjusting dynamically based on server performance.
-     - Helps prevent overloading any server.
-   - **Disadvantages**:
-     - High overhead in monitoring server health in real-time.
+
+* **Mechanism**: Traffic distribution decisions are made based on real-time server health and performance metrics, such as CPU load, memory usage, or disk I/O. The load balancer dynamically adjusts based on the state of the servers.
+* **Use Case**: Best for high-performance environments where server load can fluctuate significantly, such as in cloud services or microservice architectures.
+* **Advantages**:
+  * Provides efficient load balancing by adjusting dynamically based on server performance.
+  * Helps prevent overloading any server.
+* **Disadvantages**:
+  * High overhead in monitoring server health in real-time.
 
 </details>
 
@@ -2908,7 +2976,7 @@ Another significant difference between the two protocols is that HTTP 2.0 suppor
 
 Useful resources:
 
-- [What is HTTP/2 - The Ultimate Guide](https://kinsta.com/learn/what-is-http2/)
+* [What is HTTP/2 - The Ultimate Guide](https://kinsta.com/learn/what-is-http2/)
 
 </details>
 
@@ -2921,7 +2989,7 @@ A **three-way handshake** is a method used in a TCP/IP network to create a conne
 
 Useful resources:
 
-- [Why do we need a 3-way handshake? Why not just 2-way?](https://networkengineering.stackexchange.com/questions/24068/why-do-we-need-a-3-way-handshake-why-not-just-2-way)
+* [Why do we need a 3-way handshake? Why not just 2-way?](https://networkengineering.stackexchange.com/questions/24068/why-do-we-need-a-3-way-handshake-why-not-just-2-way)
 
 </details>
 
@@ -2934,7 +3002,7 @@ This lack of error-checking and retransmission makes UDP faster than TCP in some
 
 Useful resources:
 
-- [UDP vs TCP, how much faster is it?](https://stackoverflow.com/questions/47903/udp-vs-tcp-how-much-faster-is-it)
+* [UDP vs TCP, how much faster is it?](https://stackoverflow.com/questions/47903/udp-vs-tcp-how-much-faster-is-it)
 
 </details>
 
@@ -2944,50 +3012,62 @@ Useful resources:
 Here are the **five most important OpenSSH parameters** to improve security, along with their explanations and why they are critical:
 
 ### 1. **`PermitRootLogin no`**
-   - **Description**: Disables root login over SSH.
-   - **Why it's important**: Allowing root to log in via SSH poses a significant security risk since the root account has full control over the system. Disabling it forces users to log in with their own accounts and use `sudo` or `su` for elevated privileges. This adds a layer of security and accountability.
-   - **How to configure**: Edit `/etc/ssh/sshd_config` and set:
+
+* **Description**: Disables root login over SSH.
+* **Why it's important**: Allowing root to log in via SSH poses a significant security risk since the root account has full control over the system. Disabling it forces users to log in with their own accounts and use `sudo` or `su` for elevated privileges. This adds a layer of security and accountability.
+* **How to configure**: Edit `/etc/ssh/sshd_config` and set:
+
      ```bash
      PermitRootLogin no
      ```
 
 ### 2. **`PasswordAuthentication no`**
-   - **Description**: Disables password-based login, enforcing the use of more secure methods such as public key authentication.
-   - **Why it's important**: Password-based logins are vulnerable to brute-force attacks. By disabling password authentication, you force users to authenticate using SSH keys, which are significantly more secure and harder to crack.
-   - **How to configure**: Edit `/etc/ssh/sshd_config` and set:
+
+* **Description**: Disables password-based login, enforcing the use of more secure methods such as public key authentication.
+* **Why it's important**: Password-based logins are vulnerable to brute-force attacks. By disabling password authentication, you force users to authenticate using SSH keys, which are significantly more secure and harder to crack.
+* **How to configure**: Edit `/etc/ssh/sshd_config` and set:
+
      ```bash
      PasswordAuthentication no
      ```
 
 ### 3. **`AllowUsers` or `AllowGroups`**
-   - **Description**: Restricts which users or groups can log in via SSH.
-   - **Why it's important**: Limiting which users can access the server via SSH reduces the attack surface by preventing unauthorized or unnecessary users from attempting to log in.
-   - **How to configure**: You can specify the users or groups allowed to access the server by adding these directives:
+
+* **Description**: Restricts which users or groups can log in via SSH.
+* **Why it's important**: Limiting which users can access the server via SSH reduces the attack surface by preventing unauthorized or unnecessary users from attempting to log in.
+* **How to configure**: You can specify the users or groups allowed to access the server by adding these directives:
+
      ```bash
      AllowUsers user1 user2
      ```
+
      Or:
+
      ```bash
      AllowGroups sshusers admin
      ```
 
-### 4. - **`LoginGraceTime 60`** 
-   - **Description**: Reduces the time allowed for login attempts, minimizing the time an attacker has to brute force login credentials.
+### 4. - **`LoginGraceTime 60`**
+
+* **Description**: Reduces the time allowed for login attempts, minimizing the time an attacker has to brute force login credentials.
+
   ```bash
   LoginGraceTime 60
   ```
 
 ### 5. **`MaxAuthTries 3`**
-   - **Description**: Limits the number of authentication attempts per connection.
-   - **Why it's important**: By limiting the number of authentication attempts, you reduce the window for brute-force attacks. After the limit is reached, the SSH connection is closed, forcing the attacker to reconnect and start over.
-   - **How to configure**: Edit `/etc/ssh/sshd_config` and set:
+
+* **Description**: Limits the number of authentication attempts per connection.
+* **Why it's important**: By limiting the number of authentication attempts, you reduce the window for brute-force attacks. After the limit is reached, the SSH connection is closed, forcing the attacker to reconnect and start over.
+* **How to configure**: Edit `/etc/ssh/sshd_config` and set:
+
      ```bash
      MaxAuthTries 3
      ```
 
 Useful resources:
 
-- [OpenSSH security and hardening](https://linux-audit.com/audit-and-harden-your-ssh-configuration/)
+* [OpenSSH security and hardening](https://linux-audit.com/audit-and-harden-your-ssh-configuration/)
 
 </details>
 
@@ -3000,7 +3080,7 @@ Workstations or other computers requiring special access outside the network can
 
 Useful resources:
 
-- [Network Address Translation (NAT) Concepts](http://www.firewall.cx/networking-topics/network-address-translation-nat/227-nat-concepts.html)
+* [Network Address Translation (NAT) Concepts](http://www.firewall.cx/networking-topics/network-address-translation-nat/227-nat-concepts.html)
 
 </details>
 
@@ -3016,11 +3096,11 @@ This protocol operates at layer 2 of the OSI model with the purpose of preventin
 
 Use the:
 
-- `lsof -i`
-- `ss -l`
-- `netstat -atn` (for tcp)
-- `netstat -aun` (for udp)
-- `netstat -tulapn`
+* `lsof -i`
+* `ss -l`
+* `netstat -atn` (for tcp)
+* `netstat -aun` (for udp)
+* `netstat -tulapn`
 
 </details>
 
@@ -3037,7 +3117,7 @@ Before accepting the new host key, contact your/other system administrator for v
 
 Useful resources:
 
-- [Git error: "Host Key Verification Failed" when connecting to remote repository](https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository)
+* [Git error: "Host Key Verification Failed" when connecting to remote repository](https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository)
 
 </details>
 
@@ -3048,6 +3128,7 @@ Useful resources:
 
 SMTP Conversation:
 After connecting, you should receive a 220 response code, indicating the server is ready. From there, you can manually type in SMTP commands to simulate an email transaction:
+
 ```HELO myhostname.com
 MAIL FROM:<sender@example.com>
 RCPT TO:<recipient@example.com>
@@ -3057,6 +3138,7 @@ This is a test email sent from netcat.
 .
 QUIT
 ```
+
 Each SMTP command should result in a response from the server, typically beginning with a 250 response code indicating success.
 
 </details>
@@ -3094,27 +3176,27 @@ fuser -k 80/tcp
 
 Useful resources:
 
-- [How to kill a process running on particular port in Linux?](https://stackoverflow.com/questions/11583562/how-to-kill-a-process-running-on-particular-port-in-linux/32592965)
-- [Finding the PID of the process using a specific port?](https://unix.stackexchange.com/questions/106561/finding-the-pid-of-the-process-using-a-specific-port)
+* [How to kill a process running on particular port in Linux?](https://stackoverflow.com/questions/11583562/how-to-kill-a-process-running-on-particular-port-in-linux/32592965)
+* [Finding the PID of the process using a specific port?](https://unix.stackexchange.com/questions/106561/finding-the-pid-of-the-process-using-a-specific-port)
 
 </details>
 
 <details>
 <summary><b>You get <code>curl: (56) TCP connection reset by peer</code>. What steps will you take to solve this problem?</b></summary><br>
 
-- check if the URL is correct, maybe you should add `www` or set correctly `Host:` header? Check also scheme (http or https)
-- check the domain is resolving into a correct IP address
-- enable debug tracing with `--trace-ascii curl.dump`. `Recv failure` is a really generic error, so it's hard for more info
-- use external proxy with `--proxy` for debug connection from external ip
-- use network sniffer (e.g. `tcpdump`) for debug connection in the lower TCP/IP layers
-- check firewall rules on the production environment and on the exit point of your network, also check your NAT rules
-- check MTU size of packets traveling over your network
-- check SSL version with ssl/tls `curl` params if you are connecting to the HTTPS protocol
-- it may be a problem on the client side e.g. the netfilter drop or limit  connections from your IP address to the domain
+* check if the URL is correct, maybe you should add `www` or set correctly `Host:` header? Check also scheme (http or https)
+* check the domain is resolving into a correct IP address
+* enable debug tracing with `--trace-ascii curl.dump`. `Recv failure` is a really generic error, so it's hard for more info
+* use external proxy with `--proxy` for debug connection from external ip
+* use network sniffer (e.g. `tcpdump`) for debug connection in the lower TCP/IP layers
+* check firewall rules on the production environment and on the exit point of your network, also check your NAT rules
+* check MTU size of packets traveling over your network
+* check SSL version with ssl/tls `curl` params if you are connecting to the HTTPS protocol
+* it may be a problem on the client side e.g. the netfilter drop or limit  connections from your IP address to the domain
 
 Useful resources:
 
-- [CURL ERROR: Recv failure: Connection reset by peer - PHP Curl](https://stackoverflow.com/questions/10285700/curl-error-recv-failure-connection-reset-by-peer-php-curl)
+* [CURL ERROR: Recv failure: Connection reset by peer - PHP Curl](https://stackoverflow.com/questions/10285700/curl-error-recv-failure-connection-reset-by-peer-php-curl)
 
 </details>
 
@@ -3129,19 +3211,19 @@ Here’s how to allow traffic to/from a specific IP address in `firewalld`:
 
 This rule allows incoming traffic from a specific IP address. You can apply this rule globally or to a specific zone.
 
-- To allow traffic from a specific IP (e.g., `192.168.1.100`), use:
+* To allow traffic from a specific IP (e.g., `192.168.1.100`), use:
 
 ```bash
 sudo firewall-cmd --zone=public --add-source=192.168.1.100
 ```
 
-- To make the rule persistent across reboots, add `--permanent`:
+* To make the rule persistent across reboots, add `--permanent`:
 
 ```bash
 sudo firewall-cmd --zone=public --add-source=192.168.1.100 --permanent
 ```
 
-- Reload the firewall to apply permanent changes:
+* Reload the firewall to apply permanent changes:
 
 ```bash
 sudo firewall-cmd --reload
@@ -3153,19 +3235,19 @@ This command adds the IP `192.168.1.100` as a trusted source in the specified zo
 
 To allow outgoing traffic to a specific IP address, use a rich rule. This allows finer control over traffic permissions.
 
-- To allow traffic to a specific destination IP (e.g., `203.0.113.100`), use:
+* To allow traffic to a specific destination IP (e.g., `203.0.113.100`), use:
 
 ```bash
 sudo firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" destination address="203.0.113.100" accept'
 ```
 
-- To make it persistent:
+* To make it persistent:
 
 ```bash
 sudo firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" destination address="203.0.113.100" accept' --permanent
 ```
 
-- Reload the firewall:
+* Reload the firewall:
 
 ```bash
 sudo firewall-cmd --reload
@@ -3175,19 +3257,19 @@ sudo firewall-cmd --reload
 
 If you need to allow traffic to/from a specific IP only on certain ports, you can specify both the IP address and the port.
 
-- For example, to allow traffic from `192.168.1.100` on port `22` (SSH):
+* For example, to allow traffic from `192.168.1.100` on port `22` (SSH):
 
 ```bash
 sudo firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.1.100" port protocol="tcp" port="22" accept'
 ```
 
-- To make it persistent:
+* To make it persistent:
 
 ```bash
 sudo firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.1.100" port protocol="tcp" port="22" accept' --permanent
 ```
 
-- Reload the firewall:
+* Reload the firewall:
 
 ```bash
 sudo firewall-cmd --reload
@@ -3195,7 +3277,7 @@ sudo firewall-cmd --reload
 
 ### 4. **Checking and Verifying the Rules**
 
-- List all current rules for a specific zone to verify that the rules are applied:
+* List all current rules for a specific zone to verify that the rules are applied:
 
 ```bash
 sudo firewall-cmd --zone=public --list-all
@@ -3210,14 +3292,14 @@ This will display all the allowed sources, services, and rich rules applied to t
 
 There might be four types of responses:
 
-- **Open port** - few ports in the case of the firewall
-- **Closed port** - most ports are closed because of the firewall
-- **Filtered** - `nmap` is not sure whether the port is open or not
-- **Unfiltered** - `nmap` can access the port but is still confused about the open status of the port
+* **Open port** - few ports in the case of the firewall
+* **Closed port** - most ports are closed because of the firewall
+* **Filtered** - `nmap` is not sure whether the port is open or not
+* **Unfiltered** - `nmap` can access the port but is still confused about the open status of the port
 
 Useful resources:
 
-- [NMAP - Closed vs Filtered](https://security.stackexchange.com/questions/182504/nmap-closed-vs-filtered)
+* [NMAP - Closed vs Filtered](https://security.stackexchange.com/questions/182504/nmap-closed-vs-filtered)
 
 </details>
 
@@ -3230,11 +3312,11 @@ Tcpdump is a command-line packet analyzer tool that is used for network troubles
 
 Some examples of how tcpdump can be used include:
 
-- Troubleshooting network connectivity issues: Tcpdump can be used to capture packets on a network interface to diagnose connectivity issues, such as dropped packets, slow response times, and incorrect routing.
-- Monitoring network traffic: Tcpdump can be used to monitor network traffic for suspicious or unauthorized activity, such as malware infections, network attacks, and data breaches.
-- Analyzing network protocols: Tcpdump can be used to analyze network protocols and their behavior, such as TCP/IP, DNS, DHCP, and HTTP.
-- Debugging network applications: Tcpdump can be used to debug network applications, such as web servers, mail servers, and VoIP applications, by capturing and analyzing packets exchanged between the client and server.
-- Auditing network security: Tcpdump can be used to audit network security by capturing packets and analyzing them for security vulnerabilities, such as weak passwords, unencrypted traffic, and unauthorized access.
+* Troubleshooting network connectivity issues: Tcpdump can be used to capture packets on a network interface to diagnose connectivity issues, such as dropped packets, slow response times, and incorrect routing.
+* Monitoring network traffic: Tcpdump can be used to monitor network traffic for suspicious or unauthorized activity, such as malware infections, network attacks, and data breaches.
+* Analyzing network protocols: Tcpdump can be used to analyze network protocols and their behavior, such as TCP/IP, DNS, DHCP, and HTTP.
+* Debugging network applications: Tcpdump can be used to debug network applications, such as web servers, mail servers, and VoIP applications, by capturing and analyzing packets exchanged between the client and server.
+* Auditing network security: Tcpdump can be used to audit network security by capturing packets and analyzing them for security vulnerabilities, such as weak passwords, unencrypted traffic, and unauthorized access.
 
 </details>
 
@@ -3245,20 +3327,20 @@ Some examples of how tcpdump can be used include:
 
 The most popular DevOps tools are mentioned below:
 
-- **Git** : Version Control System tool
-- **Jenkins** : Continuous Integration tool
-- **Selenium** : Continuous Testing tool
-- **Puppet**, **Chef**, **Ansible** : Configuration Management and Deployment tools
-- **Nagios**, **Zabbix** : Continuous Monitoring tool
-- **Docker** : Containerization tool
+* **Git** : Version Control System tool
+* **Jenkins** : Continuous Integration tool
+* **Selenium** : Continuous Testing tool
+* **Puppet**, **Chef**, **Ansible** : Configuration Management and Deployment tools
+* **Nagios**, **Zabbix** : Continuous Monitoring tool
+* **Docker** : Containerization tool
 
-- Developers develop the code and this source code is managed by Version Control System tools like Git etc.
-- Developers send this code to the Git repository and any changes made in the code is committed to this Repository
-- Jenkins pulls this code from the repository using the Git plugin and build it using tools like Ant or Maven
-- Configuration management tools like puppet deploys & provisions testing environment and then Jenkins releases this code on the test environment on which testing is done using tools like selenium
-- Once the code is tested, Jenkins send it for deployment on the production server (even production server is provisioned & maintained by tools like puppet)
-- After deployment It is continuously monitored by tools like Nagios
-- Docker containers provides testing environment to test the build features
+* Developers develop the code and this source code is managed by Version Control System tools like Git etc.
+* Developers send this code to the Git repository and any changes made in the code is committed to this Repository
+* Jenkins pulls this code from the repository using the Git plugin and build it using tools like Ant or Maven
+* Configuration management tools like puppet deploys & provisions testing environment and then Jenkins releases this code on the test environment on which testing is done using tools like selenium
+* Once the code is tested, Jenkins send it for deployment on the production server (even production server is provisioned & maintained by tools like puppet)
+* After deployment It is continuously monitored by tools like Nagios
+* Docker containers provides testing environment to test the build features
 
 </details>
 
@@ -3271,12 +3353,13 @@ The most popular DevOps tools are mentioned below:
 
 Agile frameworks, such as **Scrum**, **Kanban**, and **Extreme Programming (XP)**, guide how Agile is implemented in practice, but the core principles are defined by the **Agile Manifesto**, which prioritizes:
 
-- **Individuals and interactions** over processes and tools
-- **Working software** over comprehensive documentation
-- **Customer collaboration** over contract negotiation
-- **Responding to change** over following a plan
+* **Individuals and interactions** over processes and tools
+* **Working software** over comprehensive documentation
+* **Customer collaboration** over contract negotiation
+* **Responding to change** over following a plan
 
-### Key Agile Practices:
+### Key Agile Practices
+
 1. **Iterations/Sprints**: Short cycles of development (typically 1-4 weeks) during which teams deliver a potentially shippable product increment.
 2. **Continuous Feedback**: Regular feedback from stakeholders and customers to ensure the project remains aligned with evolving requirements.
 3. **Collaboration**: Close cooperation between team members, including developers, testers, and product owners.
@@ -3285,37 +3368,37 @@ Agile frameworks, such as **Scrum**, **Kanban**, and **Extreme Programming (XP)*
 
 ---
 
-### Benefits of Agile:
+### Benefits of Agile
 
 1. **Flexibility and Adaptability**:
-   - Agile's iterative approach allows teams to adapt to changes in requirements or market conditions more easily. This is particularly useful in dynamic environments where customer needs may evolve during the development process.
+   * Agile's iterative approach allows teams to adapt to changes in requirements or market conditions more easily. This is particularly useful in dynamic environments where customer needs may evolve during the development process.
 
 2. **Improved Product Quality**:
-   - By breaking the project into smaller increments and regularly testing and reviewing each piece, Agile enables early detection and resolution of bugs and issues, leading to better overall product quality.
+   * By breaking the project into smaller increments and regularly testing and reviewing each piece, Agile enables early detection and resolution of bugs and issues, leading to better overall product quality.
 
 3. **Faster Time-to-Market**:
-   - Agile’s incremental approach enables teams to deliver functional versions of the product more quickly, allowing stakeholders and users to see value earlier and get the product to market faster.
+   * Agile’s incremental approach enables teams to deliver functional versions of the product more quickly, allowing stakeholders and users to see value earlier and get the product to market faster.
 
 4. **Customer Satisfaction**:
-   - Continuous collaboration with customers ensures their feedback is incorporated throughout the development process. This leads to a product that better meets customer expectations, improving overall satisfaction.
+   * Continuous collaboration with customers ensures their feedback is incorporated throughout the development process. This leads to a product that better meets customer expectations, improving overall satisfaction.
 
 5. **Increased Transparency**:
-   - Agile promotes transparency through regular communication, such as daily stand-ups, sprint reviews, and retrospectives. Stakeholders are kept informed about progress and challenges, creating a sense of shared ownership.
+   * Agile promotes transparency through regular communication, such as daily stand-ups, sprint reviews, and retrospectives. Stakeholders are kept informed about progress and challenges, creating a sense of shared ownership.
 
 6. **Risk Management**:
-   - By delivering small increments regularly and getting constant feedback, teams can identify risks and issues early, allowing them to address problems before they escalate.
+   * By delivering small increments regularly and getting constant feedback, teams can identify risks and issues early, allowing them to address problems before they escalate.
 
 7. **Team Empowerment and Collaboration**:
-   - Agile encourages self-organizing teams, where team members have more autonomy and are empowered to make decisions. This fosters a collaborative environment where each member contributes to the project's success.
+   * Agile encourages self-organizing teams, where team members have more autonomy and are empowered to make decisions. This fosters a collaborative environment where each member contributes to the project's success.
 
 8. **Continuous Improvement**:
-   - Agile promotes a culture of continuous improvement through regular retrospectives, where teams reflect on what went well and what could be improved, leading to better processes over time.
+   * Agile promotes a culture of continuous improvement through regular retrospectives, where teams reflect on what went well and what could be improved, leading to better processes over time.
 
 9. **Higher Productivity**:
-   - Short development cycles and focused sprints help teams stay on track, avoid delays, and deliver value efficiently. Agile's iterative nature also means that the team focuses on high-priority tasks, improving productivity.
+   * Short development cycles and focused sprints help teams stay on track, avoid delays, and deliver value efficiently. Agile's iterative nature also means that the team focuses on high-priority tasks, improving productivity.
 
 10. **Better Alignment with Business Goals**:
-    - Agile encourages close collaboration with product owners and stakeholders, ensuring that the team’s efforts are aligned with business priorities and delivering real value.
+    * Agile encourages close collaboration with product owners and stakeholders, ensuring that the team’s efforts are aligned with business priorities and delivering real value.
 
 </details>
 
@@ -3375,10 +3458,10 @@ The `$ID` indicates the type of encryption, the `$SALT` is a random string (up t
 
 Access control is a security mechanism used to restrict or allow access to resources based on various criteria. There are four main types of access control:
 
-- Mandatory Access Control (MAC): MAC is a strict form of access control that is typically used in high-security environments, such as government and military organizations. It enforces a centralized security policy that dictates who can access which resources based on their security clearance level.
-- Discretionary Access Control (DAC): DAC is a more flexible form of access control that allows users to set permissions on their own resources. In DAC, each resource has an owner who determines who can access it and at what level of access.
-- Role-Based Access Control (RBAC): RBAC is a popular access control model used in large organizations with many users and resources. It assigns users to roles based on their job function or responsibilities, and then grants access permissions to those roles. This simplifies access management and reduces the risk of human error or intentional abuse.
-- Attribute-Based Access Control (ABAC): ABAC is a newer form of access control that is based on a set of attributes or properties, such as user identity, location, time of day, and device type. It uses a rules engine to evaluate these attributes and determine access permissions for each resource. ABAC is more fine-grained than RBAC, but also more complex to set up and manage.
+* Mandatory Access Control (MAC): MAC is a strict form of access control that is typically used in high-security environments, such as government and military organizations. It enforces a centralized security policy that dictates who can access which resources based on their security clearance level.
+* Discretionary Access Control (DAC): DAC is a more flexible form of access control that allows users to set permissions on their own resources. In DAC, each resource has an owner who determines who can access it and at what level of access.
+* Role-Based Access Control (RBAC): RBAC is a popular access control model used in large organizations with many users and resources. It assigns users to roles based on their job function or responsibilities, and then grants access permissions to those roles. This simplifies access management and reduces the risk of human error or intentional abuse.
+* Attribute-Based Access Control (ABAC): ABAC is a newer form of access control that is based on a set of attributes or properties, such as user identity, location, time of day, and device type. It uses a rules engine to evaluate these attributes and determine access permissions for each resource. ABAC is more fine-grained than RBAC, but also more complex to set up and manage.
 
 </details>
 
@@ -3417,14 +3500,14 @@ To go even further in the tradeoff, you can get great security by disconnecting 
 
 Use the tools available. It's highly unlikely that you can do as well as the guys who are security experts, so use their talents to protect yourself.
 
-- public key encryption provides excellent security
-- enforce password complexity
-- understand why you are making exceptions to the rules above - review your exceptions regularly
-- hold someone to account for failure, it keeps you on your toes
+* public key encryption provides excellent security
+* enforce password complexity
+* understand why you are making exceptions to the rules above - review your exceptions regularly
+* hold someone to account for failure, it keeps you on your toes
 
 Useful resources:
 
-- [How to prevent zero day attacks (original)](https://serverfault.com/questions/391370/how-to-prevent-zero-day-attacks)
+* [How to prevent zero day attacks (original)](https://serverfault.com/questions/391370/how-to-prevent-zero-day-attacks)
 
 </details>
 
@@ -3453,36 +3536,36 @@ If you use ssh keys remember about passphrases which is strongly recommended to 
 
 Useful resources:
 
-- [How to forward local keypair in an SSH session?](https://stackoverflow.com/questions/12257968/how-to-forward-local-keypair-in-a-ssh-session)
-- [Using SSH agent forwarding](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
-- [SSH Agent Forwarding considered harmful](https://heipei.github.io/2015/02/26/SSH-Agent-Forwarding-considered-harmful/)
-- [Security Consideration while using ssh-agent](https://www.commandprompt.com/blog/security_considerations_while_using_ssh-agent/)
+* [How to forward local keypair in an SSH session?](https://stackoverflow.com/questions/12257968/how-to-forward-local-keypair-in-a-ssh-session)
+* [Using SSH agent forwarding](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
+* [SSH Agent Forwarding considered harmful](https://heipei.github.io/2015/02/26/SSH-Agent-Forwarding-considered-harmful/)
+* [Security Consideration while using ssh-agent](https://www.commandprompt.com/blog/security_considerations_while_using_ssh-agent/)
 
 </details>
 
 <details>
 <summary><b>How would you secure a newly provisioned server?</b></summary><br>
 
-- if machine is a new install, protect it from hostile network traffic, until the operating system is installed and hardened
-- create a separate partition with the `nodev`, `nosuid`, and `noexec` options set for `/tmp`
-- create separate partitions for `/var`, `/var/log`, `/var/log/audit`, and `/home`
-- enable randomized virtual memory region placement
-- remove legacy services (e.g. `telnet-server`, `rsh`, `rlogin`, `rcp`, `ypserv`, `ypbind`, `tftp`, `tftp-server`, `talk`, `talk-server`).
-- limit connections to services running on the host to authorized users of the service via firewalls and other access control technologies
-- disable source routed packet acceptance
-- enable **TCP/SYN** cookies
-- disable SSH root login
-- install and configure **AIDE**
-- install and configure **OSsec HIDS**
-- configure **SELinux**
-- all administrator or root access must be logged
-- integrity checking of system accounts, group memberships, and their associated privileges should be enabled and tested
-- set password creation requirements (e.g. with PAM)
+* if machine is a new install, protect it from hostile network traffic, until the operating system is installed and hardened
+* create a separate partition with the `nodev`, `nosuid`, and `noexec` options set for `/tmp`
+* create separate partitions for `/var`, `/var/log`, `/var/log/audit`, and `/home`
+* enable randomized virtual memory region placement
+* remove legacy services (e.g. `telnet-server`, `rsh`, `rlogin`, `rcp`, `ypserv`, `ypbind`, `tftp`, `tftp-server`, `talk`, `talk-server`).
+* limit connections to services running on the host to authorized users of the service via firewalls and other access control technologies
+* disable source routed packet acceptance
+* enable **TCP/SYN** cookies
+* disable SSH root login
+* install and configure **AIDE**
+* install and configure **OSsec HIDS**
+* configure **SELinux**
+* all administrator or root access must be logged
+* integrity checking of system accounts, group memberships, and their associated privileges should be enabled and tested
+* set password creation requirements (e.g. with PAM)
 
 Useful resources:
 
-- [Security Harden RHEL 9](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/pdf/security_hardening/Red_Hat_Enterprise_Linux-9-Security_hardening-en-US.pdf)
-- [CIS Red Hat Enterprise Linux 8](https://www.tenable.com/audits/CIS_Red_Hat_EL8_Server_v3.0.0_L1)
+* [Security Harden RHEL 9](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/pdf/security_hardening/Red_Hat_Enterprise_Linux-9-Security_hardening-en-US.pdf)
+* [CIS Red Hat Enterprise Linux 8](https://www.tenable.com/audits/CIS_Red_Hat_EL8_Server_v3.0.0_L1)
 
 </details>
 
@@ -3526,7 +3609,7 @@ To prevent Split-Brain, distributed systems often use a quorum-based approach, i
 
 Useful resources:
 
-- [What is Split brain and why do you need to worry about it?](https://www.45drives.com/community/articles/what-is-split-brain/)
+* [What is Split brain and why do you need to worry about it?](https://www.45drives.com/community/articles/what-is-split-brain/)
 
 </details>
 
@@ -3543,7 +3626,7 @@ You can also implement split-horizon DNS using the same DNS server, by using the
 
 Useful resources:
 
-- [What is Split-Horizon DNS?](https://splitdns.net/)
+* [What is Split-Horizon DNS?](https://splitdns.net/)
 
 </details>
 
@@ -3689,17 +3772,17 @@ Despite how painful an outage may have been, the worst thing you can do is to bu
 
 **If you also made a big mistake...**
 
-  > "*Humans are just apes with bigger computers.*" - african_cheetah (Reddit)
+  > "_Humans are just apes with bigger computers._" - african_cheetah (Reddit)
   >
-  > "*I've come to appreciate not having access to things I don't absolutely need.*" - warm_vanilla_sugar (Reddit)
+  > "_I've come to appreciate not having access to things I don't absolutely need._" - warm_vanilla_sugar (Reddit)
   >
   > Document whatever happened somewhere. Write setup guides. Failure is instructive.
 
 Useful resources:
 
-- [Accidentally destroyed production database on first day of a job...](https://www.reddit.com/r/cscareerquestions/comments/6ez8ag/accidentally_destroyed_production_database_on/)
-- [Postmortem of database outage of January 31](https://about.gitlab.com/2017/02/10/postmortem-of-database-outage-of-january-31/)
-- [What is an Incident Postmortem?](https://www.pagerduty.com/resources/learn/incident-postmortem/)
+* [Accidentally destroyed production database on first day of a job...](https://www.reddit.com/r/cscareerquestions/comments/6ez8ag/accidentally_destroyed_production_database_on/)
+* [Postmortem of database outage of January 31](https://about.gitlab.com/2017/02/10/postmortem-of-database-outage-of-january-31/)
+* [What is an Incident Postmortem?](https://www.pagerduty.com/resources/learn/incident-postmortem/)
 
 </details>
 
@@ -3707,15 +3790,18 @@ Useful resources:
 <summary><b>How do you add a new disk to a Linux server without rebooting? How do you rescan and add it in LVM?</b></summary><br>
 
 ### 1. **Identify the New Disk**
+
 First, check the available disks before and after adding the new one. This helps confirm that the new disk is detected by the system.
 
-- Before adding the disk:
+* Before adding the disk:
+
   ```bash
   lsblk
   fdisk -l
   ```
 
-- After adding the disk:
+* After adding the disk:
+
   ```bash
   echo "- - -" > /sys/class/scsi_host/host0/scan
   ```
@@ -3723,78 +3809,96 @@ First, check the available disks before and after adding the new one. This helps
   Then check again with `lsblk` or `fdisk -l` to verify the new disk is detected (e.g., `/dev/sdb`).
 
 ### 2. **Create a Partition on the New Disk (Optional)**
+
    You can directly use the entire disk for LVM or create a partition. If you want to create a partition, use `fdisk` or `parted`:
-   
-   - Using `fdisk`:
+
+* Using `fdisk`:
+
      ```bash
      fdisk /dev/sdb
      ```
-     Inside `fdisk`, create a new primary partition:
-     - Press `n` to create a new partition.
-     - Press `p` to make it a primary partition.
-     - Press `w` to write changes.
 
-   - Using `parted` (for GPT partition table):
+     Inside `fdisk`, create a new primary partition:
+  * Press `n` to create a new partition.
+  * Press `p` to make it a primary partition.
+  * Press `w` to write changes.
+
+* Using `parted` (for GPT partition table):
+
      ```bash
      parted /dev/sdb mklabel gpt
      parted /dev/sdb mkpart primary 0% 100%
      ```
 
 ### 3. **Mark the Partition for LVM**
+
 Once the partition is created, mark it for LVM use with the correct partition type.
 
-- Using `fdisk`:
+* Using `fdisk`:
+
   ```bash
   fdisk /dev/sdb
   ```
-  - Type `t` to change the partition type.
-  - Select partition (usually `1`).
-  - Enter `8e` (LVM partition type).
-  - Type `w` to save changes.
+
+  * Type `t` to change the partition type.
+  * Select partition (usually `1`).
+  * Enter `8e` (LVM partition type).
+  * Type `w` to save changes.
 
 ### 4. **Create a Physical Volume (PV)**
+
    Initialize the new disk or partition as a physical volume for LVM.
 
-- For the entire disk:
+* For the entire disk:
+
   ```bash
   pvcreate /dev/sdb
   ```
 
-- If you created a partition (e.g., `/dev/sdb1`):
+* If you created a partition (e.g., `/dev/sdb1`):
+
   ```bash
   pvcreate /dev/sdb1
   ```
 
 ### 5. **Extend the Volume Group (VG)**
+
    Add the newly created physical volume to your existing volume group.
 
-- Check existing volume groups:
+* Check existing volume groups:
+
   ```bash
   vgdisplay
   ```
 
-- Add the new physical volume to the volume group:
+* Add the new physical volume to the volume group:
+
   ```bash
   vgextend <VolumeGroupName> /dev/sdb1  # or /dev/sdb if using the whole disk
   ```
 
 ### 6. **Extend the Logical Volume (LV)**
+
    After adding the physical volume to the volume group, you can extend the logical volume.
 
-- Check existing logical volumes:
+* Check existing logical volumes:
+
   ```bash
   lvdisplay
   ```
 
-- Extend the logical volume while also extending the underlying filesystem:
+* Extend the logical volume while also extending the underlying filesystem:
+
   ```bash
   lvextend -r -l +100%FREE /dev/<VolumeGroupName>/<LogicalVolumeName>
   ```
 
 ### 8. **Verify the Changes**
+
    Verify that the logical volume and filesystem have been resized correctly.
 
-- Check the new size:
+* Check the new size:
+
   ```bash
   df -h
   lvdisplay
@@ -3811,8 +3915,8 @@ When a computer boots up, the bootloader loads the kernel into memory and passes
 
 Useful resources:
 
-- [What does "mounting a root file system" mean exactly?](https://superuser.com/questions/193918/what-does-mounting-a-root-file-system-mean-exactly)
-- [How does a kernel mount the root partition?](https://unix.stackexchange.com/questions/9944/how-does-a-kernel-mount-the-root-partition)
+* [What does "mounting a root file system" mean exactly?](https://superuser.com/questions/193918/what-does-mounting-a-root-file-system-mean-exactly)
+* [How does a kernel mount the root partition?](https://unix.stackexchange.com/questions/9944/how-does-a-kernel-mount-the-root-partition)
 
 </details>
 
@@ -3820,106 +3924,136 @@ Useful resources:
 <summary><b>A bare metal server's root partition is full and will not boot. How do you troubleshoot and fix the issue?</b></summary><br>
 
 ### 1. **Access the System in Rescue Mode or with a Live CD/USB**
-   - **Boot into Rescue Mode**:
-     - If your system uses a Linux distribution that supports rescue mode (like AlmaLinux/RHEL), boot into rescue mode from the installation media.
-     - During boot, select the appropriate recovery/rescue option from the GRUB menu.
-   - **Use a Live CD/USB**:
-     - If rescue mode isn’t available, use a Linux live CD/USB to boot the system. This gives you access to the filesystem so you can troubleshoot.
+
+* **Boot into Rescue Mode**:
+  * If your system uses a Linux distribution that supports rescue mode (like AlmaLinux/RHEL), boot into rescue mode from the installation media.
+  * During boot, select the appropriate recovery/rescue option from the GRUB menu.
+* **Use a Live CD/USB**:
+  * If rescue mode isn’t available, use a Linux live CD/USB to boot the system. This gives you access to the filesystem so you can troubleshoot.
 
 ### 2. **Mount the Root Filesystem**
-   - Once in rescue mode or a live environment, you’ll need to mount the root partition to gain access to the system’s files.
-   - **Identify the root partition**:
-     - Use `lsblk`, `fdisk -l`, or `blkid` to identify the root partition (e.g., `/dev/sda1`, `/dev/nvme0n1p1`).
-   - **Mount the root partition**:
+
+* Once in rescue mode or a live environment, you’ll need to mount the root partition to gain access to the system’s files.
+* **Identify the root partition**:
+  * Use `lsblk`, `fdisk -l`, or `blkid` to identify the root partition (e.g., `/dev/sda1`, `/dev/nvme0n1p1`).
+* **Mount the root partition**:
+
      ```bash
      mkdir /mnt/root
      mount /dev/sda1 /mnt/root
      ```
-   - If you have separate partitions for `/boot`, `/var`, or `/home`, you may need to mount those as well:
+
+* If you have separate partitions for `/boot`, `/var`, or `/home`, you may need to mount those as well:
+
      ```bash
      mount /dev/sda2 /mnt/root/boot
      mount /dev/sda3 /mnt/root/var
      ```
 
 ### 3. **Identify Large Files to Delete**
-   - **Change to the mounted root filesystem**:
+
+* **Change to the mounted root filesystem**:
+
      ```bash
      chroot /mnt/root
      ```
-   - **Check disk usage**:
-     - Use `du` or `df` to determine which directories or files are taking up the most space:
+
+* **Check disk usage**:
+  * Use `du` or `df` to determine which directories or files are taking up the most space:
+
      ```bash
      df -h          # Check the overall usage of the root filesystem
      du -sh /*      # Identify large directories
      du -sh /var/*  # Drill down into the `/var` directory, which is often a culprit
      ```
-   - **Common directories to check**:
-     - **/var/log/**: Large or old log files.
-     - **/var/cache/**: Package manager caches (e.g., DNF, YUM, APT caches).
-     - **/tmp/**: Temporary files that may not be necessary anymore.
-     - **/root/** or **/home/**: Check for large personal files (backups, ISOs, etc.).
+
+* **Common directories to check**:
+  * **/var/log/**: Large or old log files.
+  * **/var/cache/**: Package manager caches (e.g., DNF, YUM, APT caches).
+  * **/tmp/**: Temporary files that may not be necessary anymore.
+  * **/root/** or **/home/**: Check for large personal files (backups, ISOs, etc.).
 
 ### 4. **Free Up Space**
-   - **Delete or compress log files**:
-     - Identify and delete old or large log files in `/var/log/`. You can either remove them or compress them:
+
+* **Delete or compress log files**:
+  * Identify and delete old or large log files in `/var/log/`. You can either remove them or compress them:
+
      ```bash
      rm -f /var/log/*.log  # Remove old logs
      gzip /var/log/*.log    # Compress logs to save space
      ```
-   - **Clear package cache**:
-     - For RPM-based systems (AlmaLinux/RHEL/Fedora):
+
+* **Clear package cache**:
+  * For RPM-based systems (AlmaLinux/RHEL/Fedora):
+
      ```bash
      dnf clean all    # or yum clean all for older systems
      ```
-     - For APT-based systems (Debian/Ubuntu):
+
+  * For APT-based systems (Debian/Ubuntu):
+
      ```bash
      apt-get clean
      ```
-   - **Remove orphaned packages** (optional):
-     - Check for orphaned or unnecessary packages and remove them to free space.
+
+* **Remove orphaned packages** (optional):
+  * Check for orphaned or unnecessary packages and remove them to free space.
+
      ```bash
      dnf autoremove  # For RPM-based systems
      apt-get autoremove  # For APT-based systems
      ```
 
 ### 5. **Check for and Remove Old Kernels**
-   - On systems with a separate `/boot` partition, it can fill up if old kernels aren’t cleaned up. You can list installed kernels and remove old ones:
-     - List kernels:
+
+* On systems with a separate `/boot` partition, it can fill up if old kernels aren’t cleaned up. You can list installed kernels and remove old ones:
+  * List kernels:
+
      ```bash
      rpm -q kernel  # RHEL/AlmaLinux
      dpkg --list | grep linux-image  # Debian/Ubuntu
      ```
-     - Remove old kernels, keeping the current and one or two previous versions:
+
+  * Remove old kernels, keeping the current and one or two previous versions:
+
      ```bash
      dnf remove kernel-old-version
      ```
 
 ### 6. **Check for Core Dumps or Large Swap Files**
-   - **Core dumps**:
-     - Check for large core dump files in `/var/lib/systemd/coredump/` or `/var/crash/`. These can take up a lot of space and are safe to remove unless needed for debugging.
+
+* **Core dumps**:
+  * Check for large core dump files in `/var/lib/systemd/coredump/` or `/var/crash/`. These can take up a lot of space and are safe to remove unless needed for debugging.
+
      ```bash
      rm -f /var/lib/systemd/coredump/*
      ```
-   - **Large swap files**:
-     - If the root partition contains a large swap file, consider moving it to another partition temporarily or reducing its size.
+
+* **Large swap files**:
+  * If the root partition contains a large swap file, consider moving it to another partition temporarily or reducing its size.
 
 ### 7. **Resize the Partition (if necessary)**
-   - If space is consistently an issue, you may need to resize the root partition. This step is complex and risky, especially if the disk is already partitioned. Use tools like `gparted` or `parted` from a live CD to resize partitions if possible. Alternatively, consider adding another disk or creating a new partition for data.
+
+* If space is consistently an issue, you may need to resize the root partition. This step is complex and risky, especially if the disk is already partitioned. Use tools like `gparted` or `parted` from a live CD to resize partitions if possible. Alternatively, consider adding another disk or creating a new partition for data.
 
 ### 8. **Reboot the Server**
-   - After freeing up enough space, unmount the root partition and reboot the server:
+
+* After freeing up enough space, unmount the root partition and reboot the server:
+
      ```bash
      exit   # Exit chroot
      umount /mnt/root
      reboot
      ```
-   - The system should now boot normally.
+
+* The system should now boot normally.
 
 ### 9. **Set Up Monitoring (Post-Fix)**
-   - Once the issue is resolved, it’s good practice to implement monitoring to avoid future disk space issues:
-     - **Disk usage monitoring**: Use tools like `df` or monitoring solutions (e.g., Nagios, Zabbix, Prometheus) to alert you when disk usage exceeds a certain threshold.
-     - **Log rotation**: Ensure that log files are rotated properly using tools like `logrotate` to prevent logs from consuming excessive disk space.
-     - **Package cache cleaning**: Automate cleaning of package caches periodically to prevent them from accumulating.
+
+* Once the issue is resolved, it’s good practice to implement monitoring to avoid future disk space issues:
+  * **Disk usage monitoring**: Use tools like `df` or monitoring solutions (e.g., Nagios, Zabbix, Prometheus) to alert you when disk usage exceeds a certain threshold.
+  * **Log rotation**: Ensure that log files are rotated properly using tools like `logrotate` to prevent logs from consuming excessive disk space.
+  * **Package cache cleaning**: Automate cleaning of package caches periodically to prevent them from accumulating.
 
 </details>
 
@@ -3935,15 +4069,15 @@ To be completed.
 
 **Risks of using LVM**
 
-- Single point of failure: LVM metadata, which contains information about logical volumes, physical volumes, and volume groups, is stored on the disk. If this metadata is lost or corrupted, it can result in data loss or system downtime.
-- Performance overhead: LVM adds another layer of abstraction between the physical storage and file system, which can result in performance overhead. While the performance impact is generally negligible for most use cases, it can be significant for I/O-intensive workloads.
-- Complexity: LVM introduces additional complexity to the system and requires a good understanding of how the underlying storage works. This can make troubleshooting and maintenance more challenging.
-- Fragmentation: LVM can lead to data fragmentation because it can allocate space in small chunks. This can result in reduced performance and increased disk usage.
-- Data loss: LVM provides the ability to move and resize volumes, which can lead to data loss if not done correctly. It is essential to have a backup strategy in place before making any changes to LVM configurations.
+* Single point of failure: LVM metadata, which contains information about logical volumes, physical volumes, and volume groups, is stored on the disk. If this metadata is lost or corrupted, it can result in data loss or system downtime.
+* Performance overhead: LVM adds another layer of abstraction between the physical storage and file system, which can result in performance overhead. While the performance impact is generally negligible for most use cases, it can be significant for I/O-intensive workloads.
+* Complexity: LVM introduces additional complexity to the system and requires a good understanding of how the underlying storage works. This can make troubleshooting and maintenance more challenging.
+* Fragmentation: LVM can lead to data fragmentation because it can allocate space in small chunks. This can result in reduced performance and increased disk usage.
+* Data loss: LVM provides the ability to move and resize volumes, which can lead to data loss if not done correctly. It is essential to have a backup strategy in place before making any changes to LVM configurations.
 
 Useful resources:
 
-- [LVM dangers and caveats (original)](https://serverfault.com/questions/279571/lvm-dangers-and-caveats)
+* [LVM dangers and caveats (original)](https://serverfault.com/questions/279571/lvm-dangers-and-caveats)
 
 </details>
 
@@ -3968,17 +4102,17 @@ You may sometimes see entries marked **Z** (or **H** under Linux) in the `ps` or
 
 Summary exceptions:
 
-- Zombie processes cannot be killed since they are already dead and waiting for their parent processes to reap them
-- Processes that are in the blocked state will not die until they wake up again
-- The init process is special: It does not get signals that it does not want to handle, and thus it can ignore **SIGKILL**. An exception from this exception is while init is ptraced on Linux
-- An uninterruptibly sleeping process may not terminate (and free its resources) even when sent **SIGKILL**. This is one of the few cases in which a Unix system may have to be rebooted to solve a temporary software problem
+* Zombie processes cannot be killed since they are already dead and waiting for their parent processes to reap them
+* Processes that are in the blocked state will not die until they wake up again
+* The init process is special: It does not get signals that it does not want to handle, and thus it can ignore **SIGKILL**. An exception from this exception is while init is ptraced on Linux
+* An uninterruptibly sleeping process may not terminate (and free its resources) even when sent **SIGKILL**. This is one of the few cases in which a Unix system may have to be rebooted to solve a temporary software problem
 
 Useful resources:
 
-- [What if kill -9 does not work? (original)](https://unix.stackexchange.com/questions/5642/what-if-kill-9-does-not-work)
-- [How to kill a process in Linux if kill -9 has no effect](https://serverfault.com/questions/458261/how-to-kill-a-process-in-linux-if-kill-9-has-no-effect)
-- [When should I not kill -9 a process?](https://unix.stackexchange.com/questions/8916/when-should-i-not-kill-9-a-process)
-- [SIGTERM vs. SIGKILL](https://major.io/p/sigterm-vs-sigkill/)
+* [What if kill -9 does not work? (original)](https://unix.stackexchange.com/questions/5642/what-if-kill-9-does-not-work)
+* [How to kill a process in Linux if kill -9 has no effect](https://serverfault.com/questions/458261/how-to-kill-a-process-in-linux-if-kill-9-has-no-effect)
+* [When should I not kill -9 a process?](https://unix.stackexchange.com/questions/8916/when-should-i-not-kill-9-a-process)
+* [SIGTERM vs. SIGKILL](https://major.io/p/sigterm-vs-sigkill/)
 
 </details>
 
@@ -3995,13 +4129,13 @@ On Linux, using a bind mounts is a great way to populate the chroot tree. Using 
 
 A chroot environment is useful for:
 
-- reinstall bootloader
-- reset a forgotten password
-- perform a kernel upgrade (or downgrade)
-- rebuild your initramdisk
-- fix your **/etc/fstab**
-- reinstall packages using your package manager
-- whatever
+* reinstall bootloader
+* reset a forgotten password
+* perform a kernel upgrade (or downgrade)
+* rebuild your initramdisk
+* fix your **/etc/fstab**
+* reinstall packages using your package manager
+* whatever
 
 When working in a chrooted environment, there is a few special file systems that needs to be mounted so all programs behave properly.
 
@@ -4009,10 +4143,10 @@ Limitation is that `/dev`, `/sys` and `/proc` are not mounted by default but nee
 
 Useful resources:
 
-- [It's all about Chroot](https://medium.com/@itseranga/chroot-316dc3c89584)
-- [Best Practices for UNIX chroot() Operations](http://www.unixwiz.net/techtips/chroot-practices.html)
-- [Is there an easier way to chroot than bind-mounting?](https://askubuntu.com/questions/32418/is-there-an-easier-way-to-chroot-than-bind-mounting)
-- [What's the proper way to prepare chroot to recover a broken Linux installation?](https://superuser.com/questions/111152/whats-the-proper-way-to-prepare-chroot-to-recover-a-broken-linux-installation)
+* [It's all about Chroot](https://medium.com/@itseranga/chroot-316dc3c89584)
+* [Best Practices for UNIX chroot() Operations](http://www.unixwiz.net/techtips/chroot-practices.html)
+* [Is there an easier way to chroot than bind-mounting?](https://askubuntu.com/questions/32418/is-there-an-easier-way-to-chroot-than-bind-mounting)
+* [What's the proper way to prepare chroot to recover a broken Linux installation?](https://superuser.com/questions/111152/whats-the-proper-way-to-prepare-chroot-to-recover-a-broken-linux-installation)
 
 </details>
 
@@ -4023,10 +4157,10 @@ A **segmentation fault** (aka _segfault_) is a common condition that causes prog
 
 Program memory is divided into different segments:
 
-- a text segment for program instructions
-- a data segment for variables and arrays defined at compile time
-- a stack segment for temporary (or automatic) variables defined in subroutines and functions
-- a heap segment for variables allocated during runtime by functions, such as `malloc` (in C)
+* a text segment for program instructions
+* a data segment for variables and arrays defined at compile time
+* a stack segment for temporary (or automatic) variables defined in subroutines and functions
+* a heap segment for variables allocated during runtime by functions, such as `malloc` (in C)
 
 In practice, segfaults are almost always due to trying to read or write a non-existent array element, not properly defining a pointer before using it, or (in C programs) accidentally using a variable's value as an address. Thus, when Process A reads memory location 0x877, it reads information residing at a different physical location in RAM than when Process B reads its own 0x877.
 
@@ -4034,73 +4168,82 @@ All modern operating systems support and use segmentation, and so all can produc
 
 Segmentation fault can also occur under following circumstances:
 
-- a buggy program/command, which can be only fixed by applying patch
-- it can also appear when you try to access an array beyond the end of an array under C programming
-- inside a chrooted jail this can occur when critical shared libs, config file or `/dev/` entry missing
-- sometime hardware or faulty memory or driver can also create problem
-- maintain suggested environment for all computer equipment (overheating can also generate this problem)
+* a buggy program/command, which can be only fixed by applying patch
+* it can also appear when you try to access an array beyond the end of an array under C programming
+* inside a chrooted jail this can occur when critical shared libs, config file or `/dev/` entry missing
+* sometime hardware or faulty memory or driver can also create problem
+* maintain suggested environment for all computer equipment (overheating can also generate this problem)
 
 To debug this kind of error try one or all of the following techniques:
 
-- enable core files: `$ ulimit -c unlimited`
-- reproduce the crash: `$ ./<program>`
-- debug crash with gdb: `$ gdb <program> [core file]`
-- or run `LD_PRELOAD=...path-to.../libSegFault.so <program>` to get a report with backtrace, loaded libs, etc
+* enable core files: `$ ulimit -c unlimited`
+* reproduce the crash: `$ ./<program>`
+* debug crash with gdb: `$ gdb <program> [core file]`
+* or run `LD_PRELOAD=...path-to.../libSegFault.so <program>` to get a report with backtrace, loaded libs, etc
 
 Also:
 
-- make sure correct hardware installed and configured
-- always apply all patches and use updated system
-- make sure all dependencies installed inside jail
-- turn on core dumping for supported services such as Apache
-- use `strace` which is a useful diagnostic, instructional, and debugging tool
+* make sure correct hardware installed and configured
+* always apply all patches and use updated system
+* make sure all dependencies installed inside jail
+* turn on core dumping for supported services such as Apache
+* use `strace` which is a useful diagnostic, instructional, and debugging tool
 
 Sometimes segmentation faults are not caused by bugs in the program but are caused instead by system memory limits being set too low. Usually it is the limit on stack size that causes this kind of problem (stack overflows). To check memory limits, use the `ulimit` command in bash.
 
 Useful resources:
 
-- [What are segmentation faults (segfaults), and how can I identify what's causing them? (original)](https://kb.iu.edu/d/aqsj)
-- [What is a segmentation fault on Linux?](https://stackoverflow.com/questions/3200526/what-is-a-segmentation-fault-on-linux)
-- [Segmentation fault when calling a recursive bash function](https://unix.stackexchange.com/questions/296641/segmentation-fault-when-calling-a-recursive-bash-function)
-- [Troubleshooting Segmentation Violations/Faults](https://web.mit.edu/10.001/Web/Tips/tips_on_segmentation.html)
-- [Can one use libSegFault.so to get backtraces for SIGABRT?](https://stackoverflow.com/questions/18706496/can-one-use-libsegfault-so-to-get-backtraces-for-sigabrt)
+* [What are segmentation faults (segfaults), and how can I identify what's causing them? (original)](https://kb.iu.edu/d/aqsj)
+* [What is a segmentation fault on Linux?](https://stackoverflow.com/questions/3200526/what-is-a-segmentation-fault-on-linux)
+* [Segmentation fault when calling a recursive bash function](https://unix.stackexchange.com/questions/296641/segmentation-fault-when-calling-a-recursive-bash-function)
+* [Troubleshooting Segmentation Violations/Faults](https://web.mit.edu/10.001/Web/Tips/tips_on_segmentation.html)
+* [Can one use libSegFault.so to get backtraces for SIGABRT?](https://stackoverflow.com/questions/18706496/can-one-use-libsegfault-so-to-get-backtraces-for-sigabrt)
 
 </details>
 
 <details>
 <summary><b>In terms of *nix systems, what does it mean when we say everything is a file?</b></summary><br>
 
-### 1. **Traditional Files**:
-   - Regular files containing data (e.g., text files, binaries) are the most obvious representation of this concept. Operations like reading and writing are done via standard file operations (`open`, `read`, `write`, `close`).
+### 1. **Traditional Files**
 
-### 2. **Directories**:
-   - Directories are treated as special types of files that store information about other files and subdirectories. They can be read to list their contents but cannot be written directly like regular files.
+* Regular files containing data (e.g., text files, binaries) are the most obvious representation of this concept. Operations like reading and writing are done via standard file operations (`open`, `read`, `write`, `close`).
 
-### 3. **Devices**:
-   - **Character devices and block devices**: Hardware devices (e.g., hard drives, keyboards, mice, terminals) are represented as files in the `/dev` directory. For example:
-     - **Character devices** (e.g., `/dev/tty`, `/dev/null`) are accessed character-by-character.
-     - **Block devices** (e.g., `/dev/sda`, `/dev/loop0`) allow random access to blocks of data, typical for disk drives.
-   - Accessing or interacting with devices is done using the same read/write operations as with regular files.
+### 2. **Directories**
 
-### 4. **Pipes and Sockets**:
-   - **Named pipes** (`FIFO files`) and **UNIX domain sockets** are special files that allow inter-process communication. They enable data to be passed between processes, similar to how data is read from and written to a regular file.
-     - **Pipes**: Used for unidirectional communication (e.g., `|` in shell commands).
-     - **Sockets**: Enable bidirectional communication between processes, often used for network services.
+* Directories are treated as special types of files that store information about other files and subdirectories. They can be read to list their contents but cannot be written directly like regular files.
 
-### 5. **Processes**:
-   - Processes are represented as files under the `/proc` directory. Each running process has a directory (`/proc/<PID>`) containing information about the process, such as memory usage, file descriptors, and environment variables. This directory provides a file-based interface to the kernel’s process-related information.
-   
-### 6. **Symbolic Links**:
-   - Symbolic links (symlinks) are special files that point to other files or directories. These links allow flexible file and directory manipulation, abstracting access to target files.
+### 3. **Devices**
 
-### 7. **Input/Output Streams**:
-   - Standard input, output, and error streams (`stdin`, `stdout`, `stderr`) are treated as files with descriptors (`0`, `1`, and `2`, respectively). This file-based abstraction allows redirecting input/output between files, devices, and other processes seamlessly.
+* **Character devices and block devices**: Hardware devices (e.g., hard drives, keyboards, mice, terminals) are represented as files in the `/dev` directory. For example:
+  * **Character devices** (e.g., `/dev/tty`, `/dev/null`) are accessed character-by-character.
+  * **Block devices** (e.g., `/dev/sda`, `/dev/loop0`) allow random access to blocks of data, typical for disk drives.
+* Accessing or interacting with devices is done using the same read/write operations as with regular files.
 
-### 8. **Network Interfaces**:
-   - Network interfaces can be accessed via special files (e.g., `/dev/tun` for tunneling interfaces). Network communication, especially through UNIX domain sockets, can be treated similarly to reading and writing to files.
+### 4. **Pipes and Sockets**
 
-### 9. **System Information**:
-   - **System resources and kernel settings**: The `/proc` and `/sys` directories provide access to system information and kernel parameters. Files in these directories allow the inspection and modification of kernel behavior, such as managing hardware, checking memory usage, or tuning kernel parameters.
+* **Named pipes** (`FIFO files`) and **UNIX domain sockets** are special files that allow inter-process communication. They enable data to be passed between processes, similar to how data is read from and written to a regular file.
+  * **Pipes**: Used for unidirectional communication (e.g., `|` in shell commands).
+  * **Sockets**: Enable bidirectional communication between processes, often used for network services.
+
+### 5. **Processes**
+
+* Processes are represented as files under the `/proc` directory. Each running process has a directory (`/proc/<PID>`) containing information about the process, such as memory usage, file descriptors, and environment variables. This directory provides a file-based interface to the kernel’s process-related information.
+
+### 6. **Symbolic Links**
+
+* Symbolic links (symlinks) are special files that point to other files or directories. These links allow flexible file and directory manipulation, abstracting access to target files.
+
+### 7. **Input/Output Streams**
+
+* Standard input, output, and error streams (`stdin`, `stdout`, `stderr`) are treated as files with descriptors (`0`, `1`, and `2`, respectively). This file-based abstraction allows redirecting input/output between files, devices, and other processes seamlessly.
+
+### 8. **Network Interfaces**
+
+* Network interfaces can be accessed via special files (e.g., `/dev/tun` for tunneling interfaces). Network communication, especially through UNIX domain sockets, can be treated similarly to reading and writing to files.
+
+### 9. **System Information**
+
+* **System resources and kernel settings**: The `/proc` and `/sys` directories provide access to system information and kernel parameters. Files in these directories allow the inspection and modification of kernel behavior, such as managing hardware, checking memory usage, or tuning kernel parameters.
 
 </details>
 
@@ -4109,9 +4252,9 @@ Useful resources:
 
 You should use `/dev/urandom`, not `/dev/random`. The differences between `/dev/random` and `/dev/urandom` are:
 
- - `/dev/random` might be theoretically better _in the context of an information-theoretically secure algorithm_. This is the kind of algorithm which is secure against today's technology, and also tomorrow's technology, and technology used by aliens.
+* `/dev/random` might be theoretically better _in the context of an information-theoretically secure algorithm_. This is the kind of algorithm which is secure against today's technology, and also tomorrow's technology, and technology used by aliens.
 
- - `/dev/urandom` will not block, while `/dev/random` may do so. `/dev/random` maintains a counter of "how much entropy it still has" under the assumption that any bits it has produced is a lost entropy bit. Blocking induces very real issues, e.g. a server which fails to boot after an automated install because it is stalling on its SSH server key creation.
+* `/dev/urandom` will not block, while `/dev/random` may do so. `/dev/random` maintains a counter of "how much entropy it still has" under the assumption that any bits it has produced is a lost entropy bit. Blocking induces very real issues, e.g. a server which fails to boot after an automated install because it is stalling on its SSH server key creation.
 
 So you want to use `/dev/urandom` and stop to worry about this entropy business.
 
@@ -4121,7 +4264,7 @@ Should any of these daemons require randomness when all available entropy has be
 
 Useful resources:
 
-- [When to use /dev/random vs /dev/urandom](https://unix.stackexchange.com/questions/324209/when-to-use-dev-random-vs-dev-urandom)
+* [When to use /dev/random vs /dev/urandom](https://unix.stackexchange.com/questions/324209/when-to-use-dev-random-vs-dev-urandom)
 
 </details>
 
@@ -4136,60 +4279,72 @@ When `/sbin/nologin` is set as the shell, if user with that shell logs in, they'
 
 Useful resources:
 
-- [What's the difference between /sbin/nologin and /bin/false](https://unix.stackexchange.com/questions/10852/whats-the-difference-between-sbin-nologin-and-bin-false)
-- [Why do some system users have /usr/bin/false as their shell?](https://superuser.com/questions/1183311/why-do-some-system-users-have-usr-bin-false-as-their-shell)
+* [What's the difference between /sbin/nologin and /bin/false](https://unix.stackexchange.com/questions/10852/whats-the-difference-between-sbin-nologin-and-bin-false)
+* [Why do some system users have /usr/bin/false as their shell?](https://superuser.com/questions/1183311/why-do-some-system-users-have-usr-bin-false-as-their-shell)
 
 </details>
 
 <details>
 <summary><b>Which symptoms might be suffering from a disk bottleneck?</b></summary><br>
 
-### 1. **Slow Read/Write Operations**:
-   - **Long disk access times**: Operations involving disk I/O (file reads/writes, database queries) take much longer than usual.
-   - **Sluggish application performance**: Applications that rely on disk access (e.g., databases, web servers) may become slow, especially during peak usage times.
+### 1. **Slow Read/Write Operations**
 
-### 2. **High Disk Utilization**:
-   - **High disk I/O wait**: High `iowait` values (visible in `top`, `iostat`, or `vmstat`) indicate that processes are waiting for disk operations to complete.
-   - **High disk utilization percentage**: Disk utilization nearing 100% in monitoring tools (e.g., `iostat`, `iostat -x`, `dstat`, or graphical monitoring like Grafana) indicates the disk is being fully utilized, leaving little room for additional requests.
+* **Long disk access times**: Operations involving disk I/O (file reads/writes, database queries) take much longer than usual.
+* **Sluggish application performance**: Applications that rely on disk access (e.g., databases, web servers) may become slow, especially during peak usage times.
 
-### 3. **System Freezes or Stalls**:
-   - **Temporary system hangs**: The system may freeze temporarily, especially when performing disk-heavy operations like backups or loading large files.
-   - **Slow boot times**: The system may take much longer to boot if it is trying to read or write a lot of data during startup.
+### 2. **High Disk Utilization**
 
-### 4. **Excessive Page Faulting/Swapping**:
-   - **Increased swapping**: When the system runs low on memory, it swaps data to disk. If the disk is already bottlenecked, this increases the load, leading to slower performance as the system struggles to swap efficiently.
-   - **High number of page faults**: Page faults happen when the system tries to access data that is not in memory and has to retrieve it from disk, which is slow during a disk bottleneck.
+* **High disk I/O wait**: High `iowait` values (visible in `top`, `iostat`, or `vmstat`) indicate that processes are waiting for disk operations to complete.
+* **High disk utilization percentage**: Disk utilization nearing 100% in monitoring tools (e.g., `iostat`, `iostat -x`, `dstat`, or graphical monitoring like Grafana) indicates the disk is being fully utilized, leaving little room for additional requests.
 
-### 5. **Slow Database Performance**:
-   - **Delayed database queries**: Queries take a long time to return results due to slow disk I/O, especially on databases using spinning disks or slow SSDs for storage.
-   - **Increased latency in transaction processing**: Applications relying on databases may experience high transaction latency, indicating the database is waiting on disk access.
+### 3. **System Freezes or Stalls**
 
-### 6. **High I/O Load on Monitoring Tools**:
-   - **High `await` and `svctm` times**: Tools like `iostat` and `sar` can show high average wait times (`await`) and service times (`svctm`), indicating that disk operations are taking longer to complete.
-   - **Queue size buildup**: An increasing queue size (`avgqu-sz` in `iostat`) suggests that disk requests are stacking up because the disk can’t keep up with the demand.
+* **Temporary system hangs**: The system may freeze temporarily, especially when performing disk-heavy operations like backups or loading large files.
+* **Slow boot times**: The system may take much longer to boot if it is trying to read or write a lot of data during startup.
 
-### 7. **Increased CPU I/O Wait Time**:
-   - **High CPU I/O wait time**: The CPU spends significant time in an "I/O wait" state, visible in tools like `top` or `vmstat`. This indicates the CPU is idle, waiting for the disk to complete operations.
-   - **Low CPU usage despite slow performance**: You may notice low CPU usage, even though the system is slow, because the CPU is frequently waiting for disk operations to finish.
+### 4. **Excessive Page Faulting/Swapping**
 
-### 8. **High Latency on Disk Operations**:
-   - **Slow response times**: High latency in disk read and write operations, which can be monitored using tools like `ioping` or `fio`, signals that the disk is struggling to meet the demand.
-   - **Excessive time for I/O-bound tasks**: Tasks like copying large files or running backup jobs take much longer than expected.
+* **Increased swapping**: When the system runs low on memory, it swaps data to disk. If the disk is already bottlenecked, this increases the load, leading to slower performance as the system struggles to swap efficiently.
+* **High number of page faults**: Page faults happen when the system tries to access data that is not in memory and has to retrieve it from disk, which is slow during a disk bottleneck.
 
-### 9. **Unresponsiveness During Disk-Intensive Tasks**:
-   - **Application timeouts**: Applications might time out when trying to access the disk for large reads/writes.
-   - **System becomes unresponsive**: The entire system may become unresponsive or exhibit noticeable slowdowns when performing disk-heavy tasks like backups, indexing, or compiling large projects.
+### 5. **Slow Database Performance**
 
-### 10. **Error Messages and Logs**:
-   - **Disk-related error logs**: Disk bottlenecks might cause errors or warnings in system logs, such as timeouts or delays in disk operations (visible in `/var/log/messages`, `dmesg`, or journal logs).
-   - **Frequent I/O errors**: Frequent I/O errors or retries in log files may indicate that the disk is under strain or approaching failure.
+* **Delayed database queries**: Queries take a long time to return results due to slow disk I/O, especially on databases using spinning disks or slow SSDs for storage.
+* **Increased latency in transaction processing**: Applications relying on databases may experience high transaction latency, indicating the database is waiting on disk access.
 
-### 11. **Poor Virtual Machine or Container Performance**:
-   - **Virtual machines (VMs) slow down**: VMs may experience degraded performance if they share the same storage, especially if one or more VMs are I/O heavy.
-   - **Containers experience delays**: Similarly, containers relying on disk operations might exhibit slow performance, particularly when using shared volumes or slow disk storage.
+### 6. **High I/O Load on Monitoring Tools**
 
-### 12. **Slow Backup and Restore Operations**:
-   - **Backup jobs take longer**: If backups or restores take significantly longer than usual, it might indicate the disk is overwhelmed by the number of I/O requests.
+* **High `await` and `svctm` times**: Tools like `iostat` and `sar` can show high average wait times (`await`) and service times (`svctm`), indicating that disk operations are taking longer to complete.
+* **Queue size buildup**: An increasing queue size (`avgqu-sz` in `iostat`) suggests that disk requests are stacking up because the disk can’t keep up with the demand.
+
+### 7. **Increased CPU I/O Wait Time**
+
+* **High CPU I/O wait time**: The CPU spends significant time in an "I/O wait" state, visible in tools like `top` or `vmstat`. This indicates the CPU is idle, waiting for the disk to complete operations.
+* **Low CPU usage despite slow performance**: You may notice low CPU usage, even though the system is slow, because the CPU is frequently waiting for disk operations to finish.
+
+### 8. **High Latency on Disk Operations**
+
+* **Slow response times**: High latency in disk read and write operations, which can be monitored using tools like `ioping` or `fio`, signals that the disk is struggling to meet the demand.
+* **Excessive time for I/O-bound tasks**: Tasks like copying large files or running backup jobs take much longer than expected.
+
+### 9. **Unresponsiveness During Disk-Intensive Tasks**
+
+* **Application timeouts**: Applications might time out when trying to access the disk for large reads/writes.
+* **System becomes unresponsive**: The entire system may become unresponsive or exhibit noticeable slowdowns when performing disk-heavy tasks like backups, indexing, or compiling large projects.
+
+### 10. **Error Messages and Logs**
+
+* **Disk-related error logs**: Disk bottlenecks might cause errors or warnings in system logs, such as timeouts or delays in disk operations (visible in `/var/log/messages`, `dmesg`, or journal logs).
+* **Frequent I/O errors**: Frequent I/O errors or retries in log files may indicate that the disk is under strain or approaching failure.
+
+### 11. **Poor Virtual Machine or Container Performance**
+
+* **Virtual machines (VMs) slow down**: VMs may experience degraded performance if they share the same storage, especially if one or more VMs are I/O heavy.
+* **Containers experience delays**: Similarly, containers relying on disk operations might exhibit slow performance, particularly when using shared volumes or slow disk storage.
+
+### 12. **Slow Backup and Restore Operations**
+
+* **Backup jobs take longer**: If backups or restores take significantly longer than usual, it might indicate the disk is overwhelmed by the number of I/O requests.
 
 </details>
 
@@ -4202,34 +4357,34 @@ First, attempt to confirm if disk I/O is slowing down application performance by
 
 Example of debugging:
 
-- answering whether I/O is causing system slowness
-- finding which disk is being written to
-- finding the processes that are causing high I/O
-- process list **state**
-- finding what files are being written too heavily
-- do you see your copy process put in **D** state waiting for I/O work to be done by pdflush?
-- do you see heavy synchronous write activity on your disks?
+* answering whether I/O is causing system slowness
+* finding which disk is being written to
+* finding the processes that are causing high I/O
+* process list **state**
+* finding what files are being written too heavily
+* do you see your copy process put in **D** state waiting for I/O work to be done by pdflush?
+* do you see heavy synchronous write activity on your disks?
 
 also:
 
-- using `top` command - load averages and wa (wait time)
-- using `atop` command to monitor DSK (disk) I/O stats
-- using `iotop` command for real-time insight on disk read/writes
+* using `top` command - load averages and wa (wait time)
+* using `atop` command to monitor DSK (disk) I/O stats
+* using `iotop` command for real-time insight on disk read/writes
 
 For improvement performance:
 
-- check drive array configuration
-- check disk queuing algorithms and tuning them
-- tuning general block I/O parameters
-- tuning virtual memory management to improve I/O performance
-- check and tuning mount options and filesystem params (also responsible for cache)
+* check drive array configuration
+* check disk queuing algorithms and tuning them
+* tuning general block I/O parameters
+* tuning virtual memory management to improve I/O performance
+* check and tuning mount options and filesystem params (also responsible for cache)
 
 Useful resources:
 
-- [Linux server performance: Is disk I/O slowing your application? (original)](https://haydenjames.io/linux-server-performance-disk-io-slowing-application/)
-- [Debugging Linux I/O latency](https://superuser.com/questions/396696/debugging-linux-i-o-latency)
-- [How do pdflush, kjournald, swapd, etc. interoperate?](https://unix.stackexchange.com/questions/76970/how-do-pdflush-kjournald-swapd-etc-interoperate)
-- [5 ways to improve HDD speed on Linux](https://thecodeartist.blogspot.com/2012/06/improving-hdd-performance-linux.html)
+* [Linux server performance: Is disk I/O slowing your application? (original)](https://haydenjames.io/linux-server-performance-disk-io-slowing-application/)
+* [Debugging Linux I/O latency](https://superuser.com/questions/396696/debugging-linux-i-o-latency)
+* [How do pdflush, kjournald, swapd, etc. interoperate?](https://unix.stackexchange.com/questions/76970/how-do-pdflush-kjournald-swapd-etc-interoperate)
+* [5 ways to improve HDD speed on Linux](https://thecodeartist.blogspot.com/2012/06/improving-hdd-performance-linux.html)
 
 </details>
 
@@ -4243,79 +4398,89 @@ To be completed.
 <details>
 <summary><b>You have a LAMP stack with Nginx as a reverse proxy. Going to the site served by this web server results in a 500 Internal Server Error. List the possible causes for this issue.</b></summary><br>
 
-### 1. **Nginx Configuration Issues**:
-   - **Improper reverse proxy configuration**:
-     - The proxy settings in the Nginx configuration might be incorrect. For example, issues with the `proxy_pass` directive or missing upstream server definitions.
-   - **Incorrect permissions**:
-     - Nginx may not have proper permissions to access certain files, such as the Unix socket used by PHP-FPM.
-   - **Proxy buffer size issues**:
-     - If the responses from Apache or PHP are too large, and the Nginx proxy buffers are too small, you could encounter a 500 error. Adjusting `proxy_buffer_size`, `proxy_buffers`, and `proxy_busy_buffers_size` may help.
+### 1. **Nginx Configuration Issues**
 
-### 2. **Apache or PHP Configuration Issues**:
-   - **Apache misconfiguration**:
-     - Issues with the virtual host configuration or `.htaccess` files can cause Apache to respond with a 500 error. Check for syntax errors in the configuration.
-   - **PHP-FPM not working**:
-     - If PHP-FPM is used to handle PHP requests and isn’t running or misconfigured, Nginx will return a 500 error when it can’t forward requests properly.
-   - **Incorrect permissions for PHP files**:
-     - If PHP files are not readable or executable by Apache or PHP-FPM, it can result in a 500 error. This can happen due to incorrect ownership or file permissions.
-   - **Memory or execution time limits**:
-     - The `php.ini` file may have restrictive memory (`memory_limit`) or execution time (`max_execution_time`) settings, causing scripts to fail.
+* **Improper reverse proxy configuration**:
+  * The proxy settings in the Nginx configuration might be incorrect. For example, issues with the `proxy_pass` directive or missing upstream server definitions.
+* **Incorrect permissions**:
+  * Nginx may not have proper permissions to access certain files, such as the Unix socket used by PHP-FPM.
+* **Proxy buffer size issues**:
+  * If the responses from Apache or PHP are too large, and the Nginx proxy buffers are too small, you could encounter a 500 error. Adjusting `proxy_buffer_size`, `proxy_buffers`, and `proxy_busy_buffers_size` may help.
 
-### 3. **PHP Application Errors**:
-   - **Syntax or fatal errors in the PHP code**:
-     - A 500 error can result from unhandled exceptions, syntax errors, or PHP fatal errors that crash the application.
-   - **Missing PHP modules**:
-     - If the application requires specific PHP modules that are not installed or enabled (e.g., `mysqli`, `pdo_mysql`), it can cause a 500 error.
-   - **Incorrect database credentials**:
-     - If the PHP application is unable to connect to the database due to incorrect MySQL credentials or a missing database, it might return a 500 error.
+### 2. **Apache or PHP Configuration Issues**
 
-### 4. **Database Issues**:
-   - **MySQL/MariaDB service not running**:
-     - If the MySQL/MariaDB service is down, the application will fail to retrieve data, potentially causing a 500 error.
-   - **Database connection issues**:
-     - Network issues or improper configuration of MySQL (e.g., bind-address issues) might prevent PHP from connecting to the database, resulting in a 500 error.
+* **Apache misconfiguration**:
+  * Issues with the virtual host configuration or `.htaccess` files can cause Apache to respond with a 500 error. Check for syntax errors in the configuration.
+* **PHP-FPM not working**:
+  * If PHP-FPM is used to handle PHP requests and isn’t running or misconfigured, Nginx will return a 500 error when it can’t forward requests properly.
+* **Incorrect permissions for PHP files**:
+  * If PHP files are not readable or executable by Apache or PHP-FPM, it can result in a 500 error. This can happen due to incorrect ownership or file permissions.
+* **Memory or execution time limits**:
+  * The `php.ini` file may have restrictive memory (`memory_limit`) or execution time (`max_execution_time`) settings, causing scripts to fail.
 
-### 5. **Permission Issues**:
-   - **File and directory permissions**:
-     - The files and directories being served must have the correct permissions. For example, files should typically have `644` permissions, and directories should have `755`. Incorrect permissions can prevent execution or access.
-   - **SELinux issues** (if applicable):
-     - If SELinux is enabled, it may block access to certain resources unless the appropriate contexts are set. A 500 error could occur if SELinux is blocking access to necessary files.
+### 3. **PHP Application Errors**
 
-### 6. **Log Files and Error Reporting**:
-   - **Check Nginx logs**:
-     - Nginx logs (usually in `/var/log/nginx/error.log`) can provide insights into proxy errors, bad gateway issues, or permission problems.
-   - **Check Apache logs**:
-     - Look for errors in the Apache logs (`/var/log/httpd/error_log` or `/var/log/apache2/error.log` depending on the system) that might indicate script failures or configuration issues.
-   - **PHP error logging**:
-     - PHP errors may not be visible unless logging is enabled. Ensure `display_errors` is off and `log_errors` is on in `php.ini`, and check the PHP error log (typically `/var/log/php-fpm/error.log` or similar).
-   - **MySQL logs**:
-     - If database issues are suspected, check the MySQL error logs for any service crashes or connection issues.
+* **Syntax or fatal errors in the PHP code**:
+  * A 500 error can result from unhandled exceptions, syntax errors, or PHP fatal errors that crash the application.
+* **Missing PHP modules**:
+  * If the application requires specific PHP modules that are not installed or enabled (e.g., `mysqli`, `pdo_mysql`), it can cause a 500 error.
+* **Incorrect database credentials**:
+  * If the PHP application is unable to connect to the database due to incorrect MySQL credentials or a missing database, it might return a 500 error.
 
-### 7. **Resource Limitations**:
-   - **Memory exhaustion**:
-     - If your server is running out of memory (RAM), processes might be killed (especially PHP or MySQL), resulting in a 500 error. Check system logs (`dmesg` or `/var/log/messages`) for any memory-related issues.
-   - **Process limits**:
-     - Exceeding process limits (e.g., `max_children` in PHP-FPM) can result in the server being unable to process requests, causing a 500 error.
-   - **Disk space exhaustion**:
-     - If the disk is full, PHP may not be able to write sessions, logs, or other temporary data, leading to a 500 error.
+### 4. **Database Issues**
 
-### 8. **Misbehaving Plugins or Extensions**:
-   - **Web application plugins**:
-     - For CMS platforms like WordPress, Joomla, or Drupal, a misbehaving plugin or extension can crash the application and result in a 500 error.
-   - **Application configuration changes**:
-     - Recent changes to the application’s configuration (such as changes to a `.htaccess` file or PHP settings) may lead to a misconfiguration that causes a 500 error.
+* **MySQL/MariaDB service not running**:
+  * If the MySQL/MariaDB service is down, the application will fail to retrieve data, potentially causing a 500 error.
+* **Database connection issues**:
+  * Network issues or improper configuration of MySQL (e.g., bind-address issues) might prevent PHP from connecting to the database, resulting in a 500 error.
 
-### 9. **SSL/TLS Misconfigurations**:
-   - **SSL certificate issues**:
-     - If the site uses HTTPS, issues with the SSL certificate, including expired or invalid certificates, can cause Nginx to fail in its role as a reverse proxy and return a 500 error.
-   - **Misconfigured SSL settings in Nginx**:
-     - Incorrect SSL settings, such as outdated ciphers or protocols, can cause Nginx to fail to establish a secure connection, resulting in a 500 error.
+### 5. **Permission Issues**
 
-### 10. **Miscommunication Between Nginx and Apache**:
-   - **Incorrect FastCGI settings**:
-     - If Nginx is using FastCGI to communicate with Apache or PHP-FPM, misconfigurations in the FastCGI parameters (e.g., incorrect `fastcgi_param` settings) could cause data transmission issues.
-   - **Timeouts**:
-     - Nginx and Apache might be timing out while processing requests. Check both Nginx and Apache timeout settings (e.g., `proxy_read_timeout` in Nginx or `Timeout` in Apache).
+* **File and directory permissions**:
+  * The files and directories being served must have the correct permissions. For example, files should typically have `644` permissions, and directories should have `755`. Incorrect permissions can prevent execution or access.
+* **SELinux issues** (if applicable):
+  * If SELinux is enabled, it may block access to certain resources unless the appropriate contexts are set. A 500 error could occur if SELinux is blocking access to necessary files.
+
+### 6. **Log Files and Error Reporting**
+
+* **Check Nginx logs**:
+  * Nginx logs (usually in `/var/log/nginx/error.log`) can provide insights into proxy errors, bad gateway issues, or permission problems.
+* **Check Apache logs**:
+  * Look for errors in the Apache logs (`/var/log/httpd/error_log` or `/var/log/apache2/error.log` depending on the system) that might indicate script failures or configuration issues.
+* **PHP error logging**:
+  * PHP errors may not be visible unless logging is enabled. Ensure `display_errors` is off and `log_errors` is on in `php.ini`, and check the PHP error log (typically `/var/log/php-fpm/error.log` or similar).
+* **MySQL logs**:
+  * If database issues are suspected, check the MySQL error logs for any service crashes or connection issues.
+
+### 7. **Resource Limitations**
+
+* **Memory exhaustion**:
+  * If your server is running out of memory (RAM), processes might be killed (especially PHP or MySQL), resulting in a 500 error. Check system logs (`dmesg` or `/var/log/messages`) for any memory-related issues.
+* **Process limits**:
+  * Exceeding process limits (e.g., `max_children` in PHP-FPM) can result in the server being unable to process requests, causing a 500 error.
+* **Disk space exhaustion**:
+  * If the disk is full, PHP may not be able to write sessions, logs, or other temporary data, leading to a 500 error.
+
+### 8. **Misbehaving Plugins or Extensions**
+
+* **Web application plugins**:
+  * For CMS platforms like WordPress, Joomla, or Drupal, a misbehaving plugin or extension can crash the application and result in a 500 error.
+* **Application configuration changes**:
+  * Recent changes to the application’s configuration (such as changes to a `.htaccess` file or PHP settings) may lead to a misconfiguration that causes a 500 error.
+
+### 9. **SSL/TLS Misconfigurations**
+
+* **SSL certificate issues**:
+  * If the site uses HTTPS, issues with the SSL certificate, including expired or invalid certificates, can cause Nginx to fail in its role as a reverse proxy and return a 500 error.
+* **Misconfigured SSL settings in Nginx**:
+  * Incorrect SSL settings, such as outdated ciphers or protocols, can cause Nginx to fail to establish a secure connection, resulting in a 500 error.
+
+### 10. **Miscommunication Between Nginx and Apache**
+
+* **Incorrect FastCGI settings**:
+  * If Nginx is using FastCGI to communicate with Apache or PHP-FPM, misconfigurations in the FastCGI parameters (e.g., incorrect `fastcgi_param` settings) could cause data transmission issues.
+* **Timeouts**:
+  * Nginx and Apache might be timing out while processing requests. Check both Nginx and Apache timeout settings (e.g., `proxy_read_timeout` in Nginx or `Timeout` in Apache).
 
 </details>
 
@@ -4328,34 +4493,34 @@ This means `strace` pauses your application twice for each syscall, and context-
 
 Cons:
 
-- can cause significant and sometimes massive performance overhead, in the worst case, slowing the target application by over 100x. This may not only make it unsuitable for production use, but any timing information may also be so distorted as to be misleading
-- can't trace multiple processes simultaneously (with the exception of followed children)
-- visibility is limited to the system call interface
+* can cause significant and sometimes massive performance overhead, in the worst case, slowing the target application by over 100x. This may not only make it unsuitable for production use, but any timing information may also be so distorted as to be misleading
+* can't trace multiple processes simultaneously (with the exception of followed children)
+* visibility is limited to the system call interface
 
 Useful resources:
 
-- [strace Wow Much Syscall (original)](http://www.brendangregg.com/blog/2014-05-11/strace-wow-much-syscall.html)
+* [strace Wow Much Syscall (original)](http://www.brendangregg.com/blog/2014-05-11/strace-wow-much-syscall.html)
 
 </details>
 
 <details>
 <summary><b>MySQL replication for one Slave is failing. How do you troubleshoot the issue?</b></summary><br>
 
-- Check the MySQL error log on both the master and the slave servers. Look for any error messages that might indicate the source of the problem.
-- Verify that the slave server is connected to the master server and that the replication process is running. You can do this by running the following command on the slave server:
+* Check the MySQL error log on both the master and the slave servers. Look for any error messages that might indicate the source of the problem.
+* Verify that the slave server is connected to the master server and that the replication process is running. You can do this by running the following command on the slave server:
 `SHOW SLAVE STATUS\G`
-- This command will show you the current replication status of the slave, including the replication thread state, the last SQL statement executed, and the current position in the replication stream.
-- Check the network connectivity between the master and slave servers. Make sure that there are no firewalls or other network devices blocking the replication traffic.
-- Verify that the data on the slave server matches the data on the master server. You can do this by comparing the output of the following commands on both the master and the slave servers:
+* This command will show you the current replication status of the slave, including the replication thread state, the last SQL statement executed, and the current position in the replication stream.
+* Check the network connectivity between the master and slave servers. Make sure that there are no firewalls or other network devices blocking the replication traffic.
+* Verify that the data on the slave server matches the data on the master server. You can do this by comparing the output of the following commands on both the master and the slave servers:
 `SELECT COUNT(*) FROM table_name;`
-- If the number of rows returned by the two commands does not match, then there is a problem with the replication process.
-- Check the MySQL configuration files on both the master and slave servers. Verify that the replication settings are correct and that the servers are configured to use the same character set and collation.
-- If none of the above steps resolve the issue, you may need to rebuild the replication process from scratch. This involves stopping the replication process, resetting the slave server to the master's current position in the replication stream, and then restarting the replication process.
-- Monitor the replication process for a period of time to ensure that it is working correctly.
+* If the number of rows returned by the two commands does not match, then there is a problem with the replication process.
+* Check the MySQL configuration files on both the master and slave servers. Verify that the replication settings are correct and that the servers are configured to use the same character set and collation.
+* If none of the above steps resolve the issue, you may need to rebuild the replication process from scratch. This involves stopping the replication process, resetting the slave server to the master's current position in the replication stream, and then restarting the replication process.
+* Monitor the replication process for a period of time to ensure that it is working correctly.
 
 Useful resources:
 
-- [MySQL: Troubleshooting Replication](https://dev.mysql.com/doc/mysql-replication-excerpt/8.0/en/replication-problems.html)
+* [MySQL: Troubleshooting Replication](https://dev.mysql.com/doc/mysql-replication-excerpt/8.0/en/replication-problems.html)
 
 </details>
 
@@ -4369,8 +4534,9 @@ Using -j REJECT will send an error message back to the client, letting them know
 Using -j DROP, on the other hand, simply discards the traffic without providing any feedback to the client. This can be useful for denying traffic from known malicious sources or for denying traffic to services that should not be accessible from the public internet.
 
 Useful resources:
-- [Is it better to set -j REJECT or -j DROP in iptables?](https://unix.stackexchange.com/questions/109459/is-it-better-to-set-j-reject-or-j-drop-in-iptables)
-- [Drop versus Reject](https://www.chiark.greenend.org.uk/~peterb/network/drop-vs-reject)
+
+* [Is it better to set -j REJECT or -j DROP in iptables?](https://unix.stackexchange.com/questions/109459/is-it-better-to-set-j-reject-or-j-drop-in-iptables)
+* [Drop versus Reject](https://www.chiark.greenend.org.uk/~peterb/network/drop-vs-reject)
 
 </details>
 
@@ -4394,7 +4560,7 @@ If a nameserver responds with **SERVFAIL** or a referral (**nofail**) or termina
 
 Example:
 
-```
+```plaintext
 nameserver 192.168.250.20   # it's not a dns
 nameserver 8.8.8.8          # not store gate.test.int
 nameserver 127.0.0.1        # store gate.test.int
@@ -4402,7 +4568,7 @@ nameserver 127.0.0.1        # store gate.test.int
 
 so if you check:
 
-```
+```bash
 host -v -t a gate.test.int
 Trying "gate.test.int"                        # trying first dns (192.168.250.20) but response is time out, so try the next nameserver
 Host gate.test.int not found: 3(NXDOMAIN)     # ok but response is NXDOMAIN (not found this domain name)
@@ -4415,7 +4581,7 @@ To avoid this you can use e.g. `nslookup` command which will use the second name
 
 Useful resources:
 
-- [Second nameserver in /etc/resolv.conf not picked up by wget](https://serverfault.com/questions/398837/second-nameserver-in-etc-resolv-conf-not-picked-up-by-wget)
+* [Second nameserver in /etc/resolv.conf not picked up by wget](https://serverfault.com/questions/398837/second-nameserver-in-etc-resolv-conf-not-picked-up-by-wget)
 
 </details>
 
@@ -4423,59 +4589,66 @@ Useful resources:
 <summary><b>A client of the company you work at reports their server has stopped receiving data from your server. Go through the steps of troubleshooting the issue both on your end and your communications with them.</b></summary><br>
 
 ### 1. **Gather Information from the Client**
-   - **Initial Communication**:
-     - **Ask the client** for details: When did the issue start? What kind of data is not being received (specific service, API, etc.)? Are there any error messages or logs that indicate the failure?
-     - **Determine any changes**: Ask if they have recently changed firewall rules, network configuration, or updated software (on either the server or network layer).
-     - **Get context**: Determine if this is an intermittent issue or a complete failure, and whether the failure is only with your server or across multiple services.
+
+* **Initial Communication**:
+  * **Ask the client** for details: When did the issue start? What kind of data is not being received (specific service, API, etc.)? Are there any error messages or logs that indicate the failure?
+  * **Determine any changes**: Ask if they have recently changed firewall rules, network configuration, or updated software (on either the server or network layer).
+  * **Get context**: Determine if this is an intermittent issue or a complete failure, and whether the failure is only with your server or across multiple services.
 
 ### 2. **Verify Connectivity and Status on Your End**
-   - **Check server health**:
-     - Ensure your server is running normally and that the service responsible for sending the data is active (e.g., database, API server, or file transfer service).
-     - Check for any recent service or network configuration changes that could affect outbound data transmission.
-   - **Network/Firewall checks**:
-     - Review firewall rules and security groups to ensure that the necessary ports for communication with the client's server are open (e.g., port 80 for HTTP, 443 for HTTPS, or any other relevant protocol).
-     - If your infrastructure uses a load balancer, ensure it's forwarding traffic to the correct backend servers and that no misconfigurations exist.
-   - **Logs inspection**:
-     - Look at your server logs for any failed data transfers or connection attempts. This could provide insight into whether your server is attempting to send data and encountering failures.
-     - Check the logs of the relevant service (e.g., web server, API service, or data processing system) to see if there are errors during the data transmission.
-   - **Data queues and buffers**:
-     - If you're using a message queue or batch system, check whether data has accumulated in queues or is stuck in transit.
-     - Investigate if there are network timeouts or message drop issues.
+
+* **Check server health**:
+  * Ensure your server is running normally and that the service responsible for sending the data is active (e.g., database, API server, or file transfer service).
+  * Check for any recent service or network configuration changes that could affect outbound data transmission.
+* **Network/Firewall checks**:
+  * Review firewall rules and security groups to ensure that the necessary ports for communication with the client's server are open (e.g., port 80 for HTTP, 443 for HTTPS, or any other relevant protocol).
+  * If your infrastructure uses a load balancer, ensure it's forwarding traffic to the correct backend servers and that no misconfigurations exist.
+* **Logs inspection**:
+  * Look at your server logs for any failed data transfers or connection attempts. This could provide insight into whether your server is attempting to send data and encountering failures.
+  * Check the logs of the relevant service (e.g., web server, API service, or data processing system) to see if there are errors during the data transmission.
+* **Data queues and buffers**:
+  * If you're using a message queue or batch system, check whether data has accumulated in queues or is stuck in transit.
+  * Investigate if there are network timeouts or message drop issues.
 
 ### 3. **Perform Connectivity Tests**
-   - **Ping test**: Try pinging the client's server from your server to verify basic connectivity (if ICMP is allowed).
-   - **Traceroute**: Run a traceroute from your server to their server to diagnose network issues, like routing problems or latency spikes.
-   - **Port tests**: Use `nc` (netcat) to verify that you can reach the relevant service port on the client’s server.
-   - **Test data transmission**:
-     - Send a test request (e.g., using `curl` or `wget`) to their endpoint and inspect the response. This will show whether the server is reachable and how it responds.
-     - If data is transferred via an API, manually call the API with the expected payload and verify the result.
+
+* **Ping test**: Try pinging the client's server from your server to verify basic connectivity (if ICMP is allowed).
+* **Traceroute**: Run a traceroute from your server to their server to diagnose network issues, like routing problems or latency spikes.
+* **Port tests**: Use `nc` (netcat) to verify that you can reach the relevant service port on the client’s server.
+* **Test data transmission**:
+  * Send a test request (e.g., using `curl` or `wget`) to their endpoint and inspect the response. This will show whether the server is reachable and how it responds.
+  * If data is transferred via an API, manually call the API with the expected payload and verify the result.
 
 ### 4. **Communicate with the Client Throughout**
-   - **Initial response**:
-     - Let the client know you are investigating the issue and outline the steps you are taking.
-     - Ask for specific logs or monitoring data from their side that could give more details (e.g., HTTP logs, connection errors, or security event logs).
-   - **Share findings**:
-     - If you identify issues on your end, communicate them and provide an estimated resolution time.
-     - If no issues are found on your side, let them know what tests you’ve conducted and share the results (e.g., ping success, traceroute path).
-   - **Request client-side checks**:
-     - Ask the client to verify the health of their server, including whether their services are running correctly and whether they can reach your server.
-     - Suggest they perform similar tests: ping, traceroute, and port checks from their server to your server. This will help identify if the issue lies within their network or your connection.
-     - If they use firewalls or security appliances, ask them to confirm that traffic from your IP address is not being blocked.
-   - **Suggest a temporary bypass**:
-     - If possible, ask the client to disable any recent firewall rules or security features temporarily to rule out misconfigurations.
+
+* **Initial response**:
+  * Let the client know you are investigating the issue and outline the steps you are taking.
+  * Ask for specific logs or monitoring data from their side that could give more details (e.g., HTTP logs, connection errors, or security event logs).
+* **Share findings**:
+  * If you identify issues on your end, communicate them and provide an estimated resolution time.
+  * If no issues are found on your side, let them know what tests you’ve conducted and share the results (e.g., ping success, traceroute path).
+* **Request client-side checks**:
+  * Ask the client to verify the health of their server, including whether their services are running correctly and whether they can reach your server.
+  * Suggest they perform similar tests: ping, traceroute, and port checks from their server to your server. This will help identify if the issue lies within their network or your connection.
+  * If they use firewalls or security appliances, ask them to confirm that traffic from your IP address is not being blocked.
+* **Suggest a temporary bypass**:
+  * If possible, ask the client to disable any recent firewall rules or security features temporarily to rule out misconfigurations.
 
 ### 5. **Investigate External Factors**
-   - **DNS Issues**: Check whether the DNS name used to connect to the client’s server is resolving correctly. Ask the client if they’ve made any DNS changes recently.
-   - **ISP/Network provider issues**: If connectivity seems fine but data still isn’t flowing, investigate whether an issue exists with either your ISP or the client’s ISP, especially if routing paths or latency are problematic.
+
+* **DNS Issues**: Check whether the DNS name used to connect to the client’s server is resolving correctly. Ask the client if they’ve made any DNS changes recently.
+* **ISP/Network provider issues**: If connectivity seems fine but data still isn’t flowing, investigate whether an issue exists with either your ISP or the client’s ISP, especially if routing paths or latency are problematic.
 
 ### 6. **Escalation and Collaboration**
-   - **Involve Network and Security Teams**: If the issue appears network-related, escalate it to your network team or security team to check for deeper routing or firewall issues (both on your side and theirs).
-   - **Set up a conference call**: If needed, set up a real-time troubleshooting session with the client’s technical team. This allows both sides to run tests in parallel and exchange findings quickly.
+
+* **Involve Network and Security Teams**: If the issue appears network-related, escalate it to your network team or security team to check for deeper routing or firewall issues (both on your side and theirs).
+* **Set up a conference call**: If needed, set up a real-time troubleshooting session with the client’s technical team. This allows both sides to run tests in parallel and exchange findings quickly.
 
 ### 7. **Monitor and Confirm Resolution**
-   - **Test again**: After making any changes, send test data from your server to the client’s server and confirm successful transmission.
-   - **Ask for confirmation**: Request the client to confirm that they are now receiving the data and that everything is working as expected.
-   - **Monitor for stability**: Keep an eye on logs and monitoring systems to ensure the issue is fully resolved and doesn’t reoccur.
+
+* **Test again**: After making any changes, send test data from your server to the client’s server and confirm successful transmission.
+* **Ask for confirmation**: Request the client to confirm that they are now receiving the data and that everything is working as expected.
+* **Monitor for stability**: Keep an eye on logs and monitoring systems to ensure the issue is fully resolved and doesn’t reoccur.
 
 </details>
 
@@ -4484,7 +4657,7 @@ Useful resources:
 
 SNI (Server Name Indication) is an extension to the SSL/TLS protocol that allows a client to specify the hostname it is trying to connect to during the SSL handshake. This enables the server to present the correct SSL certificate based on the requested hostname, even when multiple domain names are hosted on the same IP address.
 
-### When SNI SSL is useful:
+### When SNI SSL is useful
 
 1. **Multiple SSL certificates on the same IP address**: SNI allows hosting multiple SSL-enabled websites on a single IP address. Without SNI, each site would need a unique IP address to present the correct SSL certificate.
 
@@ -4509,9 +4682,9 @@ In the event the router has its own DNS servers, it may have its own cache other
 
 Useful resources:
 
-- [What happens when...](https://github.com/alex/what-happens-when)
-- [DNS Explained - How Your Browser Finds Websites](https://scotch.io/tutorials/dns-explained-how-your-browser-finds-websites)
-- [Firefox invalidate dns cache](https://stackoverflow.com/questions/13063496/firefox-invalidate-dns-cache)
+* [What happens when...](https://github.com/alex/what-happens-when)
+* [DNS Explained - How Your Browser Finds Websites](https://scotch.io/tutorials/dns-explained-how-your-browser-finds-websites)
+* [Firefox invalidate dns cache](https://stackoverflow.com/questions/13063496/firefox-invalidate-dns-cache)
 
 </details>
 
@@ -4545,20 +4718,18 @@ The Spectre attack works by tricking the processor's branch predictor into specu
 
 Useful resources:
 
-- [Spectre (security vulnerability)](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability))
+* [Spectre (security vulnerability)](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability))
 
 </details>
 
 <details>
 <summary><b>What is the difference between policies, processes and guidelines?</b></summary><br>
 
-- Policies: Policies are high-level statements that define an organization's rules and principles. They provide a framework for decision-making and guide employees in their actions. Policies are typically developed by senior management and are designed to align with the organization's mission, values, and strategic goals. Examples of policies include information security policy, acceptable use policy, and employee code of conduct.
- 
+* Policies: Policies are high-level statements that define an organization's rules and principles. They provide a framework for decision-making and guide employees in their actions. Policies are typically developed by senior management and are designed to align with the organization's mission, values, and strategic goals. Examples of policies include information security policy, acceptable use policy, and employee code of conduct.
 
-- Processes: Processes are a set of interrelated activities that transform inputs into outputs. They describe how work is done in an organization and provide a structured approach to achieving specific objectives. Processes are often defined at a lower level than policies and are designed to be repeatable and scalable. Examples of processes include incident management process, change management process, and procurement process.
+* Processes: Processes are a set of interrelated activities that transform inputs into outputs. They describe how work is done in an organization and provide a structured approach to achieving specific objectives. Processes are often defined at a lower level than policies and are designed to be repeatable and scalable. Examples of processes include incident management process, change management process, and procurement process.
 
-
-- Guidelines: Guidelines are recommendations or best practices that provide direction on how to achieve a specific objective. Unlike policies and processes, guidelines are not mandatory and are often subject to interpretation. They are designed to assist employees in making decisions and performing tasks. Guidelines can be developed internally or externally, and they may be specific to a particular function or industry. Examples of guidelines include security configuration guidelines, data retention guidelines, and accessibility guidelines.
+* Guidelines: Guidelines are recommendations or best practices that provide direction on how to achieve a specific objective. Unlike policies and processes, guidelines are not mandatory and are often subject to interpretation. They are designed to assist employees in making decisions and performing tasks. Guidelines can be developed internally or externally, and they may be specific to a particular function or industry. Examples of guidelines include security configuration guidelines, data retention guidelines, and accessibility guidelines.
 
 </details>
 
@@ -4578,17 +4749,18 @@ An event-driven architecture uses events to trigger and communicate between deco
 
 It's a **fork bomb**.
 
-- `:()` - this defines the function. `:` is the function name and the empty parenthesis shows that it will not accept any arguments
-- `{ }` - these characters shows the beginning and end of function definition
-- `:|:` - it loads a copy of the function `:` into memory and pipe its output to another copy of the `:` function, which has to be loaded into memory
-- `&` - this will make the process as a background process, so that the child processes will not get killed even though the parent gets auto-killed
-- `:` - final `:` will execute the function again and hence the chain reaction begins
+* `:()` - this defines the function. `:` is the function name and the empty parenthesis shows that it will not accept any arguments
+* `{ }` - these characters shows the beginning and end of function definition
+* `:|:` - it loads a copy of the function `:` into memory and pipe its output to another copy of the `:` function, which has to be loaded into memory
+* `&` - this will make the process as a background process, so that the child processes will not get killed even though the parent gets auto-killed
+* `:` - final `:` will execute the function again and hence the chain reaction begins
 
 The best way to protect a multi-user system is to use **PAM** to limit the number of processes a user can use. We know the biggest problem with a fork bomb is the fact it takes up so many processes.
 
 So we have two ways of attempting to fix this, if you are already logged into the system:
-- execute a **SIGSTOP** command to stop the process: `killall -STOP -u user1`
-- if you can't run at the command line you will have to use `exec` to force it to run (due to processes all being used): `exec killall -STOP -u user1`
+
+* execute a **SIGSTOP** command to stop the process: `killall -STOP -u user1`
+* if you can't run at the command line you will have to use `exec` to force it to run (due to processes all being used): `exec killall -STOP -u user1`
 
 With fork bombs, the best thing to do is preventing it from being an issue in the first place.
 
@@ -4709,8 +4881,8 @@ echo <pid> > /mnt/oom-killer/invincibles/tasks
 
 Useful resources:
 
-- [Rsync triggered Linux OOM killer on a single 50 GB file](https://serverfault.com/questions/724469/rsync-triggered-linux-oom-killer-on-a-single-50-gb-file)
-- [Taming the OOM killer](https://lwn.net/Articles/317814/)
+* [Rsync triggered Linux OOM killer on a single 50 GB file](https://serverfault.com/questions/724469/rsync-triggered-linux-oom-killer-on-a-single-50-gb-file)
+* [Taming the OOM killer](https://lwn.net/Articles/317814/)
 
 </details>
 
@@ -4719,11 +4891,13 @@ Useful resources:
 
 To check and reduce the number of `TIME_WAIT` sockets on a server handling many small HTTP requests behind a proxy:
 
-### Check `TIME_WAIT` Sockets:
-- Use tools like `ss` or `netstat` to view the number of sockets in `TIME_WAIT`.
-- Get detailed information to diagnose the connections causing `TIME_WAIT`.
+### Check `TIME_WAIT` Sockets
 
-### Reduce `TIME_WAIT` Sockets:
+* Use tools like `ss` or `netstat` to view the number of sockets in `TIME_WAIT`.
+* Get detailed information to diagnose the connections causing `TIME_WAIT`.
+
+### Reduce `TIME_WAIT` Sockets
+
 1. **Enable TCP socket reuse**: Allow the system to reuse `TIME_WAIT` sockets for new connections when safe.
 2. **Lower `TIME_WAIT` duration**: Adjust the timeout value for `TIME_WAIT` to shorten the time sockets remain in this state.
 3. **Increase available ports**: Expand the range of ephemeral ports to reduce port exhaustion.
@@ -4734,7 +4908,7 @@ After applying these settings, monitor the system to ensure the changes effectiv
 
 Useful resources:
 
-- [How to reduce number of sockets in TIME_WAIT?](https://serverfault.com/questions/212093/how-to-reduce-number-of-sockets-in-time-wait)
+* [How to reduce number of sockets in TIME_WAIT?](https://serverfault.com/questions/212093/how-to-reduce-number-of-sockets-in-time-wait)
 
 </details>
 
@@ -4743,42 +4917,44 @@ Useful resources:
 
 **Protection Rings** are a mechanism used by an operating system to control access to hardware and system resources, providing a hierarchical level of privilege for executing code. The concept is often associated with **CPU architecture**, particularly in modern processors (like x86). Protection rings enforce different levels of permissions, thereby improving system security and stability by isolating different types of code execution.
 
-### Key Concepts:
+### Key Concepts
 
-- **Rings**: Protection rings are typically visualized as concentric layers, with **Ring 0** at the center, representing the most privileged level, and outer rings (like **Ring 3**) representing less privileged levels.
+* **Rings**: Protection rings are typically visualized as concentric layers, with **Ring 0** at the center, representing the most privileged level, and outer rings (like **Ring 3**) representing less privileged levels.
 
-- **Ring 0 (Kernel Mode or Supervisor Mode)**:
-  - The **most privileged** level, where the operating system kernel and core system components run.
-  - Code running in this ring has **direct access** to hardware resources (e.g., memory, CPU, and I/O devices) and can execute privileged instructions.
-  - Only trusted, critical system processes run in Ring 0, as a failure or security breach at this level can compromise the entire system.
+* **Ring 0 (Kernel Mode or Supervisor Mode)**:
+  * The **most privileged** level, where the operating system kernel and core system components run.
+  * Code running in this ring has **direct access** to hardware resources (e.g., memory, CPU, and I/O devices) and can execute privileged instructions.
+  * Only trusted, critical system processes run in Ring 0, as a failure or security breach at this level can compromise the entire system.
 
-- **Ring 1 and Ring 2** (Often Unused in Modern Systems):
-  - Historically, **Ring 1** and **Ring 2** were designed for device drivers or lower-level system services that needed more privileges than user applications but less than the kernel.
-  - In practice, modern operating systems typically combine Rings 1 and 2 into **Ring 0**, so these rings are often unused.
+* **Ring 1 and Ring 2** (Often Unused in Modern Systems):
+  * Historically, **Ring 1** and **Ring 2** were designed for device drivers or lower-level system services that needed more privileges than user applications but less than the kernel.
+  * In practice, modern operating systems typically combine Rings 1 and 2 into **Ring 0**, so these rings are often unused.
 
-- **Ring 3 (User Mode)**:
-  - The **least privileged** ring, where **user applications** and **processes** run.
-  - Code in Ring 3 has **no direct access to hardware** or system resources. Instead, user-mode applications must make system calls (via the kernel) to interact with hardware or perform privileged operations.
-  - Isolating user processes in this ring ensures that even if an application crashes or is compromised, it cannot directly affect the kernel or other system resources.
+* **Ring 3 (User Mode)**:
+  * The **least privileged** ring, where **user applications** and **processes** run.
+  * Code in Ring 3 has **no direct access to hardware** or system resources. Instead, user-mode applications must make system calls (via the kernel) to interact with hardware or perform privileged operations.
+  * Isolating user processes in this ring ensures that even if an application crashes or is compromised, it cannot directly affect the kernel or other system resources.
 
-### Why Protection Rings Matter:
+### Why Protection Rings Matter
 
 1. **Security**: By restricting privileged access, protection rings limit the potential impact of malicious or buggy code. Code running in lower-privilege rings (e.g., user applications) cannot directly interfere with the system or other applications.
-   
+
 2. **Stability**: If an application or driver running in a less privileged ring fails, it cannot crash the entire system because it doesn't have access to critical kernel-level resources.
 
 3. **Controlled Access to Resources**: System resources (like memory, I/O, and CPU instructions) are protected by limiting direct access to Ring 0. All requests from Ring 3 (user mode) must go through the kernel (via system calls), allowing the OS to manage and enforce security policies.
 
-### Common OS Implementation:
-- **Most modern operating systems** like Linux, Windows, and macOS, typically implement **two rings**:
-  - **Ring 0**: Kernel mode, where the OS kernel and low-level drivers run.
-  - **Ring 3**: User mode, where applications and services run.
-  
-### Virtualization and Hypervisors:
-- In virtualized environments, a **Ring -1** is sometimes used for the **hypervisor**, which controls virtual machines. This allows the hypervisor to manage multiple operating systems, each operating in its own Ring 0, without them having direct access to the actual hardware.
+### Common OS Implementation
 
-- [What are Rings in Operating Systems?](https://www.baeldung.com/cs/os-rings)
-- [Protecting Ring](https://en.wikipedia.org/wiki/Protection_ring)
+* **Most modern operating systems** like Linux, Windows, and macOS, typically implement **two rings**:
+  * **Ring 0**: Kernel mode, where the OS kernel and low-level drivers run.
+  * **Ring 3**: User mode, where applications and services run.
+  
+### Virtualization and Hypervisors
+
+* In virtualized environments, a **Ring -1** is sometimes used for the **hypervisor**, which controls virtual machines. This allows the hypervisor to manage multiple operating systems, each operating in its own Ring 0, without them having direct access to the actual hardware.
+
+* [What are Rings in Operating Systems?](https://www.baeldung.com/cs/os-rings)
+* [Protecting Ring](https://en.wikipedia.org/wiki/Protection_ring)
 
 </details>
 
@@ -4793,8 +4969,7 @@ According to the CA Browser forum, there may be compatibility issues with certif
 
 Useful resources:
 
-- [Are SSL certificates bound to the servers ip address?](https://stackoverflow.com/questions/1095780/are-ssl-certificates-bound-to-the-servers-ip-address)
-- [SSL certificate for a public IP address?](https://serverfault.com/questions/193775/ssl-certificate-for-a-public-ip-address)
+* [Are SSL certificates bound to the servers ip address?](https://stackoverflow.com/questions/1095780/are-ssl-certificates-bound-to-the-servers-ip-address)
+* [SSL certificate for a public IP address?](https://serverfault.com/questions/193775/ssl-certificate-for-a-public-ip-address)
 
 </details>
-
