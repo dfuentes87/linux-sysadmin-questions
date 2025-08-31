@@ -897,16 +897,6 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>Explain a simple Continuous Integration pipeline.</b></summary><br>
-
-* clone repository
-* deploy stage (QA)
-* testing environment (QA)
-* deploy stage (PROD)
-
-</details>
-
-<details>
 <summary><b>Explain some basic Docker commands.</b></summary><br>
 
 * `docker ps` - show running containers
@@ -914,8 +904,60 @@ Useful resources:
 * `docker images` - show docker images
 * `docker logs <container-id|container-name>` - get logs from container
 * `docker network ls` - show all docker networks
-* `docker volumes ls` - show all docker volumes
+* `docker volume ls` - show all docker volumes
 * `docker exec -it <container-id|container-name> bash` - execute bash in container with interactive shell
+
+</details>
+
+<details>
+<summary><b>Explain a simple Continuous Integration pipeline.</b></summary>
+
+A **CI pipeline** automates build, test, and integration steps so code changes are validated early.
+
+* **Source**: Developer pushes code to a shared repository (e.g., GitHub, GitLab).
+* **Build**: Pipeline compiles code, resolves dependencies, builds artifacts or container images.
+* **Test**: Unit, integration, and linting/security scans run automatically. Failures stop the pipeline.
+* **Staging deploy**: Artifacts are deployed to a QA or staging environment for acceptance testing.
+* **Approval / promotion**: Optional manual or automated gate based on test results and policies.
+* **Production deploy**: Pipeline delivers artifacts to production. Often includes canary or blue‑green strategies.
+* **Feedback**: Pipeline reports back to developers with logs, metrics, and notifications.
+
+</details>
+
+<details>
+<summary><b>What are semantic commit practices and how do you avoid history pollution?</b></summary><br>
+
+* Use **atomic commits**: one logical change per commit.
+* Adopt **Conventional Commits** or similar (`feat:`, `fix:`, `docs:`) to make history queryable and automate release notes.
+* Prefer **topic branches** and **pull requests**; keep `main` protected.
+* Use **rebase + squash** on feature branches to remove fixup noise before merge; avoid rewriting shared history on public branches.
+* Sign commits/tags if required; tag deployable states.
+* Avoid pollution: no generated artifacts, no secrets, avoid "WIP" dumps; enforce reviews and CI checks.
+
+</details>
+
+<details>
+<summary><b>How do you debug containerized applications in production-like environments?</b></summary><br>
+
+* Start with signals: `docker ps`, `docker logs`, exit codes, restart counts, health status.
+* Inspect: `docker inspect` for env, mounts, networks, healthchecks, and recent failures.
+* Shell in: `docker exec -it <ctr> /bin/sh` to check process tree, open ports, DNS, and filesystem state.
+* Networking: verify service discovery, DNS, and connectivity (`/etc/resolv.conf`, `ip addr`, `curl`, `nc`); check published vs container port, bridge vs host network.
+* Storage: confirm bind mounts vs volumes, permissions, SELinux/AppArmor denials.
+* Resources: check limits (`--cpus`, `--memory`) and throttling; correlate with node metrics.
+* Reproduce locally with the same image and env; minimize drift between dev/stage/prod.
+
+</details>
+
+<details>
+<summary><b>What rollback and restore strategies exist beyond <code>git reset</code>?</b></summary><br>
+
+* **git revert**: create an inverse commit to safely undo changes on shared branches.
+* **git restore / checkout**: recover files or paths from a commit without altering history.
+* **Reflog**: recover lost commits/branches after mistaken resets or force pushes.
+* **Tags and releases**: pin deployable versions; roll back deployments by re-deploying the last known good tag.
+* **Branching strategy**: keep `main` releasable; use release branches and hotfix flow to isolate fixes.
+* **Operational rollback**: roll back artifacts or containers via your deploy system (blue/green, canary), independent of Git history edits.
 
 </details>
 
@@ -1035,21 +1077,6 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>Difference between <code>nohup</code>, <code>disown</code>, and <code>&</code>. What happens when using all together?</b></summary><br>
-
-* `&` puts the job in the background, that is, makes it block on attempting to read input, and makes the shell not wait for its completion
-* `disown` removes the process from the shell's job control, but it still leaves it connected to the terminal. One of the results is that the shell won't send it a **SIGHUP**. Obviously, it can only be applied to background jobs, because you cannot enter it when a foreground job is running
-* `nohup` disconnects the process from the terminal, redirects its output to `nohup.out` and shields it from **SIGHUP**. One of the effects (the naming one) is that the process won't receive any sent **SIGHUP**. It is completely independent of job control and could in principle be used also for foreground jobs (although that's not very useful)
-
-If you use all three together, the process is running in the background, is removed from the shell's job control and is effectively disconnected from the terminal.
-
-Useful resources:
-
-* [Difference between nohup, disown and & (original)](https://unix.stackexchange.com/questions/3886/difference-between-nohup-disown-and)
-
-</details>
-
-<details>
 <summary><b>Pick two different computer languages. Describe when you would use one over the other.</b></summary><br>
 
 Python is a high-level, interpreted language that is known for its simplicity, ease of use, and flexibility. It is commonly used for data science, machine learning, web development, scripting, and automation tasks. Python has a large and active community that creates and maintains numerous libraries and frameworks, making it an excellent choice for rapid prototyping, experimentation, and development of proof-of-concept applications.
@@ -1120,6 +1147,24 @@ Useful resources:
 </details>
 
 <details>
+<summary><b>How do you troubleshoot orphaned processes and zombie processes?</b></summary><br>
+
+**Definitions**
+
+* **Zombie**: process has exited but its parent has not reaped it yet. Shows as `Z` in `ps`. Consumes no CPU or memory beyond a PID slot.
+* **Orphan**: parent exited while the child kept running; child is adopted by `init`/`systemd`.
+
+**Troubleshooting**
+
+* Identify with `ps -eo pid,ppid,state,cmd` and look for `Z` state or odd PPIDs.
+* For **zombies**: signal or restart the parent so it calls `wait(2)`; if the parent is hung, terminate it so `init`/`systemd` reaps children.
+* For **orphans**: confirm who adopted them; use service managers (systemd) to own lifecycles instead of ad-hoc backgrounding.
+* Prevent recurrence: daemonize correctly (or better, use systemd units); ensure handlers reap children.
+* Evidence: `strace -p <ppid>` to see if parent waits; `lsof -p <pid>` for open resources; check cgroups to map to the originating service.
+
+</details>
+
+<details>
 <summary><b>Every command fails with <code>command not found</code>. How can you trace the source of the error and resolve it?</b></summary><br>
 
 It looks that at one point or another are overwriting the default `PATH` environment variable. The type of errors you have, indicates that `PATH` does not contain e.g. `/bin`, where the commands (including bash) reside.
@@ -1166,18 +1211,16 @@ Production environment: This is where the application is deployed for the end-us
 </details>
 
 <details>
-<summary><b>Provide a general explanation of how SSL works.</b></summary><br>
+<summary><b>Provide a general explanation of how SSL works.</b></summary>
 
-SSL (Secure Sockets Layer) is a protocol used to establish a secure and encrypted communication between a client and a server over the internet. It was replaced by TLS (Transport Layer Security), but the term SSL is still often used.
+**SSL/TLS** creates an encrypted channel between a client and a server.
 
-When a client (such as a web browser) initiates an SSL connection to a server, the following process takes place:
+* The client connects and the server presents a certificate proving its identity.
+* The client verifies the certificate against trusted authorities.
+* A key exchange takes place so both sides agree on a shared secret.
+* That shared secret is then used for fast symmetric encryption of all further traffic.
 
-1. The client sends a request to the server to initiate an SSL connection.
-2. The server responds with its SSL certificate, which contains a public key and other information about the certificate holder.
-3. The client verifies the certificate's validity by checking it against a list of trusted root certificates installed on the client's device.
-4. The client generates a session key, encrypts it using the server's public key, and sends it to the server.
-5. The server decrypts the session key using its private key.
-6. The client and server use the session key to encrypt and decrypt data exchanged during the session.
+This ensures confidentiality, integrity, and authentication of the communication. SSL is the old name; today it is replaced by TLS.
 
 </details>
 
