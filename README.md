@@ -37,13 +37,9 @@
 
 These questions are not meant to be a list of arbitrary facts, such as port numbers that you'll maybe deal with once a year, situations or commands that are rarely encountered, or issues specific to a certain application. Instead, these are geared towards real world situations that are common and good to know in general, however not knowing all these do not mean you are not a good Linux SysAdmin.
 
-:heavy_check_mark: The answers are only **examples** and do not exhaust the whole topic. Most of them contains **useful resources** for a deeper understanding.
-
-:warning: Questions marked **`***`** don't have answer yet or answer the is incomplete - **make a pull request to add them**!
+:heavy_check_mark: The answers are only **examples** and do not exhaust the whole topic. Most of them contains useful resources for a deeper understanding.
 
 :traffic_light: If you find something which doesn't make sense, or something doesn't seem right, **please make a pull request** and please add valid and well-reasoned explanations about your changes or comments.
-
-<br>
 
 ### Contributing
 
@@ -53,9 +49,6 @@ If you would like to answer questions, or you found an error - fork the repo, ad
 
 * Please **do not** use the issue tracker for personal tech support requests.
 
-* Please **do not** derail or troll issues. Keep the discussion on topic and
-  respect the opinions of others.
-
 #### Pull requests
 
 When creating a pull request, please heed the following:
@@ -63,23 +56,17 @@ When creating a pull request, please heed the following:
 * For new answers: try to give an objective, clear, and concise response, including an example if appropriate.
 * For changes to answers: explain why you believe the current answer is incorrect and a better response and/or solution.
 
-<br>
-
 ****
-
-<br>
 
 ## Table of Contents
 
-| <b><u>The type of chapter</u></b>    | <b><u>Short description</u></b> |
+| <b><u>Skill Level</u></b>    | |
 | :---         | :---         |
 | <b>[General Knowledge](#general-knowledge)</b> ||
 | :small_orange_diamond: [Junior SysAdmin](#junior-sysadmin) | Reasonably simple questions based on basic knowledge. |
 | :small_orange_diamond: [Proficient SysAdmin](#proficient-sysadmin) | Mid-level questions that you will probably come across during your first 5 years. |
 | :small_orange_diamond: [Senior SysAdmin](#senior-sysadmin) | Advanced questions which may be open-ended, require actual experience to<br> fully understand, or are unique scenarios. |
 | <b>[Extra Knowledge](#extra-knowledge)</b> ||
-
-<br>
 
 ## <a name="general-knowledge">General Knowledge</a>
 
