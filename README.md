@@ -56,9 +56,7 @@ When creating a pull request, please heed the following:
 * For new answers: try to give an objective, clear, and concise response, including an example if appropriate.
 * For changes to answers: explain why you believe the current answer is incorrect and a better response and/or solution.
 
-****
-
-# Table of Contents
+## Table of Contents
 
 | <b>General Knowledge</b> ||
 | :---         | :---         |
@@ -66,10 +64,6 @@ When creating a pull request, please heed the following:
 | :small_orange_diamond: [Proficient SysAdmin](#proficient-sysadmin) | Mid-level questions that you will probably come across during your first 5 years. |
 | :small_orange_diamond: [Senior SysAdmin](#senior-sysadmin) | Advanced questions which may be open-ended, require actual experience to<br> fully understand, or are unique scenarios. |
 | <b>[Extra Knowledge](#extra-knowledge)</b> ||
-
-****
-
-# <a name="general-knowledge">General Knowledge</a>
 
 # :diamond_shape_with_a_dot_inside: <a name="junior-sysadmin">Junior Sysadmin</a>
 
