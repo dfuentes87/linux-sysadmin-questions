@@ -572,7 +572,7 @@ Useful resources:
 
 </details>
 
-#### <span style="color:#2A6496;">Network Questions</span>
+<h2 style="color:#2A6496;">Network Questions</h2>
 
 <details>
 <summary><b>Describe the steps for a successful DHCP handshake process.</b></summary><br>
@@ -2793,7 +2793,7 @@ Some possible reasons and troubleshooting steps to resolve the issue are:
 
 </details>
 
-#### <span style="color:#2A6496;">Network Questions</span>
+<h2 style="color:#2A6496;">Network Questions</h2>
 
 <details>
 <summary><b>What is Boot to LAN?</b></summary><br>
@@ -4577,7 +4577,7 @@ Useful resources:
 
 </details>
 
-#### <span style="color:#2A6496;">Network Questions</span>
+<h2 style="color:#2A6496;">Network Questions</h2>
 
 <details>
 <summary><b>Is it better to set <code>-j REJECT</code> or <code>-j DROP</code> in iptables?</b></summary><br>
