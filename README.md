@@ -1841,9 +1841,9 @@ Useful resources:
 
 runlevels are different operating modes in which the system can run. There are typically seven runlevels, from 0 to 6, with each one defining a specific state or mode of operation. Each runlevel is designed to start a specific set of processes and services, and by changing the runlevel, you can control which processes and services are running on your system.
 
-To change system runlevels, you can use the init command with the appropriate runlevel number. For example, to switch to runlevel 3, you can run:
+To change system runlevels, you can use the `systemctl isolate` command with the appropriate runlevel target. For example:
 
-<code>sudo init 3</code>
+<code>systemctl isolate multi-user.target</code>
 
 A few reasons you might need to switch runlevels:
 
@@ -1976,7 +1976,7 @@ You can extract parts of a file and replace specific lines using `head` and `tai
 
 You can change kernel parameters at boot time or during runtime using the `sysctl` command.
 
-To change kernel parameters at boot time, you can modify the `GRUB_CMDLINE_LINUX` variable in the /etc/default/grub file, then run sudo update-grub to update the GRUB configuration.
+To change kernel parameters at boot time, you can modify the `GRUB_CMDLINE_LINUX` variable in the /etc/default/grub file, then run `update-grub` to update the GRUB configuration.
 
 To change kernel parameters during runtime, you can use the `sysctl` command followed by the name of the parameter you want to change and its new value. For example, to increase the maximum number of open files, you can use the following command:
 
@@ -2377,9 +2377,11 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>When would you use access control lists instead of or in conjunction with the <code>chmod</code> command? ***</b></summary><br>
+<summary><b>When would you use Access Control Lists (ACLs) instead of or in conjunction with the <code>chmod</code> command?</b></summary><br>
 
-To be completed.
+Use chmod when simple owner/group/other permissions suffice.
+Use ACLs when you need fine-grained control for specific users or groups beyond that model.
+ACLs let you grant or restrict access for individual users or multiple groups without changing file ownership or broad permissions.
 
 </details>
 
@@ -4058,9 +4060,25 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>What considerations come into play when designing a highly available application, both at the architecture level and the application level? ***</b></summary><br>
+<summary><b>What considerations come into play when designing a highly available application, both at the architecture level and the application level?</b></summary><br>
 
-To be completed.
+**Architecture considerations**
+
+* **Redundancy and isolation**: Remove single points of failure. Use multiple instances, AZs, and where justified, multi‑region. Prefer independent failure domains.
+* **Traffic management**: Load balancers for distribution and health‑checks; DNS or global load balancing for regional failover. Automate failover and recovery.
+* **Capacity and scaling**: Right‑size, then auto‑scale horizontally. Plan for N+1 (or more) capacity during failures.
+* **State and data**: Keep stateless frontends. Use replicated data stores with quorum where needed. Define RPO/RTO and a tested DR plan (e.g., backup/restore, warm standby, active‑active).
+* **Observability**: Centralized logs, metrics, traces, SLOs with error budgets. Alert on user‑visible symptoms.
+* **Change safety**: Progressive delivery (canary/blue‑green), safe rollbacks, config as code, regular game‑days/chaos tests.
+
+**Application considerations**
+
+* **Failure handling**: Timeouts everywhere, retries with jitter, **circuit breakers**, and backoff. Make operations idempotent.
+* **Graceful degradation**: Shed load and degrade non‑critical features first; implement bulkheads and rate limits.
+* **State management**: Externalize sessions; design for at‑least‑once processing and exactly‑once effects where required.
+* **Compatibility**: Backward‑compatible APIs and data migrations; feature flags to decouple deploy from release.
+* **Startup/shutdown**: Health endpoints, readiness/liveness checks, fast cold‑start, safe termination hooks.
+* **Performance under failure**: Use caches carefully, apply backpressure, and keep critical paths simple to avoid cascading failures.
 
 </details>
 
@@ -4389,9 +4407,33 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>You have just discovered a server you manage for the company you work at has been hacked. Go through the steps of what you do and recover from this. ***</b></summary><br>
+<summary><b>You have just discovered a server you manage for the company you work at has been hacked. Go through the steps of what you do and recover from this.</b></summary><br>
 
-To be completed.
+**Immediate actions**
+
+* Disconnect the host from the network (isolate at switch, security group, or hypervisor).
+* Preserve evidence: avoid rebooting or changing files; capture a memory dump and copy disks or snapshots if possible.
+* Notify stakeholders and open an incident ticket with an initial timeline.
+
+**Triage and analysis**
+
+* Capture volatile data: running processes, open connections, logged-in users, listening ports, scheduled tasks/cron, startup items, kernel modules.
+* Collect artifacts: logs (/var/log, application logs), /etc, web roots, user homes, SSH keys, recent binaries; record hashes and timestamps.
+* Determine initial access, privilege escalation, lateral movement, and persistence; extract indicators of compromise (IoCs).
+
+**Eradication and recovery**
+
+* Revoke exposed credentials, rotate passwords/keys, invalidate sessions and tokens.
+* Patch exploited services and misconfigurations; tighten access controls and firewall rules.
+* Rebuild the system from known-good media or a gold image; do **not** attempt in-place cleaning of a compromised OS.
+* Restore required data from clean backups; validate integrity with checksums and application-level tests.
+* Return to production gradually behind stricter controls; enable enhanced monitoring and alerting.
+
+**Post-incident**
+
+* Write a postmortem with timeline, root cause, and corrective actions.
+* Add detections: alerts for the collected IoCs and anomalous auth/file/activity patterns.
+* Improve baseline: MFA, least privilege, hardened configs, regular backups and restore tests, immutable/centralized logs, configuration management.
 
 </details>
 
