@@ -65,6 +65,8 @@ When creating a pull request, please heed the following:
 | :small_orange_diamond: [Senior SysAdmin](#senior-sysadmin) | Advanced questions which may be open-ended, require actual experience to<br> fully understand, or are unique scenarios. |
 | <b>[Extra Knowledge](#extra-knowledge)</b> ||
 
+****
+
 # :diamond_shape_with_a_dot_inside: <a name="junior-sysadmin">Junior Sysadmin</a>
 
 ## 🔹 System Questions
@@ -568,7 +570,7 @@ Useful resources:
 
 </details>
 
-### 🔹 Network Questions
+## 🔹 Network Questions
 
 <details>
 <summary><b>Describe the steps for a successful DHCP handshake process.</b></summary><br>
@@ -932,7 +934,7 @@ A **CI pipeline** automates build, test, and integration steps so code changes a
 
 </details>
 
-### 🔹 Cybersecurity Questions
+## 🔹 Cybersecurity Questions
 
 <details>
 <summary><b>What makes a password very strong?</b></summary><br>
@@ -1023,9 +1025,9 @@ The process of threat modeling typically involves several steps, including:
 
 <br>
 
-### :diamond_shape_with_a_dot_inside: <a name="proficient-sysadmin">Proficient Sysadmin</a>
+# :diamond_shape_with_a_dot_inside: <a name="proficient-sysadmin">Proficient Sysadmin</a>
 
-### 🔹 System Questions
+## 🔹 System Questions
 
 <details>
 <summary><b>Explain briefly how Linux allows most of its software to be updated without needing to reboot? Is it possible to update the kernel without rebooting?</b></summary><br>
@@ -2789,7 +2791,7 @@ Some possible reasons and troubleshooting steps to resolve the issue are:
 
 </details>
 
-### 🔹 Network Questions
+## 🔹 Network Questions
 
 <details>
 <summary><b>What is Boot to LAN?</b></summary><br>
@@ -3443,7 +3445,7 @@ It's worth noting the difference between Continuous Delivery and Continuous Depl
 
 </details>
 
-### 🔹 Cybersecurity Questions
+## 🔹 Cybersecurity Questions
 
 <details>
 <summary><b>What are salted hashes?</b></summary><br>
@@ -3605,9 +3607,9 @@ Encryption, on the other hand, is a two-way process that transforms plain text i
 
 <br>
 
-### :diamond_shape_with_a_dot_inside: <a name="senior-sysadmin">Senior Sysadmin</a>
+# :diamond_shape_with_a_dot_inside: <a name="senior-sysadmin">Senior Sysadmin</a>
 
-### 🔹 System Questions
+## 🔹 System Questions
 
 <details>
 <summary><b>In the context of computing, what is Split-Brain and why is it a problem?</b></summary><br>
@@ -4573,7 +4575,7 @@ Useful resources:
 
 </details>
 
-### 🔹 Network Questions
+## 🔹 Network Questions
 
 <details>
 <summary><b>Is it better to set <code>-j REJECT</code> or <code>-j DROP</code> in iptables?</b></summary><br>
@@ -4756,7 +4758,7 @@ g) <b>Application Layer (Layer 7)</b>: This is the last layer of the OSI Referen
 
 </details>
 
-### 🔹 Cybersecurity Questions
+## 🔹 Cybersecurity Questions
 
 <details>
 <summary><b>Explain briefly how the Spectre vulnerability works.</b></summary><br>
