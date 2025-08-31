@@ -1295,36 +1295,53 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>How do you prevent logs from getting too big?</b></summary><br>
+<summary><b>How do you prevent logs from getting too big?</b></summary>
 
-Using `logrotate` is the usual way of dealing with logfiles. But instead of adding content to `/etc/logrotate.conf` you should add your own job to `/etc/logrotate.d/`, to avoid issues between release upgrades and to better organize different tasks rather than searching through a large logrotate.conf file.
+**Tactics on a single host**
 
-Useful resources:
+* **Rotate and compress**: use `logrotate` or journald retention (`SystemMaxUse=`, `RuntimeMaxUse=`). Keep app logs to stdout/stderr when possible and let the platform rotate.
+* **Bound growth**: cap file sizes and count (`size`, `rotate`) or journal usage, and set per‑unit limits in systemd (`LogRateLimitIntervalSec=`, `LogRateLimitBurst=`).
+* **Noise reduction**: lower verbosity in normal operation; elevate on demand with dynamic log levels.
 
-* [How to Use logrotate to Manage Log Files](https://www.linode.com/docs/uptime/logs/use-logrotate-to-manage-log-files/)
-* [System logging](https://developer.ibm.com/tutorials/l-lpic1-108-2/)
+**At scale**
+
+* **Centralize**: ship logs to a remote store (e.g., Loki/Promtail, Elastic/Beats, Splunk Forwarder, CloudWatch/Stackdriver). Treat nodes as ephemeral.
+* **Structure**: prefer JSON/structured logs for queryability and lower index cost. Include request IDs and tenant/user IDs.
+* **Retention & compliance**: set tiered retention (hot/warm/cold), legal holds, and deletion workflows. Document RPO/RTO and privacy constraints.
+* **Budgets and alerts**: monitor ingest volume, index size, and drop/error rates. Alert on sudden spikes by source, service, or label.
+* **Back‑pressure**: when the backend is slow, drop or sample non‑critical logs rather than fill disks.
+
+**Troubleshooting runaways**
+
+* Identify top talkers: check per‑file growth with `du -a | sort -h` or journal stats with `journalctl --disk-usage`.
+* Deleted‑but‑open files: `lsof | grep deleted` and restart the owning service.
+* Looping errors: sample lines to find repeating stack traces; fix the root cause before tuning rotation.
 
 </details>
 
 <details>
-<summary><b>How can you see what files are associated with a running process? What is one example of why you would use this command?</b></summary><br>
+<summary><b>How can you see what files are associated with a running process? What is one example of why you would use this command?</b></summary>
 
-To see the files associated with a running process, you can use the lsof command, which stands for "list open files." Every file, including devices, network sockets, pipes, and more, is represented as a file in UNIX-like systems.
+Use **lsof** (list open files) to map processes to file descriptors.
 
-**Example:**
-Let's say you have a process with the PID 1234, and you want to see the files it has opened:
+**Core usage**
 
-**Why would you use this command?**
+* Per‑process: `lsof -p <pid>` (add `-nP` to skip DNS/service lookups).
+* By file/path: `lsof <path>`; by protocol/port: `lsof -i :443`.
+* By user or command: `lsof -u <user>` or `lsof -c <comm>`.
 
-* **Troubleshooting Network Issues**: If a process is misbehaving or is suspected of unauthorized network activity, you can use lsof to check which network connections the process has established.
-* **File Locks**: If a process has locked a file and other processes can't access it, you can use lsof to identify the locking process and the locked file.
-* **Resource Leaks**: If you suspect that a process is not releasing file handles or consuming too many resources, lsof can provide insights by listing all open files by the process.
-* **Disk Space Issues**: Sometimes, deleted files continue to consume disk space because they are still open in a process. With lsof, you can identify such "deleted" but open files.
-* **Security Audits**: If you're conducting a security check, lsof can help you identify what resources and network connections each process is using, aiding in the identification of suspicious activities.
+**Why it matters at scale**
 
-Useful resources:
+* **FD leaks in long‑lived services**: rising `open files` leads to `EMFILE`. Track counts via `ls /proc/<pid>/fd | wc -l`; set sane limits (`LimitNOFILE=` in systemd) and fix leaks.
+* **Deleted but still open**: disk doesn’t free until the handle closes. Find with `lsof | grep deleted`; restart the owner or rotate with copy‑truncate carefully.
+* **Containers / PID namespaces**: lsof from the host may not see inside a container. Use `nsenter --target <pid> --mount --pid lsof -p <pid>` or run lsof in the container. Map host paths to container mounts.
+* **Security and data loss**: confirm which process holds a sensitive file or device before altering permissions or unmounting.
 
-* [Linux Processes](https://www.tldp.org/LDP/tlk/kernel/processes.html)
+**Related tools**
+
+* `fuser` to identify processes using a file or socket.
+* `/proc/<pid>/fd` for direct inspection; `smem`/`pmap` for memory‑mapped files.
+* Observability: export per‑process FD counts and alert on growth trends.
 
 </details>
 
