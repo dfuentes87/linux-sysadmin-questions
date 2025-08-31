@@ -314,11 +314,17 @@ Useful resources:
 <details>
 <summary><b>You type <code>CTRL + C</code> but your script still running. How do you stop it?</b></summary><br>
 
-Use the kill command to terminate the script: First, find the process ID (PID) of the running script using the ps command. Once you have the PID, you can use the kill command to send a termination signal to the process.
+Use **signals** and target the right process or group.
+
+* `Ctrl+C` sends **SIGINT** to the foreground process group. If the script traps/ignores it, it will keep running.
+* Find the PID: `ps aux | grep <script>` or `pgrep -af <script>`.
+* Try graceful stop first: `kill -TERM <pid>` (or `pkill -TERM -f <script>`).
+* If it won’t exit: `kill -KILL <pid>`.
+* If children keep running, signal the **process group**: `kill -- -<pgid>` (note the minus). Get PGID via `ps -o pgid= -p <pid>`.
+* For runaway TTY jobs: `jobs`, then `kill %1` or `kill -- -$(ps -o pgid= -p %1)`.
 
 Useful resources:
 
-* [How to kill a script running in terminal, without closing terminal (Ctrl + C doesn't work)? (original)](https://askubuntu.com/questions/520107/how-to-kill-a-script-running-in-terminal-without-closing-terminal-ctrl-c-doe)
 * [What's the difference between ^C and ^D for Unix/Mac OS X terminal?](https://superuser.com/questions/169051/whats-the-difference-between-c-and-d-for-unix-mac-os-x-terminal)
 
 </details>
@@ -410,31 +416,9 @@ Useful resources:
 <details>
 <summary><b>Combine multiple shell commands in one line.</b></summary><br>
 
-If you want to execute each command only if the previous one succeeded, then combine them using the `&&` operator:
-
-```bash
-cd /my_folder && rm *.jar && svn co path to repo && mvn compile package install
-```
-
-If one of the commands fails, then all other commands following it won't be executed.
-
-If you want to execute all commands regardless of whether the previous ones failed or not, separate them with semicolons:
-
-```bash
-cd /my_folder; rm *.jar; svn co path to repo; mvn compile package install
-```
-
-In your case, I think you want the first case where execution of the next command depends on the success of the previous one.
-
-You can also put all commands in a script and execute that instead:
-
-```bash
-#! /bin/sh
-cd /my_folder \
-&& rm *.jar \
-&& svn co path to repo \
-&& mvn compile package install
-```
+* Run next only if previous succeeded: `cmd1 && cmd2 && cmd3`.
+* Always run next regardless of prior exit: `cmd1; cmd2; cmd3`.
+* Stop pipeline on error in scripts: `set -euo pipefail` and check exit codes.
 
 Useful resources:
 
@@ -624,12 +608,12 @@ Useful resources:
 <details>
 <summary><b>What are the most important things to understand about the OSI model?</b></summary><br>
 
-The most important things to understand about the **OSI** model are:
+Use OSI as a **troubleshooting map**.
 
-* we can divide up protocols into layers
-* layers provide encapsulation
-* layers provide abstraction
-* layers decouple functions from others
+* Layers group concerns: L1 Physical (cables/power), L2 Data Link (MAC/VLAN), L3 Network (IP/routing), L4 Transport (TCP/UDP/ports), L7 Application (HTTP/SSH/…).
+* Encapsulation: problems often show one layer but originate in another.
+* Practical mapping: ARP/L2, IP+ICMP/L3, TCP handshakes/L4, DNS/HTTP/L7.
+* Debug flow: check up the stack—link, address, route, port, then app.
 
 Useful resources:
 
@@ -640,14 +624,13 @@ Useful resources:
 <details>
 <summary><b>What is the difference between TCP and UDP?</b></summary><br>
 
-| TCP | UDP |
-| :--- | :--- |
-| TCP stands for Transmission Control Protocol | UDP is stands for User Datagram Protocol or Universal Datagram Protocol |
-| Once the connection is setup, data can be sent bi-directional, i.e. TCP is a connection oriented protocol | UDP is connectionless, simple protocol. Using UDP, messages are sent as packets |
-| TCP is slower than UDP | UDP is faster compared to TCP |
-| TCP is used for applications where time is not critical part of data transmission | UDP is suitable for the applications which require fast transmission of data and time is crucial in this case. |
-| TCP transmission occurs in a sequential manner | UDP does not guarantee data is received in the same order when it reaches the destination |
-| TCP tracks the data sent to ensure no data loss during data transmission | UDP does not ensure whether receiver receives packets are not. If packets are misses then they are just lost |
+| Aspect | TCP | UDP |
+| :--- | :--- | :--- |
+| Connection | Connection-oriented (3-way handshake) | Connectionless |
+| Reliability | Ordered, reliable, retransmits | Best-effort, no ordering or retransmit |
+| Flow/Congestion control | Yes | No |
+| Typical uses | HTTP(S), SSH, SMTP, databases | DNS, VoIP, streaming, telemetry |
+| Overhead/Latency | Higher | Lower |
 
 </details>
 
@@ -669,16 +652,22 @@ Proxy servers can be used for several purposes, including:
 <details>
 <summary><b>How do you check default route and routing table?</b></summary><br>
 
-Using the commands `netstat -nr`, `route -n` or `ip route show` we can see the default route and routing tables.
+Prefer the **iproute2** tools.
+
+* Routing table: `ip route` (default route shows as `default via <gateway> dev <iface>`).
+* Interfaces summary: `ip -br addr` for concise address view.
+* Legacy equivalents: `route -n` and `netstat -rn` (older, often absent in minimal systems).
 
 </details>
 
 <details>
 <summary><b>What are 127.0.0.1 and localhost?</b></summary><br>
 
-127.0.0.1 is the loopback connection on your network interface card (NIC); pinging this address will see if it is responding. If the ping is successful, then the hardware is good. If the ping isn't successful, the NIC may have issues.
+`127.0.0.1` is the IPv4 **loopback** address. `localhost` is the hostname that usually resolves to `127.0.0.1` (and `::1` for IPv6).
 
-127.0.0.1 and localhost mean the same thing in most cases, but can be treated differently in some situations. The main difference is that you still have to do an actual lookup of localhost somewhere. If you use `127.0.0.1`, the request is directly against the IP address. Otherwise, the name has to be resolved.
+* Loopback tests the **local TCP/IP stack** only. It does **not** test the NIC, switch, or external network.
+* Name vs address: `localhost` requires a resolver lookup (`/etc/hosts` or DNS). `127.0.0.1` is a direct address.
+* IPv6 loopback is `::1`
 
 Useful resources:
 
