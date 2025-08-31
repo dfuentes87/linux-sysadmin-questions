@@ -37,7 +37,7 @@
 
 These questions are not meant to be a list of arbitrary facts, such as port numbers that you'll maybe deal with once a year, situations or commands that are rarely encountered, or issues specific to a certain application. Instead, these are geared towards real world situations that are common and good to know in general, however not knowing all these do not mean you are not a good Linux SysAdmin.
 
-:heavy_check_mark: The answers are only **examples** and do not exhaust the whole topic. Most of them contains useful resources for a deeper understanding.
+:heavy_check_mark: Some answers are only examples and do not exhaust the whole topic. Most of them contains useful resources for a deeper understanding.
 
 :traffic_light: If you find something which doesn't make sense, or something doesn't seem right, **please make a pull request** and please add valid and well-reasoned explanations about your changes or comments.
 
@@ -60,9 +60,8 @@ When creating a pull request, please heed the following:
 
 ## Table of Contents
 
-| <b><u>Skill Level</u></b>    | |
-| :---         | :---         |
 | <b>[General Knowledge](#general-knowledge)</b> ||
+| :---         | :---         |
 | :small_orange_diamond: [Junior SysAdmin](#junior-sysadmin) | Reasonably simple questions based on basic knowledge. |
 | :small_orange_diamond: [Proficient SysAdmin](#proficient-sysadmin) | Mid-level questions that you will probably come across during your first 5 years. |
 | :small_orange_diamond: [Senior SysAdmin](#senior-sysadmin) | Advanced questions which may be open-ended, require actual experience to<br> fully understand, or are unique scenarios. |
