@@ -2316,7 +2316,7 @@ Upgrading or updating a system in production requires careful planning to avoid 
    * Notify stakeholders of successful updates or any issues.
    * Document the update process, outcome, and lessons learned for future reference.
 
----
+****
 
 By automating where possible, rigorously testing updates, and planning for contingencies, you can reduce the risk of disruption in a production environment while keeping systems secure and up-to-date.
 
@@ -3366,7 +3366,7 @@ Agile frameworks, such as **Scrum**, **Kanban**, and **Extreme Programming (XP)*
 4. **Adaptability**: Ability to change project scope and direction based on real-time feedback and changing requirements.
 5. **Daily Stand-ups**: Short, daily meetings where the team discusses progress, obstacles, and goals for the day.
 
----
+****
 
 ### Benefits of Agile
 
