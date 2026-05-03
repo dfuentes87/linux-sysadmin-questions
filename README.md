@@ -14,51 +14,21 @@
 
 <br>
 
-<p align="center">
-  <a href="https://github.com/dfuentes87/linux-sysadmin-questions/pulls">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?longCache=true" alt="Pull Requests">
-  </a>
-  <a href="LICENSE.md">
-    <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg?longCache=true" alt="MIT License">
-  </a>
-</p>
-
 <div align="center">
-  <sub>Forked from <a href="https://github.com/trimstray/test-your-sysadmin-skills">trimstray</a>; Brought back to life and updated by <a href="https://github.com/dfuentes87/linux-sysadmin-questions">dfuentes87</a></sub>
+  <sub>Forked from <a href="https://github.com/trimstray/test-your-sysadmin-skills">trimstray</a></sub>
 </div>
 
-<br>
+----
 
-****
-
-<br>
-
-:information_source: This project contains more than **150** questions and answers that can be used to test your general knowledge as a **Linux System Administrator**, or to ask someone interviewing for such a position.
+This project contains more than **150** questions and answers that can be used to test your general knowledge as a **Linux System Administrator**, or to ask someone interviewing for such a position.
 
 These questions are not meant to be a list of arbitrary facts, such as port numbers that you'll maybe deal with once a year, situations or commands that are rarely encountered, or issues specific to a certain application. Instead, these are geared towards real world situations that are common and good to know in general, however not knowing all these do not mean you are not a good Linux SysAdmin.
 
-:heavy_check_mark: Some answers are only examples and do not exhaust the whole topic. Most of them contains useful resources for a deeper understanding.
-
-:traffic_light: If you find something which doesn't make sense, or something doesn't seem right, **please make a pull request** and please add valid and well-reasoned explanations about your changes or comments.
-
-### Contributing
-
-If you would like to answer questions, or you found an error - fork the repo, add your fixes, and submit a pull request.
-
-#### Using the issue tracker
-
-* Please **do not** use the issue tracker for personal tech support requests.
-
-#### Pull requests
-
-When creating a pull request, please heed the following:
-
-* For new answers: try to give an objective, clear, and concise response, including an example if appropriate.
-* For changes to answers: explain why you believe the current answer is incorrect and a better response and/or solution.
+Some answers are only examples and do not exhaust the whole topic. Most of them contains useful resources for a deeper understanding.
 
 ## Table of Contents
 
-| <b>General Knowledge</b> ||
+| General Knowledge ||
 | :---         | :---         |
 | :small_orange_diamond: [Junior SysAdmin](#junior-sysadmin) | Reasonably simple questions based on basic knowledge. |
 | :small_orange_diamond: [Proficient SysAdmin](#proficient-sysadmin) | Mid-level questions that you will probably come across during your first 5 years. |
@@ -4794,7 +4764,7 @@ An event-driven architecture uses events to trigger and communicate between deco
 </details>
 
 <details>
-<summary><b>Explain <code>:(){ :|:& };:</code> and how stop this code if you are already logged into a system?</b></summary><br>
+<summary><b>Explain <code>:(){ :|:& };:</code> and what measures can be taken to prevent it from taking down a system?</b></summary><br>
 
 It's a **fork bomb**.
 
@@ -4805,13 +4775,6 @@ It's a **fork bomb**.
 * `:` - final `:` will execute the function again and hence the chain reaction begins
 
 The best way to protect a multi-user system is to use **PAM** to limit the number of processes a user can use. We know the biggest problem with a fork bomb is the fact it takes up so many processes.
-
-So we have two ways of attempting to fix this, if you are already logged into the system:
-
-* execute a **SIGSTOP** command to stop the process: `killall -STOP -u user1`
-* if you can't run at the command line you will have to use `exec` to force it to run (due to processes all being used): `exec killall -STOP -u user1`
-
-With fork bombs, the best thing to do is preventing it from being an issue in the first place.
 
 </details>
 
