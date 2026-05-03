@@ -22,7 +22,7 @@
 
 This project contains more than **150** questions and answers that can be used to test your general knowledge as a **Linux System Administrator**, or to ask someone interviewing for such a position.
 
-These questions are not meant to be a list of arbitrary facts, such as port numbers that you'll maybe deal with once a year, situations or commands that are rarely encountered, or issues specific to a certain application. Instead, these are geared towards real world situations that are common and good to know in general, however not knowing all these do not mean you are not a good Linux SysAdmin.
+These questions are not meant to be a list of arbitrary facts, such as port numbers that you'll maybe deal with once a year, situations or commands that are rarely encountered, or issues specific to a certain application. Instead, these are geared towards real world situations that are common and good to know in general, however not knowing all these does not mean you are not a good Linux SysAdmin.
 
 Some answers are only examples and do not exhaust the whole topic. Most of them contains useful resources for a deeper understanding.
 
