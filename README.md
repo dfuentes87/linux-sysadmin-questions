@@ -327,7 +327,7 @@ Useful resources:
 
 Useful resources:
 
-* [A list of signals and what they mean](https://www-uxsup.csx.cam.ac.uk/courses/moved.Building/signals.pdf)
+* [A list of signals and what they mean](https://web.archive.org/web/20240127084816/http://www-uxsup.csx.cam.ac.uk/courses/moved.Building/signals.pdf)
 
 </details>
 
@@ -376,7 +376,7 @@ Useful resources:
 
 Useful resources:
 
-* [Execute combine multiple linux commands in one line (original)](https://stackoverflow.com/questions/13077241/execute-combine-multiple-linux-commands-in-one-line)
+* [Execute combine multiple linux commands in one line (original)](https://web.archive.org/web/20250619075641/https://stackoverflow.com/questions/13077241/execute-combine-multiple-linux-commands-in-one-line)
 
 </details>
 
@@ -394,7 +394,7 @@ chmod a+x /path/to/file
 
 Useful resources:
 
-* [How to Set File Permissions Using chmod](https://www.washington.edu/computing/unix/permissions.html)
+* [How to Set File Permissions Using chmod](https://web.archive.org/web/20080901011836/http://www.washington.edu/computing/unix/permissions.html)
 * [What does "chmod +x your_file_name" do and how do I use it?](https://askubuntu.com/questions/443789/what-does-chmod-x-filename-do-and-how-do-i-use-it)
 
 </details>
@@ -625,8 +625,8 @@ Prefer the **iproute2** tools.
 
 Useful resources:
 
-* [What is the difference between 127.0.0.1 and localhost?](https://stackoverflow.com/questions/7382602/what-is-the-difference-between-127-0-0-1-and-localhost)
-* [localhost vs. 127.0.0.1](https://stackoverflow.com/questions/3715925/localhost-vs-127-0-0-1)
+* [What is the difference between 127.0.0.1 and localhost?](https://web.archive.org/web/20260401000538/https://stackoverflow.com/questions/7382602/what-is-the-difference-between-127-0-0-1-and-localhost)
+* [localhost vs. 127.0.0.1](https://web.archive.org/web/20250417032248/https://stackoverflow.com/questions/3715925/localhost-vs-127-0-0-1-in-mysql-connect)
 
 </details>
 
@@ -790,7 +790,7 @@ Useful resources:
 
 Useful resources:
 
-* [HTTP Status Codes](https://httpstatuses.com/)
+* [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status)
 
 </details>
 
@@ -1013,10 +1013,6 @@ Traditionally, updating the Linux kernel required a reboot to switch to the new 
 * KernelCare: This is a commercial solution that offers rebootless kernel updates. It's automated and works with various Linux distributions.
 * Livepatch: Offered by Canonical for Ubuntu, Livepatch provides kernel updates without the need for a reboot.
 
-Useful resources:
-
-* [How does Linux update without a reboot? - Quora](https://www.quora.com/How-does-Linux-update-without-a-reboot)
-
 </details>
 
 <details>
@@ -1212,7 +1208,7 @@ However, if the workload is not designed to fully utilize all four cores or if t
 Useful resources:
 
 * [Proper way of interpreting system load on a 4 core 8 thread processor](https://serverfault.com/questions/618130/proper-way-of-interpreting-system-load-on-a-4-core-8-thread-processor)
-* [Understanding Linux CPU Load - when should you be worried?](http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages)
+* [Understanding Linux CPU Load - when should you be worried?](https://www.scoutapm.com/blog/understanding-load-averages)
 
 </details>
 
@@ -1345,7 +1341,7 @@ In Immutable Server model, whole unit (server, container) is replaced by new upd
 
 Useful resources:
 
-* [Infrastructure as a Code - Chapter 8: Patterns for Updating and Changing Servers](https://www.oreilly.com/library/view/infrastructure-as-code/9781491924334/)
+* [Infrastructure as a Code](https://www.freecodecamp.org/news/infrastructure-as-code-basics/)
 
 </details>
 
@@ -2316,7 +2312,7 @@ The far majority of the time, this is all you need - and is much cleaner.
 Useful resources:
 
 * [When should I not kill -9 a process?](https://unix.stackexchange.com/questions/8916/when-should-i-not-kill-9-a-process)
-* [SIGTERM vs. SIGKILL](https://major.io/2010/03/18/sigterm-vs-sigkill/)
+* [SIGTERM vs. SIGKILL](https://major.io/p/sigterm-vs-sigkill/)
 
 </details>
 
@@ -3751,17 +3747,6 @@ The post-mortem answers the single most important question of what could have pr
 
 Despite how painful an outage may have been, the worst thing you can do is to bury it and never properly close the incident in a clear and transparent way.
 
-**If you also made a big mistake...**
-
-  > "_Humans are just apes with bigger computers._" - african_cheetah (Reddit)
-  >
-  > "_I've come to appreciate not having access to things I don't absolutely need._" - warm_vanilla_sugar (Reddit)
-  >
-  > Document whatever happened somewhere. Write setup guides. Failure is instructive.
-
-Useful resources:
-
-* [Accidentally destroyed production database on first day of a job...](https://www.reddit.com/r/cscareerquestions/comments/6ez8ag/accidentally_destroyed_production_database_on/)
 * [Postmortem of database outage of January 31](https://about.gitlab.com/2017/02/10/postmortem-of-database-outage-of-january-31/)
 * [What is an Incident Postmortem?](https://www.pagerduty.com/resources/learn/incident-postmortem/)
 
@@ -4378,7 +4363,7 @@ For improvement performance:
 
 Useful resources:
 
-* [Linux server performance: Is disk I/O slowing your application? (original)](https://haydenjames.io/linux-server-performance-disk-io-slowing-application/)
+* [Linux server performance: Is disk I/O slowing your application? (original)](https://linuxblog.io/linux-server-performance-disk-io-slowing-application/)
 * [Debugging Linux I/O latency](https://superuser.com/questions/396696/debugging-linux-i-o-latency)
 * [How do pdflush, kjournald, swapd, etc. interoperate?](https://unix.stackexchange.com/questions/76970/how-do-pdflush-kjournald-swapd-etc-interoperate)
 * [5 ways to improve HDD speed on Linux](https://thecodeartist.blogspot.com/2012/06/improving-hdd-performance-linux.html)
