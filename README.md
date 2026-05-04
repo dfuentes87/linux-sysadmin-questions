@@ -14,51 +14,21 @@
 
 <br>
 
-<p align="center">
-  <a href="https://github.com/dfuentes87/linux-sysadmin-questions/pulls">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?longCache=true" alt="Pull Requests">
-  </a>
-  <a href="LICENSE.md">
-    <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg?longCache=true" alt="MIT License">
-  </a>
-</p>
-
 <div align="center">
-  <sub>Forked from <a href="https://github.com/trimstray/test-your-sysadmin-skills">trimstray</a>; Brought back to life and updated by <a href="https://github.com/dfuentes87/linux-sysadmin-questions">dfuentes87</a></sub>
+  <sub>Forked from <a href="https://github.com/trimstray/test-your-sysadmin-skills">trimstray</a></sub>
 </div>
 
-<br>
+----
 
-****
+This project contains more than **150** questions and answers that can be used to test your general knowledge as a **Linux System Administrator**, or to ask someone interviewing for such a position.
 
-<br>
+These questions are not meant to be a list of arbitrary facts, such as port numbers that you'll maybe deal with once a year, situations or commands that are rarely encountered, or issues specific to a certain application. Instead, these are geared towards real world situations that are common and good to know in general, however not knowing all these does not mean you are not a good Linux SysAdmin.
 
-:information_source: This project contains more than **150** questions and answers that can be used to test your general knowledge as a **Linux System Administrator**, or to ask someone interviewing for such a position.
-
-These questions are not meant to be a list of arbitrary facts, such as port numbers that you'll maybe deal with once a year, situations or commands that are rarely encountered, or issues specific to a certain application. Instead, these are geared towards real world situations that are common and good to know in general, however not knowing all these do not mean you are not a good Linux SysAdmin.
-
-:heavy_check_mark: Some answers are only examples and do not exhaust the whole topic. Most of them contains useful resources for a deeper understanding.
-
-:traffic_light: If you find something which doesn't make sense, or something doesn't seem right, **please make a pull request** and please add valid and well-reasoned explanations about your changes or comments.
-
-### Contributing
-
-If you would like to answer questions, or you found an error - fork the repo, add your fixes, and submit a pull request.
-
-#### Using the issue tracker
-
-* Please **do not** use the issue tracker for personal tech support requests.
-
-#### Pull requests
-
-When creating a pull request, please heed the following:
-
-* For new answers: try to give an objective, clear, and concise response, including an example if appropriate.
-* For changes to answers: explain why you believe the current answer is incorrect and a better response and/or solution.
+Some answers are only examples and do not exhaust the whole topic. Most of them contains useful resources for a deeper understanding.
 
 ## Table of Contents
 
-| <b>General Knowledge</b> ||
+| General Knowledge ||
 | :---         | :---         |
 | :small_orange_diamond: [Junior SysAdmin](#junior-sysadmin) | Reasonably simple questions based on basic knowledge. |
 | :small_orange_diamond: [Proficient SysAdmin](#proficient-sysadmin) | Mid-level questions that you will probably come across during your first 5 years. |
@@ -357,7 +327,7 @@ Useful resources:
 
 Useful resources:
 
-* [A list of signals and what they mean](https://www-uxsup.csx.cam.ac.uk/courses/moved.Building/signals.pdf)
+* [A list of signals and what they mean](https://web.archive.org/web/20240127084816/http://www-uxsup.csx.cam.ac.uk/courses/moved.Building/signals.pdf)
 
 </details>
 
@@ -406,7 +376,7 @@ Useful resources:
 
 Useful resources:
 
-* [Execute combine multiple linux commands in one line (original)](https://stackoverflow.com/questions/13077241/execute-combine-multiple-linux-commands-in-one-line)
+* [Execute combine multiple linux commands in one line (original)](https://web.archive.org/web/20250619075641/https://stackoverflow.com/questions/13077241/execute-combine-multiple-linux-commands-in-one-line)
 
 </details>
 
@@ -424,7 +394,7 @@ chmod a+x /path/to/file
 
 Useful resources:
 
-* [How to Set File Permissions Using chmod](https://www.washington.edu/computing/unix/permissions.html)
+* [How to Set File Permissions Using chmod](https://web.archive.org/web/20080901011836/http://www.washington.edu/computing/unix/permissions.html)
 * [What does "chmod +x your_file_name" do and how do I use it?](https://askubuntu.com/questions/443789/what-does-chmod-x-filename-do-and-how-do-i-use-it)
 
 </details>
@@ -655,8 +625,8 @@ Prefer the **iproute2** tools.
 
 Useful resources:
 
-* [What is the difference between 127.0.0.1 and localhost?](https://stackoverflow.com/questions/7382602/what-is-the-difference-between-127-0-0-1-and-localhost)
-* [localhost vs. 127.0.0.1](https://stackoverflow.com/questions/3715925/localhost-vs-127-0-0-1)
+* [What is the difference between 127.0.0.1 and localhost?](https://web.archive.org/web/20260401000538/https://stackoverflow.com/questions/7382602/what-is-the-difference-between-127-0-0-1-and-localhost)
+* [localhost vs. 127.0.0.1](https://web.archive.org/web/20250417032248/https://stackoverflow.com/questions/3715925/localhost-vs-127-0-0-1-in-mysql-connect)
 
 </details>
 
@@ -820,7 +790,7 @@ Useful resources:
 
 Useful resources:
 
-* [HTTP Status Codes](https://httpstatuses.com/)
+* [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status)
 
 </details>
 
@@ -1043,10 +1013,6 @@ Traditionally, updating the Linux kernel required a reboot to switch to the new 
 * KernelCare: This is a commercial solution that offers rebootless kernel updates. It's automated and works with various Linux distributions.
 * Livepatch: Offered by Canonical for Ubuntu, Livepatch provides kernel updates without the need for a reboot.
 
-Useful resources:
-
-* [How does Linux update without a reboot? - Quora](https://www.quora.com/How-does-Linux-update-without-a-reboot)
-
 </details>
 
 <details>
@@ -1242,7 +1208,7 @@ However, if the workload is not designed to fully utilize all four cores or if t
 Useful resources:
 
 * [Proper way of interpreting system load on a 4 core 8 thread processor](https://serverfault.com/questions/618130/proper-way-of-interpreting-system-load-on-a-4-core-8-thread-processor)
-* [Understanding Linux CPU Load - when should you be worried?](http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages)
+* [Understanding Linux CPU Load - when should you be worried?](https://www.scoutapm.com/blog/understanding-load-averages)
 
 </details>
 
@@ -1359,13 +1325,13 @@ Useful resources:
 </details>
 
 <details>
-<summary><b>You need to upgrade <code>ntpd</code> service at 200 servers. What is the best way to go about upgrading all of these to the latest?</b></summary><br>
+<summary><b>You need to upgrade a time synchronization service such as <code>chronyd</code>, <code>ntpd</code>, or <code>systemd-timesyncd</code> at 200 servers. What is the best way to go about upgrading all of these to the latest?</b></summary><br>
 
 By using **Infrastructure as a Code** approach, there are multiple good ways:
 
 1. **Configuration Synchronization Change Management Model**:
 
-There are Configuration Management Tools (Ansible, Chef, Puppet, Saltstack, ...), that can be used to automatically update `ntpd` service on all servers. To keep systems stable, system packages on servers are usually auto-updated with only security updates. Major or minor versions of packages are usually version locked in configuration definitions to prevent misconfiguration of the service. Change is then deployed by changing `ntpd` version in configuration definition.
+There are Configuration Management Tools (Ansible, Chef, Puppet, Saltstack, ...), that can be used to automatically update the time synchronization service on all servers. Many modern Linux distributions use `chronyd` by default; some still use `ntpd`, and lightweight systems may use `systemd-timesyncd`. To keep systems stable, system packages on servers are usually auto-updated with only security updates. Major or minor versions of packages are usually version locked in configuration definitions to prevent misconfiguration of the service. Change is then deployed by changing the desired package version in configuration definition.
 
 With this approach, it is important to be careful when deploying changes into infrastructure massively. The pipeline of deployment should include Unit, Integration and System tests, and eventually be first deployed into Staging environment to prove configuration. If tests prove configuration correctness, deployment should be done by incremental rollout with ability to rollback in case of errors or failure.
 
@@ -1375,7 +1341,7 @@ In Immutable Server model, whole unit (server, container) is replaced by new upd
 
 Useful resources:
 
-* [Infrastructure as a Code - Chapter 8: Patterns for Updating and Changing Servers](https://www.oreilly.com/library/view/infrastructure-as-code/9781491924334/)
+* [Infrastructure as a Code](https://www.freecodecamp.org/news/infrastructure-as-code-basics/)
 
 </details>
 
@@ -2070,13 +2036,17 @@ It is recommended to test backups at least once every three months to ensure tha
 </details>
 
 <details>
-<summary><b>Explain three types of journaling in ext4 and xfs.</b></summary><br>
+<summary><b>Explain journaling in ext4 and XFS.</b></summary><br>
 
-There are three types of journaling available in **ext4 and xfs** file systems:
+Journaling helps a filesystem recover to a consistent metadata state after a crash. The exact modes differ by filesystem.
 
-* **Data journaling**: In data journaling, only file data is logged in the journal. Metadata is written to disk directly, and file contents are written to the journal before being written to disk. In case of a system crash, only the data in the journal is lost. The metadata on disk remains consistent. This type of journaling is faster than other types because only the data is logged to the journal.
-* **Ordered journaling**: In ordered journaling, metadata is written to the journal before file data. This ensures that metadata is always consistent, and files can be recovered correctly in case of a system crash. This type of journaling is slower than data journaling because metadata is logged before data.
-* **Writeback journaling**: In writeback journaling, file data is written to disk before being logged in the journal. This can result in data inconsistencies in case of a system crash or power failure, as metadata can be updated before the corresponding data is written to the journal. However, writeback journaling is the fastest and most efficient journaling mode, as file data is written directly to disk without being logged in the journal first.
+**ext4** supports these data modes:
+
+* **Ordered mode (`data=ordered`)**: Default on most systems. Metadata is journaled, and changed file data is flushed to disk before the metadata commit that points to it. This avoids exposing stale data after a crash.
+* **Writeback mode (`data=writeback`)**: Metadata is journaled, but file data is not ordered before metadata commits. It can be faster in some workloads, but after a crash recently modified files may contain old data in newly allocated blocks.
+* **Journal mode (`data=journal`)**: Both file data and metadata are written to the journal before their final location. This gives stronger consistency for file contents but usually costs more I/O.
+
+**XFS** journals metadata, not regular file data. It uses write ordering and barriers/flushes to keep metadata consistent, but it does not provide ext4-style `data=journal` mode for file contents.
 
 </details>
 
@@ -2346,7 +2316,7 @@ The far majority of the time, this is all you need - and is much cleaner.
 Useful resources:
 
 * [When should I not kill -9 a process?](https://unix.stackexchange.com/questions/8916/when-should-i-not-kill-9-a-process)
-* [SIGTERM vs. SIGKILL](https://major.io/2010/03/18/sigterm-vs-sigkill/)
+* [SIGTERM vs. SIGKILL](https://major.io/p/sigterm-vs-sigkill/)
 
 </details>
 
@@ -2397,16 +2367,22 @@ ACLs let you grant or restrict access for individual users or multiple groups wi
 <details>
 <summary><b>Which algorithms are supported in <code>/etc/shadow</code> file?</b></summary><br>
 
-Typical current algorithms are:
+The password field in `/etc/shadow` stores a password hash, usually in Modular Crypt Format:
 
-* MD5
-* SHA-1 (also called SHA)
+```text
+$id$salt$hash
+```
 
-both should not be used for cryptographic/security purposes anymore!
+Common identifiers include:
 
-* SHA-256
-* SHA-512
-* SHA-3 (KECCAK was announced the winner in the competition for a new federal approved hash algorithm in October 2012)
+* `$y$` - yescrypt, common default on newer Linux distributions.
+* `$6$` - SHA-512 based `sha512crypt`.
+* `$5$` - SHA-256 based `sha256crypt`.
+* `$2a$`, `$2b$`, `$2y$` - bcrypt on systems that support it.
+* `$1$` - MD5-based `md5crypt`, legacy and should not be used for new passwords.
+* No `$id$` prefix - traditional DES `crypt`, obsolete.
+
+Plain SHA-1 and SHA-3 are not typical `/etc/shadow` password hash formats. The exact set depends on the system's PAM/libxcrypt support and password policy.
 
 Useful resources:
 
@@ -3781,17 +3757,6 @@ The post-mortem answers the single most important question of what could have pr
 
 Despite how painful an outage may have been, the worst thing you can do is to bury it and never properly close the incident in a clear and transparent way.
 
-**If you also made a big mistake...**
-
-  > "_Humans are just apes with bigger computers._" - african_cheetah (Reddit)
-  >
-  > "_I've come to appreciate not having access to things I don't absolutely need._" - warm_vanilla_sugar (Reddit)
-  >
-  > Document whatever happened somewhere. Write setup guides. Failure is instructive.
-
-Useful resources:
-
-* [Accidentally destroyed production database on first day of a job...](https://www.reddit.com/r/cscareerquestions/comments/6ez8ag/accidentally_destroyed_production_database_on/)
 * [Postmortem of database outage of January 31](https://about.gitlab.com/2017/02/10/postmortem-of-database-outage-of-january-31/)
 * [What is an Incident Postmortem?](https://www.pagerduty.com/resources/learn/incident-postmortem/)
 
@@ -4408,7 +4373,7 @@ For improvement performance:
 
 Useful resources:
 
-* [Linux server performance: Is disk I/O slowing your application? (original)](https://haydenjames.io/linux-server-performance-disk-io-slowing-application/)
+* [Linux server performance: Is disk I/O slowing your application? (original)](https://linuxblog.io/linux-server-performance-disk-io-slowing-application/)
 * [Debugging Linux I/O latency](https://superuser.com/questions/396696/debugging-linux-i-o-latency)
 * [How do pdflush, kjournald, swapd, etc. interoperate?](https://unix.stackexchange.com/questions/76970/how-do-pdflush-kjournald-swapd-etc-interoperate)
 * [5 ways to improve HDD speed on Linux](https://thecodeartist.blogspot.com/2012/06/improving-hdd-performance-linux.html)
@@ -4794,7 +4759,7 @@ An event-driven architecture uses events to trigger and communicate between deco
 </details>
 
 <details>
-<summary><b>Explain <code>:(){ :|:& };:</code> and how stop this code if you are already logged into a system?</b></summary><br>
+<summary><b>Explain <code>:(){ :|:& };:</code> and what measures can be taken to prevent it from taking down a system?</b></summary><br>
 
 It's a **fork bomb**.
 
@@ -4805,13 +4770,6 @@ It's a **fork bomb**.
 * `:` - final `:` will execute the function again and hence the chain reaction begins
 
 The best way to protect a multi-user system is to use **PAM** to limit the number of processes a user can use. We know the biggest problem with a fork bomb is the fact it takes up so many processes.
-
-So we have two ways of attempting to fix this, if you are already logged into the system:
-
-* execute a **SIGSTOP** command to stop the process: `killall -STOP -u user1`
-* if you can't run at the command line you will have to use `exec` to force it to run (due to processes all being used): `exec killall -STOP -u user1`
-
-With fork bombs, the best thing to do is preventing it from being an issue in the first place.
 
 </details>
 
@@ -4834,7 +4792,7 @@ recover_open_deleted_file () {
       old_name=${old_name%' (deleted)'}
       if [ -e "$old_name" ]; then
         new_name=$(TMPDIR=${old_name%/*} mktemp)
-        echo "$oldname has been replaced, recovering content to $new_name"
+        echo "$old_name has been replaced, recovering content to $new_name"
       else
         new_name="$old_name"
       fi
@@ -4890,43 +4848,39 @@ cat /proc/10292/oom_score
 
 The higher the value of `oom_score` of any process, the higher is its likelihood of getting killed by the **OOM Killer** in an out-of-memory situation.
 
-If you want to create a special control group containing the list of processes which should be the first to receive the **OOM killer's** attention, create a directory under `/mnt/oom-killer` to represent it:
+The OOM killer can be influenced, but not perfectly controlled. Modern Linux systems primarily use per-process OOM scores and cgroup memory controls.
 
 ```bash
-mkdir lambs
+cat /proc/<pid>/oom_score
+cat /proc/<pid>/oom_score_adj
 ```
 
-Set `oom.priority` to a value high enough:
+`oom_score_adj` ranges from `-1000` to `1000`:
+
+* `1000` makes a process more likely to be killed.
+* `0` is the default adjustment.
+* `-1000` disables OOM killing for that process, but should be used very carefully because protecting too many processes can make the whole system unstable.
+
+You can temporarily adjust a running process:
 
 ```bash
-echo 256 > /mnt/oom-killer/lambs/oom.priority
+echo 500 > /proc/<pid>/oom_score_adj
 ```
 
-`oom.priority` is a 64-bit unsigned integer, and can have a maximum value an unsigned 64-bit number can hold. While scanning for the process to be killed, the **OOM-killer** selects a process from the list of tasks with the highest `oom.priority` value.
+For services managed by systemd, set it in the unit instead:
 
-Add the PID of the process to be added to the list of tasks:
+```ini
+OOMScoreAdjust=500
+```
+
+For groups of processes, use cgroup memory limits. With cgroup v2, `memory.max` limits memory usage and `memory.oom.group=1` can make the kernel treat the cgroup as a kill unit, which is useful when killing one process from the group would leave the service broken anyway.
 
 ```bash
-echo <pid> > /mnt/oom-killer/lambs/tasks
+echo 2G > /sys/fs/cgroup/myservice/memory.max
+echo 1 > /sys/fs/cgroup/myservice/memory.oom.group
 ```
 
-To create a list of processes, which will not be killed by the **OOM-killer**, make a directory to contain the processes:
-
-```bash
-mkdir invincibles
-```
-
-Setting `oom.priority` to zero makes all the process in this cgroup to be excluded from the list of target processes to be killed.
-
-```bash
-echo 0 > /mnt/oom-killer/invincibles/oom.priority
-```
-
-To add more processes to this group, add the pid of the task to the list of tasks in the invincible group:
-
-```bash
-echo <pid> > /mnt/oom-killer/invincibles/tasks
-```
+In practice, first fix the cause: check memory growth, `rsync` options, page cache pressure, swap, container limits, and kernel logs (`journalctl -k`, `dmesg`) to confirm what triggered the OOM.
 
 Useful resources:
 
@@ -4942,18 +4896,19 @@ To check and reduce the number of `TIME_WAIT` sockets on a server handling many 
 
 ### Check `TIME_WAIT` Sockets
 
-* Use tools like `ss` or `netstat` to view the number of sockets in `TIME_WAIT`.
-* Get detailed information to diagnose the connections causing `TIME_WAIT`.
+* Count sockets: `ss -tan state time-wait | wc -l`.
+* Inspect endpoints: `ss -tan state time-wait`.
+* Check whether you are close to ephemeral port exhaustion: `sysctl net.ipv4.ip_local_port_range`.
 
 ### Reduce `TIME_WAIT` Sockets
 
-1. **Enable TCP socket reuse**: Allow the system to reuse `TIME_WAIT` sockets for new connections when safe.
-2. **Lower `TIME_WAIT` duration**: Adjust the timeout value for `TIME_WAIT` to shorten the time sockets remain in this state.
-3. **Increase available ports**: Expand the range of ephemeral ports to reduce port exhaustion.
-4. **Use Keep-Alive connections**: Enable keep-alive in your web server or proxy to reuse connections and reduce the creation of new ones.
-5. **Tune proxy settings**: Adjust connection handling settings in the proxy to minimize socket overhead.
+1. **Use Keep-Alive and connection pooling**: Reuse client-to-proxy and proxy-to-backend connections so fewer TCP connections are created.
+2. **Tune proxy settings**: Review upstream keepalive, idle timeout, max connections, and whether the proxy or backend is actively closing connections.
+3. **Increase available ephemeral ports when needed**: Widen `net.ipv4.ip_local_port_range` if the host is running out of local ports for outbound connections.
+4. **Scale connection sources**: Add more source IPs or proxy instances if one host is exhausting its tuple space.
+5. **Be cautious with TCP sysctls**: `tcp_tw_reuse` only helps specific outbound connection patterns and should be tested. Do not use obsolete advice such as `tcp_tw_recycle`, which was removed from Linux and broke clients behind NAT.
 
-After applying these settings, monitor the system to ensure the changes effectively reduce `TIME_WAIT` sockets without impacting service. Make these settings persistent by adding them to your system configuration.
+`TIME_WAIT` is a normal TCP state, not automatically a bug. Tune only when it causes a measurable problem such as port exhaustion, connection failures, or resource pressure.
 
 Useful resources:
 
@@ -5012,9 +4967,9 @@ Useful resources:
 
 It is possible (but rarely used) as long as it is a public IP address.
 
-An SSL certificate is typically issued to a Fully Qualified Domain Name (FQDN) such as `https://www.domain.com`. However, some organizations need an SSL certificate issued to a public IP address. This option allows you to specify a public IP address as the Common Name in your Certificate Signing Request (CSR). The issued certificate can then be used to secure connections directly with the public IP address (e.g. `https://1.1.1.1`.).
+An SSL/TLS certificate is typically issued to a Fully Qualified Domain Name (FQDN) such as `https://www.domain.com`. However, certificates can also identify an IP address. For modern clients, the IP address must be present in the certificate's Subject Alternative Name as an `iPAddress` entry. A Common Name (CN) alone is not sufficient for normal certificate validation.
 
-According to the CA Browser forum, there may be compatibility issues with certificates for IP addresses unless the IP address is in both the commonName and subjectAltName fields. This is due to legacy SSL implementations which are not aligned with RFC 5280, notably, Windows OS prior to Windows 10.
+Publicly trusted certificate authorities generally issue IP-address certificates only for public IP addresses and require proof that you control the address. For private IP addresses, use a private CA and install its root certificate on the clients that need to trust it.
 
 Useful resources:
 
